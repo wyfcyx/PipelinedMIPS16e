@@ -306,7 +306,7 @@ def output_instruction(ins, f, tabs):
                     end if;
                     ''' % (
                         ' and '.join([
-                            '(Instruction[%s] = \'%s\')' % (str(j), ("000" + bin(j)[2:])[5-j])
+                            '(Instruction(%s) = \'%s\')' % (str(j), ("000" + bin(j)[2:])[5-j])
                             for j in [8, 7, 6]
                         ]), str((i+1)*16-1), str(i*16)
                     )).replace(' ' * 20, tabs))
@@ -418,8 +418,8 @@ begin
     output_instruction('NOP', f, ' ' * 8)
     f.write('''
         BranchForce <= '1';
-        BranchTarget <= PC0 + %s;
-        BubbleNext <= Bubble + '111';
+        BranchTarget <= PC0 + "%s";
+        BubbleNext <= Bubble + "111";
         else
     ''' % ('1'*16, ))
     for ins in decoder['instruction']:
