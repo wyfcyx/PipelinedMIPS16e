@@ -23,7 +23,9 @@ end reg;
 architecture bhv of reg is
 
 begin
-	process()
-		end process;
-
-	end bhv;
+	process(SP_before,IH_before,reg_before,PC0,Instruction,Target,Data)
+		for i in 10 to 8 loop
+			
+		end loop
+	end process;
+end bhv;
