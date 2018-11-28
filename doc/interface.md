@@ -110,7 +110,7 @@ DataSelectorInstruction(5 downto 0)：前两位和后两位各表示一个选择
 
 BubbleNext(2 downto 0)：此条命令之后剩余的气泡数量【本语句为气泡的情况是Bubble-1，否则除非是生成气泡的语句为0，生成气泡的语句包括Load语句1个气泡，修改指令内存语句3个气泡】
 
-led(15 downto 0)：输出到外部led方便查看代码运行结果
+
 
 ## Register模块（组合逻辑）
 
@@ -133,6 +133,8 @@ Ry(15 downto 0)：Instruction(7 downto 5)对应寄存器的值。
 Rz(15 downto 0)：正常情况下Instruction(4 downto 2)对应寄存器的值。在MFPC、MFIH、MTIH、MFSP、LW_SP之类的语句的情形，为特殊寄存器的值。
 
 index(11 downto 0)：Rx、Ry、Rz的4位寄存器编号。
+
+led(15 downto 0)：输出到外部led方便查看代码运行结果
 
 ## DataSelector模块（组合逻辑）
 
@@ -255,6 +257,8 @@ LFlag：是否外部读取
 
 SFlag：是否外部写入
 
+InstructionAddress(15 downto 0)：读取指令的地址
+
 Address(15 downto 0)：读取/写入的目标地址
 
 DataS(15 downto 0)：写入的数据
@@ -262,3 +266,5 @@ DataS(15 downto 0)：写入的数据
 ### out
 
 Result(15 downto 0)：读取到的数据
+
+InstructionResult(15 downto 0)：读取到的指令
