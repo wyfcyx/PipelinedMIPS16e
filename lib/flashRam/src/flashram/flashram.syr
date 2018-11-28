@@ -1,0 +1,911 @@
+Release 13.2 - xst O.61xd (nt64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.58 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.59 secs
+ 
+--> Reading design: flashram.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "flashram.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "flashram"
+Output Format                      : NGC
+Target Device                      : xc3s1200e-5-fg320
+
+---- Source Options
+Top Module Name                    : flashram
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+WARNING:HDLParsers:3607 - Unit work/flashram is now defined in a different file.  It was defined in "E:/Xilinx/flashram/flashram.vhd", and is now defined in "E:/Tsinghua/ICO/FlashReport/src/flashram/flashram.vhd".
+WARNING:HDLParsers:3607 - Unit work/flashram/Behavioral is now defined in a different file.  It was defined in "E:/Xilinx/flashram/flashram.vhd", and is now defined in "E:/Tsinghua/ICO/FlashReport/src/flashram/flashram.vhd".
+WARNING:HDLParsers:3607 - Unit work/clk_1152 is now defined in a different file.  It was defined in "E:/Xilinx/flashram/clk_1152.vhd", and is now defined in "E:/Tsinghua/ICO/FlashReport/src/flashram/clk_1152.vhd".
+WARNING:HDLParsers:3607 - Unit work/clk_1152/Behavioral is now defined in a different file.  It was defined in "E:/Xilinx/flashram/clk_1152.vhd", and is now defined in "E:/Tsinghua/ICO/FlashReport/src/flashram/clk_1152.vhd".
+WARNING:HDLParsers:3607 - Unit work/flash_io is now defined in a different file.  It was defined in "E:/Xilinx/flashram/flash_io.vhd", and is now defined in "E:/Tsinghua/ICO/FlashReport/src/flashram/flash_io.vhd".
+WARNING:HDLParsers:3607 - Unit work/flash_io/Behavioral is now defined in a different file.  It was defined in "E:/Xilinx/flashram/flash_io.vhd", and is now defined in "E:/Tsinghua/ICO/FlashReport/src/flashram/flash_io.vhd".
+Compiling vhdl file "E:/Tsinghua/ICO/FlashReport/src/flashram/clk_1152.vhd" in Library work.
+Architecture behavioral of Entity clk_1152 is up to date.
+Compiling vhdl file "E:/Tsinghua/ICO/FlashReport/src/flashram/flash_io.vhd" in Library work.
+Architecture behavioral of Entity flash_io is up to date.
+Compiling vhdl file "E:/Tsinghua/ICO/FlashReport/src/flashram/flashram.vhd" in Library work.
+Architecture behavioral of Entity flashram is up to date.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <flashram> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <clk_1152> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <flash_io> in library <work> (architecture <behavioral>).
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <flashram> in library <work> (Architecture <behavioral>).
+INFO:Xst:2679 - Register <ledr> in unit <flashram> has a constant value of 00000000 during circuit operation. The register is replaced by logic.
+Entity <flashram> analyzed. Unit <flashram> generated.
+
+Analyzing Entity <clk_1152> in library <work> (Architecture <behavioral>).
+Entity <clk_1152> analyzed. Unit <clk_1152> generated.
+
+Analyzing Entity <flash_io> in library <work> (Architecture <behavioral>).
+WARNING:Xst:819 - "E:/Tsinghua/ICO/FlashReport/src/flashram/flash_io.vhd" line 75: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <ctl_read>, <ctl_write>, <ctl_erase>
+Entity <flash_io> analyzed. Unit <flash_io> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <clk_1152>.
+    Related source file is "E:/Tsinghua/ICO/FlashReport/src/flashram/clk_1152.vhd".
+    Found 1-bit register for signal <clk_tmp>.
+    Found 21-bit up counter for signal <count>.
+    Found 6-bit up counter for signal <count64>.
+    Summary:
+	inferred   2 Counter(s).
+	inferred   1 D-type flip-flop(s).
+Unit <clk_1152> synthesized.
+
+
+Synthesizing Unit <flash_io>.
+    Related source file is "E:/Tsinghua/ICO/FlashReport/src/flashram/flash_io.vhd".
+    Using one-hot encoding for signal <state>.
+    Found 16-bit tristate buffer for signal <flash_data>.
+    Found 1-bit register for signal <flash_we>.
+    Found 22-bit register for signal <flash_addr>.
+    Found 16-bit register for signal <data_out>.
+    Found 1-bit register for signal <flash_oe>.
+    Found 1-bit register for signal <ctl_erase_last>.
+    Found 1-bit register for signal <ctl_read_last>.
+    Found 1-bit register for signal <ctl_write_last>.
+    Found 1-bit xor2 for signal <data_out_0$xor0000> created at line 91.
+    Found 1-bit xor2 for signal <data_out_0$xor0001> created at line 94.
+    Found 1-bit xor2 for signal <data_out_0$xor0002> created at line 98.
+    Found 16-bit register for signal <Mtridata_flash_data> created at line 85.
+    Found 1-bit register for signal <Mtrien_flash_data> created at line 85.
+    Found 25-bit register for signal <next_state>.
+    Found 25-bit register for signal <state>.
+    Summary:
+	inferred  60 D-type flip-flop(s).
+	inferred  16 Tristate(s).
+Unit <flash_io> synthesized.
+
+
+Synthesizing Unit <flashram>.
+    Related source file is "E:/Tsinghua/ICO/FlashReport/src/flashram/flashram.vhd".
+WARNING:Xst:647 - Input <k1> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <swl> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <swr> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <key> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:646 - Signal <staddr<23:22>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <nop_state> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <edaddr<23:22>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Using one-hot encoding for signal <state>.
+    Found 1-bit register for signal <rdn>.
+    Found 1-bit register for signal <wrn>.
+    Found 8-bit register for signal <ledl>.
+    Found 16-bit tristate buffer for signal <data_ram1>.
+    Found 16-bit tristate buffer for signal <data_ram2>.
+    Found 17-bit register for signal <addr_ram1>.
+    Found 17-bit register for signal <addr_ram2>.
+    Found 1-bit register for signal <ram1_oe>.
+    Found 1-bit register for signal <ram2_oe>.
+    Found 1-bit register for signal <ram1_rw>.
+    Found 1-bit register for signal <ram2_rw>.
+    Found 17-bit adder for signal <addr_ram1$share0000> created at line 179.
+    Found 17-bit subtractor for signal <addr_ram1$sub0000> created at line 343.
+    Found 17-bit adder for signal <addr_ram2$share0000> created at line 179.
+    Found 6-bit register for signal <blockaddr>.
+    Found 1-bit register for signal <ctl_erase>.
+    Found 1-bit register for signal <ctl_read>.
+    Found 1-bit register for signal <ctl_write>.
+    Found 16-bit register for signal <data_tmp>.
+    Found 22-bit register for signal <edaddr<21:0>>.
+    Found 22-bit register for signal <flash_addr_input>.
+    Found 22-bit adder for signal <flash_addr_input_22$add0000> created at line 246.
+    Found 22-bit subtractor for signal <flash_addr_input_22$sub0000> created at line 258.
+    Found 16-bit register for signal <flash_data_input>.
+    Found 1-bit register for signal <high>.
+    Found 1-bit register for signal <Mtridata_data_ram1<0>> created at line 175.
+    Found 1-bit register for signal <Mtridata_data_ram1<10>> created at line 175.
+    Found 1-bit register for signal <Mtridata_data_ram1<11>> created at line 175.
+    Found 1-bit register for signal <Mtridata_data_ram1<12>> created at line 175.
+    Found 1-bit register for signal <Mtridata_data_ram1<13>> created at line 175.
+    Found 1-bit register for signal <Mtridata_data_ram1<14>> created at line 175.
+    Found 1-bit register for signal <Mtridata_data_ram1<15>> created at line 175.
+    Found 1-bit register for signal <Mtridata_data_ram1<1>> created at line 175.
+    Found 1-bit register for signal <Mtridata_data_ram1<2>> created at line 175.
+    Found 1-bit register for signal <Mtridata_data_ram1<3>> created at line 175.
+    Found 1-bit register for signal <Mtridata_data_ram1<4>> created at line 175.
+    Found 1-bit register for signal <Mtridata_data_ram1<5>> created at line 175.
+    Found 1-bit register for signal <Mtridata_data_ram1<6>> created at line 175.
+    Found 1-bit register for signal <Mtridata_data_ram1<7>> created at line 175.
+    Found 1-bit register for signal <Mtridata_data_ram1<8>> created at line 175.
+    Found 1-bit register for signal <Mtridata_data_ram1<9>> created at line 175.
+    Found 1-bit register for signal <Mtridata_data_ram2<0>> created at line 397.
+    Found 1-bit register for signal <Mtridata_data_ram2<10>> created at line 397.
+    Found 1-bit register for signal <Mtridata_data_ram2<11>> created at line 397.
+    Found 1-bit register for signal <Mtridata_data_ram2<12>> created at line 397.
+    Found 1-bit register for signal <Mtridata_data_ram2<13>> created at line 397.
+    Found 1-bit register for signal <Mtridata_data_ram2<14>> created at line 397.
+    Found 1-bit register for signal <Mtridata_data_ram2<15>> created at line 397.
+    Found 1-bit register for signal <Mtridata_data_ram2<1>> created at line 397.
+    Found 1-bit register for signal <Mtridata_data_ram2<2>> created at line 397.
+    Found 1-bit register for signal <Mtridata_data_ram2<3>> created at line 397.
+    Found 1-bit register for signal <Mtridata_data_ram2<4>> created at line 397.
+    Found 1-bit register for signal <Mtridata_data_ram2<5>> created at line 397.
+    Found 1-bit register for signal <Mtridata_data_ram2<6>> created at line 397.
+    Found 1-bit register for signal <Mtridata_data_ram2<7>> created at line 397.
+    Found 1-bit register for signal <Mtridata_data_ram2<8>> created at line 397.
+    Found 1-bit register for signal <Mtridata_data_ram2<9>> created at line 397.
+    Found 1-bit register for signal <Mtrien_data_ram1<0>> created at line 175.
+    Found 1-bit register for signal <Mtrien_data_ram1<10>> created at line 175.
+    Found 1-bit register for signal <Mtrien_data_ram1<11>> created at line 175.
+    Found 1-bit register for signal <Mtrien_data_ram1<12>> created at line 175.
+    Found 1-bit register for signal <Mtrien_data_ram1<13>> created at line 175.
+    Found 1-bit register for signal <Mtrien_data_ram1<14>> created at line 175.
+    Found 1-bit register for signal <Mtrien_data_ram1<15>> created at line 175.
+    Found 1-bit register for signal <Mtrien_data_ram1<1>> created at line 175.
+    Found 1-bit register for signal <Mtrien_data_ram1<2>> created at line 175.
+    Found 1-bit register for signal <Mtrien_data_ram1<3>> created at line 175.
+    Found 1-bit register for signal <Mtrien_data_ram1<4>> created at line 175.
+    Found 1-bit register for signal <Mtrien_data_ram1<5>> created at line 175.
+    Found 1-bit register for signal <Mtrien_data_ram1<6>> created at line 175.
+    Found 1-bit register for signal <Mtrien_data_ram1<7>> created at line 175.
+    Found 1-bit register for signal <Mtrien_data_ram1<8>> created at line 175.
+    Found 1-bit register for signal <Mtrien_data_ram1<9>> created at line 175.
+    Found 1-bit register for signal <Mtrien_data_ram2<0>> created at line 397.
+    Found 1-bit register for signal <Mtrien_data_ram2<10>> created at line 397.
+    Found 1-bit register for signal <Mtrien_data_ram2<11>> created at line 397.
+    Found 1-bit register for signal <Mtrien_data_ram2<12>> created at line 397.
+    Found 1-bit register for signal <Mtrien_data_ram2<13>> created at line 397.
+    Found 1-bit register for signal <Mtrien_data_ram2<14>> created at line 397.
+    Found 1-bit register for signal <Mtrien_data_ram2<15>> created at line 397.
+    Found 1-bit register for signal <Mtrien_data_ram2<1>> created at line 397.
+    Found 1-bit register for signal <Mtrien_data_ram2<2>> created at line 397.
+    Found 1-bit register for signal <Mtrien_data_ram2<3>> created at line 397.
+    Found 1-bit register for signal <Mtrien_data_ram2<4>> created at line 397.
+    Found 1-bit register for signal <Mtrien_data_ram2<5>> created at line 397.
+    Found 1-bit register for signal <Mtrien_data_ram2<6>> created at line 397.
+    Found 1-bit register for signal <Mtrien_data_ram2<7>> created at line 397.
+    Found 1-bit register for signal <Mtrien_data_ram2<8>> created at line 397.
+    Found 1-bit register for signal <Mtrien_data_ram2<9>> created at line 397.
+    Found 58-bit register for signal <next_state>.
+    Found 58-bit register for signal <readsize_state>.
+    Found 8-bit register for signal <response>.
+    Found 1-bit register for signal <sendflag>.
+    Found 22-bit comparator equal for signal <sendflag$cmp_eq0000> created at line 236.
+    Found 17-bit comparator equal for signal <sendflag$cmp_eq0001> created at line 320.
+    Found 17-bit comparator equal for signal <sendflag$cmp_eq0002> created at line 403.
+    Found 22-bit register for signal <staddr<21:0>>.
+    Found 58-bit register for signal <state>.
+    Summary:
+	inferred 345 D-type flip-flop(s).
+	inferred   5 Adder/Subtractor(s).
+	inferred   3 Comparator(s).
+	inferred  32 Tristate(s).
+Unit <flashram> synthesized.
+
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 5
+ 17-bit adder                                          : 2
+ 17-bit subtractor                                     : 1
+ 22-bit adder                                          : 1
+ 22-bit subtractor                                     : 1
+# Counters                                             : 2
+ 21-bit up counter                                     : 1
+ 6-bit up counter                                      : 1
+# Registers                                            : 208
+ 1-bit register                                        : 196
+ 16-bit register                                       : 1
+ 17-bit register                                       : 2
+ 22-bit register                                       : 1
+ 25-bit register                                       : 2
+ 58-bit register                                       : 3
+ 6-bit register                                        : 1
+ 8-bit register                                        : 2
+# Comparators                                          : 3
+ 17-bit comparator equal                               : 2
+ 22-bit comparator equal                               : 1
+# Tristates                                            : 33
+ 1-bit tristate buffer                                 : 32
+ 16-bit tristate buffer                                : 1
+# Xors                                                 : 3
+ 1-bit xor2                                            : 3
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:1293 - FF/Latch <readsize_state_31> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_29> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_28> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_27> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_26> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_24> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_23> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_22> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_21> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_20> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_19> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_17> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_16> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_15> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_14> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_12> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_11> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_10> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_9> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_8> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_7> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_5> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_4> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_3> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_56> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_55> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_54> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_53> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_52> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_51> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_50> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_49> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_48> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_47> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_46> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_45> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_44> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_43> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_42> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_41> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_40> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_39> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_38> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_36> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_35> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_34> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_33> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_32> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_28> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_27> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_26> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_25> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_23> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_22> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_21> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_20> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_19> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_18> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_16> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_15> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_14> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_13> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_11> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_10> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_9> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_8> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_7> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_6> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_4> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_3> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_2> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_1> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_2> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_1> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <response_7> (without init value) has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <response_6> (without init value) has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <response_4> (without init value) has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_55> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_53> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_51> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_49> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_47> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_45> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_44> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_43> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_42> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_41> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_40> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_39> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_38> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_37> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_35> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_34> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_33> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_32> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_31> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_30> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <next_state_57> of sequential type is unconnected in block <flashram>.
+WARNING:Xst:2677 - Node <readsize_state_57> of sequential type is unconnected in block <flashram>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 5
+ 17-bit adder                                          : 2
+ 17-bit subtractor                                     : 1
+ 22-bit adder                                          : 1
+ 22-bit subtractor                                     : 1
+# Counters                                             : 2
+ 21-bit up counter                                     : 1
+ 6-bit up counter                                      : 1
+# Registers                                            : 514
+ Flip-Flops                                            : 514
+# Comparators                                          : 3
+ 17-bit comparator equal                               : 2
+ 22-bit comparator equal                               : 1
+# Xors                                                 : 3
+ 1-bit xor2                                            : 3
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1293 - FF/Latch <readsize_state_31> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_29> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_28> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_27> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_26> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_24> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_23> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_22> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_21> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_20> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_19> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_17> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_16> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_15> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_14> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_12> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_11> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_10> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_9> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_8> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_7> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_5> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_4> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_3> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_57> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_56> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_55> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_54> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_53> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_52> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_51> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_50> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_49> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_48> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_47> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_46> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_45> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_44> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_43> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_42> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_41> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_40> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_39> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_38> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_36> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_35> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_34> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_33> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_32> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_28> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_27> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_26> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_25> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_23> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_22> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_21> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_20> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_19> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_18> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_16> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_15> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_14> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_13> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_11> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_10> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_9> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_8> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_7> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_6> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_4> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_3> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_2> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_1> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_2> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readsize_state_1> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <response_7> (without init value) has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <response_6> (without init value) has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <response_4> (without init value) has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_55> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_53> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_51> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_49> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_47> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_45> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_44> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_43> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_42> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_41> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_40> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_39> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_38> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_37> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_35> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_34> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_33> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_32> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_31> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_30> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <flash/state_8> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <flash/state_7> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <flash/state_6> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <flash/next_state_22> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <flash/next_state_20> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <flash/next_state_19> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <flash/next_state_21> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <flash/next_state_17> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <flash/next_state_16> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <flash/next_state_18> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <flash/next_state_14> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <flash/next_state_13> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <flash/next_state_15> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <flash/next_state_11> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <flash/next_state_10> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <flash/next_state_12> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <flash/next_state_8> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <flash/next_state_7> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <flash/next_state_9> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <flash/next_state_5> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <flash/next_state_4> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <flash/next_state_6> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <flash/next_state_3> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <flash/next_state_2> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <flash/next_state_1> has a constant value of 0 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <next_state_57> of sequential type is unconnected in block <flashram>.
+WARNING:Xst:2677 - Node <state_57> of sequential type is unconnected in block <flashram>.
+WARNING:Xst:2677 - Node <flash/next_state_24> of sequential type is unconnected in block <flashram>.
+WARNING:Xst:2677 - Node <flash/state_24> of sequential type is unconnected in block <flashram>.
+
+Optimizing unit <flashram> ...
+WARNING:Xst:1710 - FF/Latch <response_5> (without init value) has a constant value of 1 in block <flashram>. This FF/Latch will be trimmed during the optimization process.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block flashram, actual ratio is 5.
+FlipFlop state_27 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 414
+ Flip-Flops                                            : 414
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : flashram.ngr
+Top Level Output File Name         : flashram
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 155
+
+Cell Usage :
+# BELS                             : 1095
+#      GND                         : 1
+#      INV                         : 47
+#      LUT1                        : 75
+#      LUT2                        : 93
+#      LUT2_D                      : 4
+#      LUT2_L                      : 13
+#      LUT3                        : 129
+#      LUT3_D                      : 17
+#      LUT3_L                      : 12
+#      LUT4                        : 311
+#      LUT4_D                      : 19
+#      LUT4_L                      : 90
+#      MUXCY                       : 151
+#      MUXF5                       : 16
+#      VCC                         : 1
+#      XORCY                       : 116
+# FlipFlops/Latches                : 414
+#      FD                          : 5
+#      FDC                         : 78
+#      FDCE                        : 8
+#      FDCPE                       : 3
+#      FDE                         : 270
+#      FDP                         : 11
+#      FDPE                        : 17
+#      FDR                         : 22
+# Clock Buffers                    : 3
+#      BUFG                        : 2
+#      BUFGP                       : 1
+# IO Buffers                       : 136
+#      IBUF                        : 2
+#      IOBUF                       : 48
+#      OBUF                        : 86
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s1200efg320-5 
+
+ Number of Slices:                      427  out of   8672     4%  
+ Number of Slice Flip Flops:            400  out of  17344     2%  
+ Number of 4 input LUTs:                810  out of  17344     4%  
+ Number of IOs:                         155
+ Number of bonded IOBs:                 137  out of    250    54%  
+    IOB Flip Flops:                      14
+ Number of GCLKs:                         3  out of     24    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk_producer/clk_tmp1              | BUFG                   | 303   |
+clk                                | BUFGP                  | 28    |
+clk_producer/count64_51            | BUFG                   | 83    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-------------------------------------------------------------+---------------------------+-------+
+Control Signal                                               | Buffer(FF name)           | Load  |
+-------------------------------------------------------------+---------------------------+-------+
+flash/next_state_Acst_inv(flash/next_state_Acst_inv1_INV_0:O)| NONE(Mtrien_data_ram1<0>) | 114   |
+flash/ctl_erase_last_and0000(flash/ctl_erase_last_and00001:O)| NONE(flash/ctl_erase_last)| 1     |
+flash/ctl_erase_last_and0001(flash/ctl_erase_last_and00011:O)| NONE(flash/ctl_erase_last)| 1     |
+flash/ctl_read_last_and0000(flash/ctl_read_last_and00001:O)  | NONE(flash/ctl_read_last) | 1     |
+flash/ctl_read_last_and0001(flash/ctl_read_last_and00011:O)  | NONE(flash/ctl_read_last) | 1     |
+flash/ctl_write_last_and0000(flash/ctl_write_last_and00001:O)| NONE(flash/ctl_write_last)| 1     |
+flash/ctl_write_last_and0001(flash/ctl_write_last_and00011:O)| NONE(flash/ctl_write_last)| 1     |
+-------------------------------------------------------------+---------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 7.731ns (Maximum Frequency: 129.349MHz)
+   Minimum input arrival time before clock: 7.656ns
+   Maximum output required time after clock: 4.562ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk_producer/clk_tmp1'
+  Clock period: 7.731ns (frequency: 129.349MHz)
+  Total number of paths / destination ports: 8971 / 370
+-------------------------------------------------------------------------
+Delay:               7.731ns (Levels of Logic = 5)
+  Source:            state_18 (FF)
+  Destination:       Mtridata_data_ram1<0> (FF)
+  Source Clock:      clk_producer/clk_tmp1 rising
+  Destination Clock: clk_producer/clk_tmp1 rising
+
+  Data Path: state_18 to Mtridata_data_ram1<0>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q             24   0.514   1.067  state_18 (state_18)
+     LUT4:I3->O            1   0.612   0.387  Mtridata_data_ram1<0>_not0001143 (Mtridata_data_ram1<0>_not0001143)
+     LUT3:I2->O            2   0.612   0.383  Mtridata_data_ram1<0>_not0001148 (Mtridata_data_ram1<0>_not0001148)
+     LUT4:I3->O            2   0.612   0.532  Mtridata_data_ram1<0>_not0001170_SW1 (N264)
+     LUT4:I0->O            1   0.612   0.426  Mtridata_data_ram1<0>_not0001215_SW0 (N328)
+     LUT4:I1->O           16   0.612   0.879  Mtridata_data_ram1<0>_not0001215 (Mtridata_data_ram1<0>_not0001)
+     FDE:CE                    0.483          Mtridata_data_ram1<0>
+    ----------------------------------------
+    Total                      7.731ns (4.057ns logic, 3.674ns route)
+                                       (52.5% logic, 47.5% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 4.289ns (frequency: 233.136MHz)
+  Total number of paths / destination ports: 715 / 50
+-------------------------------------------------------------------------
+Delay:               4.289ns (Levels of Logic = 6)
+  Source:            clk_producer/count_8 (FF)
+  Destination:       clk_producer/count_0 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: clk_producer/count_8 to clk_producer/count_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              2   0.514   0.532  clk_producer/count_8 (clk_producer/count_8)
+     LUT4:I0->O            1   0.612   0.000  clk_producer/clk_tmp_cmp_eq0000_wg_lut<1> (clk_producer/clk_tmp_cmp_eq0000_wg_lut<1>)
+     MUXCY:S->O            1   0.404   0.000  clk_producer/clk_tmp_cmp_eq0000_wg_cy<1> (clk_producer/clk_tmp_cmp_eq0000_wg_cy<1>)
+     MUXCY:CI->O           1   0.052   0.000  clk_producer/clk_tmp_cmp_eq0000_wg_cy<2> (clk_producer/clk_tmp_cmp_eq0000_wg_cy<2>)
+     MUXCY:CI->O           1   0.052   0.000  clk_producer/clk_tmp_cmp_eq0000_wg_cy<3> (clk_producer/clk_tmp_cmp_eq0000_wg_cy<3>)
+     MUXCY:CI->O           1   0.052   0.000  clk_producer/clk_tmp_cmp_eq0000_wg_cy<4> (clk_producer/clk_tmp_cmp_eq0000_wg_cy<4>)
+     MUXCY:CI->O          22   0.289   0.989  clk_producer/clk_tmp_cmp_eq0000_wg_cy<5> (clk_producer/clk_tmp_cmp_eq0000)
+     FDR:R                     0.795          clk_producer/count_0
+    ----------------------------------------
+    Total                      4.289ns (2.768ns logic, 1.521ns route)
+                                       (64.5% logic, 35.5% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk_producer/count64_51'
+  Clock period: 5.878ns (frequency: 170.114MHz)
+  Total number of paths / destination ports: 888 / 100
+-------------------------------------------------------------------------
+Delay:               5.878ns (Levels of Logic = 4)
+  Source:            flash/state_16 (FF)
+  Destination:       flash/Mtrien_flash_data (FF)
+  Source Clock:      clk_producer/count64_51 rising
+  Destination Clock: clk_producer/count64_51 rising
+
+  Data Path: flash/state_16 to flash/Mtrien_flash_data
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              5   0.514   0.690  flash/state_16 (flash/state_16)
+     LUT3_D:I0->O          1   0.612   0.387  flash/Mtridata_flash_data_not000157 (flash/Mtridata_flash_data_not000157)
+     LUT4:I2->O            1   0.612   0.360  flash/Mtridata_flash_data_not000140_SW1 (N316)
+     LUT4_L:I3->LO         1   0.612   0.103  flash/Mtridata_flash_data_not000193 (flash/Mtridata_flash_data_not000193)
+     LUT4:I3->O           17   0.612   0.893  flash/Mtridata_flash_data_not0001150 (flash/Mtridata_flash_data_not0001)
+     FDE:CE                    0.483          flash/Mtridata_flash_data_0
+    ----------------------------------------
+    Total                      5.878ns (3.445ns logic, 2.433ns route)
+                                       (58.6% logic, 41.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_producer/clk_tmp1'
+  Total number of paths / destination ports: 905 / 445
+-------------------------------------------------------------------------
+Offset:              7.656ns (Levels of Logic = 6)
+  Source:            data_ready (PAD)
+  Destination:       Mtridata_data_ram1<0> (FF)
+  Destination Clock: clk_producer/clk_tmp1 rising
+
+  Data Path: data_ready to Mtridata_data_ram1<0>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            39   1.106   1.227  data_ready_IBUF (data_ready_IBUF)
+     LUT4:I0->O            1   0.612   0.360  Mtridata_data_ram1<0>_not0001170_SW0_G_SW0 (N371)
+     LUT4:I3->O            1   0.612   0.000  Mtridata_data_ram1<0>_not0001170_SW0_G (N336)
+     MUXF5:I1->O           2   0.278   0.449  Mtridata_data_ram1<0>_not0001170_SW0 (N263)
+     LUT4:I1->O            1   0.612   0.426  Mtridata_data_ram1<0>_not0001215_SW0 (N328)
+     LUT4:I1->O           16   0.612   0.879  Mtridata_data_ram1<0>_not0001215 (Mtridata_data_ram1<0>_not0001)
+     FDE:CE                    0.483          Mtridata_data_ram1<0>
+    ----------------------------------------
+    Total                      7.656ns (4.315ns logic, 3.341ns route)
+                                       (56.4% logic, 43.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_producer/count64_51'
+  Total number of paths / destination ports: 57 / 57
+-------------------------------------------------------------------------
+Offset:              4.320ns (Levels of Logic = 2)
+  Source:            reset (PAD)
+  Destination:       flash/data_out_9 (FF)
+  Destination Clock: clk_producer/count64_51 rising
+
+  Data Path: reset to flash/data_out_9
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O           141   1.106   1.254  reset_IBUF (reset_IBUF)
+     LUT2:I0->O           15   0.612   0.864  flash/data_out_10_and00001 (flash/data_out_10_and0000)
+     FDE:CE                    0.483          flash/data_out_10
+    ----------------------------------------
+    Total                      4.320ns (2.201ns logic, 2.119ns route)
+                                       (51.0% logic, 49.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_producer/clk_tmp1'
+  Total number of paths / destination ports: 112 / 80
+-------------------------------------------------------------------------
+Offset:              4.182ns (Levels of Logic = 1)
+  Source:            addr_ram1_16 (FF)
+  Destination:       addr_ram1<16> (PAD)
+  Source Clock:      clk_producer/clk_tmp1 rising
+
+  Data Path: addr_ram1_16 to addr_ram1<16>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              4   0.514   0.499  addr_ram1_16 (addr_ram1_16)
+     OBUF:I->O                 3.169          addr_ram1_16_OBUF (addr_ram1<16>)
+    ----------------------------------------
+    Total                      4.182ns (3.683ns logic, 0.499ns route)
+                                       (88.1% logic, 11.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_producer/count64_51'
+  Total number of paths / destination ports: 56 / 40
+-------------------------------------------------------------------------
+Offset:              4.562ns (Levels of Logic = 1)
+  Source:            flash/Mtrien_flash_data (FF)
+  Destination:       flash_data<15> (PAD)
+  Source Clock:      clk_producer/count64_51 rising
+
+  Data Path: flash/Mtrien_flash_data to flash_data<15>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDPE:C->Q            16   0.514   0.879  flash/Mtrien_flash_data (flash/Mtrien_flash_data)
+     IOBUF:T->IO               3.169          flash_data_15_IOBUF (flash_data<15>)
+    ----------------------------------------
+    Total                      4.562ns (3.683ns logic, 0.879ns route)
+                                       (80.7% logic, 19.3% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 24.00 secs
+Total CPU time to Xst completion: 23.45 secs
+ 
+--> 
+
+Total memory usage is 280020 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  241 (   0 filtered)
+Number of infos    :    2 (   0 filtered)
+
