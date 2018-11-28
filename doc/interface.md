@@ -82,6 +82,8 @@ Bubble(2 downto 0)：剩余的气泡数量
 
 Instruction(15 downto 0)：指令内容
 
+reg(127 downto 0)：寄存器读入
+
 BranchPredict：对下次跳转是否预测为成功【影响Branch语句的BranchTarget和AluInstruction输出，比如BNEZ 0x20，当Predict为1的时候下次会预测跳转，所以解析成BEQZ PC0+1，其中PC0+1用Decoder内部的加法器算出，当Predict为0时下次不预测跳转，正常解析】
 
 ### out
