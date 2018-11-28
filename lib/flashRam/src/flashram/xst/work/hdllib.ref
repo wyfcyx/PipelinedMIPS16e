@@ -1,0 +1,8 @@
+AR serial behavioral E:/Xilinx/flashram/serial.vhd sub00/vhpl03 1320413855
+EN flash_io NULL E:/Tsinghua/ICO/FlashReport/src/flashram/flash_io.vhd sub00/vhpl04 1321539461
+AR clk_1152 behavioral E:/Tsinghua/ICO/FlashReport/src/flashram/clk_1152.vhd sub00/vhpl01 1321539460
+EN flashram NULL E:/Tsinghua/ICO/FlashReport/src/flashram/flashram.vhd sub00/vhpl06 1321539463
+EN serial NULL E:/Xilinx/flashram/serial.vhd sub00/vhpl02 1320413854
+AR flashram behavioral E:/Tsinghua/ICO/FlashReport/src/flashram/flashram.vhd sub00/vhpl07 1321539464
+AR flash_io behavioral E:/Tsinghua/ICO/FlashReport/src/flashram/flash_io.vhd sub00/vhpl05 1321539462
+EN clk_1152 NULL E:/Tsinghua/ICO/FlashReport/src/flashram/clk_1152.vhd sub00/vhpl00 1321539459

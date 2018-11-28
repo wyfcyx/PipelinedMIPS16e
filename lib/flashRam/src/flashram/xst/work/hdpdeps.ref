@@ -1,0 +1,30 @@
+V3 17
+FL E:/Tsinghua/ICO/FlashReport/src/flashram/clk_1152.vhd 2011/11/15.14:08:18 O.61xd
+EN work/clk_1152 1321539459 \
+      FL E:/Tsinghua/ICO/FlashReport/src/flashram/clk_1152.vhd \
+      PB ieee/std_logic_1164 1308643377 PB ieee/STD_LOGIC_UNSIGNED 1308643379 \
+      PB ieee/std_logic_arith 1308643378
+AR work/clk_1152/Behavioral 1321539460 \
+      FL E:/Tsinghua/ICO/FlashReport/src/flashram/clk_1152.vhd EN work/clk_1152 1321539459
+FL E:/Tsinghua/ICO/FlashReport/src/flashram/flashram.vhd 2011/11/15.14:08:36 O.61xd
+EN work/flashram 1321539463 \
+      FL E:/Tsinghua/ICO/FlashReport/src/flashram/flashram.vhd \
+      PB ieee/std_logic_1164 1308643377 PB ieee/STD_LOGIC_UNSIGNED 1308643379 \
+      PB ieee/std_logic_arith 1308643378
+AR work/flashram/Behavioral 1321539464 \
+      FL E:/Tsinghua/ICO/FlashReport/src/flashram/flashram.vhd EN work/flashram 1321539463 \
+      CP clk_1152 CP flash_io
+FL E:/Tsinghua/ICO/FlashReport/src/flashram/flash_io.vhd 2011/11/15.14:10:56 O.61xd
+EN work/flash_io 1321539461 \
+      FL E:/Tsinghua/ICO/FlashReport/src/flashram/flash_io.vhd \
+      PB ieee/std_logic_1164 1308643377
+AR work/flash_io/Behavioral 1321539462 \
+      FL E:/Tsinghua/ICO/FlashReport/src/flashram/flash_io.vhd EN work/flash_io 1321539461
+FL E:/Xilinx/flashram/clk_1152.vhd 2011/11/15.14:08:18 O.61xd
+FL E:/Xilinx/flashram/flashram.vhd 2011/11/15.14:08:36 O.61xd
+FL E:/Xilinx/flashram/flash_io.vhd 2011/11/15.14:10:56 O.61xd
+FL E:/Xilinx/flashram/serial.vhd 2011/11/01.02:55:46 O.61xd
+EN work/serial 1320413854 FL E:/Xilinx/flashram/serial.vhd PB ieee/std_logic_1164 1308643377 \
+      PB ieee/STD_LOGIC_UNSIGNED 1308643379 PB ieee/std_logic_arith 1308643378
+AR work/serial/Behavioral 1320413855 \
+      FL E:/Xilinx/flashram/serial.vhd EN work/serial 1320413854

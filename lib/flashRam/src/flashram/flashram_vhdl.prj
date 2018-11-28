@@ -1,0 +1,3 @@
+vhdl work "E:\Tsinghua\ICO\FlashReport\src\flashram\flash_io.vhd"
+vhdl work "E:\Tsinghua\ICO\FlashReport\src\flashram\clk_1152.vhd"
+vhdl work "E:\Tsinghua\ICO\FlashReport\src\flashram\flashram.vhd"

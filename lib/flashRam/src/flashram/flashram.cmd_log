@@ -1,0 +1,651 @@
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Xilinx/flashram/flashram.xst" -ofn "E:/Xilinx/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 
+xst -intstyle ise -ifn "E:/Tsinghua/ICO/FlashReport/src/flashram/flashram.xst" -ofn "E:/Tsinghua/ICO/FlashReport/src/flashram/flashram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc flashram.ucf -p xc3s1200e-fg320-5 flashram.ngc flashram.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o flashram_map.ncd flashram.ngd flashram.pcf 
+par -w -intstyle ise -ol high -t 1 flashram_map.ncd flashram.ncd flashram.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml flashram.twx flashram.ncd -o flashram.twr flashram.pcf -ucf flashram.ucf 
+bitgen -intstyle ise -f flashram.ut flashram.ncd 

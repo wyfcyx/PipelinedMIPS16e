@@ -1,0 +1,30 @@
+Release 13.2 - par O.61xd (nt64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+
+Thu Nov 17 22:19:11 2011
+
+All signals are completely routed.
+
+WARNING:ParHelpers:361 - There are 18 loadless signals in this design. This design will cause Bitgen to issue DRC
+   warnings.
+
+   k1_IBUF
+   key_IBUF
+   swl<0>_IBUF
+   swl<1>_IBUF
+   swl<2>_IBUF
+   swl<3>_IBUF
+   swl<4>_IBUF
+   swl<5>_IBUF
+   swl<6>_IBUF
+   swl<7>_IBUF
+   swr<0>_IBUF
+   swr<1>_IBUF
+   swr<2>_IBUF
+   swr<3>_IBUF
+   swr<4>_IBUF
+   swr<5>_IBUF
+   swr<6>_IBUF
+   swr<7>_IBUF
+
+
