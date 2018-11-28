@@ -367,7 +367,8 @@ def output_instruction(ins, f, tabs):
                  + ' & ' + 'Instruction(%s downto %s)' % (str(start_immediate), str(end_immediate))))
 
     # 数据选择器
-    f.write('%sDataSelectorInstruction <= "%s";\n' % (tabs, get_data(ins, 'DataSelectorInstruction')))
+    f.write('%sDataSelectorInstruction <= "%s";\n' % (tabs, (get_data(ins, 'DataSelectorInstruction')
+                                                      + "00")[:6]))
     f.write('%sBubbleNext <= "%s";\n' % (tabs, get_data(ins, 'BubbleNext')))
 
 
@@ -398,7 +399,7 @@ entity decoder is
         RegisterTarget : out std_logic_vector(3 downto 0);
         AluInstruction : out std_logic_vector(3 downto 0);
         Immediate : out std_logic_vector(15 downto 0);
-        DataSelectorInstruction : out std_logic_vector(3 downto 0);
+        DataSelectorInstruction : out std_logic_vector(5 downto 0);
         BubbleNext : out std_logic_vector(2 downto 0)
     );
 end decoder;
@@ -413,8 +414,8 @@ begin
     output_instruction('NOP', f, ' ' * 8)
     f.write('''
     else
-        if (Bubble(2) or Bubble(1) or Bubble(0)) then
-    ''')
+        if (%s) then
+    ''' % (' or '.join(["(Bubble(%d) = '1')" % i for i in range(3)])))
     output_instruction('NOP', f, ' ' * 8)
     f.write('''
         BranchForce <= '1';
