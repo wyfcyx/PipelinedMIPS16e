@@ -110,6 +110,8 @@ DataSelectorInstruction(5 downto 0)：前两位和后两位各表示一个选择
 
 BubbleNext(2 downto 0)：此条命令之后剩余的气泡数量【本语句为气泡的情况是Bubble-1，否则除非是生成气泡的语句为0，生成气泡的语句包括Load语句1个气泡，修改指令内存语句3个气泡】
 
+led(15 downto 0)：输出到外部led方便查看代码运行结果
+
 ## Register模块（组合逻辑）
 
 ### in
