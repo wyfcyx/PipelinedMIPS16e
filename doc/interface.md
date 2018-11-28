@@ -150,7 +150,7 @@ DataA(15 downto 0)：选择出的第一个数
 
 DataB(15 downto 0)：选择出的第二个数
 
-DataS(15 downto 0)：即将写入外部的数据【也就是在借助旁路更新之后获得的DataA的数值】
+DataS(15 downto 0)：即将写入外部的数据
 
 ## ALU模块（组合逻辑）
 
@@ -164,6 +164,8 @@ DataB(15 downto 0)：参与运算的第二个数
 
 AluInstruction(3 downto 0)：执行的ALU指令编号
 
+T：输入标志
+
 BranchTargetAlu(15 downto 0)：传递给ALU的跳转目标地址
 
 ### out
@@ -174,7 +176,7 @@ BranchConfirm：是否确认跳转
 
 BranchTargetConfirm(15 downto 0)：跳转目标
 
-T：输出标志
+Tout：输出标志
 
 Result(15 downto 0)：运算结果
 

@@ -50,22 +50,22 @@ begin
 
     else
         if ((Bubble(0) = '1') or (Bubble(1) = '1') or (Bubble(2) = '1')) then
-            LFlag <= '0';
-        SFlag <= '0';
-        BranchFlag <= '0';
-        BranchForce <= '0';
+                LFlag <= '0';
+            SFlag <= '0';
+            BranchFlag <= '0';
+            BranchForce <= '0';
 
-        BranchTargetAlu <= "0000000000000000";
-        BranchTarget <= "0000000000000000";
-                RegisterTarget <= "1111";
-        AluInstruction <= "0000";
-        Immediate <= "0000000000000000";
-        DataSelectorInstruction <= "000000";
-        BubbleNext <= "000";
+            BranchTargetAlu <= "0000000000000000";
+            BranchTarget <= "0000000000000000";
+                        RegisterTarget <= "1111";
+            AluInstruction <= "0000";
+            Immediate <= "0000000000000000";
+            DataSelectorInstruction <= "000000";
+            BubbleNext <= "000";
 
-        BranchForce <= '1';
-        BranchTarget <= PC0 + "1111111111111111";
-        BubbleNext <= Bubble + "111";
+            BranchForce <= '1';
+            BranchTarget <= PC0 + "1111111111111111";
+            BubbleNext <= Bubble + "111";
         else
     
 

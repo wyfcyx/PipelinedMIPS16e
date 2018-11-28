@@ -416,11 +416,11 @@ begin
     else
         if (%s) then
     ''' % (' or '.join(["(Bubble(%d) = '1')" % i for i in range(3)])))
-    output_instruction('NOP', f, ' ' * 8)
+    output_instruction('NOP', f, ' ' * 12)
     f.write('''
-        BranchForce <= '1';
-        BranchTarget <= PC0 + "%s";
-        BubbleNext <= Bubble + "111";
+            BranchForce <= '1';
+            BranchTarget <= PC0 + "%s";
+            BubbleNext <= Bubble + "111";
         else
     ''' % ('1'*16, ))
     for ins in decoder['instruction']:
