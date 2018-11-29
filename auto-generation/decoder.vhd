@@ -64,7 +64,7 @@ begin
             BubbleNext <= "000";
 
             BranchForce <= '1';
-            BranchTarget <= PC0 + "1111111111111110";
+            BranchTarget <= PC0 + "1111111111111111";
             BubbleNext <= Bubble + "111";
         else
     
@@ -156,7 +156,7 @@ begin
                 BranchFlag <= '1';
                 BranchForce <= '0';
 
-                BranchTargetAlu <= PC0 + 2;
+                BranchTargetAlu <= PC0 + 1;
                 BranchTarget <= PC0 + Instruction(7 downto 0);
                                 RegisterTarget <= "1010";
                 AluInstruction <= "1011";
@@ -173,10 +173,10 @@ begin
                 BranchForce <= '0';
 
                 if (BranchPredict = '0') then
-                    BranchTarget <= PC0 + 2;
+                    BranchTarget <= PC0 + 1;
                     BranchTargetAlu <= PC0 + Instruction(7 downto 0);
                 else
-                    BranchTargetAlu <= PC0 + 2;
+                    BranchTargetAlu <= PC0 + 1;
                     BranchTarget <= PC0 + Instruction(7 downto 0);
                 end if;
                                 RegisterTarget <= "1010";
@@ -199,10 +199,10 @@ begin
                 BranchForce <= '0';
 
                 if (BranchPredict = '0') then
-                    BranchTarget <= PC0 + 2;
+                    BranchTarget <= PC0 + 1;
                     BranchTargetAlu <= PC0 + Instruction(7 downto 0);
                 else
-                    BranchTargetAlu <= PC0 + 2;
+                    BranchTargetAlu <= PC0 + 1;
                     BranchTarget <= PC0 + Instruction(7 downto 0);
                 end if;
                                 RegisterTarget <= "1010";
@@ -225,10 +225,10 @@ begin
                 BranchForce <= '0';
 
                 if (BranchPredict = '0') then
-                    BranchTarget <= PC0 + 2;
+                    BranchTarget <= PC0 + 1;
                     BranchTargetAlu <= PC0 + Instruction(7 downto 0);
                 else
-                    BranchTargetAlu <= PC0 + 2;
+                    BranchTargetAlu <= PC0 + 1;
                     BranchTarget <= PC0 + Instruction(7 downto 0);
                 end if;
                                 RegisterTarget <= "1010";
@@ -283,42 +283,42 @@ begin
                 BranchForce <= '0';
 
                 if ((Instruction(8) = '0') and (Instruction(7) = '1') and (Instruction(6) = '0')) then
-                    BranchTargetAlu <= PC0 + 2;
+                    BranchTargetAlu <= PC0 + 1;
                     BranchTarget <= reg(15 downto 0);
                 end if;
                 
                 if ((Instruction(8) = '0') and (Instruction(7) = '1') and (Instruction(6) = '0')) then
-                    BranchTargetAlu <= PC0 + 2;
+                    BranchTargetAlu <= PC0 + 1;
                     BranchTarget <= reg(31 downto 16);
                 end if;
                 
                 if ((Instruction(8) = '0') and (Instruction(7) = '1') and (Instruction(6) = '0')) then
-                    BranchTargetAlu <= PC0 + 2;
+                    BranchTargetAlu <= PC0 + 1;
                     BranchTarget <= reg(47 downto 32);
                 end if;
                 
                 if ((Instruction(8) = '0') and (Instruction(7) = '1') and (Instruction(6) = '0')) then
-                    BranchTargetAlu <= PC0 + 2;
+                    BranchTargetAlu <= PC0 + 1;
                     BranchTarget <= reg(63 downto 48);
                 end if;
                 
                 if ((Instruction(8) = '0') and (Instruction(7) = '1') and (Instruction(6) = '0')) then
-                    BranchTargetAlu <= PC0 + 2;
+                    BranchTargetAlu <= PC0 + 1;
                     BranchTarget <= reg(79 downto 64);
                 end if;
                 
                 if ((Instruction(8) = '0') and (Instruction(7) = '1') and (Instruction(6) = '0')) then
-                    BranchTargetAlu <= PC0 + 2;
+                    BranchTargetAlu <= PC0 + 1;
                     BranchTarget <= reg(95 downto 80);
                 end if;
                 
                 if ((Instruction(8) = '0') and (Instruction(7) = '1') and (Instruction(6) = '0')) then
-                    BranchTargetAlu <= PC0 + 2;
+                    BranchTargetAlu <= PC0 + 1;
                     BranchTarget <= reg(111 downto 96);
                 end if;
                 
                 if ((Instruction(8) = '0') and (Instruction(7) = '1') and (Instruction(6) = '0')) then
-                    BranchTargetAlu <= PC0 + 2;
+                    BranchTargetAlu <= PC0 + 1;
                     BranchTarget <= reg(127 downto 112);
                 end if;
                                 RegisterTarget <= "1010";

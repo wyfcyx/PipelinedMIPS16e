@@ -281,10 +281,10 @@ def output_instruction(ins, f, tabs):
             # 需要预判的情况
             f.write('''
             if (BranchPredict = '0') then
-                BranchTarget <= PC0 + 2;
+                BranchTarget <= PC0 + 1;
                 BranchTargetAlu <= PC0 + Instruction(7 downto 0);
             else
-                BranchTargetAlu <= PC0 + 2;
+                BranchTargetAlu <= PC0 + 1;
                 BranchTarget <= PC0 + Instruction(7 downto 0);
             end if;
             '''.replace(' ' * 12, tabs))
@@ -293,7 +293,7 @@ def output_instruction(ins, f, tabs):
             if ins == 'B':
                 # 直接跳转的情况
                 f.write('''
-                BranchTargetAlu <= PC0 + 2;
+                BranchTargetAlu <= PC0 + 1;
                 BranchTarget <= PC0 + Instruction(7 downto 0);
                 '''.replace(' ' * 16, tabs))
             else:
@@ -301,7 +301,7 @@ def output_instruction(ins, f, tabs):
                 for i in range(8):
                     f.write(('''
                     if (%s) then
-                        BranchTargetAlu <= PC0 + 2;
+                        BranchTargetAlu <= PC0 + 1;
                         BranchTarget <= reg(%s downto %s);
                     end if;
                     ''' % (
@@ -421,7 +421,7 @@ begin
             BranchTarget <= PC0 + "%s";
             BubbleNext <= Bubble + "111";
         else
-    ''' % ('1'*15 + '0', ))
+    ''' % ('1'*16, ))
     for ins in decoder['instruction']:
         output_full_instruction(ins, f, ' '*12)
     f.write('''
