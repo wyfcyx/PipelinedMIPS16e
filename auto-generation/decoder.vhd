@@ -388,7 +388,7 @@ begin
                                 RegisterTarget <= "0" & Instruction(10 downto 8);
                 AluInstruction <= "0101";
                 Immediate <= "0000000000000000";
-                DataSelectorInstruction <= "001100";
+                DataSelectorInstruction <= "111100";
                 BubbleNext <= "000";
             end if;
 
@@ -404,7 +404,7 @@ begin
                                 RegisterTarget <= "0" & Instruction(10 downto 8);
                 AluInstruction <= "0101";
                 Immediate <= "0000000000000000";
-                DataSelectorInstruction <= "001100";
+                DataSelectorInstruction <= "111100";
                 BubbleNext <= "000";
             end if;
 

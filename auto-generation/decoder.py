@@ -177,11 +177,11 @@ set_data('LW_SP', 'BubbleNext', '001')
 
 set_data('MFIH', 'RegisterTarget', 'rx')
 set_data('MFIH', 'AluInstruction', 'AND')
-set_data('MFIH', 'DataSelectorInstruction', '0011')
+set_data('MFIH', 'DataSelectorInstruction', '1111')
 
 set_data('MFPC', 'RegisterTarget', 'rx')
 set_data('MFPC', 'AluInstruction', 'AND')
-set_data('MFPC', 'DataSelectorInstruction', '0011')
+set_data('MFPC', 'DataSelectorInstruction', '1111')
 
 set_data('MTIH', 'RegisterTarget', 'IH')
 set_data('MTIH', 'AluInstruction', 'AND')
@@ -314,8 +314,7 @@ def output_instruction(ins, f, tabs):
         # 不进行跳转的情况
         f.write(('''
         BranchTargetAlu <= "%s";
-        BranchTarget <= "%s";
-        ''' % ('0'*16, '0'*16)).replace(' ' * 8, tabs))
+        BranchTarget <= "%s";\n''' % ('0'*16, '0'*16)).replace(' ' * 8, tabs))
 
     # 写入的寄存器编号
     for i in range(3):
