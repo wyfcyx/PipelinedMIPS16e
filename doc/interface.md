@@ -162,8 +162,6 @@ DataS(15 downto 0)：即将写入外部的数据
 
 ### in
 
-BranchFlag：是否为跳转语句
-
 DataA(15 downto 0)：参与运算的第一个数
 
 DataB(15 downto 0)：参与运算的第二个数
@@ -176,7 +174,7 @@ BranchTargetAlu(15 downto 0)：传递给ALU的跳转目标地址
 
 ### out
 
-BranchFlag：是否为跳转语句
+BranchFlagForward：是否为跳转语句
 
 BranchConfirm：是否确认跳转
 
@@ -213,7 +211,7 @@ ALU的Instruction对应表：
 
 ### in
 
-PC0(15 downto 0)：来自IF段的“下一条指令的地址”
+PC(15 downto 0)：当前地址
 
 BranchPredict：对下次跳转是否预测为跳转
 
@@ -230,6 +228,8 @@ BranchConfirm：更上一条语句进行跳转
 BranchTargetConfirm(15 downto 0)：更上一条语句的跳转目标
 
 ### out
+
+PC0(15 downto 0)：理论上的“下一条指令地址”（PC+1）
 
 PCNext(15 downto 0)：选择之后的“下一条指令的地址”
 

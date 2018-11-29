@@ -126,7 +126,7 @@ component alu is
 		T_before : in std_logic;
 		BranchTargetAlu : in std_logic_vector(15 downto 0);
 
-		BranchFlag : out std_logic;
+		BranchFlagForward : out std_logic; -------------------
 		BranchConfirm : out std_logic;
 		BranchTargetConfirm : out std_logic;
 		T_after : out std_logic;
@@ -187,7 +187,7 @@ begin
 		SFlag => EX_MEM_SFlag_out,
 		Address => EX_MEM_AluResult_out,
 		DataS => EX_MEM_DataS_out,
-		InstructionAddress => PC_out,
+		InstructionAddress => PC_out, --------------------------------------------
 		-- out
 		Result => MEM_WB_WriteInData_in,
 		InstructionResult => IF_ID_Instruction_in,
@@ -211,7 +211,7 @@ begin
 	
 	decoder_instance : decoder port map(
 		-- in
-		ForceNop => PredictionFailed_out,
+		ForceNop => PredictionFailed_out, --- 要加锁存
 		PC0 => IF_ID_PC0_out,
 		Bubble => IF_ID_Bubble_out,
 		Instruction => IF_ID_Instruction_out,
@@ -220,9 +220,9 @@ begin
 		-- out
 		LFlag => ID_EX_LFlag_in,
 		SFlag => ID_EX_SFlag_in,
-		BranchFlag => ID_EX_BranchFlag_in,
-		BranchForce => BranchForce_in,
-		BranchTarget => BranchTarget_in,
+		BranchFlag => ID_EX_BranchFlag_in, ---------- BranchFlag
+		BranchForce => BranchForce_in, -------- 不要加锁存
+		BranchTarget => BranchTarget_in, --------- 不要加锁存
 		BranchTargetAlu => ID_EX_BranchTargetAlu_in,
 		RegisterTarget => ID_EX_RegisterTarget_in,
 		AluInstruction => ID_EX_AluInstruction_in,
@@ -262,48 +262,53 @@ begin
 
 	alu_instance : alu port map(
 		-- in
-		BranchFlag => ID_EX_BranchFlag_out,
+		--- BranchFlag => ID_EX_BranchFlag_out,
 		DataA => DataA,
 		DataB => DataB,
 		AluInstruction => ID_EX_AluInstruction_out,
 		T => T_out,
 		BranchTargetAlu => ID_EX_BranchTargetAlu_out,
 		-- out
-		BranchConfirm => BranchConfirm_in,
-		BranchConfirmTarget => BranchConfirmTarget_in,
+        BranchFlagForward => BranchFlagForward, -------------加上
+		BranchConfirm => BranchConfirm_in, -------- 不要加锁存
+		BranchConfirmTarget => BranchConfirmTarget_in, --- 同上
 		Tout => T_in,
 		Result => EX_MEM_AluResult_in
 	);
 
 	pcselector_instance : pcselector port map(
 		-- in
-		PC0 => PC_out + 1,
-		BranchPredict => BranchPredict_out,
-		BranchFlag => BranchFlag_out,
-		BranchForce => BranchForce_out,
-		BranchTarget => BranchTarget_out,
-		BranchFlagForward => 
-		BranchConfirm => BranchConfirm_out,
-		BranchConfirmTarget => BranchConfirmTarget_out,
+		PC => PC_out,
+		BranchPredict => BranchPredict_out, ------
+		BranchFlag => BranchFlag_out, ------ BranchFlag
+		BranchForce => BranchForce_out, -------- 
+		BranchTarget => BranchTarget_out, ---------
+		BranchFlagForward => BranchFlagForward, --------------加上，不要加锁存
+		BranchConfirm => BranchConfirm_out, -------------
+		BranchConfirmTarget => BranchConfirmTarget_out, --------------
 		-- out
-		PCNext => IF_ID_PC0_in,
+        PC0 => IF_ID_PC0_in,    -------------- add
+		PCNext => IF_ID_PC0_in, ------ PC_in
 		PredictionFailed => PredictionFailed_in,
 		BranchPredictNext => BranchPredict_in
 	);
 	-- dynamic routes
+    
+    
 	process (clk)
 	begin
 		if (clk'event and clk = '1') then
 			PC_out <= PC_in;
+            
 			SP_out <= SP_in;
 			IH_out <= IH_in;
 			reg_out <= reg_in;
 			BranchPredict_out <= BranchPredict_in;
 			PredictionFailed_out <= PredictionFailed_in;
-			BranchForce_out <= BranchForce_in;
-			BranchTarget_out <= BranchTarget_in;
-			BranchConfirm_out <= BranchConfirm_in;
-			BranchConfirmTarget_out <= BranchConfirmTarget_in;
+			BranchForce_out <= BranchForce_in; ------------不要加锁存
+			BranchTarget_out <= BranchTarget_in; ------------------
+			BranchConfirm_out <= BranchConfirm_in; ---------------
+			BranchConfirmTarget_out <= BranchConfirmTarget_in; ------------
 			T_out <= T_in;
 
 			IF_ID_PC0_out <= IF_ID_PC0_in;
@@ -312,7 +317,7 @@ begin
 
 			ID_EX_LFlag_out <= ID_EX_LFlag_in;
 			ID_EX_SFlag_out <= ID_EX_SFlag_in;
-			ID_EX_BranchFlag_out <= ID_EX_BranchFlag_in;
+			ID_EX_BranchFlag_out <= ID_EX_BranchFlag_in; ---------- not needed
 			ID_EX_BranchTargetAlu_out <= ID_EX_BranchTargetAlu_in;
 			ID_EX_RegisterTarget_out <= ID_EX_RegisterTarget_in;
 			ID_EX_AluInstruction_out <= ID_EX_AluInstruction_in;
