@@ -31,7 +31,7 @@ begin
 
         if (DataSelectorInstruction(1 downto 0) = "01") then
 
-            if (Index(7 downto 4) = ModifiedIndex(3 downto 0)) then
+            if (Index(3 downto 0) = ModifiedIndex(3 downto 0)) then
                 DataA <= ModifiedValue;
             else
                 DataA <= Data(31 downto 16);
@@ -41,7 +41,7 @@ begin
 
         if (DataSelectorInstruction(1 downto 0) = "10") then
 
-            if (Index(11 downto 8) = ModifiedIndex(3 downto 0)) then
+            if (Index(7 downto 4) = ModifiedIndex(3 downto 0)) then
                 DataA <= ModifiedValue;
             else
                 DataA <= Data(47 downto 32);
@@ -51,7 +51,7 @@ begin
 
         if (DataSelectorInstruction(1 downto 0) = "11") then
 
-            if (Index(15 downto 12) = ModifiedIndex(3 downto 0)) then
+            if (Index(11 downto 8) = ModifiedIndex(3 downto 0)) then
                 DataA <= ModifiedValue;
             else
                 DataA <= Data(63 downto 48);
@@ -67,7 +67,7 @@ begin
 
         if (DataSelectorInstruction(3 downto 2) = "01") then
 
-            if (Index(7 downto 4) = ModifiedIndex(3 downto 0)) then
+            if (Index(3 downto 0) = ModifiedIndex(3 downto 0)) then
                 DataB <= ModifiedValue;
             else
                 DataB <= Data(31 downto 16);
@@ -77,7 +77,7 @@ begin
 
         if (DataSelectorInstruction(3 downto 2) = "10") then
 
-            if (Index(11 downto 8) = ModifiedIndex(3 downto 0)) then
+            if (Index(7 downto 4) = ModifiedIndex(3 downto 0)) then
                 DataB <= ModifiedValue;
             else
                 DataB <= Data(47 downto 32);
@@ -87,7 +87,7 @@ begin
 
         if (DataSelectorInstruction(3 downto 2) = "11") then
 
-            if (Index(15 downto 12) = ModifiedIndex(3 downto 0)) then
+            if (Index(11 downto 8) = ModifiedIndex(3 downto 0)) then
                 DataB <= ModifiedValue;
             else
                 DataB <= Data(63 downto 48);
@@ -103,7 +103,7 @@ begin
 
         if (DataSelectorInstruction(5 downto 4) = "01") then
 
-            if (Index(7 downto 4) = ModifiedIndex(3 downto 0)) then
+            if (Index(3 downto 0) = ModifiedIndex(3 downto 0)) then
                 DataS <= ModifiedValue;
             else
                 DataS <= Data(31 downto 16);
@@ -113,7 +113,7 @@ begin
 
         if (DataSelectorInstruction(5 downto 4) = "10") then
 
-            if (Index(11 downto 8) = ModifiedIndex(3 downto 0)) then
+            if (Index(7 downto 4) = ModifiedIndex(3 downto 0)) then
                 DataS <= ModifiedValue;
             else
                 DataS <= Data(47 downto 32);
@@ -123,7 +123,7 @@ begin
 
         if (DataSelectorInstruction(5 downto 4) = "11") then
 
-            if (Index(15 downto 12) = ModifiedIndex(3 downto 0)) then
+            if (Index(11 downto 8) = ModifiedIndex(3 downto 0)) then
                 DataS <= ModifiedValue;
             else
                 DataS <= Data(63 downto 48);

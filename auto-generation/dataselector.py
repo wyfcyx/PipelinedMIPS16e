@@ -14,7 +14,7 @@ def select_data(index, f):
                 Data%s <= Data(%d downto %d);
             end if;\n''' % (
                 'Index(%d downto %d) = ModifiedIndex(3 downto 0)' % (
-                    dataIndex*4+3, dataIndex*4
+                    (dataIndex-1)*4+3, (dataIndex-1)*4
                 ),
                 'ABS'[index], 'ABS'[index],
                 dataIndex*16+15, dataIndex*16
