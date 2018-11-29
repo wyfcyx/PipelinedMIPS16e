@@ -361,7 +361,7 @@ def output_instruction(ins, f, tabs):
         f.write('%sImmediate <= "%s";\n' % (tabs, '0'*16))
     else:
         f.write('%sImmediate <= %s;\n' %
-                (tabs, ' & '.join(['Instruction(%s)' % str(start_immediate), ]
+                (tabs, ' & '.join(['Instruction(%s)' % str(start_immediate) if ins != 'LI' else '"0"', ]
                                   * (15 + end_immediate - start_immediate))
                  + ' & ' + 'Instruction(%s downto %s)' % (str(start_immediate), str(end_immediate))))
 

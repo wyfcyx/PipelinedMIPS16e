@@ -42,7 +42,7 @@ begin
 
         BranchTargetAlu <= "0000000000000000";
         BranchTarget <= "0000000000000000";
-                RegisterTarget <= "1111";
+        RegisterTarget <= "1111";
         AluInstruction <= "0000";
         Immediate <= "0000000000000000";
         DataSelectorInstruction <= "000000";
@@ -57,7 +57,7 @@ begin
 
             BranchTargetAlu <= "0000000000000000";
             BranchTarget <= "0000000000000000";
-                        RegisterTarget <= "1111";
+            RegisterTarget <= "1111";
             AluInstruction <= "0000";
             Immediate <= "0000000000000000";
             DataSelectorInstruction <= "000000";
@@ -78,7 +78,7 @@ begin
 
                 BranchTargetAlu <= "0000000000000000";
                 BranchTarget <= "0000000000000000";
-                                RegisterTarget <= "0" & Instruction(10 downto 8);
+                RegisterTarget <= "0" & Instruction(10 downto 8);
                 AluInstruction <= "0001";
                 Immediate <= Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7 downto 0);
                 DataSelectorInstruction <= "000100";
@@ -94,7 +94,7 @@ begin
 
                 BranchTargetAlu <= "0000000000000000";
                 BranchTarget <= "0000000000000000";
-                                RegisterTarget <= "0" & Instruction(7 downto 5);
+                RegisterTarget <= "0" & Instruction(7 downto 5);
                 AluInstruction <= "0001";
                 Immediate <= Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4 downto 0);
                 DataSelectorInstruction <= "000100";
@@ -110,7 +110,7 @@ begin
 
                 BranchTargetAlu <= "0000000000000000";
                 BranchTarget <= "0000000000000000";
-                                RegisterTarget <= "1001";
+                RegisterTarget <= "1001";
                 AluInstruction <= "0001";
                 Immediate <= Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7 downto 1);
                 DataSelectorInstruction <= "001100";
@@ -126,7 +126,7 @@ begin
 
                 BranchTargetAlu <= "0000000000000000";
                 BranchTarget <= "0000000000000000";
-                                RegisterTarget <= "0" & Instruction(4 downto 2);
+                RegisterTarget <= "0" & Instruction(4 downto 2);
                 AluInstruction <= "0001";
                 Immediate <= "0000000000000000";
                 DataSelectorInstruction <= "100100";
@@ -142,7 +142,7 @@ begin
 
                 BranchTargetAlu <= "0000000000000000";
                 BranchTarget <= "0000000000000000";
-                                RegisterTarget <= "0" & Instruction(10 downto 8);
+                RegisterTarget <= "0" & Instruction(10 downto 8);
                 AluInstruction <= "0101";
                 Immediate <= Instruction(1) & Instruction(1) & Instruction(1) & Instruction(1) & Instruction(1) & Instruction(1) & Instruction(1) & Instruction(1) & Instruction(1) & Instruction(1) & Instruction(1) & Instruction(1) & Instruction(1) & Instruction(1) & Instruction(1 downto 0);
                 DataSelectorInstruction <= "100100";
@@ -252,7 +252,7 @@ begin
 
                 BranchTargetAlu <= "0000000000000000";
                 BranchTarget <= "0000000000000000";
-                                RegisterTarget <= "1111";
+                RegisterTarget <= "1111";
                 AluInstruction <= "0011";
                 Immediate <= "0000000000000000";
                 DataSelectorInstruction <= "100100";
@@ -268,7 +268,7 @@ begin
 
                 BranchTargetAlu <= "0000000000000000";
                 BranchTarget <= "0000000000000000";
-                                RegisterTarget <= "1111";
+                RegisterTarget <= "1111";
                 AluInstruction <= "0011";
                 Immediate <= Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7 downto 0);
                 DataSelectorInstruction <= "000100";
@@ -337,9 +337,9 @@ begin
 
                 BranchTargetAlu <= "0000000000000000";
                 BranchTarget <= "0000000000000000";
-                                RegisterTarget <= "0" & Instruction(10 downto 8);
+                RegisterTarget <= "0" & Instruction(10 downto 8);
                 AluInstruction <= "0101";
-                Immediate <= Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7 downto 0);
+                Immediate <= "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & Instruction(7 downto 0);
                 DataSelectorInstruction <= "000000";
                 BubbleNext <= "001";
             end if;
@@ -353,7 +353,7 @@ begin
 
                 BranchTargetAlu <= "0000000000000000";
                 BranchTarget <= "0000000000000000";
-                                RegisterTarget <= "0" & Instruction(7 downto 5);
+                RegisterTarget <= "0" & Instruction(7 downto 5);
                 AluInstruction <= "0001";
                 Immediate <= Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4 downto 0);
                 DataSelectorInstruction <= "000100";
@@ -369,7 +369,7 @@ begin
 
                 BranchTargetAlu <= "0000000000000000";
                 BranchTarget <= "0000000000000000";
-                                RegisterTarget <= "0" & Instruction(10 downto 8);
+                RegisterTarget <= "0" & Instruction(10 downto 8);
                 AluInstruction <= "0001";
                 Immediate <= Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7 downto 0);
                 DataSelectorInstruction <= "001100";
@@ -385,7 +385,7 @@ begin
 
                 BranchTargetAlu <= "0000000000000000";
                 BranchTarget <= "0000000000000000";
-                                RegisterTarget <= "0" & Instruction(10 downto 8);
+                RegisterTarget <= "0" & Instruction(10 downto 8);
                 AluInstruction <= "0101";
                 Immediate <= "0000000000000000";
                 DataSelectorInstruction <= "111100";
@@ -401,7 +401,7 @@ begin
 
                 BranchTargetAlu <= "0000000000000000";
                 BranchTarget <= "0000000000000000";
-                                RegisterTarget <= "0" & Instruction(10 downto 8);
+                RegisterTarget <= "0" & Instruction(10 downto 8);
                 AluInstruction <= "0101";
                 Immediate <= "0000000000000000";
                 DataSelectorInstruction <= "111100";
@@ -417,7 +417,7 @@ begin
 
                 BranchTargetAlu <= "0000000000000000";
                 BranchTarget <= "0000000000000000";
-                                RegisterTarget <= "1000";
+                RegisterTarget <= "1000";
                 AluInstruction <= "0101";
                 Immediate <= "0000000000000000";
                 DataSelectorInstruction <= "010100";
@@ -433,7 +433,7 @@ begin
 
                 BranchTargetAlu <= "0000000000000000";
                 BranchTarget <= "0000000000000000";
-                                RegisterTarget <= "1001";
+                RegisterTarget <= "1001";
                 AluInstruction <= "0101";
                 Immediate <= "0000000000000000";
                 DataSelectorInstruction <= "010100";
@@ -449,7 +449,7 @@ begin
 
                 BranchTargetAlu <= "0000000000000000";
                 BranchTarget <= "0000000000000000";
-                                RegisterTarget <= "0" & Instruction(10 downto 8);
+                RegisterTarget <= "0" & Instruction(10 downto 8);
                 AluInstruction <= "1001";
                 Immediate <= "0000000000000000";
                 DataSelectorInstruction <= "100000";
@@ -465,7 +465,7 @@ begin
 
                 BranchTargetAlu <= "0000000000000000";
                 BranchTarget <= "0000000000000000";
-                                RegisterTarget <= "1111";
+                RegisterTarget <= "1111";
                 AluInstruction <= "0000";
                 Immediate <= "0000000000000000";
                 DataSelectorInstruction <= "000000";
@@ -481,7 +481,7 @@ begin
 
                 BranchTargetAlu <= "0000000000000000";
                 BranchTarget <= "0000000000000000";
-                                RegisterTarget <= "0" & Instruction(10 downto 8);
+                RegisterTarget <= "0" & Instruction(10 downto 8);
                 AluInstruction <= "0110";
                 Immediate <= "0000000000000000";
                 DataSelectorInstruction <= "100100";
@@ -497,7 +497,7 @@ begin
 
                 BranchTargetAlu <= "0000000000000000";
                 BranchTarget <= "0000000000000000";
-                                RegisterTarget <= "0" & Instruction(10 downto 8);
+                RegisterTarget <= "0" & Instruction(10 downto 8);
                 AluInstruction <= "0111";
                 Immediate <= Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4 downto 1);
                 DataSelectorInstruction <= "100000";
@@ -513,7 +513,7 @@ begin
 
                 BranchTargetAlu <= "0000000000000000";
                 BranchTarget <= "0000000000000000";
-                                RegisterTarget <= "1111";
+                RegisterTarget <= "1111";
                 AluInstruction <= "0100";
                 Immediate <= "0000000000000000";
                 DataSelectorInstruction <= "011000";
@@ -529,7 +529,7 @@ begin
 
                 BranchTargetAlu <= "0000000000000000";
                 BranchTarget <= "0000000000000000";
-                                RegisterTarget <= "0" & Instruction(10 downto 8);
+                RegisterTarget <= "0" & Instruction(10 downto 8);
                 AluInstruction <= "1000";
                 Immediate <= Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4 downto 1);
                 DataSelectorInstruction <= "100000";
@@ -545,7 +545,7 @@ begin
 
                 BranchTargetAlu <= "0000000000000000";
                 BranchTarget <= "0000000000000000";
-                                RegisterTarget <= "0" & Instruction(7 downto 5);
+                RegisterTarget <= "0" & Instruction(7 downto 5);
                 AluInstruction <= "1000";
                 Immediate <= "0000000000000000";
                 DataSelectorInstruction <= "100100";
@@ -561,7 +561,7 @@ begin
 
                 BranchTargetAlu <= "0000000000000000";
                 BranchTarget <= "0000000000000000";
-                                RegisterTarget <= "0" & Instruction(4 downto 2);
+                RegisterTarget <= "0" & Instruction(4 downto 2);
                 AluInstruction <= "0010";
                 Immediate <= "0000000000000000";
                 DataSelectorInstruction <= "011000";
@@ -577,7 +577,7 @@ begin
 
                 BranchTargetAlu <= "0000000000000000";
                 BranchTarget <= "0000000000000000";
-                                RegisterTarget <= "1111";
+                RegisterTarget <= "1111";
                 AluInstruction <= "0001";
                 Immediate <= Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4 downto 0);
                 DataSelectorInstruction <= "000110";
@@ -593,7 +593,7 @@ begin
 
                 BranchTargetAlu <= "0000000000000000";
                 BranchTarget <= "0000000000000000";
-                                RegisterTarget <= "1111";
+                RegisterTarget <= "1111";
                 AluInstruction <= "0000";
                 Immediate <= Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7 downto 0);
                 DataSelectorInstruction <= "000000";
@@ -609,7 +609,7 @@ begin
 
                 BranchTargetAlu <= "0000000000000000";
                 BranchTarget <= "0000000000000000";
-                                RegisterTarget <= "1111";
+                RegisterTarget <= "1111";
                 AluInstruction <= "0001";
                 Immediate <= Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7 downto 0);
                 DataSelectorInstruction <= "001101";
