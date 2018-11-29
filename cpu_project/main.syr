@@ -10,7 +10,7 @@ Total CPU time to Xst completion: 0.24 secs
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.25 secs
+Total CPU time to Xst completion: 0.24 secs
  
 --> Reading design: main.prj
 
@@ -109,158 +109,19 @@ Architecture bhv of Entity memory is up to date.
 Compiling vhdl file "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/decoder.vhd" in Library work.
 Architecture bhv of Entity decoder is up to date.
 Compiling vhdl file "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" in Library work.
-Entity <reg> compiled.
-ERROR:HDLParsers:800 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 29. Type of flag1 is incompatible with type of 0.
-ERROR:HDLParsers:164 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 31. parse error, unexpected SEMICOLON, expecting COMMA or CLOSEPAR
-ERROR:HDLParsers:164 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 38. parse error, unexpected IF, expecting PROCESS
-ERROR:HDLParsers:808 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 40. = can not have such operands in this context.
-ERROR:HDLParsers:800 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 42. Type of flag2 is incompatible with type of '2'.
-ERROR:HDLParsers:808 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 45. = can not have such operands in this context.
-ERROR:HDLParsers:800 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 47. Type of flag2 is incompatible with type of '3'.
-ERROR:HDLParsers:3402 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 52. Read symbol =, expecting <= or := 
-ERROR:HDLParsers:3402 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 55. Read symbol =, expecting <= or := 
-ERROR:HDLParsers:808 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 56. = can not have such operands in this context.
-ERROR:HDLParsers:3402 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 58. Read symbol =, expecting <= or := 
-ERROR:HDLParsers:3402 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 61. Read symbol =, expecting <= or := 
-ERROR:HDLParsers:164 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 64. parse error, unexpected IF, expecting PROCESS
-ERROR:HDLParsers:164 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 66. parse error, unexpected SEMICOLON, expecting COMMA or CLOSEPAR
-ERROR:HDLParsers:164 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 73. parse error, unexpected IF, expecting PROCESS
-ERROR:HDLParsers:808 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 75. = can not have such operands in this context.
-ERROR:HDLParsers:800 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 77. Type of flag2 is incompatible with type of '2'.
-ERROR:HDLParsers:808 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 80. = can not have such operands in this context.
-ERROR:HDLParsers:800 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 82. Type of flag2 is incompatible with type of '3'.
-ERROR:HDLParsers:3402 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 87. Read symbol =, expecting <= or := 
-ERROR:HDLParsers:3402 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 90. Read symbol =, expecting <= or := 
-ERROR:HDLParsers:808 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 91. = can not have such operands in this context.
-ERROR:HDLParsers:3402 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 93. Read symbol =, expecting <= or := 
-ERROR:HDLParsers:3402 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 96. Read symbol =, expecting <= or := 
-ERROR:HDLParsers:164 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 99. parse error, unexpected IF, expecting PROCESS
-ERROR:HDLParsers:164 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 101. parse error, unexpected SEMICOLON, expecting COMMA or CLOSEPAR
-ERROR:HDLParsers:164 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 108. parse error, unexpected IF, expecting PROCESS
-ERROR:HDLParsers:808 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 110. = can not have such operands in this context.
-ERROR:HDLParsers:800 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 112. Type of flag2 is incompatible with type of '2'.
-ERROR:HDLParsers:808 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 115. = can not have such operands in this context.
-ERROR:HDLParsers:800 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 117. Type of flag2 is incompatible with type of '3'.
-ERROR:HDLParsers:3402 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 122. Read symbol =, expecting <= or := 
-ERROR:HDLParsers:3402 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 125. Read symbol =, expecting <= or := 
-ERROR:HDLParsers:808 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 126. = can not have such operands in this context.
-ERROR:HDLParsers:3402 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 128. Read symbol =, expecting <= or := 
-ERROR:HDLParsers:3402 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 131. Read symbol =, expecting <= or := 
-ERROR:HDLParsers:164 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 134. parse error, unexpected IF, expecting PROCESS
-ERROR:HDLParsers:164 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 136. parse error, unexpected SEMICOLON, expecting COMMA or CLOSEPAR
-ERROR:HDLParsers:164 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 143. parse error, unexpected IF, expecting PROCESS
-ERROR:HDLParsers:808 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 145. = can not have such operands in this context.
-ERROR:HDLParsers:800 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 147. Type of flag2 is incompatible with type of '2'.
-ERROR:HDLParsers:808 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 150. = can not have such operands in this context.
-ERROR:HDLParsers:800 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 152. Type of flag2 is incompatible with type of '3'.
-ERROR:HDLParsers:3402 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 157. Read symbol =, expecting <= or := 
-ERROR:HDLParsers:3402 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 160. Read symbol =, expecting <= or := 
-ERROR:HDLParsers:808 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 161. = can not have such operands in this context.
-ERROR:HDLParsers:3402 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 163. Read symbol =, expecting <= or := 
-ERROR:HDLParsers:3402 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 166. Read symbol =, expecting <= or := 
-ERROR:HDLParsers:164 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 169. parse error, unexpected IF, expecting PROCESS
-ERROR:HDLParsers:164 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 171. parse error, unexpected SEMICOLON, expecting COMMA or CLOSEPAR
-ERROR:HDLParsers:164 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 178. parse error, unexpected IF, expecting PROCESS
-ERROR:HDLParsers:808 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 180. = can not have such operands in this context.
-ERROR:HDLParsers:800 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 182. Type of flag2 is incompatible with type of '2'.
-ERROR:HDLParsers:808 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 185. = can not have such operands in this context.
-ERROR:HDLParsers:800 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 187. Type of flag2 is incompatible with type of '3'.
-ERROR:HDLParsers:3402 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 192. Read symbol =, expecting <= or := 
-ERROR:HDLParsers:3402 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 195. Read symbol =, expecting <= or := 
-ERROR:HDLParsers:808 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 196. = can not have such operands in this context.
-ERROR:HDLParsers:3402 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 198. Read symbol =, expecting <= or := 
-ERROR:HDLParsers:3402 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 201. Read symbol =, expecting <= or := 
-ERROR:HDLParsers:164 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 204. parse error, unexpected IF, expecting PROCESS
-ERROR:HDLParsers:164 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 206. parse error, unexpected SEMICOLON, expecting COMMA or CLOSEPAR
-ERROR:HDLParsers:164 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 213. parse error, unexpected IF, expecting PROCESS
-ERROR:HDLParsers:808 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 215. = can not have such operands in this context.
-ERROR:HDLParsers:800 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 217. Type of flag2 is incompatible with type of '2'.
-ERROR:HDLParsers:808 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 220. = can not have such operands in this context.
-ERROR:HDLParsers:800 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 222. Type of flag2 is incompatible with type of '3'.
-ERROR:HDLParsers:3402 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 227. Read symbol =, expecting <= or := 
-ERROR:HDLParsers:3402 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 230. Read symbol =, expecting <= or := 
-ERROR:HDLParsers:808 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 231. = can not have such operands in this context.
-ERROR:HDLParsers:3402 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 233. Read symbol =, expecting <= or := 
-ERROR:HDLParsers:3402 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 236. Read symbol =, expecting <= or := 
-ERROR:HDLParsers:164 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 239. parse error, unexpected IF, expecting PROCESS
-ERROR:HDLParsers:164 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 241. parse error, unexpected SEMICOLON, expecting COMMA or CLOSEPAR
-ERROR:HDLParsers:164 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 248. parse error, unexpected IF, expecting PROCESS
-ERROR:HDLParsers:808 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 250. = can not have such operands in this context.
-ERROR:HDLParsers:800 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 252. Type of flag2 is incompatible with type of '2'.
-ERROR:HDLParsers:808 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 255. = can not have such operands in this context.
-ERROR:HDLParsers:800 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 257. Type of flag2 is incompatible with type of '3'.
-ERROR:HDLParsers:3402 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 262. Read symbol =, expecting <= or := 
-ERROR:HDLParsers:3402 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 265. Read symbol =, expecting <= or := 
-ERROR:HDLParsers:808 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 266. = can not have such operands in this context.
-ERROR:HDLParsers:3402 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 268. Read symbol =, expecting <= or := 
-ERROR:HDLParsers:3402 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 271. Read symbol =, expecting <= or := 
-ERROR:HDLParsers:164 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 274. parse error, unexpected IF, expecting PROCESS
-ERROR:HDLParsers:164 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 276. parse error, unexpected SEMICOLON, expecting COMMA or CLOSEPAR
-ERROR:HDLParsers:164 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 283. parse error, unexpected IF, expecting PROCESS
-ERROR:HDLParsers:808 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 285. = can not have such operands in this context.
-ERROR:HDLParsers:800 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 287. Type of flag2 is incompatible with type of '2'.
-ERROR:HDLParsers:808 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 290. = can not have such operands in this context.
-ERROR:HDLParsers:800 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 292. Type of flag2 is incompatible with type of '3'.
-ERROR:HDLParsers:3402 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 297. Read symbol =, expecting <= or := 
-ERROR:HDLParsers:3402 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 300. Read symbol =, expecting <= or := 
-ERROR:HDLParsers:808 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 301. = can not have such operands in this context.
-ERROR:HDLParsers:3402 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 303. Read symbol =, expecting <= or := 
-ERROR:HDLParsers:3402 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 306. Read symbol =, expecting <= or := 
-ERROR:HDLParsers:164 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 309. parse error, unexpected IF, expecting PROCESS
-ERROR:HDLParsers:164 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 311. parse error, unexpected SEMICOLON, expecting COMMA or CLOSEPAR
-ERROR:HDLParsers:3402 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 314. Read symbol =, expecting <= or := 
-ERROR:HDLParsers:164 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 316. parse error, unexpected IF, expecting PROCESS
-ERROR:HDLParsers:164 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 318. parse error, unexpected SEMICOLON, expecting COMMA or CLOSEPAR
-ERROR:HDLParsers:3402 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 321. Read symbol =, expecting <= or := 
-ERROR:HDLParsers:164 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 323. parse error, unexpected IF, expecting PROCESS
-ERROR:HDLParsers:164 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 325. parse error, unexpected SEMICOLON, expecting COMMA or CLOSEPAR
-ERROR:HDLParsers:3402 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 328. Read symbol =, expecting <= or := 
-ERROR:HDLParsers:164 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 330. parse error, unexpected IF, expecting PROCESS
-ERROR:HDLParsers:164 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 332. parse error, unexpected SEMICOLON, expecting COMMA or CLOSEPAR
-ERROR:HDLParsers:3402 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 335. Read symbol =, expecting <= or := 
-ERROR:HDLParsers:164 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 337. parse error, unexpected IF, expecting PROCESS
-ERROR:HDLParsers:164 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 339. parse error, unexpected SEMICOLON, expecting COMMA or CLOSEPAR
-ERROR:HDLParsers:3402 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 342. Read symbol =, expecting <= or := 
-ERROR:HDLParsers:164 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 344. parse error, unexpected IF, expecting PROCESS
-ERROR:HDLParsers:164 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 346. parse error, unexpected SEMICOLON, expecting COMMA or CLOSEPAR
-ERROR:HDLParsers:3402 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 349. Read symbol =, expecting <= or := 
-ERROR:HDLParsers:164 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 351. parse error, unexpected IF, expecting PROCESS
-ERROR:HDLParsers:164 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 353. parse error, unexpected SEMICOLON, expecting COMMA or CLOSEPAR
-ERROR:HDLParsers:3402 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 356. Read symbol =, expecting <= or := 
-ERROR:HDLParsers:164 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 358. parse error, unexpected IF, expecting PROCESS
-ERROR:HDLParsers:164 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 360. parse error, unexpected SEMICOLON, expecting COMMA or CLOSEPAR
-ERROR:HDLParsers:3402 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 363. Read symbol =, expecting <= or := 
-ERROR:HDLParsers:164 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 365. parse error, unexpected IF, expecting PROCESS
-ERROR:HDLParsers:164 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 367. parse error, unexpected SEMICOLON, expecting COMMA or CLOSEPAR
-ERROR:HDLParsers:3402 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 370. Read symbol =, expecting <= or := 
-ERROR:HDLParsers:164 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 372. parse error, unexpected IF, expecting PROCESS
-ERROR:HDLParsers:164 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 374. parse error, unexpected SEMICOLON, expecting COMMA or CLOSEPAR
-ERROR:HDLParsers:3402 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 377. Read symbol =, expecting <= or := 
-ERROR:HDLParsers:164 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 379. parse error, unexpected IF, expecting PROCESS
-ERROR:HDLParsers:164 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 381. parse error, unexpected SEMICOLON, expecting COMMA or CLOSEPAR
-ERROR:HDLParsers:3402 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 384. Read symbol =, expecting <= or := 
-ERROR:HDLParsers:164 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 386. parse error, unexpected IF, expecting PROCESS
-ERROR:HDLParsers:164 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 388. parse error, unexpected SEMICOLON, expecting COMMA or CLOSEPAR
-ERROR:HDLParsers:3402 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 391. Read symbol =, expecting <= or := 
-ERROR:HDLParsers:164 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 393. parse error, unexpected IF, expecting PROCESS
-ERROR:HDLParsers:164 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 395. parse error, unexpected SEMICOLON, expecting COMMA or CLOSEPAR
-ERROR:HDLParsers:3402 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 398. Read symbol =, expecting <= or := 
-ERROR:HDLParsers:164 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 400. parse error, unexpected IF, expecting PROCESS
-ERROR:HDLParsers:164 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 402. parse error, unexpected SEMICOLON, expecting COMMA or CLOSEPAR
-ERROR:HDLParsers:3402 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 405. Read symbol =, expecting <= or := 
-ERROR:HDLParsers:164 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 407. parse error, unexpected IF, expecting PROCESS
-ERROR:HDLParsers:164 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 409. parse error, unexpected SEMICOLON, expecting COMMA or CLOSEPAR
-ERROR:HDLParsers:3402 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 412. Read symbol =, expecting <= or := 
-ERROR:HDLParsers:164 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 414. parse error, unexpected IF, expecting PROCESS
-ERROR:HDLParsers:164 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 416. parse error, unexpected SEMICOLON, expecting COMMA or CLOSEPAR
-ERROR:HDLParsers:3402 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 419. Read symbol =, expecting <= or := 
-ERROR:HDLParsers:164 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 421. parse error, unexpected IF, expecting PROCESS
-ERROR:HDLParsers:164 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" Line 423. parse error, unexpected PIPE, expecting THEN
+Architecture bhv of Entity reg is up to date.
+Compiling vhdl file "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/dataselector.vhd" in Library work.
+ERROR:HDLParsers:3367 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/dataselector.vhd" Line 54. 15 is not included in the index range, 11 downto 0, of array Index.
+ERROR:HDLParsers:3367 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/dataselector.vhd" Line 54. 12 is not included in the index range, 11 downto 0, of array Index.
+ERROR:HDLParsers:3367 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/dataselector.vhd" Line 90. 15 is not included in the index range, 11 downto 0, of array Index.
+ERROR:HDLParsers:3367 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/dataselector.vhd" Line 90. 12 is not included in the index range, 11 downto 0, of array Index.
+ERROR:HDLParsers:3367 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/dataselector.vhd" Line 126. 15 is not included in the index range, 11 downto 0, of array Index.
+ERROR:HDLParsers:3367 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/dataselector.vhd" Line 126. 12 is not included in the index range, 11 downto 0, of array Index.
 --> 
 
-Total memory usage is 4533368 kilobytes
+Total memory usage is 4533288 kilobytes
 
-Number of errors   :  146 (   0 filtered)
+Number of errors   :    6 (   0 filtered)
 Number of warnings :    0 (   0 filtered)
 Number of infos    :    0 (   0 filtered)
 
