@@ -144,7 +144,7 @@ Data(63 downto 0)：4个16位数据，00~11分别代表立即数、Rx、Ry、Rz
 
 DataSelectorInstruction(5 downto 0)：每两位表示一个选择，00~11分别代表立即数、Rx、Ry、Rz，指示DataA、DataB和DataS
 
-Index(11 downto 0)：Rx、Ry、Rz的4位寄存器编号。
+index(11 downto 0)：Rx、Ry、Rz的4位寄存器编号。
 
 ModifiedIndex(3 downto 0)：上一条语句修改的寄存器编号
 
@@ -193,7 +193,7 @@ ALU的Instruction对应表：
 | 0000           | NOP   | Res = 0                                    |
 | 0001           | ADD   | Res = A + B                                |
 | 0010           | SUBU  | Res = A - B（无符号）                      |
-| 0011           | CMP   | Res = A - B（无符号）                      |
+| 0011           | CMP   | Res = A - B（无符号），T=(Res!=0)          |
 | 0100           | SLTU  | Res = A - B（无符号），T=(Res<0)           |
 | 0101           | AND   | Res = A & B                                |
 | 0110           | OR    | Res = A \| B                               |
@@ -207,7 +207,7 @@ ALU的Instruction对应表：
 | 1110           | BTEQZ | Res = 0; Confirm = (T==0)， Target = A + B |
 | 1111           | BTNEZ | Res = 0; Confirm = (T!=0)， Target = A + B |
 
-## PCSelector模块（组合逻辑）
+## PCSelector模块（敏感信号为CLK）
 
 ### in
 
