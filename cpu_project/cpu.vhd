@@ -115,7 +115,7 @@ component dataselector is
 		ModifiedIndex : in std_logic_vector(3 downto 0);
 		ModifiedValue : in std_logic_vector(15 downto 0);
 
-		DataA, DataB, DataS : out std_logic_vector(15 downto 0);
+		DataA, DataB, DataS : out std_logic_vector(15 downto 0)
 	);
 end component;
 

@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated   -->
+<!--     by the Xilinx ISE software.  Any direct editing or        -->
+<!--     changes made to this file may result in unpredictable     -->
+<!--     behavior or data corruption.  It is strongly advised that -->
+<!--     users do not edit the contents of this file.              -->
+<!--                                                               -->
+<!-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.    -->
+
+<messages>
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/alu.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/alu.vhd</arg>&quot; Line <arg fmt="%d" index="2">100</arg>. <arg fmt="%s" index="3">Syntax error near &quot;Result&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/alu.vhd</arg>&quot; Line <arg fmt="%d" index="2">103</arg>. <arg fmt="%s" index="3">Syntax error near &quot;Result&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/alu.vhd</arg>&quot; Line <arg fmt="%d" index="2">104</arg>. <arg fmt="%s" index="3">Syntax error near &quot;if&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/alu.vhd</arg>&quot; Line <arg fmt="%d" index="2">106</arg>. <arg fmt="%s" index="3">Syntax error near &quot;Result&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/alu.vhd</arg>&quot; Line <arg fmt="%d" index="2">107</arg>. <arg fmt="%s" index="3">Syntax error near &quot;if&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/alu.vhd</arg>&quot; Line <arg fmt="%d" index="2">109</arg>. <arg fmt="%s" index="3">Syntax error near &quot;Result&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/alu.vhd</arg>&quot; Line <arg fmt="%d" index="2">110</arg>. <arg fmt="%s" index="3">Syntax error near &quot;if&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/alu.vhd</arg>&quot; Line <arg fmt="%d" index="2">112</arg>. <arg fmt="%s" index="3">Syntax error near &quot;Result&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/alu.vhd</arg>&quot; Line <arg fmt="%d" index="2">113</arg>. <arg fmt="%s" index="3">Syntax error near &quot;if&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/alu.vhd</arg>&quot; Line <arg fmt="%d" index="2">115</arg>. <arg fmt="%s" index="3">Syntax error near &quot;Result&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/alu.vhd</arg>&quot; Line <arg fmt="%d" index="2">116</arg>. <arg fmt="%s" index="3">Syntax error near &quot;if&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/alu.vhd</arg>&quot; Line <arg fmt="%d" index="2">118</arg>. <arg fmt="%s" index="3">Syntax error near &quot;Result&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/alu.vhd</arg>&quot; Line <arg fmt="%d" index="2">119</arg>. <arg fmt="%s" index="3">Syntax error near &quot;if&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/alu.vhd</arg>&quot; Line <arg fmt="%d" index="2">121</arg>. <arg fmt="%s" index="3">Syntax error near &quot;Result&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/alu.vhd</arg>&quot; Line <arg fmt="%d" index="2">122</arg>. <arg fmt="%s" index="3">Syntax error near &quot;if&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/alu.vhd</arg>&quot; Line <arg fmt="%d" index="2">132</arg>. <arg fmt="%s" index="3">Syntax error near &quot;Result&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/alu.vhd</arg>&quot; Line <arg fmt="%d" index="2">135</arg>. <arg fmt="%s" index="3">Syntax error near &quot;Result&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/alu.vhd</arg>&quot; Line <arg fmt="%d" index="2">136</arg>. <arg fmt="%s" index="3">Syntax error near &quot;if&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/alu.vhd</arg>&quot; Line <arg fmt="%d" index="2">138</arg>. <arg fmt="%s" index="3">Syntax error near &quot;Result&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/alu.vhd</arg>&quot; Line <arg fmt="%d" index="2">139</arg>. <arg fmt="%s" index="3">Syntax error near &quot;if&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/alu.vhd</arg>&quot; Line <arg fmt="%d" index="2">141</arg>. <arg fmt="%s" index="3">Syntax error near &quot;Result&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/alu.vhd</arg>&quot; Line <arg fmt="%d" index="2">142</arg>. <arg fmt="%s" index="3">Syntax error near &quot;if&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/alu.vhd</arg>&quot; Line <arg fmt="%d" index="2">144</arg>. <arg fmt="%s" index="3">Syntax error near &quot;Result&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/alu.vhd</arg>&quot; Line <arg fmt="%d" index="2">145</arg>. <arg fmt="%s" index="3">Syntax error near &quot;if&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/alu.vhd</arg>&quot; Line <arg fmt="%d" index="2">147</arg>. <arg fmt="%s" index="3">Syntax error near &quot;Result&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/alu.vhd</arg>&quot; Line <arg fmt="%d" index="2">148</arg>. <arg fmt="%s" index="3">Syntax error near &quot;if&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/alu.vhd</arg>&quot; Line <arg fmt="%d" index="2">150</arg>. <arg fmt="%s" index="3">Syntax error near &quot;Result&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/alu.vhd</arg>&quot; Line <arg fmt="%d" index="2">151</arg>. <arg fmt="%s" index="3">Syntax error near &quot;if&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/alu.vhd</arg>&quot; Line <arg fmt="%d" index="2">153</arg>. <arg fmt="%s" index="3">Syntax error near &quot;Result&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/alu.vhd</arg>&quot; Line <arg fmt="%d" index="2">154</arg>. <arg fmt="%s" index="3">Syntax error near &quot;if&quot;.</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/cpu.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/cpu.vhd</arg>&quot; Line <arg fmt="%d" index="2">258</arg>. <arg fmt="%s" index="3">Syntax error near &quot;;&quot;.</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/dataselector.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/dataselector.vhd</arg>&quot; Line <arg fmt="%d" index="2">18</arg>. <arg fmt="%s" index="3">Syntax error near &quot;)&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/dataselector.vhd</arg>&quot; Line <arg fmt="%d" index="2">23</arg>. <arg fmt="%s" index="3">Syntax error near &quot;)&quot;.</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/pcselector.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/pcselector.vhd</arg>&quot; Line <arg fmt="%d" index="2">22</arg>. <arg fmt="%s" index="3">Syntax error near &quot;end&quot;.</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">35</arg>. <arg fmt="%s" index="3">Syntax error near &quot;if&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">65</arg>. <arg fmt="%s" index="3">Syntax error near &quot;if&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">95</arg>. <arg fmt="%s" index="3">Syntax error near &quot;if&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">125</arg>. <arg fmt="%s" index="3">Syntax error near &quot;if&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">155</arg>. <arg fmt="%s" index="3">Syntax error near &quot;if&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">185</arg>. <arg fmt="%s" index="3">Syntax error near &quot;if&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">215</arg>. <arg fmt="%s" index="3">Syntax error near &quot;if&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">245</arg>. <arg fmt="%s" index="3">Syntax error near &quot;if&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">274</arg>. <arg fmt="%s" index="3">Syntax error near &quot;=&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">279</arg>. <arg fmt="%s" index="3">Syntax error near &quot;=&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">284</arg>. <arg fmt="%s" index="3">Syntax error near &quot;=&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">289</arg>. <arg fmt="%s" index="3">Syntax error near &quot;=&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">294</arg>. <arg fmt="%s" index="3">Syntax error near &quot;=&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">299</arg>. <arg fmt="%s" index="3">Syntax error near &quot;=&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">304</arg>. <arg fmt="%s" index="3">Syntax error near &quot;=&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">309</arg>. <arg fmt="%s" index="3">Syntax error near &quot;=&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">314</arg>. <arg fmt="%s" index="3">Syntax error near &quot;=&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">319</arg>. <arg fmt="%s" index="3">Syntax error near &quot;=&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">324</arg>. <arg fmt="%s" index="3">Syntax error near &quot;=&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">329</arg>. <arg fmt="%s" index="3">Syntax error near &quot;=&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">334</arg>. <arg fmt="%s" index="3">Syntax error near &quot;=&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">339</arg>. <arg fmt="%s" index="3">Syntax error near &quot;=&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">344</arg>. <arg fmt="%s" index="3">Syntax error near &quot;=&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">349</arg>. <arg fmt="%s" index="3">Syntax error near &quot;=&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">351</arg>. <arg fmt="%s" index="3">Syntax error near &quot;!&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">353</arg>. <arg fmt="%s" index="3">Syntax error near &quot;=&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">356</arg>. <arg fmt="%s" index="3">Syntax error near &quot;end&quot;.</arg>
+</msg>
+
+</messages>
+
