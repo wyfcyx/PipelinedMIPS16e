@@ -109,7 +109,7 @@ def output_alu(ins, f):
     elif ins == 'SLL':
         for i in range(8):
             f.write('''
-        if (DataB(2 downto 0) = "%s")
+        if (DataB(2 downto 0) = "%s") then
             Result <= DataA(%d downto 0) & "%s";
         end if;''' % (
                 ("000" + bin(i)[2:])[-3:], 7 if i == 0 else 15-i, '0' * (8 if i == 0 else i)
@@ -117,7 +117,7 @@ def output_alu(ins, f):
     elif ins == 'SRA':
         for i in range(8):
             f.write('''
-        if (DataB(2 downto 0) = "%s")
+        if (DataB(2 downto 0) = "%s") then
             Result <= %s & Data(15 downto %d);
         end if;''' % (
                 ("000" + bin(i)[2:])[-3:], ' & '.join(['a(15)', ] * (8 if i == 0 else i)),
