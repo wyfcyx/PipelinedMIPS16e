@@ -7,6 +7,8 @@ entity cpu is
 	port(
 		-- pipeline clock
 		clk : in std_logic;
+		-- scan clock
+		clk_scan : in std_logic;
 		-- data mem
 		Ram1Data : inout std_logic_vector(15 downto 0);
 		Ram1Addr : out std_logic_vector(15 downto 0);
@@ -31,12 +33,10 @@ signal T_in, T_out : std_logic;
 -- Local Regs lock
 signal BranchPredict_in, BranchPredict_out : std_logic;
 signal PredictionFailed_in, PredictionFailed_out : std_logic;
-signal BranchForce_in, BranchForce_out : std_logic;
-signal BranchTarget_in, BranchTarget_out : std_logic;
-signal BranchConfirm_in, BranchConfirm_out : std_logic;
-signal BranchConfirmTarget_in, BranchConfirmTarget_out : std_logic;
 -- transfer signals
 signal DataA, DataB : std_logic_vector(15 downto 0);
+signal BranchTarget, BranchForce, BranchConfirm, BranchConfirmTarget : std_logic;
+signal BranchFlagForward : std_logic;
 -- IF/ID lock
 signal IF_ID_PC0_in, IF_ID_PC0_out : std_logic_vector(15 downto 0);
 signal IF_ID_Instruction_in, IF_ID_Instruction_out : std_logic_vector(15 downto 0);
@@ -44,7 +44,6 @@ signal IF_ID_Bubble_in, IF_ID_Bubble_out : std_logic_vector(2 downto 0);
 -- ID/EX lock
 signal ID_EX_LFlag_in, ID_EX_LFlag_out : std_logic;
 signal ID_EX_SFlag_in, ID_EX_SFlag_out : std_logic;
-signal ID_EX_BranchFlag_in, ID_EX_BranchFlag_out : std_logic;
 signal ID_EX_BranchTargetAlu_in, ID_EX_BranchTargetAlu_out : std_logic_vector(15 downto 0);
 signal ID_EX_RegisterTarget_in, ID_EX_RegisterTarget_out : std_logic_vector(3 downto 0);
 signal ID_EX_AluInstruction_in, ID_EX_AluInstruction_out : std_logic_vector(3 downto 0);
@@ -125,8 +124,7 @@ component alu is
 		AluInstruction : in std_logic_vector(3 downto 0);
 		T_before : in std_logic;
 		BranchTargetAlu : in std_logic_vector(15 downto 0);
-
-		BranchFlagForward : out std_logic; -------------------
+		BranchFlagForward : out std_logic;
 		BranchConfirm : out std_logic;
 		BranchTargetConfirm : out std_logic;
 		T_after : out std_logic;
@@ -158,6 +156,8 @@ component memory is
 		Address : in std_logic_vector(15 downto 0);
 		DataS : in std_logic_vector(15 downto 0);
 		InstructionAddress : in std_logic_vector(15 downto 0);
+		clk : in std_logic;
+		clk_scan : in std_logic;
 
 		Result : out std_logic_vector(15 downto 0);
 		InstructionResult : out std_logic_vector(15 downto 0);
@@ -187,11 +187,13 @@ begin
 		SFlag => EX_MEM_SFlag_out,
 		Address => EX_MEM_AluResult_out,
 		DataS => EX_MEM_DataS_out,
-		InstructionAddress => PC_out, --------------------------------------------
+		InstructionAddress => PC_out,
 		-- out
 		Result => MEM_WB_WriteInData_in,
 		InstructionResult => IF_ID_Instruction_in,
 		-- ram & comm
+		clk => clk,
+		clk_scan => clk_scan,
 		Ram1Data => Ram1Data,
 		Ram1Addr => Ram1Addr,
 		Ram1OE => Ram1OE,
@@ -211,7 +213,7 @@ begin
 	
 	decoder_instance : decoder port map(
 		-- in
-		ForceNop => PredictionFailed_out, --- 要加锁存
+		ForceNop => PredictionFailed_out,
 		PC0 => IF_ID_PC0_out,
 		Bubble => IF_ID_Bubble_out,
 		Instruction => IF_ID_Instruction_out,
@@ -220,9 +222,9 @@ begin
 		-- out
 		LFlag => ID_EX_LFlag_in,
 		SFlag => ID_EX_SFlag_in,
-		BranchFlag => ID_EX_BranchFlag_in, ---------- BranchFlag
-		BranchForce => BranchForce_in, -------- 不要加锁存
-		BranchTarget => BranchTarget_in, --------- 不要加锁存
+		BranchFlag => BranchFlag, 
+		BranchForce => BranchForce,
+		BranchTarget => BranchTarget,
 		BranchTargetAlu => ID_EX_BranchTargetAlu_in,
 		RegisterTarget => ID_EX_RegisterTarget_in,
 		AluInstruction => ID_EX_AluInstruction_in,
@@ -262,16 +264,15 @@ begin
 
 	alu_instance : alu port map(
 		-- in
-		--- BranchFlag => ID_EX_BranchFlag_out,
 		DataA => DataA,
 		DataB => DataB,
 		AluInstruction => ID_EX_AluInstruction_out,
 		T => T_out,
 		BranchTargetAlu => ID_EX_BranchTargetAlu_out,
 		-- out
-        BranchFlagForward => BranchFlagForward, -------------加上
-		BranchConfirm => BranchConfirm_in, -------- 不要加锁存
-		BranchConfirmTarget => BranchConfirmTarget_in, --- 同上
+        BranchFlagForward => BranchFlagForward,
+		BranchConfirm => BranchConfirm,
+		BranchConfirmTarget => BranchConfirmTarget,
 		Tout => T_in,
 		Result => EX_MEM_AluResult_in
 	);
@@ -279,16 +280,16 @@ begin
 	pcselector_instance : pcselector port map(
 		-- in
 		PC => PC_out,
-		BranchPredict => BranchPredict_out, ------
-		BranchFlag => BranchFlag_out, ------ BranchFlag
-		BranchForce => BranchForce_out, -------- 
-		BranchTarget => BranchTarget_out, ---------
-		BranchFlagForward => BranchFlagForward, --------------加上，不要加锁存
-		BranchConfirm => BranchConfirm_out, -------------
-		BranchConfirmTarget => BranchConfirmTarget_out, --------------
+		BranchPredict => BranchPredict_out,
+		BranchFlag => BranchFlag,
+		BranchForce => BranchForce, 
+		BranchTarget => BranchTarget,
+		BranchFlagForward => BranchFlagForward,
+		BranchConfirm => BranchConfirm,
+		BranchConfirmTarget => BranchConfirmTarget,
 		-- out
-        PC0 => IF_ID_PC0_in,    -------------- add
-		PCNext => IF_ID_PC0_in, ------ PC_in
+        PC0 => IF_ID_PC0_in,
+		PCNext => PC_in,
 		PredictionFailed => PredictionFailed_in,
 		BranchPredictNext => BranchPredict_in
 	);
@@ -299,16 +300,11 @@ begin
 	begin
 		if (clk'event and clk = '1') then
 			PC_out <= PC_in;
-            
 			SP_out <= SP_in;
 			IH_out <= IH_in;
 			reg_out <= reg_in;
 			BranchPredict_out <= BranchPredict_in;
 			PredictionFailed_out <= PredictionFailed_in;
-			BranchForce_out <= BranchForce_in; ------------不要加锁存
-			BranchTarget_out <= BranchTarget_in; ------------------
-			BranchConfirm_out <= BranchConfirm_in; ---------------
-			BranchConfirmTarget_out <= BranchConfirmTarget_in; ------------
 			T_out <= T_in;
 
 			IF_ID_PC0_out <= IF_ID_PC0_in;
@@ -317,7 +313,6 @@ begin
 
 			ID_EX_LFlag_out <= ID_EX_LFlag_in;
 			ID_EX_SFlag_out <= ID_EX_SFlag_in;
-			ID_EX_BranchFlag_out <= ID_EX_BranchFlag_in; ---------- not needed
 			ID_EX_BranchTargetAlu_out <= ID_EX_BranchTargetAlu_in;
 			ID_EX_RegisterTarget_out <= ID_EX_RegisterTarget_in;
 			ID_EX_AluInstruction_out <= ID_EX_AluInstruction_in;
@@ -341,5 +336,3 @@ begin
 		end if;
 	end process;
 end bhv;
-		
-		
