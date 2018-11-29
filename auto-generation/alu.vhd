@@ -77,7 +77,7 @@ begin
         BranchConfirm <= '0';
         BranchTargetConfirm <= BranchTargetAlu;
         Tout <= T;
-        Result <= (DataA(14) and DataB(14)) & (DataA(13) and DataB(13)) & (DataA(12) and DataB(12)) & (DataA(11) and DataB(11)) & (DataA(10) and DataB(10)) & (DataA(9) and DataB(9)) & (DataA(8) and DataB(8)) & (DataA(7) and DataB(7)) & (DataA(6) and DataB(6)) & (DataA(5) and DataB(5)) & (DataA(4) and DataB(4)) & (DataA(3) and DataB(3)) & (DataA(2) and DataB(2)) & (DataA(1) and DataB(1)) & (DataA(0) and DataB(0));
+        Result <= (DataA(15) and DataB(15)) & (DataA(14) and DataB(14)) & (DataA(13) and DataB(13)) & (DataA(12) and DataB(12)) & (DataA(11) and DataB(11)) & (DataA(10) and DataB(10)) & (DataA(9) and DataB(9)) & (DataA(8) and DataB(8)) & (DataA(7) and DataB(7)) & (DataA(6) and DataB(6)) & (DataA(5) and DataB(5)) & (DataA(4) and DataB(4)) & (DataA(3) and DataB(3)) & (DataA(2) and DataB(2)) & (DataA(1) and DataB(1)) & (DataA(0) and DataB(0));
     end if;
     
     -- OR
@@ -86,7 +86,7 @@ begin
         BranchConfirm <= '0';
         BranchTargetConfirm <= BranchTargetAlu;
         Tout <= T;
-        Result <= (DataA(14) or DataB(14)) & (DataA(13) or DataB(13)) & (DataA(12) or DataB(12)) & (DataA(11) or DataB(11)) & (DataA(10) or DataB(10)) & (DataA(9) or DataB(9)) & (DataA(8) or DataB(8)) & (DataA(7) or DataB(7)) & (DataA(6) or DataB(6)) & (DataA(5) or DataB(5)) & (DataA(4) or DataB(4)) & (DataA(3) or DataB(3)) & (DataA(2) or DataB(2)) & (DataA(1) or DataB(1)) & (DataA(0) or DataB(0));
+        Result <= (DataA(15) or DataB(15)) & (DataA(14) or DataB(14)) & (DataA(13) or DataB(13)) & (DataA(12) or DataB(12)) & (DataA(11) or DataB(11)) & (DataA(10) or DataB(10)) & (DataA(9) or DataB(9)) & (DataA(8) or DataB(8)) & (DataA(7) or DataB(7)) & (DataA(6) or DataB(6)) & (DataA(5) or DataB(5)) & (DataA(4) or DataB(4)) & (DataA(3) or DataB(3)) & (DataA(2) or DataB(2)) & (DataA(1) or DataB(1)) & (DataA(0) or DataB(0));
     end if;
     
     -- SLL
@@ -128,28 +128,28 @@ begin
         BranchTargetConfirm <= BranchTargetAlu;
         Tout <= T;
         if (DataB(2 downto 0) = "000") then
-            Result <= a(15) & a(15) & a(15) & a(15) & a(15) & a(15) & a(15) & a(15) & Data(15 downto 7);
+            Result <= DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15 downto 7);
         end if;
         if (DataB(2 downto 0) = "001") then
-            Result <= a(15) & Data(15 downto 14);
+            Result <= DataA(15) & DataA(15 downto 14);
         end if;
         if (DataB(2 downto 0) = "010") then
-            Result <= a(15) & a(15) & Data(15 downto 13);
+            Result <= DataA(15) & DataA(15) & DataA(15 downto 13);
         end if;
         if (DataB(2 downto 0) = "011") then
-            Result <= a(15) & a(15) & a(15) & Data(15 downto 12);
+            Result <= DataA(15) & DataA(15) & DataA(15) & DataA(15 downto 12);
         end if;
         if (DataB(2 downto 0) = "100") then
-            Result <= a(15) & a(15) & a(15) & a(15) & Data(15 downto 11);
+            Result <= DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15 downto 11);
         end if;
         if (DataB(2 downto 0) = "101") then
-            Result <= a(15) & a(15) & a(15) & a(15) & a(15) & Data(15 downto 10);
+            Result <= DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15 downto 10);
         end if;
         if (DataB(2 downto 0) = "110") then
-            Result <= a(15) & a(15) & a(15) & a(15) & a(15) & a(15) & Data(15 downto 9);
+            Result <= DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15 downto 9);
         end if;
         if (DataB(2 downto 0) = "111") then
-            Result <= a(15) & a(15) & a(15) & a(15) & a(15) & a(15) & a(15) & Data(15 downto 8);
+            Result <= DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15 downto 8);
         end if;
     end if;
     

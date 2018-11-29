@@ -46,7 +46,7 @@ entity DataSelector is
         
         DataA : out std_logic_vector(15 downto 0);
         DataB : out std_logic_vector(15 downto 0);
-        DataS : out std_logic_vector(15 downto 0);
+        DataS : out std_logic_vector(15 downto 0)
     );
 end DataSelector;
 
