@@ -32,19 +32,20 @@ def Rz(index,f):
         #如果是特殊情况
         cur=reg['instruction'].index(reg['special'][i])
         f.write('''
-                if Instrction(15 downto 11) = "%s"
+                if Instrction(15 downto 11) = "%s" then
                     flag1 <= "1" --存在特殊情况
                     flag2 <= "%d" --临时标记
+                end if;
                 '''%(reg['bit15-11'][cur],i+1))
     t='1'+'{:03b}'.format(index)
     f.write('''
-            if flag2 = "0" --正常情况
+            if flag2 = "0" then --正常情况
                 Rz <= reg_before(%d downto %d)
                 index(11 downto 8) = "%s"
-            elsif  flag2 = "1"
+            elsif  flag2 = "1" then
                 Rz <= reg_before(47 downto 32)
                 index(11 downto 8) = "%s"
-            elseif flag2 = "2"
+            elsif flag2 = "2" then
                 Rz <= reg_before(31 downto 16)
                 index(11 downto 8) = "%s"
             else
@@ -73,6 +74,9 @@ def R(index,f):
                    )
         else:
             Rz(dataIndex,f)
+        f.write('''
+        end if;
+                ''')
 
 
     pass
@@ -111,10 +115,10 @@ begin
     for i in range(3):
         R(i,f);
     f.write('''
-        if Target(3 downto 0) != "1111"
+        if Target(3 downto 0) != "1111" then
             --不是输出
             led(15 downto 0)=Data(15 downto 0)
-
+        end if;
             ''')
     f.write('''
 end process;
