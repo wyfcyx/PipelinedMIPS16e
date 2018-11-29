@@ -5,7 +5,7 @@ use ieee.std_logic_unsigned.all;
 
 entity PCSelector is
     port (
-        PC0: in std_logic_vector(15 downto 0);
+        PC: in std_logic_vector(15 downto 0);
         BranchPredict: in std_logic;
         BranchFlag: in std_logic;
         BranchForce: in std_logic;
@@ -14,6 +14,7 @@ entity PCSelector is
         BranchConfirm: in std_logic;
         BranchTargetConfirm: in std_logic_vector(15 downto 0);
         
+        PC0: out std_logic_vector(15 downto 0);
         PCNext: out std_logic_vector(15 downto 0);
         PredictionFailed: out std_logic;
         BranchPredictNext: out std_logic
@@ -24,14 +25,15 @@ architecture bhv of PCSelector is
 begin
 process(PC0, BranchPredict, BranchFlag, BranchForce, BranchTarget, BranchFlagForward, BranchConfirm, BranchTargetConfirm)
 begin
+    PC0 <= PC + 2;
     if ((BranchForce = '1') or (BranchFlagForward = '0' and BranchFlag = '1')) then
         PCNext <= BranchTarget;
     end if;
     if (BranchForce = '0' and BranchFlagForward = '1' and BranchConfirm = '1') then
-        PCNext <= PC0;
+        PCNext <= PC + 2;
     end if;
     if (BranchForce = '0' and BranchFlagForward = '0' and BranchFlag = '0') then
-        PCNext <= PC0;
+        PCNext <= PC + 2;
     end if;
     if (BranchForce = '0' and BranchFlagForward = '1' and BranchConfirm = '0') then
         PCNext <= BranchTargetConfirm;
