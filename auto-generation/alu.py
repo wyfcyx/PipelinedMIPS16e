@@ -121,7 +121,7 @@ def output_alu(ins, f):
             Result <= %s & DataA(15 downto %d);
         end if;''' % (
                 ("000" + bin(i)[2:])[-3:], ' & '.join(['DataA(15)', ] * (8 if i == 0 else i)),
-                7 if i == 0 else 15-i
+                8 if i == 0 else i
             ))
 
     f.write('''
