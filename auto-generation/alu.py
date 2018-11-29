@@ -94,13 +94,13 @@ def output_alu(ins, f):
         f.write('''
         Result <= %s;''' % (' & '.join([
             '(DataA(%d) and DataB(%d))' %
-            (x, x) for x in list(range(15))[::-1]
+            (x, x) for x in list(range(16))[::-1]
         ]), ))
     elif ins == 'OR':
         f.write('''
         Result <= %s;''' % (' & '.join([
             '(DataA(%d) or DataB(%d))' %
-            (x, x) for x in list(range(15))[::-1]
+            (x, x) for x in list(range(16))[::-1]
         ]),))
     elif ins == 'NEG':
         f.write('''
@@ -118,9 +118,9 @@ def output_alu(ins, f):
         for i in range(8):
             f.write('''
         if (DataB(2 downto 0) = "%s") then
-            Result <= %s & Data(15 downto %d);
+            Result <= %s & DataA(15 downto %d);
         end if;''' % (
-                ("000" + bin(i)[2:])[-3:], ' & '.join(['a(15)', ] * (8 if i == 0 else i)),
+                ("000" + bin(i)[2:])[-3:], ' & '.join(['DataA(15)', ] * (8 if i == 0 else i)),
                 7 if i == 0 else 15-i
             ))
 
