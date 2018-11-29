@@ -17,7 +17,7 @@ entity reg is
 	Rx, Ry, Rz : out std_logic_vector(15 downto 0);
 	Index : out std_logic_vector(11 downto 0);
 	led : out std_logic_vector(15 downto 0)
-);
+	);
 end reg;
 
 architecture bhv of reg is
