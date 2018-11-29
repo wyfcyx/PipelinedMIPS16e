@@ -111,17 +111,21 @@ Architecture bhv of Entity decoder is up to date.
 Compiling vhdl file "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd" in Library work.
 Architecture bhv of Entity reg is up to date.
 Compiling vhdl file "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/dataselector.vhd" in Library work.
-ERROR:HDLParsers:3367 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/dataselector.vhd" Line 54. 15 is not included in the index range, 11 downto 0, of array Index.
-ERROR:HDLParsers:3367 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/dataselector.vhd" Line 54. 12 is not included in the index range, 11 downto 0, of array Index.
-ERROR:HDLParsers:3367 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/dataselector.vhd" Line 90. 15 is not included in the index range, 11 downto 0, of array Index.
-ERROR:HDLParsers:3367 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/dataselector.vhd" Line 90. 12 is not included in the index range, 11 downto 0, of array Index.
-ERROR:HDLParsers:3367 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/dataselector.vhd" Line 126. 15 is not included in the index range, 11 downto 0, of array Index.
-ERROR:HDLParsers:3367 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/dataselector.vhd" Line 126. 12 is not included in the index range, 11 downto 0, of array Index.
+Architecture bhv of Entity dataselector is up to date.
+Compiling vhdl file "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/alu.vhd" in Library work.
+Entity <alu> compiled.
+ERROR:HDLParsers:804 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/alu.vhd" Line 134. Size of concat operation is different than size of the target.
+ERROR:HDLParsers:804 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/alu.vhd" Line 137. Size of concat operation is different than size of the target.
+ERROR:HDLParsers:804 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/alu.vhd" Line 140. Size of concat operation is different than size of the target.
+ERROR:HDLParsers:804 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/alu.vhd" Line 143. Size of concat operation is different than size of the target.
+ERROR:HDLParsers:804 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/alu.vhd" Line 146. Size of concat operation is different than size of the target.
+ERROR:HDLParsers:804 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/alu.vhd" Line 149. Size of concat operation is different than size of the target.
+ERROR:HDLParsers:804 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/alu.vhd" Line 152. Size of concat operation is different than size of the target.
 --> 
 
-Total memory usage is 4533288 kilobytes
+Total memory usage is 4533328 kilobytes
 
-Number of errors   :    6 (   0 filtered)
+Number of errors   :    7 (   0 filtered)
 Number of warnings :    0 (   0 filtered)
 Number of infos    :    0 (   0 filtered)
 

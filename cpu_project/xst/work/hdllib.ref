@@ -1,7 +1,9 @@
-AR memory bhv D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/memory.vhd sub00/vhpl01 1543496369
-AR reg bhv D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd sub00/vhpl05 1543496373
-EN dataselector NULL D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/dataselector.vhd sub00/vhpl06 1543496374
-EN memory NULL D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/memory.vhd sub00/vhpl00 1543496368
-AR decoder bhv D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/decoder.vhd sub00/vhpl03 1543496371
-EN decoder NULL D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/decoder.vhd sub00/vhpl02 1543496370
-EN reg NULL D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd sub00/vhpl04 1543496372
+AR memory bhv D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/memory.vhd sub00/vhpl01 1543496729
+AR reg bhv D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd sub00/vhpl05 1543496733
+EN dataselector NULL D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/dataselector.vhd sub00/vhpl06 1543496734
+EN memory NULL D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/memory.vhd sub00/vhpl00 1543496728
+AR dataselector bhv D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/dataselector.vhd sub00/vhpl07 1543496735
+AR decoder bhv D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/decoder.vhd sub00/vhpl03 1543496731
+EN decoder NULL D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/decoder.vhd sub00/vhpl02 1543496730
+EN reg NULL D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd sub00/vhpl04 1543496732
+EN alu NULL D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/alu.vhd sub00/vhpl08 1543496736

@@ -15,22 +15,22 @@ EN work/cpu 0 \
 AR work/cpu/bhv 0 \
       FL D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/cpu.vhd \
       EN work/cpu 0 CP memory CP decoder CP reg CP dataselector CP alu CP pcselector
-FL D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/dataselector.vhd 2018/11/29.20:21:17 P.20131013
-EN work/DataSelector 0 \
+FL D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/dataselector.vhd 2018/11/29.21:01:22 P.20131013
+EN work/DataSelector 1543496734 \
       FL D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/dataselector.vhd \
       PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
       PB ieee/STD_LOGIC_UNSIGNED 1381692179
-AR work/DataSelector/bhv 0 \
+AR work/DataSelector/bhv 1543496735 \
       FL D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/dataselector.vhd \
-      EN work/DataSelector 0
+      EN work/DataSelector 1543496734
 FL D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/decoder.vhd 2018/11/29.20:18:58 P.20131013
-EN work/decoder 1543496370 \
+EN work/decoder 1543496730 \
       FL D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/decoder.vhd \
       PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
       PB ieee/STD_LOGIC_UNSIGNED 1381692179
-AR work/decoder/bhv 1543496371 \
+AR work/decoder/bhv 1543496731 \
       FL D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/decoder.vhd \
-      EN work/decoder 1543496370
+      EN work/decoder 1543496730
 FL D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/main.vhd 2018/11/29.20:13:36 P.20131013
 EN work/main 0 \
       FL D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/main.vhd \
@@ -40,13 +40,13 @@ AR work/main/bhv 0 \
       FL D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/main.vhd \
       EN work/main 0 CP cpu
 FL D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/memory.vhd 2018/11/29.20:13:36 P.20131013
-EN work/memory 1543496368 \
+EN work/memory 1543496728 \
       FL D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/memory.vhd \
       PB ieee/std_logic_1164 1381692176 PB ieee/STD_LOGIC_UNSIGNED 1381692179 \
       PB ieee/std_logic_arith 1381692177
-AR work/memory/bhv 1543496369 \
+AR work/memory/bhv 1543496729 \
       FL D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/memory.vhd \
-      EN work/memory 1543496368
+      EN work/memory 1543496728
 FL D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/pcselector.vhd 2018/11/29.20:21:34 P.20131013
 EN work/PCSelector 0 \
       FL D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/pcselector.vhd \
@@ -55,11 +55,11 @@ EN work/PCSelector 0 \
 AR work/PCSelector/bhv 0 \
       FL D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/pcselector.vhd \
       EN work/PCSelector 0
-FL D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd 2018/11/29.20:46:44 P.20131013
-EN work/reg 1543496372 \
+FL D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd 2018/11/29.21:00:28 P.20131013
+EN work/reg 1543496732 \
       FL D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd \
       PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
       PB ieee/STD_LOGIC_UNSIGNED 1381692179
-AR work/reg/bhv 1543496373 \
+AR work/reg/bhv 1543496733 \
       FL D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd \
-      EN work/reg 1543496372
+      EN work/reg 1543496732

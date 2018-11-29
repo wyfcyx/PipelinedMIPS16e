@@ -5,22 +5,25 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="error" file="HDLParsers" num="3367" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/dataselector.vhd</arg>&quot; Line <arg fmt="%d" index="2">54</arg>. <arg fmt="%d" index="3">15</arg> is not included in the index range, <arg fmt="%d" index="4">11</arg> <arg fmt="%s" index="5">downto</arg> <arg fmt="%d" index="6">0</arg>, of array <arg fmt="%s" index="7">Index</arg>.
+<msg type="error" file="HDLParsers" num="804" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/alu.vhd</arg>&quot; Line <arg fmt="%d" index="2">134</arg>. Size of <arg fmt="%s" index="3">concat operation</arg> is different than size of <arg fmt="%s" index="4">the target</arg>.
 </msg>
 
-<msg type="error" file="HDLParsers" num="3367" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/dataselector.vhd</arg>&quot; Line <arg fmt="%d" index="2">54</arg>. <arg fmt="%d" index="3">12</arg> is not included in the index range, <arg fmt="%d" index="4">11</arg> <arg fmt="%s" index="5">downto</arg> <arg fmt="%d" index="6">0</arg>, of array <arg fmt="%s" index="7">Index</arg>.
+<msg type="error" file="HDLParsers" num="804" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/alu.vhd</arg>&quot; Line <arg fmt="%d" index="2">137</arg>. Size of <arg fmt="%s" index="3">concat operation</arg> is different than size of <arg fmt="%s" index="4">the target</arg>.
 </msg>
 
-<msg type="error" file="HDLParsers" num="3367" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/dataselector.vhd</arg>&quot; Line <arg fmt="%d" index="2">90</arg>. <arg fmt="%d" index="3">15</arg> is not included in the index range, <arg fmt="%d" index="4">11</arg> <arg fmt="%s" index="5">downto</arg> <arg fmt="%d" index="6">0</arg>, of array <arg fmt="%s" index="7">Index</arg>.
+<msg type="error" file="HDLParsers" num="804" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/alu.vhd</arg>&quot; Line <arg fmt="%d" index="2">140</arg>. Size of <arg fmt="%s" index="3">concat operation</arg> is different than size of <arg fmt="%s" index="4">the target</arg>.
 </msg>
 
-<msg type="error" file="HDLParsers" num="3367" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/dataselector.vhd</arg>&quot; Line <arg fmt="%d" index="2">90</arg>. <arg fmt="%d" index="3">12</arg> is not included in the index range, <arg fmt="%d" index="4">11</arg> <arg fmt="%s" index="5">downto</arg> <arg fmt="%d" index="6">0</arg>, of array <arg fmt="%s" index="7">Index</arg>.
+<msg type="error" file="HDLParsers" num="804" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/alu.vhd</arg>&quot; Line <arg fmt="%d" index="2">143</arg>. Size of <arg fmt="%s" index="3">concat operation</arg> is different than size of <arg fmt="%s" index="4">the target</arg>.
 </msg>
 
-<msg type="error" file="HDLParsers" num="3367" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/dataselector.vhd</arg>&quot; Line <arg fmt="%d" index="2">126</arg>. <arg fmt="%d" index="3">15</arg> is not included in the index range, <arg fmt="%d" index="4">11</arg> <arg fmt="%s" index="5">downto</arg> <arg fmt="%d" index="6">0</arg>, of array <arg fmt="%s" index="7">Index</arg>.
+<msg type="error" file="HDLParsers" num="804" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/alu.vhd</arg>&quot; Line <arg fmt="%d" index="2">146</arg>. Size of <arg fmt="%s" index="3">concat operation</arg> is different than size of <arg fmt="%s" index="4">the target</arg>.
 </msg>
 
-<msg type="error" file="HDLParsers" num="3367" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/dataselector.vhd</arg>&quot; Line <arg fmt="%d" index="2">126</arg>. <arg fmt="%d" index="3">12</arg> is not included in the index range, <arg fmt="%d" index="4">11</arg> <arg fmt="%s" index="5">downto</arg> <arg fmt="%d" index="6">0</arg>, of array <arg fmt="%s" index="7">Index</arg>.
+<msg type="error" file="HDLParsers" num="804" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/alu.vhd</arg>&quot; Line <arg fmt="%d" index="2">149</arg>. Size of <arg fmt="%s" index="3">concat operation</arg> is different than size of <arg fmt="%s" index="4">the target</arg>.
+</msg>
+
+<msg type="error" file="HDLParsers" num="804" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/alu.vhd</arg>&quot; Line <arg fmt="%d" index="2">152</arg>. Size of <arg fmt="%s" index="3">concat operation</arg> is different than size of <arg fmt="%s" index="4">the target</arg>.
 </msg>
 
 </messages>
