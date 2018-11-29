@@ -7,6 +7,8 @@ entity cpu is
 	port(
 		-- pipeline clock
 		clk : in std_logic;
+		-- pipeline is started
+		started : in std_logic;
 		-- scan clock
 		clk_scan : in std_logic;
 		-- data mem
@@ -157,6 +159,7 @@ component memory is
 		DataS : in std_logic_vector(15 downto 0);
 		InstructionAddress : in std_logic_vector(15 downto 0);
 		clk : in std_logic;
+		started : in std_logic;
 		clk_scan : in std_logic;
 
 		Result : out std_logic_vector(15 downto 0);
@@ -193,6 +196,7 @@ begin
 		InstructionResult => IF_ID_Instruction_in,
 		-- ram & comm
 		clk => clk,
+		started => started,
 		clk_scan => clk_scan,
 		Ram1Data => Ram1Data,
 		Ram1Addr => Ram1Addr,
