@@ -14,7 +14,6 @@ entity alu is
 
         BranchFlagForward : out std_logic;
         BranchConfirm : out std_logic;
-        BranchConfirm : out std_logic;
         BranchTargetConfirm : out std_logic_vector(15 downto 0);
         Tout : out std_logic;
         Result: out std_logic_vector(15 downto 0)
@@ -96,28 +95,28 @@ begin
         BranchConfirm <= '0';
         BranchTargetConfirm <= BranchTargetAlu;
         Tout <= T;
-        if (DataB(2 downto 0) = "000")
+        if (DataB(2 downto 0) = "000") then
             Result <= DataA(7 downto 0) & "00000000";
         end if;
-        if (DataB(2 downto 0) = "001")
+        if (DataB(2 downto 0) = "001") then
             Result <= DataA(14 downto 0) & "0";
         end if;
-        if (DataB(2 downto 0) = "010")
+        if (DataB(2 downto 0) = "010") then
             Result <= DataA(13 downto 0) & "00";
         end if;
-        if (DataB(2 downto 0) = "011")
+        if (DataB(2 downto 0) = "011") then
             Result <= DataA(12 downto 0) & "000";
         end if;
-        if (DataB(2 downto 0) = "100")
+        if (DataB(2 downto 0) = "100") then
             Result <= DataA(11 downto 0) & "0000";
         end if;
-        if (DataB(2 downto 0) = "101")
+        if (DataB(2 downto 0) = "101") then
             Result <= DataA(10 downto 0) & "00000";
         end if;
-        if (DataB(2 downto 0) = "110")
+        if (DataB(2 downto 0) = "110") then
             Result <= DataA(9 downto 0) & "000000";
         end if;
-        if (DataB(2 downto 0) = "111")
+        if (DataB(2 downto 0) = "111") then
             Result <= DataA(8 downto 0) & "0000000";
         end if;
     end if;
@@ -128,28 +127,28 @@ begin
         BranchConfirm <= '0';
         BranchTargetConfirm <= BranchTargetAlu;
         Tout <= T;
-        if (DataB(2 downto 0) = "000")
+        if (DataB(2 downto 0) = "000") then
             Result <= a(15) & a(15) & a(15) & a(15) & a(15) & a(15) & a(15) & a(15) & Data(15 downto 7);
         end if;
-        if (DataB(2 downto 0) = "001")
+        if (DataB(2 downto 0) = "001") then
             Result <= a(15) & Data(15 downto 14);
         end if;
-        if (DataB(2 downto 0) = "010")
+        if (DataB(2 downto 0) = "010") then
             Result <= a(15) & a(15) & Data(15 downto 13);
         end if;
-        if (DataB(2 downto 0) = "011")
+        if (DataB(2 downto 0) = "011") then
             Result <= a(15) & a(15) & a(15) & Data(15 downto 12);
         end if;
-        if (DataB(2 downto 0) = "100")
+        if (DataB(2 downto 0) = "100") then
             Result <= a(15) & a(15) & a(15) & a(15) & Data(15 downto 11);
         end if;
-        if (DataB(2 downto 0) = "101")
+        if (DataB(2 downto 0) = "101") then
             Result <= a(15) & a(15) & a(15) & a(15) & a(15) & Data(15 downto 10);
         end if;
-        if (DataB(2 downto 0) = "110")
+        if (DataB(2 downto 0) = "110") then
             Result <= a(15) & a(15) & a(15) & a(15) & a(15) & a(15) & Data(15 downto 9);
         end if;
-        if (DataB(2 downto 0) = "111")
+        if (DataB(2 downto 0) = "111") then
             Result <= a(15) & a(15) & a(15) & a(15) & a(15) & a(15) & a(15) & Data(15 downto 8);
         end if;
     end if;

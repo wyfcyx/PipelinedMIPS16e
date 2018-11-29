@@ -26,31 +26,31 @@ reg={
 def Rz(index,f):
     #判断是不是特殊情况
     f.write('''
-                flag2 <= "0" --初始化
+                flag2 <= '0' --初始化
             ''')
     for i in range(len(reg['special'])):
         #如果是特殊情况
         cur=reg['instruction'].index(reg['special'][i])
         f.write('''
-                if Instrction(15 downto 11) = "%s" then
-                    flag1 <= "1" --存在特殊情况
-                    flag2 <= "%d" --临时标记
+                if (Instrction(15 downto 11) = "%s") then
+                    flag1 <= '1';--存在特殊情况
+                    flag2 <= '%d'; --临时标记
                 end if;
                 '''%(reg['bit15-11'][cur],i+1))
     t='1'+'{:03b}'.format(index)
     f.write('''
-            if flag2 = "0" then --正常情况
-                Rz <= reg_before(%d downto %d)
-                index(11 downto 8) = "%s"
-            elsif  flag2 = "1" then
-                Rz <= reg_before(47 downto 32)
-                index(11 downto 8) = "%s"
-            elsif flag2 = "2" then
-                Rz <= reg_before(31 downto 16)
-                index(11 downto 8) = "%s"
+            if flag2 = '0' then --正常情况
+                Rz <= reg_before(%d downto %d);
+                index(11 downto 8) = "%s";
+            elsif  flag2 = '1' then
+                Rz <= reg_before(47 downto 32);
+                index(11 downto 8) = "%s";
+            elsif flag2 = '2' then
+                Rz <= reg_before(31 downto 16);
+                index(11 downto 8) = "%s";
             else
-                Rz<= reg_before(15 downto 0)
-                index(11 downto 8) = "%s"
+                Rz<= reg_before(15 downto 0);
+                index(11 downto 8) = "%s";
             end if;
             '''%(
                 index*16+15,index*16,'{:04b}'.format(index),t,t,t
@@ -60,14 +60,14 @@ def R(index,f):
     for dataIndex in range(8):
         f.write('''
         if (%s) then\n'''%(
-            'Instruction(%d downto %d) = "%s"'%(
+            'Instruction(%d downto %d) = "%s";'%(
                 3*index+4,3*index+2,'{:03b}'.format(dataIndex)
             )
         ))
         if index !=0:
             f.write('''
             R%s <= reg_before(%d downto %d);
-            Index(%d downto %d) =  "%s"
+            Index(%d downto %d) =  "%s";
                     '''%(
                         cur[index],dataIndex*16+15,dataIndex*16,4*(2-index)+3,4*(2-index),'{:04b}'.format(dataIndex)
             )
@@ -105,11 +105,11 @@ entity reg is
 end reg;
 architecture bhv of reg is
     signal flag1: std_logic; --说明是否存在特殊情况
-    signal flag2: std_logic; --临时变量
+    signal flag2: std_logic_vector(1 downto 0); --临时变量
 begin
 process(SP_before,IH_before,reg_before,PC0,Instruction,Target,Data)
 begin
-    flag1 <= "0";
+    flag1 <= '0';
     ''')
     #添加中间代码
     for i in range(3):
@@ -117,7 +117,7 @@ begin
     f.write('''
         if Target(3 downto 0) != "1111" then
             --不是输出
-            led(15 downto 0)=Data(15 downto 0)
+            led(15 downto 0)=Data(15 downto 0);
         end if;
             ''')
     f.write('''

@@ -1,0 +1,5 @@
+AR memory bhv D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/memory.vhd sub00/vhpl01 1543494747
+EN memory NULL D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/memory.vhd sub00/vhpl00 1543494746
+AR decoder bhv D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/decoder.vhd sub00/vhpl03 1543494749
+EN decoder NULL D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/decoder.vhd sub00/vhpl02 1543494748
+EN reg NULL D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd sub00/vhpl04 1543494750

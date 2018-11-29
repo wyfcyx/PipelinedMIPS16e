@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="error" file="HDLParsers" num="800" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">29</arg>. Type of <arg fmt="%s" index="3">flag1</arg> is incompatible with type of <arg fmt="%s" index="4">0</arg>.
+</msg>
+
+<msg type="error" file="HDLParsers" num="164" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">31</arg>. <arg fmt="%s" index="3">parse error, unexpected SEMICOLON, expecting COMMA or CLOSEPAR</arg>
+</msg>
+
+<msg type="error" file="HDLParsers" num="164" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">38</arg>. <arg fmt="%s" index="3">parse error, unexpected IF, expecting PROCESS</arg>
+</msg>
+
+<msg type="error" file="HDLParsers" num="808" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">40</arg>. <arg fmt="%s" index="3">=</arg> can not have such operands in this context.
+</msg>
+
+<msg type="error" file="HDLParsers" num="800" delta="new" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">42</arg>. Type of <arg fmt="%s" index="3">flag2</arg> is incompatible with type of <arg fmt="%s" index="4">&apos;2&apos;</arg>.
+</msg>
+
+<msg type="error" file="HDLParsers" num="808" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">45</arg>. <arg fmt="%s" index="3">=</arg> can not have such operands in this context.
+</msg>
+
+<msg type="error" file="HDLParsers" num="800" delta="new" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">47</arg>. Type of <arg fmt="%s" index="3">flag2</arg> is incompatible with type of <arg fmt="%s" index="4">&apos;3&apos;</arg>.
+</msg>
+
+<msg type="error" file="HDLParsers" num="3402" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">52</arg>. Read symbol =, expecting &lt;= or := 
+</msg>
+
+<msg type="error" file="HDLParsers" num="3402" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">55</arg>. Read symbol =, expecting &lt;= or := 
+</msg>
+
+<msg type="error" file="HDLParsers" num="808" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">56</arg>. <arg fmt="%s" index="3">=</arg> can not have such operands in this context.
+</msg>
+
+<msg type="error" file="HDLParsers" num="3402" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">58</arg>. Read symbol =, expecting &lt;= or := 
+</msg>
+
+<msg type="error" file="HDLParsers" num="3402" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">61</arg>. Read symbol =, expecting &lt;= or := 
+</msg>
+
+<msg type="error" file="HDLParsers" num="164" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">64</arg>. <arg fmt="%s" index="3">parse error, unexpected IF, expecting PROCESS</arg>
+</msg>
+
+<msg type="error" file="HDLParsers" num="164" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">66</arg>. <arg fmt="%s" index="3">parse error, unexpected SEMICOLON, expecting COMMA or CLOSEPAR</arg>
+</msg>
+
+<msg type="error" file="HDLParsers" num="164" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">73</arg>. <arg fmt="%s" index="3">parse error, unexpected IF, expecting PROCESS</arg>
+</msg>
+
+<msg type="error" file="HDLParsers" num="808" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">75</arg>. <arg fmt="%s" index="3">=</arg> can not have such operands in this context.
+</msg>
+
+<msg type="error" file="HDLParsers" num="800" delta="new" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">77</arg>. Type of <arg fmt="%s" index="3">flag2</arg> is incompatible with type of <arg fmt="%s" index="4">&apos;2&apos;</arg>.
+</msg>
+
+<msg type="error" file="HDLParsers" num="808" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">80</arg>. <arg fmt="%s" index="3">=</arg> can not have such operands in this context.
+</msg>
+
+<msg type="error" file="HDLParsers" num="800" delta="new" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">82</arg>. Type of <arg fmt="%s" index="3">flag2</arg> is incompatible with type of <arg fmt="%s" index="4">&apos;3&apos;</arg>.
+</msg>
+
+<msg type="error" file="HDLParsers" num="3402" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">87</arg>. Read symbol =, expecting &lt;= or := 
+</msg>
+
+<msg type="error" file="HDLParsers" num="3402" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">90</arg>. Read symbol =, expecting &lt;= or := 
+</msg>
+
+<msg type="error" file="HDLParsers" num="808" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">91</arg>. <arg fmt="%s" index="3">=</arg> can not have such operands in this context.
+</msg>
+
+<msg type="error" file="HDLParsers" num="3402" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">93</arg>. Read symbol =, expecting &lt;= or := 
+</msg>
+
+<msg type="error" file="HDLParsers" num="3402" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">96</arg>. Read symbol =, expecting &lt;= or := 
+</msg>
+
+<msg type="error" file="HDLParsers" num="164" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">99</arg>. <arg fmt="%s" index="3">parse error, unexpected IF, expecting PROCESS</arg>
+</msg>
+
+<msg type="error" file="HDLParsers" num="164" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">101</arg>. <arg fmt="%s" index="3">parse error, unexpected SEMICOLON, expecting COMMA or CLOSEPAR</arg>
+</msg>
+
+<msg type="error" file="HDLParsers" num="164" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">108</arg>. <arg fmt="%s" index="3">parse error, unexpected IF, expecting PROCESS</arg>
+</msg>
+
+<msg type="error" file="HDLParsers" num="808" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">110</arg>. <arg fmt="%s" index="3">=</arg> can not have such operands in this context.
+</msg>
+
+<msg type="error" file="HDLParsers" num="800" delta="new" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">112</arg>. Type of <arg fmt="%s" index="3">flag2</arg> is incompatible with type of <arg fmt="%s" index="4">&apos;2&apos;</arg>.
+</msg>
+
+<msg type="error" file="HDLParsers" num="808" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">115</arg>. <arg fmt="%s" index="3">=</arg> can not have such operands in this context.
+</msg>
+
+<msg type="error" file="HDLParsers" num="800" delta="new" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">117</arg>. Type of <arg fmt="%s" index="3">flag2</arg> is incompatible with type of <arg fmt="%s" index="4">&apos;3&apos;</arg>.
+</msg>
+
+<msg type="error" file="HDLParsers" num="3402" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">122</arg>. Read symbol =, expecting &lt;= or := 
+</msg>
+
+<msg type="error" file="HDLParsers" num="3402" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">125</arg>. Read symbol =, expecting &lt;= or := 
+</msg>
+
+<msg type="error" file="HDLParsers" num="808" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">126</arg>. <arg fmt="%s" index="3">=</arg> can not have such operands in this context.
+</msg>
+
+<msg type="error" file="HDLParsers" num="3402" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">128</arg>. Read symbol =, expecting &lt;= or := 
+</msg>
+
+<msg type="error" file="HDLParsers" num="3402" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">131</arg>. Read symbol =, expecting &lt;= or := 
+</msg>
+
+<msg type="error" file="HDLParsers" num="164" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">134</arg>. <arg fmt="%s" index="3">parse error, unexpected IF, expecting PROCESS</arg>
+</msg>
+
+<msg type="error" file="HDLParsers" num="164" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">136</arg>. <arg fmt="%s" index="3">parse error, unexpected SEMICOLON, expecting COMMA or CLOSEPAR</arg>
+</msg>
+
+<msg type="error" file="HDLParsers" num="164" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">143</arg>. <arg fmt="%s" index="3">parse error, unexpected IF, expecting PROCESS</arg>
+</msg>
+
+<msg type="error" file="HDLParsers" num="808" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">145</arg>. <arg fmt="%s" index="3">=</arg> can not have such operands in this context.
+</msg>
+
+<msg type="error" file="HDLParsers" num="800" delta="new" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">147</arg>. Type of <arg fmt="%s" index="3">flag2</arg> is incompatible with type of <arg fmt="%s" index="4">&apos;2&apos;</arg>.
+</msg>
+
+<msg type="error" file="HDLParsers" num="808" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">150</arg>. <arg fmt="%s" index="3">=</arg> can not have such operands in this context.
+</msg>
+
+<msg type="error" file="HDLParsers" num="800" delta="new" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">152</arg>. Type of <arg fmt="%s" index="3">flag2</arg> is incompatible with type of <arg fmt="%s" index="4">&apos;3&apos;</arg>.
+</msg>
+
+<msg type="error" file="HDLParsers" num="3402" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">157</arg>. Read symbol =, expecting &lt;= or := 
+</msg>
+
+<msg type="error" file="HDLParsers" num="3402" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">160</arg>. Read symbol =, expecting &lt;= or := 
+</msg>
+
+<msg type="error" file="HDLParsers" num="808" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">161</arg>. <arg fmt="%s" index="3">=</arg> can not have such operands in this context.
+</msg>
+
+<msg type="error" file="HDLParsers" num="3402" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">163</arg>. Read symbol =, expecting &lt;= or := 
+</msg>
+
+<msg type="error" file="HDLParsers" num="3402" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">166</arg>. Read symbol =, expecting &lt;= or := 
+</msg>
+
+<msg type="error" file="HDLParsers" num="164" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">169</arg>. <arg fmt="%s" index="3">parse error, unexpected IF, expecting PROCESS</arg>
+</msg>
+
+<msg type="error" file="HDLParsers" num="164" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">171</arg>. <arg fmt="%s" index="3">parse error, unexpected SEMICOLON, expecting COMMA or CLOSEPAR</arg>
+</msg>
+
+<msg type="error" file="HDLParsers" num="164" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">178</arg>. <arg fmt="%s" index="3">parse error, unexpected IF, expecting PROCESS</arg>
+</msg>
+
+<msg type="error" file="HDLParsers" num="808" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">180</arg>. <arg fmt="%s" index="3">=</arg> can not have such operands in this context.
+</msg>
+
+<msg type="error" file="HDLParsers" num="800" delta="new" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">182</arg>. Type of <arg fmt="%s" index="3">flag2</arg> is incompatible with type of <arg fmt="%s" index="4">&apos;2&apos;</arg>.
+</msg>
+
+<msg type="error" file="HDLParsers" num="808" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">185</arg>. <arg fmt="%s" index="3">=</arg> can not have such operands in this context.
+</msg>
+
+<msg type="error" file="HDLParsers" num="800" delta="new" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">187</arg>. Type of <arg fmt="%s" index="3">flag2</arg> is incompatible with type of <arg fmt="%s" index="4">&apos;3&apos;</arg>.
+</msg>
+
+<msg type="error" file="HDLParsers" num="3402" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">192</arg>. Read symbol =, expecting &lt;= or := 
+</msg>
+
+<msg type="error" file="HDLParsers" num="3402" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">195</arg>. Read symbol =, expecting &lt;= or := 
+</msg>
+
+<msg type="error" file="HDLParsers" num="808" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">196</arg>. <arg fmt="%s" index="3">=</arg> can not have such operands in this context.
+</msg>
+
+<msg type="error" file="HDLParsers" num="3402" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">198</arg>. Read symbol =, expecting &lt;= or := 
+</msg>
+
+<msg type="error" file="HDLParsers" num="3402" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">201</arg>. Read symbol =, expecting &lt;= or := 
+</msg>
+
+<msg type="error" file="HDLParsers" num="164" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">204</arg>. <arg fmt="%s" index="3">parse error, unexpected IF, expecting PROCESS</arg>
+</msg>
+
+<msg type="error" file="HDLParsers" num="164" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">206</arg>. <arg fmt="%s" index="3">parse error, unexpected SEMICOLON, expecting COMMA or CLOSEPAR</arg>
+</msg>
+
+<msg type="error" file="HDLParsers" num="164" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">213</arg>. <arg fmt="%s" index="3">parse error, unexpected IF, expecting PROCESS</arg>
+</msg>
+
+<msg type="error" file="HDLParsers" num="808" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">215</arg>. <arg fmt="%s" index="3">=</arg> can not have such operands in this context.
+</msg>
+
+<msg type="error" file="HDLParsers" num="800" delta="new" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">217</arg>. Type of <arg fmt="%s" index="3">flag2</arg> is incompatible with type of <arg fmt="%s" index="4">&apos;2&apos;</arg>.
+</msg>
+
+<msg type="error" file="HDLParsers" num="808" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">220</arg>. <arg fmt="%s" index="3">=</arg> can not have such operands in this context.
+</msg>
+
+<msg type="error" file="HDLParsers" num="800" delta="new" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">222</arg>. Type of <arg fmt="%s" index="3">flag2</arg> is incompatible with type of <arg fmt="%s" index="4">&apos;3&apos;</arg>.
+</msg>
+
+<msg type="error" file="HDLParsers" num="3402" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">227</arg>. Read symbol =, expecting &lt;= or := 
+</msg>
+
+<msg type="error" file="HDLParsers" num="3402" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">230</arg>. Read symbol =, expecting &lt;= or := 
+</msg>
+
+<msg type="error" file="HDLParsers" num="808" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">231</arg>. <arg fmt="%s" index="3">=</arg> can not have such operands in this context.
+</msg>
+
+<msg type="error" file="HDLParsers" num="3402" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">233</arg>. Read symbol =, expecting &lt;= or := 
+</msg>
+
+<msg type="error" file="HDLParsers" num="3402" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">236</arg>. Read symbol =, expecting &lt;= or := 
+</msg>
+
+<msg type="error" file="HDLParsers" num="164" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">239</arg>. <arg fmt="%s" index="3">parse error, unexpected IF, expecting PROCESS</arg>
+</msg>
+
+<msg type="error" file="HDLParsers" num="164" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">241</arg>. <arg fmt="%s" index="3">parse error, unexpected SEMICOLON, expecting COMMA or CLOSEPAR</arg>
+</msg>
+
+<msg type="error" file="HDLParsers" num="164" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">248</arg>. <arg fmt="%s" index="3">parse error, unexpected IF, expecting PROCESS</arg>
+</msg>
+
+<msg type="error" file="HDLParsers" num="808" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">250</arg>. <arg fmt="%s" index="3">=</arg> can not have such operands in this context.
+</msg>
+
+<msg type="error" file="HDLParsers" num="800" delta="new" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">252</arg>. Type of <arg fmt="%s" index="3">flag2</arg> is incompatible with type of <arg fmt="%s" index="4">&apos;2&apos;</arg>.
+</msg>
+
+<msg type="error" file="HDLParsers" num="808" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">255</arg>. <arg fmt="%s" index="3">=</arg> can not have such operands in this context.
+</msg>
+
+<msg type="error" file="HDLParsers" num="800" delta="new" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">257</arg>. Type of <arg fmt="%s" index="3">flag2</arg> is incompatible with type of <arg fmt="%s" index="4">&apos;3&apos;</arg>.
+</msg>
+
+<msg type="error" file="HDLParsers" num="3402" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">262</arg>. Read symbol =, expecting &lt;= or := 
+</msg>
+
+<msg type="error" file="HDLParsers" num="3402" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">265</arg>. Read symbol =, expecting &lt;= or := 
+</msg>
+
+<msg type="error" file="HDLParsers" num="808" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">266</arg>. <arg fmt="%s" index="3">=</arg> can not have such operands in this context.
+</msg>
+
+<msg type="error" file="HDLParsers" num="3402" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">268</arg>. Read symbol =, expecting &lt;= or := 
+</msg>
+
+<msg type="error" file="HDLParsers" num="3402" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">271</arg>. Read symbol =, expecting &lt;= or := 
+</msg>
+
+<msg type="error" file="HDLParsers" num="164" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">274</arg>. <arg fmt="%s" index="3">parse error, unexpected IF, expecting PROCESS</arg>
+</msg>
+
+<msg type="error" file="HDLParsers" num="164" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">276</arg>. <arg fmt="%s" index="3">parse error, unexpected SEMICOLON, expecting COMMA or CLOSEPAR</arg>
+</msg>
+
+<msg type="error" file="HDLParsers" num="164" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">283</arg>. <arg fmt="%s" index="3">parse error, unexpected IF, expecting PROCESS</arg>
+</msg>
+
+<msg type="error" file="HDLParsers" num="808" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">285</arg>. <arg fmt="%s" index="3">=</arg> can not have such operands in this context.
+</msg>
+
+<msg type="error" file="HDLParsers" num="800" delta="new" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">287</arg>. Type of <arg fmt="%s" index="3">flag2</arg> is incompatible with type of <arg fmt="%s" index="4">&apos;2&apos;</arg>.
+</msg>
+
+<msg type="error" file="HDLParsers" num="808" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">290</arg>. <arg fmt="%s" index="3">=</arg> can not have such operands in this context.
+</msg>
+
+<msg type="error" file="HDLParsers" num="800" delta="new" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">292</arg>. Type of <arg fmt="%s" index="3">flag2</arg> is incompatible with type of <arg fmt="%s" index="4">&apos;3&apos;</arg>.
+</msg>
+
+<msg type="error" file="HDLParsers" num="3402" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">297</arg>. Read symbol =, expecting &lt;= or := 
+</msg>
+
+<msg type="error" file="HDLParsers" num="3402" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">300</arg>. Read symbol =, expecting &lt;= or := 
+</msg>
+
+<msg type="error" file="HDLParsers" num="808" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">301</arg>. <arg fmt="%s" index="3">=</arg> can not have such operands in this context.
+</msg>
+
+<msg type="error" file="HDLParsers" num="3402" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">303</arg>. Read symbol =, expecting &lt;= or := 
+</msg>
+
+<msg type="error" file="HDLParsers" num="3402" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">306</arg>. Read symbol =, expecting &lt;= or := 
+</msg>
+
+<msg type="error" file="HDLParsers" num="164" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">309</arg>. <arg fmt="%s" index="3">parse error, unexpected IF, expecting PROCESS</arg>
+</msg>
+
+<msg type="error" file="HDLParsers" num="164" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">311</arg>. <arg fmt="%s" index="3">parse error, unexpected SEMICOLON, expecting COMMA or CLOSEPAR</arg>
+</msg>
+
+<msg type="error" file="HDLParsers" num="3402" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">314</arg>. Read symbol =, expecting &lt;= or := 
+</msg>
+
+<msg type="error" file="HDLParsers" num="164" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">316</arg>. <arg fmt="%s" index="3">parse error, unexpected IF, expecting PROCESS</arg>
+</msg>
+
+<msg type="error" file="HDLParsers" num="164" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">318</arg>. <arg fmt="%s" index="3">parse error, unexpected SEMICOLON, expecting COMMA or CLOSEPAR</arg>
+</msg>
+
+<msg type="error" file="HDLParsers" num="3402" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">321</arg>. Read symbol =, expecting &lt;= or := 
+</msg>
+
+<msg type="error" file="HDLParsers" num="164" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">323</arg>. <arg fmt="%s" index="3">parse error, unexpected IF, expecting PROCESS</arg>
+</msg>
+
+<msg type="error" file="HDLParsers" num="164" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">325</arg>. <arg fmt="%s" index="3">parse error, unexpected SEMICOLON, expecting COMMA or CLOSEPAR</arg>
+</msg>
+
+<msg type="error" file="HDLParsers" num="3402" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">328</arg>. Read symbol =, expecting &lt;= or := 
+</msg>
+
+<msg type="error" file="HDLParsers" num="164" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">330</arg>. <arg fmt="%s" index="3">parse error, unexpected IF, expecting PROCESS</arg>
+</msg>
+
+<msg type="error" file="HDLParsers" num="164" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">332</arg>. <arg fmt="%s" index="3">parse error, unexpected SEMICOLON, expecting COMMA or CLOSEPAR</arg>
+</msg>
+
+<msg type="error" file="HDLParsers" num="3402" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">335</arg>. Read symbol =, expecting &lt;= or := 
+</msg>
+
+<msg type="error" file="HDLParsers" num="164" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">337</arg>. <arg fmt="%s" index="3">parse error, unexpected IF, expecting PROCESS</arg>
+</msg>
+
+<msg type="error" file="HDLParsers" num="164" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">339</arg>. <arg fmt="%s" index="3">parse error, unexpected SEMICOLON, expecting COMMA or CLOSEPAR</arg>
+</msg>
+
+<msg type="error" file="HDLParsers" num="3402" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">342</arg>. Read symbol =, expecting &lt;= or := 
+</msg>
+
+<msg type="error" file="HDLParsers" num="164" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">344</arg>. <arg fmt="%s" index="3">parse error, unexpected IF, expecting PROCESS</arg>
+</msg>
+
+<msg type="error" file="HDLParsers" num="164" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">346</arg>. <arg fmt="%s" index="3">parse error, unexpected SEMICOLON, expecting COMMA or CLOSEPAR</arg>
+</msg>
+
+<msg type="error" file="HDLParsers" num="3402" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">349</arg>. Read symbol =, expecting &lt;= or := 
+</msg>
+
+<msg type="error" file="HDLParsers" num="164" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">351</arg>. <arg fmt="%s" index="3">parse error, unexpected IF, expecting PROCESS</arg>
+</msg>
+
+<msg type="error" file="HDLParsers" num="164" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">353</arg>. <arg fmt="%s" index="3">parse error, unexpected SEMICOLON, expecting COMMA or CLOSEPAR</arg>
+</msg>
+
+<msg type="error" file="HDLParsers" num="3402" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">356</arg>. Read symbol =, expecting &lt;= or := 
+</msg>
+
+<msg type="error" file="HDLParsers" num="164" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">358</arg>. <arg fmt="%s" index="3">parse error, unexpected IF, expecting PROCESS</arg>
+</msg>
+
+<msg type="error" file="HDLParsers" num="164" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">360</arg>. <arg fmt="%s" index="3">parse error, unexpected SEMICOLON, expecting COMMA or CLOSEPAR</arg>
+</msg>
+
+<msg type="error" file="HDLParsers" num="3402" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">363</arg>. Read symbol =, expecting &lt;= or := 
+</msg>
+
+<msg type="error" file="HDLParsers" num="164" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">365</arg>. <arg fmt="%s" index="3">parse error, unexpected IF, expecting PROCESS</arg>
+</msg>
+
+<msg type="error" file="HDLParsers" num="164" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">367</arg>. <arg fmt="%s" index="3">parse error, unexpected SEMICOLON, expecting COMMA or CLOSEPAR</arg>
+</msg>
+
+<msg type="error" file="HDLParsers" num="3402" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">370</arg>. Read symbol =, expecting &lt;= or := 
+</msg>
+
+<msg type="error" file="HDLParsers" num="164" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">372</arg>. <arg fmt="%s" index="3">parse error, unexpected IF, expecting PROCESS</arg>
+</msg>
+
+<msg type="error" file="HDLParsers" num="164" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">374</arg>. <arg fmt="%s" index="3">parse error, unexpected SEMICOLON, expecting COMMA or CLOSEPAR</arg>
+</msg>
+
+<msg type="error" file="HDLParsers" num="3402" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">377</arg>. Read symbol =, expecting &lt;= or := 
+</msg>
+
+<msg type="error" file="HDLParsers" num="164" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">379</arg>. <arg fmt="%s" index="3">parse error, unexpected IF, expecting PROCESS</arg>
+</msg>
+
+<msg type="error" file="HDLParsers" num="164" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">381</arg>. <arg fmt="%s" index="3">parse error, unexpected SEMICOLON, expecting COMMA or CLOSEPAR</arg>
+</msg>
+
+<msg type="error" file="HDLParsers" num="3402" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">384</arg>. Read symbol =, expecting &lt;= or := 
+</msg>
+
+<msg type="error" file="HDLParsers" num="164" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">386</arg>. <arg fmt="%s" index="3">parse error, unexpected IF, expecting PROCESS</arg>
+</msg>
+
+<msg type="error" file="HDLParsers" num="164" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">388</arg>. <arg fmt="%s" index="3">parse error, unexpected SEMICOLON, expecting COMMA or CLOSEPAR</arg>
+</msg>
+
+<msg type="error" file="HDLParsers" num="3402" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">391</arg>. Read symbol =, expecting &lt;= or := 
+</msg>
+
+<msg type="error" file="HDLParsers" num="164" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">393</arg>. <arg fmt="%s" index="3">parse error, unexpected IF, expecting PROCESS</arg>
+</msg>
+
+<msg type="error" file="HDLParsers" num="164" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">395</arg>. <arg fmt="%s" index="3">parse error, unexpected SEMICOLON, expecting COMMA or CLOSEPAR</arg>
+</msg>
+
+<msg type="error" file="HDLParsers" num="3402" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">398</arg>. Read symbol =, expecting &lt;= or := 
+</msg>
+
+<msg type="error" file="HDLParsers" num="164" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">400</arg>. <arg fmt="%s" index="3">parse error, unexpected IF, expecting PROCESS</arg>
+</msg>
+
+<msg type="error" file="HDLParsers" num="164" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">402</arg>. <arg fmt="%s" index="3">parse error, unexpected SEMICOLON, expecting COMMA or CLOSEPAR</arg>
+</msg>
+
+<msg type="error" file="HDLParsers" num="3402" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">405</arg>. Read symbol =, expecting &lt;= or := 
+</msg>
+
+<msg type="error" file="HDLParsers" num="164" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">407</arg>. <arg fmt="%s" index="3">parse error, unexpected IF, expecting PROCESS</arg>
+</msg>
+
+<msg type="error" file="HDLParsers" num="164" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">409</arg>. <arg fmt="%s" index="3">parse error, unexpected SEMICOLON, expecting COMMA or CLOSEPAR</arg>
+</msg>
+
+<msg type="error" file="HDLParsers" num="3402" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">412</arg>. Read symbol =, expecting &lt;= or := 
+</msg>
+
+<msg type="error" file="HDLParsers" num="164" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">414</arg>. <arg fmt="%s" index="3">parse error, unexpected IF, expecting PROCESS</arg>
+</msg>
+
+<msg type="error" file="HDLParsers" num="164" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">416</arg>. <arg fmt="%s" index="3">parse error, unexpected SEMICOLON, expecting COMMA or CLOSEPAR</arg>
+</msg>
+
+<msg type="error" file="HDLParsers" num="3402" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">419</arg>. Read symbol =, expecting &lt;= or := 
+</msg>
+
+<msg type="error" file="HDLParsers" num="164" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">421</arg>. <arg fmt="%s" index="3">parse error, unexpected IF, expecting PROCESS</arg>
+</msg>
+
+<msg type="error" file="HDLParsers" num="164" delta="old" >&quot;<arg fmt="%s" index="1">D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg.vhd</arg>&quot; Line <arg fmt="%d" index="2">423</arg>. <arg fmt="%s" index="3">parse error, unexpected PIPE, expecting THEN</arg>
+</msg>
+
+</messages>
+

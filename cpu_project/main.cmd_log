@@ -1,0 +1,2 @@
+xst -intstyle ise -ifn "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/main.xst" -ofn "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/main.syr" 
+xst -intstyle ise -ifn "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/main.xst" -ofn "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/main.syr" 

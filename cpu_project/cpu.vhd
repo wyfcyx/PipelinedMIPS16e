@@ -255,7 +255,7 @@ begin
 
 	dataselector_instance : dataselector port map(
 		-- in
-		Data => ID_EX_Rz_out & ID_EX_Ry_out & ID_EX_Rx_out & ID_EX_Immediate_out;
+		Data => ID_EX_Rz_out & ID_EX_Ry_out & ID_EX_Rx_out & ID_EX_Immediate_out,
 		DataSelectorInstruction => ID_EX_DataSelectorInstruction_out,
 		Index => ID_EX_Index_out,
 		ModifiedIndex => ID_EX_ModifiedIndex_out,
