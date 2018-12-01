@@ -160,6 +160,7 @@ set_data('JR', 'DataSelectorInstruction', '0001')
 set_data('LI', 'RegisterTarget', 'rx')
 set_data('LI', 'AluInstruction', 'AND')
 set_data('LI', 'DataSelectorInstruction', '0000')
+set_data('LI', 'BubbleNext', '001')
 
 set_data('LW', 'LFlag', '1')
 set_data('LW', 'RegisterTarget', 'ry')
