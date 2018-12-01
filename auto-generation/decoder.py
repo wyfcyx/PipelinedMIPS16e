@@ -417,10 +417,10 @@ begin
     output_instruction('NOP', f, ' ' * 12)
     f.write('''
             BranchForce <= '1';
-            BranchTarget <= PC0 + "%s";
+            BranchTarget <= PC0;
             BubbleNext <= Bubble + "111";
         else
-    ''' % ('1'*16, ))
+    ''')
     for ins in decoder['instruction']:
         output_full_instruction(ins, f, ' '*12)
     f.write('''
