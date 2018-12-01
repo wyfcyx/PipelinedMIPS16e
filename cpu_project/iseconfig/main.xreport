@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2018-12-02T02:16:56</DateModified>
+  <DateModified>2018-12-02T02:28:21</DateModified>
   <ModuleName>main</ModuleName>
-  <SummaryTimeStamp>2018-12-02T01:52:19</SummaryTimeStamp>
+  <SummaryTimeStamp>2018-12-02T02:18:06</SummaryTimeStamp>
   <SavedFilePath>D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/iseconfig/main.xreport</SavedFilePath>
   <ImplementationReportsDirectory>D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project\</ImplementationReportsDirectory>
   <DateInitialized>2018-11-28T16:33:36</DateInitialized>
