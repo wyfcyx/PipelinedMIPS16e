@@ -42,22 +42,22 @@ signal IH_in, IH_out : std_logic_vector(15 downto 0); -- r8
 signal reg_in, reg_out : std_logic_vector(127 downto 0); -- r0(15 downto 0), r1(31 downto 16), ...
 signal T_in, T_out : std_logic;
 -- Local Regs lock
-signal BranchPredict_in, BranchPredict_out : std_logic;
-signal PredictionFailed_in, PredictionFailed_out : std_logic;
+signal BranchPredict_in, BranchPredict_out : std_logic := '0';
+signal PredictionFailed_in, PredictionFailed_out : std_logic := '0';
 -- transfer signals
 signal DataA, DataB : std_logic_vector(15 downto 0);
-signal BranchForce, BranchConfirm, BranchFlag : std_logic;
-signal BranchTarget, BranchConfirmTarget : std_logic_vector(15 downto 0);
-signal BranchFlagForward : std_logic;
+signal BranchForce, BranchConfirm, BranchFlag : std_logic := '0';
+signal BranchTarget, BranchConfirmTarget : std_logic_vector(15 downto 0) := (others => '0');
+signal BranchFlagForward : std_logic := '0';
 signal Data : std_logic_vector(63 downto 0);
 -- IF/ID lock
 signal IF_ID_PC0_in, IF_ID_PC0_out : std_logic_vector(15 downto 0);
 signal IF_ID_Instruction_in, IF_ID_Instruction_out : std_logic_vector(15 downto 0);
-signal IF_ID_Bubble_in, IF_ID_Bubble_out : std_logic_vector(2 downto 0);
+signal IF_ID_Bubble_in, IF_ID_Bubble_out : std_logic_vector(2 downto 0) := "000";
 -- ID/EX lock
 signal ID_EX_LFlag_in, ID_EX_LFlag_out : std_logic;
 signal ID_EX_SFlag_in, ID_EX_SFlag_out : std_logic;
-signal ID_EX_BranchTargetAlu_in, ID_EX_BranchTargetAlu_out : std_logic_vector(15 downto 0);
+signal ID_EX_BranchTargetAlu_in, ID_EX_BranchTargetAlu_out : std_logic_vector(15 downto 0) := (others => '0');
 signal ID_EX_RegisterTarget_in, ID_EX_RegisterTarget_out : std_logic_vector(3 downto 0);
 signal ID_EX_AluInstruction_in, ID_EX_AluInstruction_out : std_logic_vector(3 downto 0);
 signal ID_EX_Immediate_in, ID_EX_Immediate_out : std_logic_vector(15 downto 0);
@@ -208,8 +208,11 @@ component memory is
 end component;
 begin
 	-- led-debug setting
-	led <= ID_EX_RegisterTarget_in & x"000";
-
+	led <= ID_EX_RegisterTarget_in & ID_EX_AluInstruction_in & ID_EX_DataSelectorInstruction_in & IF_ID_Bubble_in(1 downto 0);
+	--led <= IF_ID_Instruction_out;
+	--led <= IF_ID_Instruction_out(15 downto 8) & ID_EX_Immediate_in(3 downto 0) & IF_ID_PC0_out(3 downto 0);
+	--led <= ID_EX_RegisterTarget_in;
+	
 	-- register-forward routes
 	EX_MEM_LFlag_in <= ID_EX_LFlag_out;
 	EX_MEM_SFlag_in <= ID_EX_SFlag_out;
