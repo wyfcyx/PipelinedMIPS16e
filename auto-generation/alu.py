@@ -83,34 +83,34 @@ def output_alu(ins, f):
 
     if ins[0] == 'B' or ins in ('NOP', 'CMP', 'SLTU'):
         f.write('''
-        Result <= "%s";''' % ('0'*16, ))
+        Result0 <= "%s";''' % ('0'*16, ))
     elif ins == 'ADD':
         f.write('''
-        Result <= DataA + DataB;''')
+        Result0 <= DataA + DataB;''')
     elif ins == 'SUBU':
         f.write('''
-        Result <= DataA - DataB;''')
+        Result0 <= DataA - DataB;''')
     elif ins == 'AND':
         f.write('''
-        Result <= %s;''' % (' & '.join([
+        Result0 <= %s;''' % (' & '.join([
             '(DataA(%d) and DataB(%d))' %
             (x, x) for x in list(range(16))[::-1]
         ]), ))
     elif ins == 'OR':
         f.write('''
-        Result <= %s;''' % (' & '.join([
+        Result0 <= %s;''' % (' & '.join([
             '(DataA(%d) or DataB(%d))' %
             (x, x) for x in list(range(16))[::-1]
         ]),))
     elif ins == 'NEG':
         f.write('''
-        Result <= (not DataA(15 downto 0)) + 1;''' % (
+        Result0 <= (not DataA(15 downto 0)) + 1;''' % (
         ))
     elif ins == 'SLL':
         for i in range(8):
             f.write('''
         if (DataB(2 downto 0) = "%s") then
-            Result <= DataA(%d downto 0) & "%s";
+            Result0 <= DataA(%d downto 0) & "%s";
         end if;''' % (
                 ("000" + bin(i)[2:])[-3:], 7 if i == 0 else 15-i, '0' * (8 if i == 0 else i)
             ))
@@ -118,7 +118,7 @@ def output_alu(ins, f):
         for i in range(8):
             f.write('''
         if (DataB(2 downto 0) = "%s") then
-            Result <= %s & DataA(15 downto %d);
+            Result0 <= %s & DataA(15 downto %d);
         end if;''' % (
                 ("000" + bin(i)[2:])[-3:], ' & '.join(['DataA(15)', ] * (8 if i == 0 else i)),
                 8 if i == 0 else i
@@ -152,12 +152,13 @@ entity alu is
         Tout : out std_logic;
         Result: out std_logic_vector(15 downto 0);
         ModifiedIndex : out std_logic_vector(3 downto 0);
-        ModifiedValue : out std_logic_vector(15 downto 0);
+        ModifiedValue : out std_logic_vector(15 downto 0)
     );
 end alu;
 
 architecture bhv of alu is
 begin
+signal Result0 : std_logic_vector(15 downto 0);
 process(DataA, DataB, AluInstruction, T, BranchTargetAlu, RegisterTarget, ModifiedIndex_before, ModifiedValue_before)
 begin
     ''')
@@ -165,12 +166,13 @@ begin
         output_alu(ins, f)
     f.write('''
     
+    Result <= Result0;
     if (RegisterTarget == "1111") then
         ModifiedIndex <= ModifiedIndex_before;
         ModifiedValue <= ModifiedValue_before;
     else
         ModifiedIndex <= RegisterTarget;
-        ModifiedValue <= Result;
+        ModifiedValue <= Result0;
     end if;
 end process;
 end bhv;
