@@ -102,7 +102,7 @@ begin
             end if;
 
             -- ADDSP
-            if ((Instruction(0) = '1') and (Instruction(1) = '0') and (Instruction(8) = '1') and (Instruction(9) = '1') and (Instruction(10) = '0') and (Instruction(11) = '0') and (Instruction(12) = '0') and (Instruction(13) = '1') and (Instruction(14) = '1') and (Instruction(15) = '0')) then
+            if ((Instruction(8) = '1') and (Instruction(9) = '1') and (Instruction(10) = '0') and (Instruction(11) = '0') and (Instruction(12) = '0') and (Instruction(13) = '1') and (Instruction(14) = '1') and (Instruction(15) = '0')) then
                 LFlag <= '0';
                 SFlag <= '0';
                 BranchFlag <= '0';
@@ -112,13 +112,13 @@ begin
                 BranchTarget <= "0000000000000000";
                 RegisterTarget <= "1001";
                 AluInstruction <= "0001";
-                Immediate <= Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7 downto 1);
+                Immediate <= Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7 downto 0);
                 DataSelectorInstruction <= "001100";
                 BubbleNext <= "000";
             end if;
 
             -- ADDU
-            if ((Instruction(0) = '0') and (Instruction(1) = '0') and (Instruction(11) = '0') and (Instruction(12) = '0') and (Instruction(13) = '1') and (Instruction(14) = '1') and (Instruction(15) = '1')) then
+            if ((Instruction(0) = '1') and (Instruction(1) = '0') and (Instruction(11) = '0') and (Instruction(12) = '0') and (Instruction(13) = '1') and (Instruction(14) = '1') and (Instruction(15) = '1')) then
                 LFlag <= '0';
                 SFlag <= '0';
                 BranchFlag <= '0';
@@ -134,7 +134,7 @@ begin
             end if;
 
             -- AND
-            if ((Instruction(2) = '1') and (Instruction(3) = '1') and (Instruction(4) = '0') and (Instruction(11) = '1') and (Instruction(12) = '0') and (Instruction(13) = '1') and (Instruction(14) = '1') and (Instruction(15) = '1')) then
+            if ((Instruction(0) = '0') and (Instruction(1) = '0') and (Instruction(2) = '1') and (Instruction(3) = '1') and (Instruction(4) = '0') and (Instruction(11) = '1') and (Instruction(12) = '0') and (Instruction(13) = '1') and (Instruction(14) = '1') and (Instruction(15) = '1')) then
                 LFlag <= '0';
                 SFlag <= '0';
                 BranchFlag <= '0';
@@ -144,7 +144,7 @@ begin
                 BranchTarget <= "0000000000000000";
                 RegisterTarget <= "0" & Instruction(10 downto 8);
                 AluInstruction <= "0101";
-                Immediate <= Instruction(1) & Instruction(1) & Instruction(1) & Instruction(1) & Instruction(1) & Instruction(1) & Instruction(1) & Instruction(1) & Instruction(1) & Instruction(1) & Instruction(1) & Instruction(1) & Instruction(1) & Instruction(1) & Instruction(1 downto 0);
+                Immediate <= "0000000000000000";
                 DataSelectorInstruction <= "100100";
                 BubbleNext <= "000";
             end if;
