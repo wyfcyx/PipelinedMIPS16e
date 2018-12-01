@@ -44,7 +44,7 @@ begin
         BranchTarget <= "0000000000000000";
         RegisterTarget <= "1111";
         AluInstruction <= "0000";
-        Immediate <= "0000000000000000";
+        Immediate <= "1011011011011011";
         DataSelectorInstruction <= "000000";
         BubbleNext <= "000";
 
@@ -57,7 +57,7 @@ begin
 
             BranchTargetAlu <= "0000000000000000";
             BranchTarget <= "0000000000000000";
-            RegisterTarget <= "1111";
+            RegisterTarget <= "1110";
             AluInstruction <= "0000";
             Immediate <= "0000000000000000";
             DataSelectorInstruction <= "000000";
