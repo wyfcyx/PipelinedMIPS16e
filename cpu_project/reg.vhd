@@ -454,6 +454,10 @@ begin
             reg_after(111 downto 96) <= Data(15 downto 0);
         end if;
                 
+        if (Target(3 downto 0) = "0111") then
+            reg_after(127 downto 112) <= Data(15 downto 0);
+        end if;
+                
         if (Target(3 downto 0) = "1001") then
             SP_after(15 downto 0) <= Data(15 downto 0);
         end if;

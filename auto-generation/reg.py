@@ -27,7 +27,7 @@ reg={
 }
 
 def writereg(f):
-    for i in range(7):
+    for i in range(8):
         f.write('''
         if (Target(3 downto 0) = "%s") then
             reg_after(%d downto %d) <= Data(15 downto 0);
@@ -45,8 +45,6 @@ def writereg(f):
         end if;
 
             ''')
-
-
 
 def Rz(index,f):
     #判断是不是特殊情况
