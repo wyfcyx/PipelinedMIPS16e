@@ -26,11 +26,11 @@ reg={
 def writereg(f):
     for i in range(7):
         f.write('''
-        if (Target(3 downto 0) = "%s") then
+        if (Target(2 downto 0) = "%s") then
             reg_after(%d downto %d) <= Data(15 downto 0);
         end if;
                 '''%(
-                    '{:04b}'.format(i),i*16+15,i*16
+                    '{:03b}'.format(i),i*16+15,i*16
                 ))
 
 
@@ -60,7 +60,7 @@ def Rz(index,f):
                 Rz <= reg_before(31 downto 16);
                 index(11 downto 8) <= "%s";
             else
-                Rz<= reg_before(15 downto 0);
+                Rz<= PC0;
                 index(11 downto 8) <= "%s";
             end if;
             '''%(

@@ -57,7 +57,7 @@ begin
                 Rz <= reg_before(31 downto 16);
                 index(11 downto 8) <= "1000";
             else
-                Rz<= reg_before(15 downto 0);
+                Rz<= PC0;
                 index(11 downto 8) <= "1000";
             end if;
             
@@ -92,7 +92,7 @@ begin
                 Rz <= reg_before(31 downto 16);
                 index(11 downto 8) <= "1001";
             else
-                Rz<= reg_before(15 downto 0);
+                Rz<= PC0;
                 index(11 downto 8) <= "1001";
             end if;
             
@@ -127,7 +127,7 @@ begin
                 Rz <= reg_before(31 downto 16);
                 index(11 downto 8) <= "1010";
             else
-                Rz<= reg_before(15 downto 0);
+                Rz<= PC0;
                 index(11 downto 8) <= "1010";
             end if;
             
@@ -162,7 +162,7 @@ begin
                 Rz <= reg_before(31 downto 16);
                 index(11 downto 8) <= "1011";
             else
-                Rz<= reg_before(15 downto 0);
+                Rz<= PC0;
                 index(11 downto 8) <= "1011";
             end if;
             
@@ -197,7 +197,7 @@ begin
                 Rz <= reg_before(31 downto 16);
                 index(11 downto 8) <= "1100";
             else
-                Rz<= reg_before(15 downto 0);
+                Rz<= PC0;
                 index(11 downto 8) <= "1100";
             end if;
             
@@ -232,7 +232,7 @@ begin
                 Rz <= reg_before(31 downto 16);
                 index(11 downto 8) <= "1101";
             else
-                Rz<= reg_before(15 downto 0);
+                Rz<= PC0;
                 index(11 downto 8) <= "1101";
             end if;
             
@@ -267,7 +267,7 @@ begin
                 Rz <= reg_before(31 downto 16);
                 index(11 downto 8) <= "1110";
             else
-                Rz<= reg_before(15 downto 0);
+                Rz<= PC0;
                 index(11 downto 8) <= "1110";
             end if;
             
@@ -302,7 +302,7 @@ begin
                 Rz <= reg_before(31 downto 16);
                 index(11 downto 8) <= "1111";
             else
-                Rz<= reg_before(15 downto 0);
+                Rz<= PC0;
                 index(11 downto 8) <= "1111";
             end if;
             
@@ -426,31 +426,31 @@ begin
         end if;
 
             
-        if (Target(3 downto 0) = "0000") then
+        if (Target(2 downto 0) = "000") then
             reg_after(15 downto 0) <= Data(15 downto 0);
         end if;
                 
-        if (Target(3 downto 0) = "0001") then
+        if (Target(2 downto 0) = "001") then
             reg_after(31 downto 16) <= Data(15 downto 0);
         end if;
                 
-        if (Target(3 downto 0) = "0010") then
+        if (Target(2 downto 0) = "010") then
             reg_after(47 downto 32) <= Data(15 downto 0);
         end if;
                 
-        if (Target(3 downto 0) = "0011") then
+        if (Target(2 downto 0) = "011") then
             reg_after(63 downto 48) <= Data(15 downto 0);
         end if;
                 
-        if (Target(3 downto 0) = "0100") then
+        if (Target(2 downto 0) = "100") then
             reg_after(79 downto 64) <= Data(15 downto 0);
         end if;
                 
-        if (Target(3 downto 0) = "0101") then
+        if (Target(2 downto 0) = "101") then
             reg_after(95 downto 80) <= Data(15 downto 0);
         end if;
                 
-        if (Target(3 downto 0) = "0110") then
+        if (Target(2 downto 0) = "110") then
             reg_after(111 downto 96) <= Data(15 downto 0);
         end if;
                 
