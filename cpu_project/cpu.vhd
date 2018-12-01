@@ -208,7 +208,7 @@ component memory is
 end component;
 begin
 	-- led-debug setting
-	led <= MEM_WB_WriteInData_in;
+	led <= DataA;
 
 	-- register-forward routes
 	EX_MEM_LFlag_in <= ID_EX_LFlag_out;
