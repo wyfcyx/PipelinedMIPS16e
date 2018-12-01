@@ -23,6 +23,17 @@ reg={
     ]
 }
 
+def writereg(f):
+    for i in range(15):
+        f.write('''
+        if (Target(3 downto 0) = "%s") then
+            reg_after(%d downto %d) <= Data(15 downto 0);
+        end if;
+                '''%(
+                    '{:04b}'.format(i),i*16+15,i*16
+                ))
+
+
 def Rz(index,f):
     #判断是不是特殊情况
     f.write('''
@@ -116,10 +127,12 @@ begin
         R(i,f);
     f.write('''
         if Target(3 downto 0) < 15 then
-            --不是输出
+            -- 不是输出
             led(15 downto 0)<=Data(15 downto 0);
         end if;
+
             ''')
+    writereg(f)
     f.write('''
 end process;
 end bhv;

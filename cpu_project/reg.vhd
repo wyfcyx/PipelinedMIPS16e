@@ -30,7 +30,7 @@ begin
     
         if (Instruction(4 downto 2) = "000") then
 
-                flag2 <= "00"; --初始�
+                flag2 <= "00"; --初始化
             
                 if (Instruction(15 downto 11) = "10010") then
                     flag1 <= '1'; --存在特殊情况
@@ -65,7 +65,7 @@ begin
                 
         if (Instruction(4 downto 2) = "001") then
 
-                flag2 <= "00"; --初始�
+                flag2 <= "00"; --初始化
             
                 if (Instruction(15 downto 11) = "10010") then
                     flag1 <= '1'; --存在特殊情况
@@ -100,7 +100,7 @@ begin
                 
         if (Instruction(4 downto 2) = "010") then
 
-                flag2 <= "00"; --初始�
+                flag2 <= "00"; --初始化
             
                 if (Instruction(15 downto 11) = "10010") then
                     flag1 <= '1'; --存在特殊情况
@@ -135,7 +135,7 @@ begin
                 
         if (Instruction(4 downto 2) = "011") then
 
-                flag2 <= "00"; --初始�
+                flag2 <= "00"; --初始化
             
                 if (Instruction(15 downto 11) = "10010") then
                     flag1 <= '1'; --存在特殊情况
@@ -170,7 +170,7 @@ begin
                 
         if (Instruction(4 downto 2) = "100") then
 
-                flag2 <= "00"; --初始�
+                flag2 <= "00"; --初始化
             
                 if (Instruction(15 downto 11) = "10010") then
                     flag1 <= '1'; --存在特殊情况
@@ -205,7 +205,7 @@ begin
                 
         if (Instruction(4 downto 2) = "101") then
 
-                flag2 <= "00"; --初始�
+                flag2 <= "00"; --初始化
             
                 if (Instruction(15 downto 11) = "10010") then
                     flag1 <= '1'; --存在特殊情况
@@ -240,7 +240,7 @@ begin
                 
         if (Instruction(4 downto 2) = "110") then
 
-                flag2 <= "00"; --初始�
+                flag2 <= "00"; --初始化
             
                 if (Instruction(15 downto 11) = "10010") then
                     flag1 <= '1'; --存在特殊情况
@@ -275,7 +275,7 @@ begin
                 
         if (Instruction(4 downto 2) = "111") then
 
-                flag2 <= "00"; --初始�
+                flag2 <= "00"; --初始化
             
                 if (Instruction(15 downto 11) = "10010") then
                     flag1 <= '1'; --存在特殊情况
@@ -421,9 +421,70 @@ begin
         end if;
                 
         if Target(3 downto 0) < 15 then
-            --不是输出
+            -- 不是输出
             led(15 downto 0)<=Data(15 downto 0);
         end if;
+
             
+        if (Target(3 downto 0) = "0000") then
+            reg_after(15 downto 0) <= Data(15 downto 0);
+        end if;
+                
+        if (Target(3 downto 0) = "0001") then
+            reg_after(31 downto 16) <= Data(15 downto 0);
+        end if;
+                
+        if (Target(3 downto 0) = "0010") then
+            reg_after(47 downto 32) <= Data(15 downto 0);
+        end if;
+                
+        if (Target(3 downto 0) = "0011") then
+            reg_after(63 downto 48) <= Data(15 downto 0);
+        end if;
+                
+        if (Target(3 downto 0) = "0100") then
+            reg_after(79 downto 64) <= Data(15 downto 0);
+        end if;
+                
+        if (Target(3 downto 0) = "0101") then
+            reg_after(95 downto 80) <= Data(15 downto 0);
+        end if;
+                
+        if (Target(3 downto 0) = "0110") then
+            reg_after(111 downto 96) <= Data(15 downto 0);
+        end if;
+                
+        if (Target(3 downto 0) = "0111") then
+            reg_after(127 downto 112) <= Data(15 downto 0);
+        end if;
+                
+        if (Target(3 downto 0) = "1000") then
+            reg_after(143 downto 128) <= Data(15 downto 0);
+        end if;
+                
+        if (Target(3 downto 0) = "1001") then
+            reg_after(159 downto 144) <= Data(15 downto 0);
+        end if;
+                
+        if (Target(3 downto 0) = "1010") then
+            reg_after(175 downto 160) <= Data(15 downto 0);
+        end if;
+                
+        if (Target(3 downto 0) = "1011") then
+            reg_after(191 downto 176) <= Data(15 downto 0);
+        end if;
+                
+        if (Target(3 downto 0) = "1100") then
+            reg_after(207 downto 192) <= Data(15 downto 0);
+        end if;
+                
+        if (Target(3 downto 0) = "1101") then
+            reg_after(223 downto 208) <= Data(15 downto 0);
+        end if;
+                
+        if (Target(3 downto 0) = "1110") then
+            reg_after(239 downto 224) <= Data(15 downto 0);
+        end if;
+                
 end process;
 end bhv;
