@@ -213,7 +213,8 @@ begin
 	--led <= IF_ID_Instruction_out(15 downto 8) & ID_EX_Immediate_in(3 downto 0) & IF_ID_PC0_out(3 downto 0);
 	--led <= ID_EX_RegisterTarget_in;
 	-- led <= led_reg;
-	led <= ID_EX_AluInstruction_in(3 downto 0) & ID_EX_Rx_in(3 downto 0) & EX_MEM_AluResult_in(3 downto 0) & DataA(3 downto 0);
+	--led <= ID_EX_AluInstruction_in(3 downto 0) & ID_EX_Rx_in(3 downto 0) & EX_MEM_AluResult_in(3 downto 0) & DataA(3 downto 0);
+	led <= IF_ID_Bubble_out(2 downto 0) & IF_ID_Instruction_out(15 downto 11) & IF_ID_PC0_out(3 downto 0) & ID_EX_AluInstruction_in(3 downto 0);
 	
 	-- register-forward routes
 	EX_MEM_LFlag_in <= ID_EX_LFlag_out;
