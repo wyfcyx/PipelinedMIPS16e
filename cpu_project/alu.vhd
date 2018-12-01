@@ -131,25 +131,25 @@ begin
             Result <= DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15 downto 8);
         end if;
         if (DataB(2 downto 0) = "001") then
-            Result <= DataA(15) & DataA(15 downto 14);
+            Result <= DataA(15) & DataA(15 downto 1);
         end if;
         if (DataB(2 downto 0) = "010") then
-            Result <= DataA(15) & DataA(15) & DataA(15 downto 13);
+            Result <= DataA(15) & DataA(15) & DataA(15 downto 2);
         end if;
         if (DataB(2 downto 0) = "011") then
-            Result <= DataA(15) & DataA(15) & DataA(15) & DataA(15 downto 12);
+            Result <= DataA(15) & DataA(15) & DataA(15) & DataA(15 downto 3);
         end if;
         if (DataB(2 downto 0) = "100") then
-            Result <= DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15 downto 11);
+            Result <= DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15 downto 4);
         end if;
         if (DataB(2 downto 0) = "101") then
-            Result <= DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15 downto 10);
+            Result <= DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15 downto 5);
         end if;
         if (DataB(2 downto 0) = "110") then
-            Result <= DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15 downto 9);
+            Result <= DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15 downto 6);
         end if;
         if (DataB(2 downto 0) = "111") then
-            Result <= DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15 downto 8);
+            Result <= DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15 downto 7);
         end if;
     end if;
     

@@ -23,7 +23,7 @@ end PCSelector;
 
 architecture bhv of PCSelector is
 begin
-process(PC0, BranchPredict, BranchFlag, BranchForce, BranchTarget, BranchFlagForward, BranchConfirm, BranchTargetConfirm)
+process(BranchPredict, BranchFlag, BranchForce, BranchTarget, BranchFlagForward, BranchConfirm, BranchTargetConfirm)
 begin
     PC0 <= PC + 2;
     if ((BranchForce = '1') or (BranchFlagForward = '0' and BranchFlag = '1')) then

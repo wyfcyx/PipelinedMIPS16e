@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7
+# Build 321239 by xbuild on Fri Sep 27 19:31:35 MDT 2013
+# Start of session at: Fri Nov 30 20:29:20 2018
+# Process ID: 13220
+# Log file: D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/planAhead_run_3/planAhead.log
+# Journal file: D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/planAhead_run_3/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/pa.fromNetlist.tcl
+startgroup
+set_property package_pin B8 [get_ports clk_scan]
+endgroup
+save_constraints

@@ -7,10 +7,9 @@ entity cpu is
 	port(
 		-- pipeline clock
 		clk : in std_logic;
-		-- pipeline is started
-		started : in std_logic;
 		-- scan clock
 		clk_scan : in std_logic;
+		reset : in std_logic;
 		-- data mem
 		Ram1Data : inout std_logic_vector(15 downto 0);
 		Ram1Addr : out std_logic_vector(15 downto 0);
@@ -20,14 +19,24 @@ entity cpu is
 		Ram2Data : inout std_logic_vector(15 downto 0);
 		Ram2Addr : out std_logic_vector(15 downto 0);
 		Ram2OE, Ram2WE, Ram2EN : out std_logic;
+		-- flash
+		flashByte : out std_logic;
+		flashVpen : out std_logic;
+		flashCE : out std_logic;
+		flashOE : out std_logic;
+		flashWE : out std_logic;
+		flashRP : out std_logic;
+		flashAddr : out std_logic_vector(22 downto 1);
+		flashData : inout std_logic_vector(15 downto 0);
 		-- debug data output
-		led : out std_logic_vector(15 downto 0)
+		led : out std_logic_vector(15 downto 0);
+		started : out std_logic
 	);
 end cpu;
 
 architecture bhv of cpu is 
 -- Global Regs lock
-signal PC_in, PC_out : std_logic_vector(15 downto 0); -- r10
+signal PC_in, PC_out : std_logic_vector(15 downto 0) := (others => '0'); -- r10
 signal SP_in, SP_out : std_logic_vector(15 downto 0); -- r9
 signal IH_in, IH_out : std_logic_vector(15 downto 0); -- r8
 signal reg_in, reg_out : std_logic_vector(127 downto 0); -- r0(15 downto 0), r1(31 downto 16), ...
@@ -37,8 +46,10 @@ signal BranchPredict_in, BranchPredict_out : std_logic;
 signal PredictionFailed_in, PredictionFailed_out : std_logic;
 -- transfer signals
 signal DataA, DataB : std_logic_vector(15 downto 0);
-signal BranchTarget, BranchForce, BranchConfirm, BranchConfirmTarget : std_logic;
+signal BranchForce, BranchConfirm, BranchFlag : std_logic;
+signal BranchTarget, BranchConfirmTarget : std_logic_vector(15 downto 0);
 signal BranchFlagForward : std_logic;
+signal Data : std_logic_vector(63 downto 0);
 -- IF/ID lock
 signal IF_ID_PC0_in, IF_ID_PC0_out : std_logic_vector(15 downto 0);
 signal IF_ID_Instruction_in, IF_ID_Instruction_out : std_logic_vector(15 downto 0);
@@ -66,7 +77,10 @@ signal EX_MEM_DataS_in, EX_MEM_DataS_out : std_logic_vector(15 downto 0);
 -- MEM/WB lock
 signal MEM_WB_RegisterTarget_in, MEM_WB_RegisterTarget_out : std_logic_vector(3 downto 0);
 signal MEM_WB_WriteInData_in, MEM_WB_WriteInData_out : std_logic_vector(15 downto 0);
-
+-- debug led
+signal led_reg : std_logic_vector(15 downto 0);
+signal led_test : std_logic_vector(15 downto 0) := (others => '0');
+signal led_memory : std_logic_vector(15 downto 0);
 -- Components
 component decoder is
 	port(
@@ -75,6 +89,7 @@ component decoder is
 		Bubble : in std_logic_vector(2 downto 0);
 		Instruction : in std_logic_vector(15 downto 0);
 		BranchPredict : in std_logic;
+		reg : in std_logic_vector(127 downto 0);
 
 		LFlag : out std_logic;
 		SFlag : out std_logic;
@@ -121,22 +136,21 @@ end component;
 
 component alu is
 	port(
-		BranchFlag : in std_logic;
 		DataA, DataB : in std_logic_vector(15 downto 0);
 		AluInstruction : in std_logic_vector(3 downto 0);
-		T_before : in std_logic;
+		T : in std_logic;
 		BranchTargetAlu : in std_logic_vector(15 downto 0);
 		BranchFlagForward : out std_logic;
 		BranchConfirm : out std_logic;
-		BranchTargetConfirm : out std_logic;
-		T_after : out std_logic;
+		BranchTargetConfirm : out std_logic_vector(15 downto 0);
+		Tout : out std_logic;
 		Result : out std_logic_vector(15 downto 0)
 	);
 end component;
 
 component pcselector is
 	port(
-		PC0 : in std_logic_vector(15 downto 0);
+		PC : in std_logic_vector(15 downto 0);
 		BranchPredict : in std_logic;
 		BranchFlag : in std_logic;
 		BranchForce : in std_logic;
@@ -145,6 +159,7 @@ component pcselector is
 		BranchConfirm : in std_logic;
 		BranchTargetConfirm : in std_logic_vector(15 downto 0);
 		
+		PC0 : out std_logic_vector(15 downto 0);
 		PCNext : out std_logic_vector(15 downto 0);
 		PredictionFailed : out std_logic;
 		BranchPredictNext : out std_logic
@@ -159,9 +174,9 @@ component memory is
 		DataS : in std_logic_vector(15 downto 0);
 		InstructionAddress : in std_logic_vector(15 downto 0);
 		clk : in std_logic;
-		started : in std_logic;
 		clk_scan : in std_logic;
-
+		reset : in std_logic;
+		
 		Result : out std_logic_vector(15 downto 0);
 		InstructionResult : out std_logic_vector(15 downto 0);
 
@@ -174,10 +189,27 @@ component memory is
 		-- instruction mem
 		Ram2Data : inout std_logic_vector(15 downto 0);
 		Ram2Addr : out std_logic_vector(15 downto 0);
-		Ram2OE, Ram2WE, Ram2EN : out std_logic
+		Ram2OE, Ram2WE, Ram2EN : out std_logic;
+		
+		-- flash
+		flashByte : out std_logic;
+		flashVpen : out std_logic;
+		flashCE : out std_logic;
+		flashOE : out std_logic;
+		flashWE : out std_logic;
+		flashRP : out std_logic;
+		flashAddr : out std_logic_vector(22 downto 1);
+		flashData : inout std_logic_vector(15 downto 0);
+		
+		-- led
+		led : out std_logic_vector(15 downto 0);
+		started : out std_logic
 	);
 end component;
 begin
+	-- led-debug setting
+	led <= led_memory;
+
 	-- register-forward routes
 	EX_MEM_LFlag_in <= ID_EX_LFlag_out;
 	EX_MEM_SFlag_in <= ID_EX_SFlag_out;
@@ -196,8 +228,8 @@ begin
 		InstructionResult => IF_ID_Instruction_in,
 		-- ram & comm
 		clk => clk,
-		started => started,
 		clk_scan => clk_scan,
+		reset => reset,
 		Ram1Data => Ram1Data,
 		Ram1Addr => Ram1Addr,
 		Ram1OE => Ram1OE,
@@ -212,7 +244,17 @@ begin
 		Ram2Addr => Ram2Addr,
 		Ram2OE => Ram2OE,
 		Ram2WE => Ram2WE,
-		Ram2EN => Ram2EN
+		Ram2EN => Ram2EN,
+		flashByte => flashByte,
+		flashVpen => flashVpen,
+		flashCE => flashCE,
+		flashOE => flashOE,
+		flashWE => flashWE,
+		flashRP => flashRP,
+		flashAddr => flashAddr,
+		flashData => flashData,
+		led => led_memory,
+		started => started
 	);
 	
 	decoder_instance : decoder port map(
@@ -250,12 +292,13 @@ begin
 		reg_after => reg_in,
 		Rx => ID_EX_Rx_in, Ry => ID_EX_Ry_in, Rz => ID_EX_Rz_in,
 		Index => ID_EX_Index_in,
-		led => led
+		led => led_reg
 	);
 
+	Data <= (ID_EX_Rz_out & ID_EX_Ry_out & ID_EX_Rx_out & ID_EX_Immediate_out);
 	dataselector_instance : dataselector port map(
 		-- in
-		Data => ID_EX_Rz_out & ID_EX_Ry_out & ID_EX_Rx_out & ID_EX_Immediate_out,
+		Data => Data,
 		DataSelectorInstruction => ID_EX_DataSelectorInstruction_out,
 		Index => ID_EX_Index_out,
 		ModifiedIndex => ID_EX_ModifiedIndex_out,
@@ -274,9 +317,9 @@ begin
 		T => T_out,
 		BranchTargetAlu => ID_EX_BranchTargetAlu_out,
 		-- out
-        BranchFlagForward => BranchFlagForward,
+      BranchFlagForward => BranchFlagForward,
 		BranchConfirm => BranchConfirm,
-		BranchConfirmTarget => BranchConfirmTarget,
+		BranchTargetConfirm => BranchConfirmTarget,
 		Tout => T_in,
 		Result => EX_MEM_AluResult_in
 	);
@@ -290,9 +333,9 @@ begin
 		BranchTarget => BranchTarget,
 		BranchFlagForward => BranchFlagForward,
 		BranchConfirm => BranchConfirm,
-		BranchConfirmTarget => BranchConfirmTarget,
+		BranchTargetConfirm => BranchConfirmTarget,
 		-- out
-        PC0 => IF_ID_PC0_in,
+      	PC0 => IF_ID_PC0_in,
 		PCNext => PC_in,
 		PredictionFailed => PredictionFailed_in,
 		BranchPredictNext => BranchPredict_in
@@ -302,7 +345,10 @@ begin
     
 	process (clk)
 	begin
-		if (clk'event and clk = '1') then
+		if (clk'event and clk = '0') then
+			-- led debug-area
+			led_test <= led_test + 1;
+			-- led debug-area
 			PC_out <= PC_in;
 			SP_out <= SP_in;
 			IH_out <= IH_in;

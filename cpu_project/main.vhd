@@ -10,7 +10,7 @@ entity main is
 		-- scan clock
 		clk_scan : in std_logic;
 		-- start button
-		start : in std_logic;
+		reset : in std_logic;
 		-- data mem
 		Ram1Data : inout std_logic_vector(15 downto 0);
 		Ram1Addr : out std_logic_vector(15 downto 0);
@@ -20,8 +20,18 @@ entity main is
 		Ram2Data : inout std_logic_vector(15 downto 0);
 		Ram2Addr : out std_logic_vector(15 downto 0);
 		Ram2OE, Ram2WE, Ram2EN : out std_logic;
+		-- flash
+		flashByte : out std_logic;
+		flashVpen : out std_logic;
+		flashCE : out std_logic;
+		flashOE : out std_logic;
+		flashWE : out std_logic;
+		flashRP : out std_logic;
+		flashAddr : out std_logic_vector(22 downto 1);
+		flashData : inout std_logic_vector(15 downto 0);
 		-- debug data output
-		led : out std_logic_vector(15 downto 0)
+		led : out std_logic_vector(15 downto 0);
+		started : out std_logic
 	);
 end main;
 
@@ -32,6 +42,7 @@ component cpu is
 		clk : in std_logic;
 		-- scan clock
 		clk_scan : in std_logic;
+		reset : in std_logic;
 		-- data mem
 		Ram1Data : inout std_logic_vector(15 downto 0);
 		Ram1Addr : out std_logic_vector(15 downto 0);
@@ -41,23 +52,29 @@ component cpu is
 		Ram2Data : inout std_logic_vector(15 downto 0);
 		Ram2Addr : out std_logic_vector(15 downto 0);
 		Ram2OE, Ram2WE, Ram2EN : out std_logic;
+		-- flash
+		flashByte : out std_logic;
+		flashVpen : out std_logic;
+		flashCE : out std_logic;
+		flashOE : out std_logic;
+		flashWE : out std_logic;
+		flashRP : out std_logic;
+		flashAddr : out std_logic_vector(22 downto 1);
+		flashData : inout std_logic_vector(15 downto 0);
 		-- debug data output
-		led : out std_logic_vector(15 downto 0)
+		led : out std_logic_vector(15 downto 0);
+		started : out std_logic
 	);
 end component;
-signal started : std_logic := '0';
-
+signal led_cpu : std_logic_vector(15 downto 0);
+signal gen_clk_scan : std_logic;
+signal gen_scan_count : std_logic_vector(31 downto 0) := (others => '0');
 begin
-	process (start)
-	begin
-		if (start = '0') then
-			started <= '1';
-		end if;
-	end process;
+	led <= led_cpu;
 	cpu_instance : cpu port map(
-		clk => clk and started,
-		started => started,
+		clk => clk,
 		clk_scan => clk_scan,
+		reset => reset,
 		Ram1Data => Ram1Data,
 		Ram1Addr => Ram1Addr,
 		Ram1WE => Ram1WE,
@@ -73,7 +90,27 @@ begin
 		Ram2WE => Ram2WE,
 		Ram2OE => Ram2OE,
 		Ram2EN => Ram2EN,
-		led => led
+		flashByte => flashByte,
+		flashVpen => flashVpen,
+		flashCE => flashCE,
+		flashOE => flashOE,
+		flashWE => flashWE,
+		flashRP => flashRP,
+		flashAddr => flashAddr,
+		flashData => flashData,
+		led => led_cpu,
+		started => started
 	);
+	process (clk_scan)
+	begin
+		if (clk_scan'event and clk_scan = '1') then
+			if (gen_scan_count = 1000000) then
+				gen_scan_count <= (others => '0');
+				gen_clk_scan <= not gen_clk_scan;
+			else
+				gen_scan_count <= gen_scan_count + 1;
+			end if;
+		end if;
+	end process;
 end bhv;
 
