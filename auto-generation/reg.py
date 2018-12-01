@@ -20,18 +20,32 @@ reg={
     ],
     'sindex':[
         9,8,10
+    ],
+    'sbit15-11':[
+        '1001','1000','1010'
     ]
 }
 
 def writereg(f):
     for i in range(7):
         f.write('''
-        if (Target(2 downto 0) = "%s") then
+        if (Target(3 downto 0) = "%s") then
             reg_after(%d downto %d) <= Data(15 downto 0);
         end if;
                 '''%(
-                    '{:03b}'.format(i),i*16+15,i*16
+                    '{:04b}'.format(i),i*16+15,i*16
                 ))
+    f.write('''
+        if (Target(3 downto 0) = "1001") then
+            SP_after(15 downto 0) <= Data(15 downto 0);
+        end if;
+
+        if (Target(3 downto 0) = "1000") then
+            IH_after <= Data(15 downto 0);
+        end if;
+
+            ''')
+
 
 
 def Rz(index,f):
@@ -48,23 +62,22 @@ def Rz(index,f):
                     flag2 <= "%s"; --临时标记
                 end if;
                 '''%(reg['bit15-11'][cur],'{:02b}'.format(i+1)))
-    t='1'+'{:03b}'.format(index)
     f.write('''
             if flag2 = "00" then --正常情况
                 Rz <= reg_before(%d downto %d);
                 index(11 downto 8) <= "%s";
             elsif  flag2 = "01" then
-                Rz <= reg_before(47 downto 32);
+                Rz <= SP_before;
                 index(11 downto 8) <= "%s";
             elsif flag2 = "10" then
-                Rz <= reg_before(31 downto 16);
+                Rz <= IH_before;
                 index(11 downto 8) <= "%s";
             else
                 Rz<= PC0;
                 index(11 downto 8) <= "%s";
             end if;
             '''%(
-                index*16+15,index*16,'{:04b}'.format(index),t,t,t
+                index*16+15,index*16,'{:04b}'.format(index),reg['sbit15-11'][0],reg['sbit15-11'][1],reg['sbit15-11'][2]
             ))
 def R(index,f):
     cur=['z','y','x']

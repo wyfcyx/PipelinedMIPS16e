@@ -51,14 +51,14 @@ begin
                 Rz <= reg_before(15 downto 0);
                 index(11 downto 8) <= "0000";
             elsif  flag2 = "01" then
-                Rz <= reg_before(47 downto 32);
-                index(11 downto 8) <= "1000";
+                Rz <= SP_before;
+                index(11 downto 8) <= "1001";
             elsif flag2 = "10" then
-                Rz <= reg_before(31 downto 16);
+                Rz <= IH_before;
                 index(11 downto 8) <= "1000";
             else
                 Rz<= PC0;
-                index(11 downto 8) <= "1000";
+                index(11 downto 8) <= "1010";
             end if;
             
         end if;
@@ -86,14 +86,14 @@ begin
                 Rz <= reg_before(31 downto 16);
                 index(11 downto 8) <= "0001";
             elsif  flag2 = "01" then
-                Rz <= reg_before(47 downto 32);
+                Rz <= SP_before;
                 index(11 downto 8) <= "1001";
             elsif flag2 = "10" then
-                Rz <= reg_before(31 downto 16);
-                index(11 downto 8) <= "1001";
+                Rz <= IH_before;
+                index(11 downto 8) <= "1000";
             else
                 Rz<= PC0;
-                index(11 downto 8) <= "1001";
+                index(11 downto 8) <= "1010";
             end if;
             
         end if;
@@ -121,11 +121,11 @@ begin
                 Rz <= reg_before(47 downto 32);
                 index(11 downto 8) <= "0010";
             elsif  flag2 = "01" then
-                Rz <= reg_before(47 downto 32);
-                index(11 downto 8) <= "1010";
+                Rz <= SP_before;
+                index(11 downto 8) <= "1001";
             elsif flag2 = "10" then
-                Rz <= reg_before(31 downto 16);
-                index(11 downto 8) <= "1010";
+                Rz <= IH_before;
+                index(11 downto 8) <= "1000";
             else
                 Rz<= PC0;
                 index(11 downto 8) <= "1010";
@@ -156,14 +156,14 @@ begin
                 Rz <= reg_before(63 downto 48);
                 index(11 downto 8) <= "0011";
             elsif  flag2 = "01" then
-                Rz <= reg_before(47 downto 32);
-                index(11 downto 8) <= "1011";
+                Rz <= SP_before;
+                index(11 downto 8) <= "1001";
             elsif flag2 = "10" then
-                Rz <= reg_before(31 downto 16);
-                index(11 downto 8) <= "1011";
+                Rz <= IH_before;
+                index(11 downto 8) <= "1000";
             else
                 Rz<= PC0;
-                index(11 downto 8) <= "1011";
+                index(11 downto 8) <= "1010";
             end if;
             
         end if;
@@ -191,14 +191,14 @@ begin
                 Rz <= reg_before(79 downto 64);
                 index(11 downto 8) <= "0100";
             elsif  flag2 = "01" then
-                Rz <= reg_before(47 downto 32);
-                index(11 downto 8) <= "1100";
+                Rz <= SP_before;
+                index(11 downto 8) <= "1001";
             elsif flag2 = "10" then
-                Rz <= reg_before(31 downto 16);
-                index(11 downto 8) <= "1100";
+                Rz <= IH_before;
+                index(11 downto 8) <= "1000";
             else
                 Rz<= PC0;
-                index(11 downto 8) <= "1100";
+                index(11 downto 8) <= "1010";
             end if;
             
         end if;
@@ -226,14 +226,14 @@ begin
                 Rz <= reg_before(95 downto 80);
                 index(11 downto 8) <= "0101";
             elsif  flag2 = "01" then
-                Rz <= reg_before(47 downto 32);
-                index(11 downto 8) <= "1101";
+                Rz <= SP_before;
+                index(11 downto 8) <= "1001";
             elsif flag2 = "10" then
-                Rz <= reg_before(31 downto 16);
-                index(11 downto 8) <= "1101";
+                Rz <= IH_before;
+                index(11 downto 8) <= "1000";
             else
                 Rz<= PC0;
-                index(11 downto 8) <= "1101";
+                index(11 downto 8) <= "1010";
             end if;
             
         end if;
@@ -261,14 +261,14 @@ begin
                 Rz <= reg_before(111 downto 96);
                 index(11 downto 8) <= "0110";
             elsif  flag2 = "01" then
-                Rz <= reg_before(47 downto 32);
-                index(11 downto 8) <= "1110";
+                Rz <= SP_before;
+                index(11 downto 8) <= "1001";
             elsif flag2 = "10" then
-                Rz <= reg_before(31 downto 16);
-                index(11 downto 8) <= "1110";
+                Rz <= IH_before;
+                index(11 downto 8) <= "1000";
             else
                 Rz<= PC0;
-                index(11 downto 8) <= "1110";
+                index(11 downto 8) <= "1010";
             end if;
             
         end if;
@@ -296,14 +296,14 @@ begin
                 Rz <= reg_before(127 downto 112);
                 index(11 downto 8) <= "0111";
             elsif  flag2 = "01" then
-                Rz <= reg_before(47 downto 32);
-                index(11 downto 8) <= "1111";
+                Rz <= SP_before;
+                index(11 downto 8) <= "1001";
             elsif flag2 = "10" then
-                Rz <= reg_before(31 downto 16);
-                index(11 downto 8) <= "1111";
+                Rz <= IH_before;
+                index(11 downto 8) <= "1000";
             else
                 Rz<= PC0;
-                index(11 downto 8) <= "1111";
+                index(11 downto 8) <= "1010";
             end if;
             
         end if;
@@ -426,33 +426,42 @@ begin
         end if;
 
             
-        if (Target(2 downto 0) = "000") then
+        if (Target(3 downto 0) = "0000") then
             reg_after(15 downto 0) <= Data(15 downto 0);
         end if;
                 
-        if (Target(2 downto 0) = "001") then
+        if (Target(3 downto 0) = "0001") then
             reg_after(31 downto 16) <= Data(15 downto 0);
         end if;
                 
-        if (Target(2 downto 0) = "010") then
+        if (Target(3 downto 0) = "0010") then
             reg_after(47 downto 32) <= Data(15 downto 0);
         end if;
                 
-        if (Target(2 downto 0) = "011") then
+        if (Target(3 downto 0) = "0011") then
             reg_after(63 downto 48) <= Data(15 downto 0);
         end if;
                 
-        if (Target(2 downto 0) = "100") then
+        if (Target(3 downto 0) = "0100") then
             reg_after(79 downto 64) <= Data(15 downto 0);
         end if;
                 
-        if (Target(2 downto 0) = "101") then
+        if (Target(3 downto 0) = "0101") then
             reg_after(95 downto 80) <= Data(15 downto 0);
         end if;
                 
-        if (Target(2 downto 0) = "110") then
+        if (Target(3 downto 0) = "0110") then
             reg_after(111 downto 96) <= Data(15 downto 0);
         end if;
                 
+        if (Target(3 downto 0) = "1001") then
+            SP_after(15 downto 0) <= Data(15 downto 0);
+        end if;
+
+        if (Target(3 downto 0) = "1000") then
+            IH_after <= Data(15 downto 0);
+        end if;
+
+            
 end process;
 end bhv;
