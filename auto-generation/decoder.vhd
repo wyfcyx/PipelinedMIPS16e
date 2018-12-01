@@ -64,7 +64,7 @@ begin
             BubbleNext <= "000";
 
             BranchForce <= '1';
-            BranchTarget <= PC0;
+            BranchTarget <= PC0 + "1111111111111111";
             BubbleNext <= Bubble + "111";
         else
     

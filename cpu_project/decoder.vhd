@@ -44,7 +44,7 @@ begin
         BranchTarget <= "0000000000000000";
         RegisterTarget <= "1111";
         AluInstruction <= "0000";
-        Immediate <= "1011011011011011";
+        Immediate <= "0000000000000000";
         DataSelectorInstruction <= "000000";
         BubbleNext <= "000";
 
@@ -57,14 +57,14 @@ begin
 
             BranchTargetAlu <= "0000000000000000";
             BranchTarget <= "0000000000000000";
-            RegisterTarget <= "1110";
+            RegisterTarget <= "1111";
             AluInstruction <= "0000";
             Immediate <= "0000000000000000";
             DataSelectorInstruction <= "000000";
             BubbleNext <= "000";
 
             BranchForce <= '1';
-            BranchTarget <= PC0;
+            BranchTarget <= PC0 + "1111111111111111";
             BubbleNext <= Bubble + "111";
         else
     
