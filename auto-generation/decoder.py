@@ -368,6 +368,10 @@ def output_instruction(ins, f, tabs):
     f.write('%sDataSelectorInstruction <= "%s";\n' % (tabs, (get_data(ins, 'DataSelectorInstruction')
                                                       + "00")[:6]))
     f.write('%sBubbleNext <= "%s";\n' % (tabs, get_data(ins, 'BubbleNext')))
+    if get_data(ins, 'BubbleNext') != "000":
+        f.write('%sBranchForce <= \'1\';\n%sBranchTarget <= PC0 + "%s";\n' % (
+            tabs, tabs, '1'*16
+        ))
 
 
 with open("decoder.vhd", 'w', encoding='utf-8') as f:
@@ -416,8 +420,10 @@ begin
     ''' % (' or '.join(["(Bubble(%d) = '1')" % i for i in range(3)])))
     output_instruction('NOP', f, ' ' * 12)
     f.write('''
-            BranchForce <= '1';
-            BranchTarget <= PC0 + "%s";
+            if ((Bubble(0) = '1') or (Bubble(1) = '1')) then
+                BranchForce <= '1';
+                BranchTarget <= PC0 + "%s";
+            end if;
             BubbleNext <= Bubble + "111";
         else
     ''' % ('1'*16, ))

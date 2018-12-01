@@ -63,8 +63,10 @@ begin
             DataSelectorInstruction <= "000000";
             BubbleNext <= "000";
 
-            BranchForce <= '1';
-            BranchTarget <= PC0 + "1111111111111111";
+            if ((Bubble(0) = '1') or (Bubble(1) = '1')) then
+                BranchForce <= '1';
+                BranchTarget <= PC0 + "1111111111111111";
+            end if;
             BubbleNext <= Bubble + "111";
         else
     
@@ -342,6 +344,8 @@ begin
                 Immediate <= "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & Instruction(7 downto 0);
                 DataSelectorInstruction <= "000000";
                 BubbleNext <= "001";
+                BranchForce <= '1';
+                BranchTarget <= PC0 + "1111111111111111";
             end if;
 
             -- LW
@@ -358,6 +362,8 @@ begin
                 Immediate <= Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4 downto 0);
                 DataSelectorInstruction <= "000100";
                 BubbleNext <= "001";
+                BranchForce <= '1';
+                BranchTarget <= PC0 + "1111111111111111";
             end if;
 
             -- LW_SP
@@ -374,6 +380,8 @@ begin
                 Immediate <= Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7 downto 0);
                 DataSelectorInstruction <= "001100";
                 BubbleNext <= "001";
+                BranchForce <= '1';
+                BranchTarget <= PC0 + "1111111111111111";
             end if;
 
             -- MFIH
