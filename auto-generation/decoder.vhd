@@ -343,7 +343,7 @@ begin
                 AluInstruction <= "0101";
                 Immediate <= "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & Instruction(7 downto 0);
                 DataSelectorInstruction <= "000000";
-                BubbleNext <= "011";
+                BubbleNext <= "001";
                 BranchForce <= '1';
                 BranchTarget <= PC0;
             end if;
@@ -361,7 +361,7 @@ begin
                 AluInstruction <= "0001";
                 Immediate <= Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4 downto 0);
                 DataSelectorInstruction <= "000001";
-                BubbleNext <= "011";
+                BubbleNext <= "001";
                 BranchForce <= '1';
                 BranchTarget <= PC0;
             end if;
@@ -379,7 +379,7 @@ begin
                 AluInstruction <= "0001";
                 Immediate <= Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7 downto 0);
                 DataSelectorInstruction <= "000011";
-                BubbleNext <= "011";
+                BubbleNext <= "001";
                 BranchForce <= '1';
                 BranchTarget <= PC0;
             end if;

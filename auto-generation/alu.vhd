@@ -11,18 +11,23 @@ entity alu is
         AluInstruction : in std_logic_vector(3 downto 0);
         T : in std_logic;
         BranchTargetAlu : in std_logic_vector(15 downto 0);
+        RegisterTarget : in std_logic_vector(3 downto 0);
+        ModifiedIndex_before : in std_logic_vector(3 downto 0);
+        ModifiedValue_before : in std_logic_vector(15 downto 0);
 
         BranchFlagForward : out std_logic;
         BranchConfirm : out std_logic;
         BranchTargetConfirm : out std_logic_vector(15 downto 0);
         Tout : out std_logic;
-        Result: out std_logic_vector(15 downto 0)
+        Result: out std_logic_vector(15 downto 0);
+        ModifiedIndex : out std_logic_vector(3 downto 0);
+        ModifiedValue : out std_logic_vector(15 downto 0);
     );
 end alu;
 
 architecture bhv of alu is
 begin
-process(DataA, DataB, AluInstruction, T, BranchTargetAlu)
+process(DataA, DataB, AluInstruction, T, BranchTargetAlu, RegisterTarget, ModifiedIndex_before, ModifiedValue_before)
 begin
     
     
@@ -214,6 +219,14 @@ begin
         BranchTargetConfirm <= BranchTargetAlu;
         Tout <= T;
         Result <= "0000000000000000";
+    end if;
+    
+    if (RegisterTarget == "1111") then
+        ModifiedIndex <= ModifiedIndex_before;
+        ModifiedValue <= ModifiedValue_before;
+    else
+        ModifiedIndex <= RegisterTarget;
+        ModifiedValue <= Result;
     end if;
 end process;
 end bhv;
