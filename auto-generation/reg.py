@@ -24,7 +24,7 @@ reg={
 }
 
 def writereg(f):
-    for i in range(15):
+    for i in range(7):
         f.write('''
         if (Target(3 downto 0) = "%s") then
             reg_after(%d downto %d) <= Data(15 downto 0);

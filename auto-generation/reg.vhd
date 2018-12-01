@@ -454,37 +454,5 @@ begin
             reg_after(111 downto 96) <= Data(15 downto 0);
         end if;
                 
-        if (Target(3 downto 0) = "0111") then
-            reg_after(127 downto 112) <= Data(15 downto 0);
-        end if;
-                
-        if (Target(3 downto 0) = "1000") then
-            reg_after(143 downto 128) <= Data(15 downto 0);
-        end if;
-                
-        if (Target(3 downto 0) = "1001") then
-            reg_after(159 downto 144) <= Data(15 downto 0);
-        end if;
-                
-        if (Target(3 downto 0) = "1010") then
-            reg_after(175 downto 160) <= Data(15 downto 0);
-        end if;
-                
-        if (Target(3 downto 0) = "1011") then
-            reg_after(191 downto 176) <= Data(15 downto 0);
-        end if;
-                
-        if (Target(3 downto 0) = "1100") then
-            reg_after(207 downto 192) <= Data(15 downto 0);
-        end if;
-                
-        if (Target(3 downto 0) = "1101") then
-            reg_after(223 downto 208) <= Data(15 downto 0);
-        end if;
-                
-        if (Target(3 downto 0) = "1110") then
-            reg_after(239 downto 224) <= Data(15 downto 0);
-        end if;
-                
 end process;
 end bhv;
