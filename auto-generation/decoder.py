@@ -157,7 +157,6 @@ set_data('JR', 'AluInstruction', 'B')
 set_data('JR', 'DataSelectorInstruction', '0001')
 
 # LI操作直接对两个立即数取与，返回本身作为Address
-set_data('LI', 'LFlag', '1')
 set_data('LI', 'RegisterTarget', 'rx')
 set_data('LI', 'AluInstruction', 'AND')
 set_data('LI', 'DataSelectorInstruction', '0000')
@@ -263,7 +262,7 @@ def output_full_instruction(ins, f, tabs):
     # 判定条件
     f.write("%sif (%s) then\n" % (tabs, ' and '.join([
         ('(Instruction(%s) = \'%s\')' % (str(i), get_ins_bit(ins, i)))
-        for i in range(16) if get_ins_bit(ins, i) in '01'
+        for i in range(16) if get_ins_bit(ins, i) in '01' and not (ins == 'NOP' and get_ins_bit(ins, i) == '1')
     ])))
     output_instruction(ins, f, tabs + ' '*4)
     f.write("%send if;" % tabs)

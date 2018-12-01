@@ -65,7 +65,7 @@ signal r1Trigger : std_logic_vector(17 downto 0) := (others => '1');
 signal r2Trigger : std_logic_vector(15 downto 0) := (others => '1');
 signal curAddr : std_logic_vector(15 downto 0) := (others => '0');
 signal curData : std_logic_vector(15 downto 0);
-signal instructions : std_logic_vector(15 downto 0) := x"0008";
+signal instructions : std_logic_vector(15 downto 0) := x"4000";
 type FlashToRamState is (
 	waiting, read1, read2, read3, read4, writeToRam, done, readTest
 );
@@ -94,7 +94,7 @@ begin
 	flashRP <= '1';
 	flashCE <= '0';
 	started <= startedCache;
-	led <= InstructionAddress;
+	--led <= InstructionAddress;
 	process (LFlag, SFlag, startedCache, clk_scan, clk, reset)
 	begin
 		if (reset = '0') then
@@ -128,7 +128,7 @@ begin
 						r2State <= read2;
 					when read2 =>
 						InstructionResult <= Ram2Data;
-						--led <= Ram2Data;
+						led <= Ram2Data;
 						r2State <= done;
 					when done =>
 					when others =>
@@ -145,6 +145,7 @@ begin
 						elsif (SFlag = '1') then
 							r1State <= write1;
 						else
+							Result <= Address;
 							r1State <= done;
 						end if;
 					when read1 =>
