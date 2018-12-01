@@ -65,7 +65,7 @@ signal r1Trigger : std_logic_vector(17 downto 0) := (others => '1');
 signal r2Trigger : std_logic_vector(15 downto 0) := (others => '1');
 signal curAddr : std_logic_vector(15 downto 0) := (others => '0');
 signal curData : std_logic_vector(15 downto 0);
-signal instructions : std_logic_vector(15 downto 0) := x"0008";
+signal instructions : std_logic_vector(15 downto 0) := x"4000";
 type FlashToRamState is (
 	waiting, read1, read2, read3, read4, writeToRam, done, readTest
 );

@@ -174,8 +174,6 @@ Analyzing Entity <alu> in library <work> (Architecture <bhv>).
 Entity <alu> analyzed. Unit <alu> generated.
 
 Analyzing Entity <pcselector> in library <work> (Architecture <bhv>).
-WARNING:Xst:819 - "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/pcselector.vhd" line 26: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
-   <PC>
 Entity <pcselector> analyzed. Unit <pcselector> generated.
 
 
@@ -193,7 +191,7 @@ WARNING:Xst:2563 - Inout <tsre> is never assigned. Tied to value Z.
 WARNING:Xst:2563 - Inout <rdn> is never assigned. Tied to value Z.
 WARNING:Xst:2563 - Inout <wrn> is never assigned. Tied to value Z.
 WARNING:Xst:2563 - Inout <dataReady> is never assigned. Tied to value Z.
-WARNING:Xst:653 - Signal <instructions> is used but never assigned. This sourceless signal will be automatically connected to value 0000000000001000.
+WARNING:Xst:653 - Signal <instructions> is used but never assigned. This sourceless signal will be automatically connected to value 0100000000000000.
 INFO:Xst:1799 - State write1 is never reached in FSM <r2State>.
     Found finite state machine <FSM_0> for signal <state>.
     -----------------------------------------------------------------------
@@ -752,22 +750,22 @@ WARNING:Xst:638 - in unit memory Conflict on KEEP property on signal Mtridata_fl
 WARNING:Xst:638 - in unit memory Conflict on KEEP property on signal Mtridata_flashData<0> and Mtridata_flashData<5> Mtridata_flashData<5> signal will be lost.
 WARNING:Xst:638 - in unit memory Conflict on KEEP property on signal Mtridata_flashData<0> and Mtridata_flashData<6> Mtridata_flashData<6> signal will be lost.
 WARNING:Xst:638 - in unit memory Conflict on KEEP property on signal Mtridata_flashData<0> and Mtridata_flashData<7> Mtridata_flashData<7> signal will be lost.
-WARNING:Xst:2170 - Unit alu : the following signal(s) form a combinatorial loop: Result<8>.
-WARNING:Xst:2170 - Unit alu : the following signal(s) form a combinatorial loop: Result<2>.
+WARNING:Xst:2170 - Unit alu : the following signal(s) form a combinatorial loop: Result<0>.
 WARNING:Xst:2170 - Unit alu : the following signal(s) form a combinatorial loop: Result<10>.
+WARNING:Xst:2170 - Unit alu : the following signal(s) form a combinatorial loop: Result<6>.
 WARNING:Xst:2170 - Unit alu : the following signal(s) form a combinatorial loop: Result<3>.
 WARNING:Xst:2170 - Unit alu : the following signal(s) form a combinatorial loop: Result<15>.
-WARNING:Xst:2170 - Unit alu : the following signal(s) form a combinatorial loop: Result<4>.
-WARNING:Xst:2170 - Unit alu : the following signal(s) form a combinatorial loop: Result<14>.
-WARNING:Xst:2170 - Unit alu : the following signal(s) form a combinatorial loop: Result<12>.
-WARNING:Xst:2170 - Unit alu : the following signal(s) form a combinatorial loop: Result<11>.
-WARNING:Xst:2170 - Unit alu : the following signal(s) form a combinatorial loop: Result<6>.
-WARNING:Xst:2170 - Unit alu : the following signal(s) form a combinatorial loop: Result<13>.
-WARNING:Xst:2170 - Unit alu : the following signal(s) form a combinatorial loop: Result<1>.
-WARNING:Xst:2170 - Unit alu : the following signal(s) form a combinatorial loop: Result<5>.
 WARNING:Xst:2170 - Unit alu : the following signal(s) form a combinatorial loop: Result<7>.
-WARNING:Xst:2170 - Unit alu : the following signal(s) form a combinatorial loop: Result<0>.
+WARNING:Xst:2170 - Unit alu : the following signal(s) form a combinatorial loop: Result<14>.
+WARNING:Xst:2170 - Unit alu : the following signal(s) form a combinatorial loop: Result<8>.
+WARNING:Xst:2170 - Unit alu : the following signal(s) form a combinatorial loop: Result<12>.
+WARNING:Xst:2170 - Unit alu : the following signal(s) form a combinatorial loop: Result<5>.
+WARNING:Xst:2170 - Unit alu : the following signal(s) form a combinatorial loop: Result<4>.
+WARNING:Xst:2170 - Unit alu : the following signal(s) form a combinatorial loop: Result<1>.
+WARNING:Xst:2170 - Unit alu : the following signal(s) form a combinatorial loop: Result<2>.
 WARNING:Xst:2170 - Unit alu : the following signal(s) form a combinatorial loop: Result<9>.
+WARNING:Xst:2170 - Unit alu : the following signal(s) form a combinatorial loop: Result<13>.
+WARNING:Xst:2170 - Unit alu : the following signal(s) form a combinatorial loop: Result<11>.
 
 Optimizing unit <main> ...
 
@@ -1079,9 +1077,9 @@ WARNING:Xst:638 - in unit main Conflict on KEEP property on signal cpu_instance/
 WARNING:Xst:638 - in unit main Conflict on KEEP property on signal cpu_instance/memory_instance/Mtridata_Ram1Data<10> and cpu_instance/memory_instance/Mtridata_Ram1Data<13> cpu_instance/memory_instance/Mtridata_Ram1Data<13> signal will be lost.
 WARNING:Xst:638 - in unit main Conflict on KEEP property on signal cpu_instance/memory_instance/Mtridata_Ram1Data<10> and cpu_instance/memory_instance/Mtridata_Ram1Data<14> cpu_instance/memory_instance/Mtridata_Ram1Data<14> signal will be lost.
 WARNING:Xst:638 - in unit main Conflict on KEEP property on signal cpu_instance/memory_instance/Mtridata_Ram1Data<10> and cpu_instance/memory_instance/Mtridata_Ram1Data<15> cpu_instance/memory_instance/Mtridata_Ram1Data<15> signal will be lost.
-FlipFlop cpu_instance/ID_EX_DataSelectorInstruction_out_0 has been replicated 2 time(s)
-FlipFlop cpu_instance/ID_EX_DataSelectorInstruction_out_1 has been replicated 2 time(s)
-FlipFlop cpu_instance/ID_EX_DataSelectorInstruction_out_2 has been replicated 1 time(s)
+FlipFlop cpu_instance/ID_EX_DataSelectorInstruction_out_0 has been replicated 1 time(s)
+FlipFlop cpu_instance/ID_EX_DataSelectorInstruction_out_1 has been replicated 1 time(s)
+FlipFlop cpu_instance/ID_EX_DataSelectorInstruction_out_2 has been replicated 2 time(s)
 FlipFlop cpu_instance/ID_EX_DataSelectorInstruction_out_3 has been replicated 1 time(s)
 FlipFlop cpu_instance/PC_out_15 has been replicated 1 time(s) to handle iob=true attribute.
 FlipFlop cpu_instance/PC_out_14 has been replicated 1 time(s) to handle iob=true attribute.
@@ -1111,8 +1109,8 @@ Unit <main> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 321
- Flip-Flops                                            : 321
+# Registers                                            : 320
+ Flip-Flops                                            : 320
 # Shift Registers                                      : 2
  2-bit shift register                                  : 2
 
@@ -1143,24 +1141,24 @@ Design Statistics
 # IOs                              : 139
 
 Cell Usage :
-# BELS                             : 1374
+# BELS                             : 1376
 #      GND                         : 1
 #      INV                         : 24
-#      LUT1                        : 67
-#      LUT2                        : 52
+#      LUT1                        : 68
+#      LUT2                        : 54
 #      LUT2_L                      : 2
-#      LUT3                        : 273
+#      LUT3                        : 275
 #      LUT3_D                      : 22
-#      LUT3_L                      : 8
-#      LUT4                        : 517
-#      LUT4_D                      : 8
+#      LUT3_L                      : 6
+#      LUT4                        : 515
+#      LUT4_D                      : 7
 #      LUT4_L                      : 46
-#      MUXCY                       : 167
+#      MUXCY                       : 168
 #      MUXF5                       : 59
 #      VCC                         : 1
-#      XORCY                       : 127
-# FlipFlops/Latches                : 399
-#      FD_1                        : 126
+#      XORCY                       : 128
+# FlipFlops/Latches                : 398
+#      FD_1                        : 125
 #      FDCE                        : 23
 #      FDE                         : 155
 #      FDPE                        : 3
@@ -1185,8 +1183,8 @@ Device utilization summary:
 
 Selected Device : 3s1200efg320-4 
 
- Number of Slices:                      565  out of   8672     6%  
- Number of Slice Flip Flops:            383  out of  17344     2%  
+ Number of Slices:                      566  out of   8672     6%  
+ Number of Slice Flip Flops:            382  out of  17344     2%  
  Number of 4 input LUTs:               1021  out of  17344     5%  
     Number used as logic:              1019
     Number used as Shift registers:       2
@@ -1217,7 +1215,7 @@ Clock Information:
 Clock Signal                                                                                              | Clock buffer(FF name)                                 | Load  |
 ----------------------------------------------------------------------------------------------------------+-------------------------------------------------------+-------+
 clk_scan                                                                                                  | BUFGP                                                 | 181   |
-clk                                                                                                       | BUFGP                                                 | 144   |
+clk                                                                                                       | BUFGP                                                 | 143   |
 cpu_instance/decoder_instance/BranchTarget_and00001(cpu_instance/decoder_instance/BranchTarget_and00001:O)| BUFG(*)(cpu_instance/decoder_instance/BranchTarget_15)| 56    |
 cpu_instance/IF_ID_Instruction_out_15                                                                     | NONE(cpu_instance/decoder_instance/SFlag)             | 4     |
 cpu_instance/pcselector_instance/PCNext_or0000(cpu_instance/pcselector_instance/PCNext_or00001:O)         | NONE(*)(cpu_instance/pcselector_instance/PCNext_15)   | 16    |
@@ -1391,7 +1389,7 @@ Timing Summary:
 ---------------
 Speed Grade: -4
 
-   Minimum period: 9.372ns (Maximum Frequency: 106.701MHz)
+   Minimum period: 9.252ns (Maximum Frequency: 108.085MHz)
    Minimum input arrival time before clock: 5.076ns
    Maximum output required time after clock: 5.131ns
    Maximum combinational path delay: No path found
@@ -1402,10 +1400,10 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk_scan'
-  Clock period: 8.626ns (frequency: 115.929MHz)
+  Clock period: 8.567ns (frequency: 116.727MHz)
   Total number of paths / destination ports: 3940 / 283
 -------------------------------------------------------------------------
-Delay:               8.626ns (Levels of Logic = 16)
+Delay:               8.567ns (Levels of Logic = 15)
   Source:            cpu_instance/memory_instance/curAddr_1 (FF)
   Destination:       cpu_instance/memory_instance/curAddr_0 (FF)
   Source Clock:      clk_scan rising
@@ -1427,44 +1425,48 @@ Delay:               8.626ns (Levels of Logic = 16)
      MUXCY:CI->O           1   0.059   0.000  cpu_instance/memory_instance/Madd_state_add0000_cy<8> (cpu_instance/memory_instance/Madd_state_add0000_cy<8>)
      MUXCY:CI->O           1   0.059   0.000  cpu_instance/memory_instance/Madd_state_add0000_cy<9> (cpu_instance/memory_instance/Madd_state_add0000_cy<9>)
      MUXCY:CI->O           1   0.059   0.000  cpu_instance/memory_instance/Madd_state_add0000_cy<10> (cpu_instance/memory_instance/Madd_state_add0000_cy<10>)
-     MUXCY:CI->O           1   0.059   0.000  cpu_instance/memory_instance/Madd_state_add0000_cy<11> (cpu_instance/memory_instance/Madd_state_add0000_cy<11>)
-     XORCY:CI->O           1   0.804   0.455  cpu_instance/memory_instance/Madd_state_add0000_xor<12> (cpu_instance/memory_instance/state_add0000<12>)
-     LUT3:I2->O            2   0.704   0.451  cpu_instance/memory_instance/state_cmp_eq000016 (cpu_instance/memory_instance/state_cmp_eq000016)
-     LUT4_D:I3->LO         1   0.704   0.104  cpu_instance/memory_instance/state_cmp_eq000083_SW0 (N546)
+     XORCY:CI->O           2   0.804   0.482  cpu_instance/memory_instance/Madd_state_add0000_xor<11> (cpu_instance/memory_instance/state_add0000<11>)
+     LUT3:I2->O            1   0.704   0.424  cpu_instance/memory_instance/state_cmp_eq000036 (cpu_instance/memory_instance/state_cmp_eq000036)
+     LUT4_D:I3->LO         1   0.704   0.104  cpu_instance/memory_instance/state_cmp_eq000083_SW0 (N564)
      LUT4:I3->O           16   0.704   1.034  cpu_instance/memory_instance/curAddr_not00011 (cpu_instance/memory_instance/curAddr_not0001)
      FDCE:CE                   0.555          cpu_instance/memory_instance/curAddr_0
     ----------------------------------------
-    Total                      8.626ns (5.820ns logic, 2.806ns route)
-                                       (67.5% logic, 32.5% route)
+    Total                      8.567ns (5.761ns logic, 2.806ns route)
+                                       (67.2% logic, 32.8% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 9.372ns (frequency: 106.701MHz)
-  Total number of paths / destination ports: 4960 / 64
+  Clock period: 9.252ns (frequency: 108.085MHz)
+  Total number of paths / destination ports: 4866 / 64
 -------------------------------------------------------------------------
-Delay:               9.372ns (Levels of Logic = 8)
-  Source:            cpu_instance/ID_EX_Immediate_out_15 (FF)
+Delay:               9.252ns (Levels of Logic = 13)
+  Source:            cpu_instance/ID_EX_DataSelectorInstruction_out_3 (FF)
   Destination:       cpu_instance/T_out (FF)
   Source Clock:      clk falling
   Destination Clock: clk falling
 
-  Data Path: cpu_instance/ID_EX_Immediate_out_15 to cpu_instance/T_out
+  Data Path: cpu_instance/ID_EX_DataSelectorInstruction_out_3 to cpu_instance/T_out
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD_1:C->Q            18   0.591   1.243  cpu_instance/ID_EX_Immediate_out_15 (cpu_instance/ID_EX_Immediate_out_15)
-     LUT3_D:I0->O         12   0.704   0.965  cpu_instance/dataselector_instance/Mmux_DataB_2_f5_5 (cpu_instance/DataB<15>)
-     LUT4:I3->O            1   0.704   0.000  cpu_instance/alu_instance/Tout_and0000_wg_lut<6> (cpu_instance/alu_instance/Tout_and0000_wg_lut<6>)
-     MUXCY:S->O            1   0.464   0.000  cpu_instance/alu_instance/Tout_and0000_wg_cy<6> (cpu_instance/alu_instance/Tout_and0000_wg_cy<6>)
+     FD_1:C->Q            19   0.591   1.089  cpu_instance/ID_EX_DataSelectorInstruction_out_3 (cpu_instance/ID_EX_DataSelectorInstruction_out_3)
+     LUT4:I3->O            6   0.704   0.704  cpu_instance/alu_instance/Tout_and0000_wg_lut<1>_SW0 (N291)
+     LUT3:I2->O            1   0.704   0.000  cpu_instance/alu_instance/Tout_and0000_wg_lut<1> (cpu_instance/alu_instance/Tout_and0000_wg_lut<1>)
+     MUXCY:S->O            1   0.464   0.000  cpu_instance/alu_instance/Tout_and0000_wg_cy<1> (cpu_instance/alu_instance/Tout_and0000_wg_cy<1>)
+     MUXCY:CI->O           1   0.059   0.000  cpu_instance/alu_instance/Tout_and0000_wg_cy<2> (cpu_instance/alu_instance/Tout_and0000_wg_cy<2>)
+     MUXCY:CI->O           1   0.059   0.000  cpu_instance/alu_instance/Tout_and0000_wg_cy<3> (cpu_instance/alu_instance/Tout_and0000_wg_cy<3>)
+     MUXCY:CI->O           1   0.059   0.000  cpu_instance/alu_instance/Tout_and0000_wg_cy<4> (cpu_instance/alu_instance/Tout_and0000_wg_cy<4>)
+     MUXCY:CI->O           1   0.059   0.000  cpu_instance/alu_instance/Tout_and0000_wg_cy<5> (cpu_instance/alu_instance/Tout_and0000_wg_cy<5>)
+     MUXCY:CI->O           1   0.059   0.000  cpu_instance/alu_instance/Tout_and0000_wg_cy<6> (cpu_instance/alu_instance/Tout_and0000_wg_cy<6>)
      MUXCY:CI->O           1   0.459   0.424  cpu_instance/alu_instance/Tout_and0000_wg_cy<7> (cpu_instance/alu_instance/Tout_and0000)
      LUT4:I3->O            2   0.704   0.482  cpu_instance/alu_instance/Mmux_Tout_7 (cpu_instance/alu_instance/Mmux_Tout_7)
-     LUT3:I2->O            1   0.704   0.000  cpu_instance/alu_instance/Mmux_Tout_6_SW1_F (N349)
-     MUXF5:I0->O           1   0.321   0.595  cpu_instance/alu_instance/Mmux_Tout_6_SW1 (N252)
+     LUT3:I2->O            1   0.704   0.000  cpu_instance/alu_instance/Mmux_Tout_6_SW1_F (N362)
+     MUXF5:I0->O           1   0.321   0.595  cpu_instance/alu_instance/Mmux_Tout_6_SW1 (N250)
      LUT3:I0->O            1   0.704   0.000  cpu_instance/alu_instance/AluInstruction<3>11 (cpu_instance/T_in)
      FD_1:D                    0.308          cpu_instance/T_out
     ----------------------------------------
-    Total                      9.372ns (5.663ns logic, 3.709ns route)
-                                       (60.4% logic, 39.6% route)
+    Total                      9.252ns (5.958ns logic, 3.294ns route)
+                                       (64.4% logic, 35.6% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_scan'
@@ -1527,14 +1529,14 @@ Offset:              4.283ns (Levels of Logic = 1)
 =========================================================================
 
 
-Total REAL time to Xst completion: 39.00 secs
-Total CPU time to Xst completion: 39.37 secs
+Total REAL time to Xst completion: 37.00 secs
+Total CPU time to Xst completion: 37.35 secs
  
 --> 
 
-Total memory usage is 4617236 kilobytes
+Total memory usage is 4617300 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  506 (   0 filtered)
+Number of warnings :  505 (   0 filtered)
 Number of infos    :   31 (   0 filtered)
 
