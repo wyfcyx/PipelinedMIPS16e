@@ -404,7 +404,7 @@ end decoder;
 
 architecture bhv of decoder is
 begin
-process(PC0, Bubble) --新进入语句或者PC改变或者气泡减少
+process(PC0, Bubble, ForceNop, Instruction, BranchPredict)
 begin
     -- 判断是否因为预测失败强制解析为NOP
     if (ForceNop = '1') then
