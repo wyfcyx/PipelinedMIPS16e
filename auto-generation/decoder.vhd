@@ -341,7 +341,7 @@ begin
                 AluInstruction <= "0101";
                 Immediate <= "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & Instruction(7 downto 0);
                 DataSelectorInstruction <= "000000";
-                BubbleNext <= "001";
+                BubbleNext <= "000";
             end if;
 
             -- LW
