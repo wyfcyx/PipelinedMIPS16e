@@ -83,7 +83,7 @@ begin
                 RegisterTarget <= "0" & Instruction(10 downto 8);
                 AluInstruction <= "0001";
                 Immediate <= Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7 downto 0);
-                DataSelectorInstruction <= "000100";
+                DataSelectorInstruction <= "000001";
                 BubbleNext <= "000";
             end if;
 
@@ -99,7 +99,7 @@ begin
                 RegisterTarget <= "0" & Instruction(7 downto 5);
                 AluInstruction <= "0001";
                 Immediate <= Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4 downto 0);
-                DataSelectorInstruction <= "000100";
+                DataSelectorInstruction <= "000001";
                 BubbleNext <= "000";
             end if;
 
@@ -115,7 +115,7 @@ begin
                 RegisterTarget <= "1001";
                 AluInstruction <= "0001";
                 Immediate <= Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7 downto 0);
-                DataSelectorInstruction <= "001100";
+                DataSelectorInstruction <= "000011";
                 BubbleNext <= "000";
             end if;
 
@@ -131,7 +131,7 @@ begin
                 RegisterTarget <= "0" & Instruction(4 downto 2);
                 AluInstruction <= "0001";
                 Immediate <= "0000000000000000";
-                DataSelectorInstruction <= "100100";
+                DataSelectorInstruction <= "001001";
                 BubbleNext <= "000";
             end if;
 
@@ -147,7 +147,7 @@ begin
                 RegisterTarget <= "0" & Instruction(10 downto 8);
                 AluInstruction <= "0101";
                 Immediate <= "0000000000000000";
-                DataSelectorInstruction <= "100100";
+                DataSelectorInstruction <= "001001";
                 BubbleNext <= "000";
             end if;
 
@@ -163,7 +163,7 @@ begin
                                 RegisterTarget <= "1010";
                 AluInstruction <= "1011";
                 Immediate <= Instruction(10) & Instruction(10) & Instruction(10) & Instruction(10) & Instruction(10) & Instruction(10 downto 0);
-                DataSelectorInstruction <= "001100";
+                DataSelectorInstruction <= "000011";
                 BubbleNext <= "000";
             end if;
 
@@ -189,7 +189,7 @@ begin
                     AluInstruction <= "1101";
                 end if;
                                 Immediate <= Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7 downto 0);
-                DataSelectorInstruction <= "001100";
+                DataSelectorInstruction <= "000011";
                 BubbleNext <= "000";
             end if;
 
@@ -215,7 +215,7 @@ begin
                     AluInstruction <= "1100";
                 end if;
                                 Immediate <= Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7 downto 0);
-                DataSelectorInstruction <= "001100";
+                DataSelectorInstruction <= "000011";
                 BubbleNext <= "000";
             end if;
 
@@ -241,7 +241,7 @@ begin
                     AluInstruction <= "1111";
                 end if;
                                 Immediate <= Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7 downto 0);
-                DataSelectorInstruction <= "001100";
+                DataSelectorInstruction <= "000011";
                 BubbleNext <= "000";
             end if;
 
@@ -257,7 +257,7 @@ begin
                 RegisterTarget <= "1111";
                 AluInstruction <= "0011";
                 Immediate <= "0000000000000000";
-                DataSelectorInstruction <= "100100";
+                DataSelectorInstruction <= "001001";
                 BubbleNext <= "000";
             end if;
 
@@ -273,7 +273,7 @@ begin
                 RegisterTarget <= "1111";
                 AluInstruction <= "0011";
                 Immediate <= Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7 downto 0);
-                DataSelectorInstruction <= "000100";
+                DataSelectorInstruction <= "000001";
                 BubbleNext <= "000";
             end if;
 
@@ -326,7 +326,7 @@ begin
                                 RegisterTarget <= "1010";
                 AluInstruction <= "1011";
                 Immediate <= "0000000000000000";
-                DataSelectorInstruction <= "000100";
+                DataSelectorInstruction <= "000001";
                 BubbleNext <= "000";
             end if;
 
@@ -343,7 +343,7 @@ begin
                 AluInstruction <= "0101";
                 Immediate <= "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & Instruction(7 downto 0);
                 DataSelectorInstruction <= "000000";
-                BubbleNext <= "001";
+                BubbleNext <= "011";
                 BranchForce <= '1';
                 BranchTarget <= PC0;
             end if;
@@ -360,8 +360,8 @@ begin
                 RegisterTarget <= "0" & Instruction(7 downto 5);
                 AluInstruction <= "0001";
                 Immediate <= Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4 downto 0);
-                DataSelectorInstruction <= "000100";
-                BubbleNext <= "001";
+                DataSelectorInstruction <= "000001";
+                BubbleNext <= "011";
                 BranchForce <= '1';
                 BranchTarget <= PC0;
             end if;
@@ -378,8 +378,8 @@ begin
                 RegisterTarget <= "0" & Instruction(10 downto 8);
                 AluInstruction <= "0001";
                 Immediate <= Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7 downto 0);
-                DataSelectorInstruction <= "001100";
-                BubbleNext <= "001";
+                DataSelectorInstruction <= "000011";
+                BubbleNext <= "011";
                 BranchForce <= '1';
                 BranchTarget <= PC0;
             end if;
@@ -396,7 +396,7 @@ begin
                 RegisterTarget <= "0" & Instruction(10 downto 8);
                 AluInstruction <= "0101";
                 Immediate <= "0000000000000000";
-                DataSelectorInstruction <= "111100";
+                DataSelectorInstruction <= "001111";
                 BubbleNext <= "000";
             end if;
 
@@ -412,7 +412,7 @@ begin
                 RegisterTarget <= "0" & Instruction(10 downto 8);
                 AluInstruction <= "0101";
                 Immediate <= "0000000000000000";
-                DataSelectorInstruction <= "111100";
+                DataSelectorInstruction <= "001111";
                 BubbleNext <= "000";
             end if;
 
@@ -428,7 +428,7 @@ begin
                 RegisterTarget <= "1000";
                 AluInstruction <= "0101";
                 Immediate <= "0000000000000000";
-                DataSelectorInstruction <= "010100";
+                DataSelectorInstruction <= "000101";
                 BubbleNext <= "000";
             end if;
 
@@ -444,7 +444,7 @@ begin
                 RegisterTarget <= "1001";
                 AluInstruction <= "0101";
                 Immediate <= "0000000000000000";
-                DataSelectorInstruction <= "010100";
+                DataSelectorInstruction <= "000101";
                 BubbleNext <= "000";
             end if;
 
@@ -460,7 +460,7 @@ begin
                 RegisterTarget <= "0" & Instruction(10 downto 8);
                 AluInstruction <= "1001";
                 Immediate <= "0000000000000000";
-                DataSelectorInstruction <= "100000";
+                DataSelectorInstruction <= "001000";
                 BubbleNext <= "000";
             end if;
 
@@ -492,7 +492,7 @@ begin
                 RegisterTarget <= "0" & Instruction(10 downto 8);
                 AluInstruction <= "0110";
                 Immediate <= "0000000000000000";
-                DataSelectorInstruction <= "100100";
+                DataSelectorInstruction <= "001001";
                 BubbleNext <= "000";
             end if;
 
@@ -508,7 +508,7 @@ begin
                 RegisterTarget <= "0" & Instruction(10 downto 8);
                 AluInstruction <= "0111";
                 Immediate <= Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4 downto 1);
-                DataSelectorInstruction <= "100000";
+                DataSelectorInstruction <= "001000";
                 BubbleNext <= "000";
             end if;
 
@@ -524,7 +524,7 @@ begin
                 RegisterTarget <= "1111";
                 AluInstruction <= "0100";
                 Immediate <= "0000000000000000";
-                DataSelectorInstruction <= "011000";
+                DataSelectorInstruction <= "000110";
                 BubbleNext <= "000";
             end if;
 
@@ -540,7 +540,7 @@ begin
                 RegisterTarget <= "0" & Instruction(10 downto 8);
                 AluInstruction <= "1000";
                 Immediate <= Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4 downto 1);
-                DataSelectorInstruction <= "100000";
+                DataSelectorInstruction <= "001000";
                 BubbleNext <= "000";
             end if;
 
@@ -556,7 +556,7 @@ begin
                 RegisterTarget <= "0" & Instruction(7 downto 5);
                 AluInstruction <= "1000";
                 Immediate <= "0000000000000000";
-                DataSelectorInstruction <= "100100";
+                DataSelectorInstruction <= "001001";
                 BubbleNext <= "000";
             end if;
 
@@ -572,7 +572,7 @@ begin
                 RegisterTarget <= "0" & Instruction(4 downto 2);
                 AluInstruction <= "0010";
                 Immediate <= "0000000000000000";
-                DataSelectorInstruction <= "011000";
+                DataSelectorInstruction <= "000110";
                 BubbleNext <= "000";
             end if;
 
@@ -588,7 +588,7 @@ begin
                 RegisterTarget <= "1111";
                 AluInstruction <= "0001";
                 Immediate <= Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4 downto 0);
-                DataSelectorInstruction <= "000110";
+                DataSelectorInstruction <= "001000";
                 BubbleNext <= "000";
             end if;
 
@@ -620,7 +620,7 @@ begin
                 RegisterTarget <= "1111";
                 AluInstruction <= "0001";
                 Immediate <= Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7 downto 0);
-                DataSelectorInstruction <= "001101";
+                DataSelectorInstruction <= "000100";
                 BubbleNext <= "000";
             end if;
         end if;

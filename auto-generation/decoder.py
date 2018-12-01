@@ -160,19 +160,19 @@ set_data('JR', 'DataSelectorInstruction', '0001')
 set_data('LI', 'RegisterTarget', 'rx')
 set_data('LI', 'AluInstruction', 'AND')
 set_data('LI', 'DataSelectorInstruction', '0000')
-set_data('LI', 'BubbleNext', '001')
+set_data('LI', 'BubbleNext', '011')
 
 set_data('LW', 'LFlag', '1')
 set_data('LW', 'RegisterTarget', 'ry')
 set_data('LW', 'AluInstruction', 'ADD')
 set_data('LW', 'DataSelectorInstruction', '0001')
-set_data('LW', 'BubbleNext', '001')
+set_data('LW', 'BubbleNext', '011')
 
 set_data('LW_SP', 'LFlag', '1')
 set_data('LW_SP', 'RegisterTarget', 'rx')
 set_data('LW_SP', 'AluInstruction', 'ADD')
 set_data('LW_SP', 'DataSelectorInstruction', '0011')
-set_data('LW_SP', 'BubbleNext', '001')
+set_data('LW_SP', 'BubbleNext', '011')
 
 set_data('MFIH', 'RegisterTarget', 'rx')
 set_data('MFIH', 'AluInstruction', 'AND')
@@ -219,11 +219,11 @@ set_data('SUBU', 'DataSelectorInstruction', '0110')
 
 set_data('SW', 'SFlag', '1')
 set_data('SW', 'AluInstruction', 'ADD')
-set_data('SW', 'DataSelectorInstruction', '000110')
+set_data('SW', 'DataSelectorInstruction', '100001')
 
 set_data('SW_SP', 'SFlag', '1')
 set_data('SW_SP', 'AluInstruction', 'ADD')
-set_data('SW_SP', 'DataSelectorInstruction', '001101')
+set_data('SW_SP', 'DataSelectorInstruction', '010011')
 
 
 # 判断指令在某一个位置是否为固定值
@@ -365,8 +365,8 @@ def output_instruction(ins, f, tabs):
                  + ' & ' + 'Instruction(%s downto %s)' % (str(start_immediate), str(end_immediate))))
 
     # 数据选择器
-    f.write('%sDataSelectorInstruction <= "%s";\n' % (tabs, (get_data(ins, 'DataSelectorInstruction')
-                                                      + "00")[:6]))
+    f.write('%sDataSelectorInstruction <= "%s";\n' % (tabs, ("00" + get_data(ins, 'DataSelectorInstruction')
+                                                       )[:6]))
     f.write('%sBubbleNext <= "%s";\n' % (tabs, get_data(ins, 'BubbleNext')))
     if get_data(ins, 'BubbleNext') != "000":
         f.write('%sBranchForce <= \'1\';\n%sBranchTarget <= PC0;\n' % (
