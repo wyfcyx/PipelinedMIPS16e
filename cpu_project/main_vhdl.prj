@@ -1,8 +1,0 @@
-vhdl work "D:\Tsinghua\Autumn2018\computer\PipelinedMIPS16e\cpu_project\reg.vhd"
-vhdl work "D:\Tsinghua\Autumn2018\computer\PipelinedMIPS16e\cpu_project\pcselector.vhd"
-vhdl work "D:\Tsinghua\Autumn2018\computer\PipelinedMIPS16e\cpu_project\memory.vhd"
-vhdl work "D:\Tsinghua\Autumn2018\computer\PipelinedMIPS16e\cpu_project\decoder.vhd"
-vhdl work "D:\Tsinghua\Autumn2018\computer\PipelinedMIPS16e\cpu_project\dataselector.vhd"
-vhdl work "D:\Tsinghua\Autumn2018\computer\PipelinedMIPS16e\cpu_project\alu.vhd"
-vhdl work "D:\Tsinghua\Autumn2018\computer\PipelinedMIPS16e\cpu_project\cpu.vhd"
-vhdl work "D:\Tsinghua\Autumn2018\computer\PipelinedMIPS16e\cpu_project\main.vhd"

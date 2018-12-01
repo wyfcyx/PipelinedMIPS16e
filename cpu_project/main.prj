@@ -1,8 +1,0 @@
-vhdl work "reg.vhd"
-vhdl work "pcselector.vhd"
-vhdl work "memory.vhd"
-vhdl work "decoder.vhd"
-vhdl work "dataselector.vhd"
-vhdl work "alu.vhd"
-vhdl work "cpu.vhd"
-vhdl work "main.vhd"
