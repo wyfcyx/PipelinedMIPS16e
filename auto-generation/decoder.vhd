@@ -65,7 +65,7 @@ begin
 
             if ((Bubble(0) = '1') or (Bubble(1) = '1')) then
                 BranchForce <= '1';
-                BranchTarget <= PC0 + "1111111111111111";
+                BranchTarget <= PC0;
             end if;
             BubbleNext <= Bubble + "111";
         else
@@ -345,7 +345,7 @@ begin
                 DataSelectorInstruction <= "000000";
                 BubbleNext <= "001";
                 BranchForce <= '1';
-                BranchTarget <= PC0 + "1111111111111111";
+                BranchTarget <= PC0;
             end if;
 
             -- LW
@@ -363,7 +363,7 @@ begin
                 DataSelectorInstruction <= "000100";
                 BubbleNext <= "001";
                 BranchForce <= '1';
-                BranchTarget <= PC0 + "1111111111111111";
+                BranchTarget <= PC0;
             end if;
 
             -- LW_SP
@@ -381,7 +381,7 @@ begin
                 DataSelectorInstruction <= "001100";
                 BubbleNext <= "001";
                 BranchForce <= '1';
-                BranchTarget <= PC0 + "1111111111111111";
+                BranchTarget <= PC0;
             end if;
 
             -- MFIH

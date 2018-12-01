@@ -369,8 +369,8 @@ def output_instruction(ins, f, tabs):
                                                       + "00")[:6]))
     f.write('%sBubbleNext <= "%s";\n' % (tabs, get_data(ins, 'BubbleNext')))
     if get_data(ins, 'BubbleNext') != "000":
-        f.write('%sBranchForce <= \'1\';\n%sBranchTarget <= PC0 + "%s";\n' % (
-            tabs, tabs, '1'*16
+        f.write('%sBranchForce <= \'1\';\n%sBranchTarget <= PC0;\n' % (
+            tabs, tabs
         ))
 
 
@@ -422,11 +422,11 @@ begin
     f.write('''
             if ((Bubble(0) = '1') or (Bubble(1) = '1')) then
                 BranchForce <= '1';
-                BranchTarget <= PC0 + "%s";
+                BranchTarget <= PC0;
             end if;
             BubbleNext <= Bubble + "111";
         else
-    ''' % ('1'*16, ))
+    ''')
     for ins in decoder['instruction']:
         output_full_instruction(ins, f, ' '*12)
     f.write('''
