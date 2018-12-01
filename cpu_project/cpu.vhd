@@ -344,7 +344,7 @@ begin
 		Tout => T_in,
 		Result => EX_MEM_AluResult_in,
 		ModifiedIndex => ID_EX_ModifiedIndex_in,
-		ModifiedValue => ID_EX_ModifiedValue_in,
+		ModifiedValue => ID_EX_ModifiedValue_in
 	);
 
 	pcselector_instance : pcselector port map(

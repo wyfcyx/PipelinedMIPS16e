@@ -26,8 +26,9 @@ entity alu is
 end alu;
 
 architecture bhv of alu is
-begin
 signal Result0 : std_logic_vector(15 downto 0);
+begin
+
 process(DataA, DataB, AluInstruction, T, BranchTargetAlu, RegisterTarget, ModifiedIndex_before, ModifiedValue_before)
 begin
     
@@ -223,7 +224,7 @@ begin
     end if;
     
     Result <= Result0;
-    if (RegisterTarget == "1111") then
+    if (RegisterTarget = "1111") then
         ModifiedIndex <= ModifiedIndex_before;
         ModifiedValue <= ModifiedValue_before;
     else
