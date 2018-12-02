@@ -133,12 +133,12 @@ set_data('B', 'DataSelectorInstruction', '0011')
 set_data('BEQZ', 'BranchFlag', '1')
 set_data('BEQZ', 'RegisterTarget', 'PC')
 set_data('BEQZ', 'AluInstruction', 'BEQZ')
-set_data('BEQZ', 'DataSelectorInstruction', '0011')
+set_data('BEQZ', 'DataSelectorInstruction', '0001')
 
 set_data('BNEZ', 'BranchFlag', '1')
 set_data('BNEZ', 'RegisterTarget', 'PC')
 set_data('BNEZ', 'AluInstruction', 'BNEZ')
-set_data('BNEZ', 'DataSelectorInstruction', '0011')
+set_data('BNEZ', 'DataSelectorInstruction', '0001')
 
 set_data('BTEQZ', 'BranchFlag', '1')
 set_data('BTEQZ', 'RegisterTarget', 'PC')
@@ -192,7 +192,7 @@ set_data('MTSP', 'DataSelectorInstruction', '0101')
 
 set_data('NEG', 'RegisterTarget', 'rx')
 set_data('NEG', 'AluInstruction', 'NEG')
-set_data('NEG', 'DataSelectorInstruction', '1000')
+set_data('NEG', 'DataSelectorInstruction', '0010')
 
 set_data('OR', 'RegisterTarget', 'rx')
 set_data('OR', 'AluInstruction', 'OR')
@@ -200,22 +200,22 @@ set_data('OR', 'DataSelectorInstruction', '1001')
 
 set_data('SLL', 'RegisterTarget', 'rx')
 set_data('SLL', 'AluInstruction', 'SLL')
-set_data('SLL', 'DataSelectorInstruction', '1000')
+set_data('SLL', 'DataSelectorInstruction', '0010')
 
 set_data('SLTU', 'AluInstruction', 'SLTU')
-set_data('SLTU', 'DataSelectorInstruction', '0110')
+set_data('SLTU', 'DataSelectorInstruction', '1001')
 
 set_data('SRA', 'RegisterTarget', 'rx')
 set_data('SRA', 'AluInstruction', 'SRA')
-set_data('SRA', 'DataSelectorInstruction', '1000')
+set_data('SRA', 'DataSelectorInstruction', '0010')
 
 set_data('SRAV', 'RegisterTarget', 'ry')
 set_data('SRAV', 'AluInstruction', 'SRA')
-set_data('SRAV', 'DataSelectorInstruction', '1001')
+set_data('SRAV', 'DataSelectorInstruction', '0110')
 
 set_data('SUBU', 'RegisterTarget', 'rz')
 set_data('SUBU', 'AluInstruction', 'SUBU')
-set_data('SUBU', 'DataSelectorInstruction', '0110')
+set_data('SUBU', 'DataSelectorInstruction', '1001')
 
 set_data('SW', 'SFlag', '1')
 set_data('SW', 'AluInstruction', 'ADD')
