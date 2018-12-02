@@ -36,25 +36,21 @@ begin
                 if (Instruction(15 downto 11) = "10010") then
                     flag1 <= '1'; --存在特殊情况
                     flag2 <= "001"; --临时标记
-                    flag3 <= "10010"; --特殊寄存器
                 end if;
                 
                 if (Instruction(15 downto 11) = "11110") then
                     flag1 <= '1'; --存在特殊情况
                     flag2 <= "010"; --临时标记
-                    flag3 <= "11110"; --特殊寄存器
                 end if;
                 
                 if (Instruction(15 downto 11) = "11101") then
                     flag1 <= '1'; --存在特殊情况
                     flag2 <= "011"; --临时标记
-                    flag3 <= "11101"; --特殊寄存器
                 end if;
                 
                 if (Instruction(15 downto 11) = "11010") then
                     flag1 <= '1'; --存在特殊情况
                     flag2 <= "100"; --临时标记
-                    flag3 <= "11010"; --特殊寄存器
                 end if;
                 
             if flag2 = "000" then --正常情况
@@ -63,15 +59,19 @@ begin
             elsif  flag2 = "001" then
                 Rz <= SP_before;
                 index(11 downto 8) <= "1001";
+                flag3 <= "1001";
             elsif flag2 = "010" then
                 Rz <= IH_before;
                 index(11 downto 8) <= "1000";
+                flag3 <= "1000";
             elsif flag2 = "011" then
                 Rz<= PC0;
                 index(11 downto 8) <= "1010";
+                flag3 <= "1010";
             else
                 Rz <= SP_before;
                 index(11 downto 8) <= "1001";
+                flag3 <= "1001";
             end if;
             
         end if;
@@ -83,25 +83,21 @@ begin
                 if (Instruction(15 downto 11) = "10010") then
                     flag1 <= '1'; --存在特殊情况
                     flag2 <= "001"; --临时标记
-                    flag3 <= "10010"; --特殊寄存器
                 end if;
                 
                 if (Instruction(15 downto 11) = "11110") then
                     flag1 <= '1'; --存在特殊情况
                     flag2 <= "010"; --临时标记
-                    flag3 <= "11110"; --特殊寄存器
                 end if;
                 
                 if (Instruction(15 downto 11) = "11101") then
                     flag1 <= '1'; --存在特殊情况
                     flag2 <= "011"; --临时标记
-                    flag3 <= "11101"; --特殊寄存器
                 end if;
                 
                 if (Instruction(15 downto 11) = "11010") then
                     flag1 <= '1'; --存在特殊情况
                     flag2 <= "100"; --临时标记
-                    flag3 <= "11010"; --特殊寄存器
                 end if;
                 
             if flag2 = "000" then --正常情况
@@ -110,15 +106,19 @@ begin
             elsif  flag2 = "001" then
                 Rz <= SP_before;
                 index(11 downto 8) <= "1001";
+                flag3 <= "1001";
             elsif flag2 = "010" then
                 Rz <= IH_before;
                 index(11 downto 8) <= "1000";
+                flag3 <= "1000";
             elsif flag2 = "011" then
                 Rz<= PC0;
                 index(11 downto 8) <= "1010";
+                flag3 <= "1010";
             else
                 Rz <= SP_before;
                 index(11 downto 8) <= "1001";
+                flag3 <= "1001";
             end if;
             
         end if;
@@ -130,25 +130,21 @@ begin
                 if (Instruction(15 downto 11) = "10010") then
                     flag1 <= '1'; --存在特殊情况
                     flag2 <= "001"; --临时标记
-                    flag3 <= "10010"; --特殊寄存器
                 end if;
                 
                 if (Instruction(15 downto 11) = "11110") then
                     flag1 <= '1'; --存在特殊情况
                     flag2 <= "010"; --临时标记
-                    flag3 <= "11110"; --特殊寄存器
                 end if;
                 
                 if (Instruction(15 downto 11) = "11101") then
                     flag1 <= '1'; --存在特殊情况
                     flag2 <= "011"; --临时标记
-                    flag3 <= "11101"; --特殊寄存器
                 end if;
                 
                 if (Instruction(15 downto 11) = "11010") then
                     flag1 <= '1'; --存在特殊情况
                     flag2 <= "100"; --临时标记
-                    flag3 <= "11010"; --特殊寄存器
                 end if;
                 
             if flag2 = "000" then --正常情况
@@ -157,15 +153,19 @@ begin
             elsif  flag2 = "001" then
                 Rz <= SP_before;
                 index(11 downto 8) <= "1001";
+                flag3 <= "1001";
             elsif flag2 = "010" then
                 Rz <= IH_before;
                 index(11 downto 8) <= "1000";
+                flag3 <= "1000";
             elsif flag2 = "011" then
                 Rz<= PC0;
                 index(11 downto 8) <= "1010";
+                flag3 <= "1010";
             else
                 Rz <= SP_before;
                 index(11 downto 8) <= "1001";
+                flag3 <= "1001";
             end if;
             
         end if;
@@ -177,25 +177,21 @@ begin
                 if (Instruction(15 downto 11) = "10010") then
                     flag1 <= '1'; --存在特殊情况
                     flag2 <= "001"; --临时标记
-                    flag3 <= "10010"; --特殊寄存器
                 end if;
                 
                 if (Instruction(15 downto 11) = "11110") then
                     flag1 <= '1'; --存在特殊情况
                     flag2 <= "010"; --临时标记
-                    flag3 <= "11110"; --特殊寄存器
                 end if;
                 
                 if (Instruction(15 downto 11) = "11101") then
                     flag1 <= '1'; --存在特殊情况
                     flag2 <= "011"; --临时标记
-                    flag3 <= "11101"; --特殊寄存器
                 end if;
                 
                 if (Instruction(15 downto 11) = "11010") then
                     flag1 <= '1'; --存在特殊情况
                     flag2 <= "100"; --临时标记
-                    flag3 <= "11010"; --特殊寄存器
                 end if;
                 
             if flag2 = "000" then --正常情况
@@ -204,15 +200,19 @@ begin
             elsif  flag2 = "001" then
                 Rz <= SP_before;
                 index(11 downto 8) <= "1001";
+                flag3 <= "1001";
             elsif flag2 = "010" then
                 Rz <= IH_before;
                 index(11 downto 8) <= "1000";
+                flag3 <= "1000";
             elsif flag2 = "011" then
                 Rz<= PC0;
                 index(11 downto 8) <= "1010";
+                flag3 <= "1010";
             else
                 Rz <= SP_before;
                 index(11 downto 8) <= "1001";
+                flag3 <= "1001";
             end if;
             
         end if;
@@ -224,25 +224,21 @@ begin
                 if (Instruction(15 downto 11) = "10010") then
                     flag1 <= '1'; --存在特殊情况
                     flag2 <= "001"; --临时标记
-                    flag3 <= "10010"; --特殊寄存器
                 end if;
                 
                 if (Instruction(15 downto 11) = "11110") then
                     flag1 <= '1'; --存在特殊情况
                     flag2 <= "010"; --临时标记
-                    flag3 <= "11110"; --特殊寄存器
                 end if;
                 
                 if (Instruction(15 downto 11) = "11101") then
                     flag1 <= '1'; --存在特殊情况
                     flag2 <= "011"; --临时标记
-                    flag3 <= "11101"; --特殊寄存器
                 end if;
                 
                 if (Instruction(15 downto 11) = "11010") then
                     flag1 <= '1'; --存在特殊情况
                     flag2 <= "100"; --临时标记
-                    flag3 <= "11010"; --特殊寄存器
                 end if;
                 
             if flag2 = "000" then --正常情况
@@ -251,15 +247,19 @@ begin
             elsif  flag2 = "001" then
                 Rz <= SP_before;
                 index(11 downto 8) <= "1001";
+                flag3 <= "1001";
             elsif flag2 = "010" then
                 Rz <= IH_before;
                 index(11 downto 8) <= "1000";
+                flag3 <= "1000";
             elsif flag2 = "011" then
                 Rz<= PC0;
                 index(11 downto 8) <= "1010";
+                flag3 <= "1010";
             else
                 Rz <= SP_before;
                 index(11 downto 8) <= "1001";
+                flag3 <= "1001";
             end if;
             
         end if;
@@ -271,25 +271,21 @@ begin
                 if (Instruction(15 downto 11) = "10010") then
                     flag1 <= '1'; --存在特殊情况
                     flag2 <= "001"; --临时标记
-                    flag3 <= "10010"; --特殊寄存器
                 end if;
                 
                 if (Instruction(15 downto 11) = "11110") then
                     flag1 <= '1'; --存在特殊情况
                     flag2 <= "010"; --临时标记
-                    flag3 <= "11110"; --特殊寄存器
                 end if;
                 
                 if (Instruction(15 downto 11) = "11101") then
                     flag1 <= '1'; --存在特殊情况
                     flag2 <= "011"; --临时标记
-                    flag3 <= "11101"; --特殊寄存器
                 end if;
                 
                 if (Instruction(15 downto 11) = "11010") then
                     flag1 <= '1'; --存在特殊情况
                     flag2 <= "100"; --临时标记
-                    flag3 <= "11010"; --特殊寄存器
                 end if;
                 
             if flag2 = "000" then --正常情况
@@ -298,15 +294,19 @@ begin
             elsif  flag2 = "001" then
                 Rz <= SP_before;
                 index(11 downto 8) <= "1001";
+                flag3 <= "1001";
             elsif flag2 = "010" then
                 Rz <= IH_before;
                 index(11 downto 8) <= "1000";
+                flag3 <= "1000";
             elsif flag2 = "011" then
                 Rz<= PC0;
                 index(11 downto 8) <= "1010";
+                flag3 <= "1010";
             else
                 Rz <= SP_before;
                 index(11 downto 8) <= "1001";
+                flag3 <= "1001";
             end if;
             
         end if;
@@ -318,25 +318,21 @@ begin
                 if (Instruction(15 downto 11) = "10010") then
                     flag1 <= '1'; --存在特殊情况
                     flag2 <= "001"; --临时标记
-                    flag3 <= "10010"; --特殊寄存器
                 end if;
                 
                 if (Instruction(15 downto 11) = "11110") then
                     flag1 <= '1'; --存在特殊情况
                     flag2 <= "010"; --临时标记
-                    flag3 <= "11110"; --特殊寄存器
                 end if;
                 
                 if (Instruction(15 downto 11) = "11101") then
                     flag1 <= '1'; --存在特殊情况
                     flag2 <= "011"; --临时标记
-                    flag3 <= "11101"; --特殊寄存器
                 end if;
                 
                 if (Instruction(15 downto 11) = "11010") then
                     flag1 <= '1'; --存在特殊情况
                     flag2 <= "100"; --临时标记
-                    flag3 <= "11010"; --特殊寄存器
                 end if;
                 
             if flag2 = "000" then --正常情况
@@ -345,15 +341,19 @@ begin
             elsif  flag2 = "001" then
                 Rz <= SP_before;
                 index(11 downto 8) <= "1001";
+                flag3 <= "1001";
             elsif flag2 = "010" then
                 Rz <= IH_before;
                 index(11 downto 8) <= "1000";
+                flag3 <= "1000";
             elsif flag2 = "011" then
                 Rz<= PC0;
                 index(11 downto 8) <= "1010";
+                flag3 <= "1010";
             else
                 Rz <= SP_before;
                 index(11 downto 8) <= "1001";
+                flag3 <= "1001";
             end if;
             
         end if;
@@ -365,25 +365,21 @@ begin
                 if (Instruction(15 downto 11) = "10010") then
                     flag1 <= '1'; --存在特殊情况
                     flag2 <= "001"; --临时标记
-                    flag3 <= "10010"; --特殊寄存器
                 end if;
                 
                 if (Instruction(15 downto 11) = "11110") then
                     flag1 <= '1'; --存在特殊情况
                     flag2 <= "010"; --临时标记
-                    flag3 <= "11110"; --特殊寄存器
                 end if;
                 
                 if (Instruction(15 downto 11) = "11101") then
                     flag1 <= '1'; --存在特殊情况
                     flag2 <= "011"; --临时标记
-                    flag3 <= "11101"; --特殊寄存器
                 end if;
                 
                 if (Instruction(15 downto 11) = "11010") then
                     flag1 <= '1'; --存在特殊情况
                     flag2 <= "100"; --临时标记
-                    flag3 <= "11010"; --特殊寄存器
                 end if;
                 
             if flag2 = "000" then --正常情况
@@ -392,15 +388,19 @@ begin
             elsif  flag2 = "001" then
                 Rz <= SP_before;
                 index(11 downto 8) <= "1001";
+                flag3 <= "1001";
             elsif flag2 = "010" then
                 Rz <= IH_before;
                 index(11 downto 8) <= "1000";
+                flag3 <= "1000";
             elsif flag2 = "011" then
                 Rz<= PC0;
                 index(11 downto 8) <= "1010";
+                flag3 <= "1010";
             else
                 Rz <= SP_before;
                 index(11 downto 8) <= "1001";
+                flag3 <= "1001";
             end if;
             
         end if;
@@ -538,7 +538,7 @@ begin
             end if;
         else
             if flag1 = '1' then --存在特殊情况
-                if Target(3 downto 0) = SP(3 downto 0) then
+                if Target(3 downto 0) = flag3(3 downto 0) then
                     Rz(15 downto 0)<= Data(15 downto 0);
                 end if;
             end if;
