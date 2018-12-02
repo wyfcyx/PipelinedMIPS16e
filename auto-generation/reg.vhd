@@ -22,7 +22,8 @@ entity reg is
 end reg;
 architecture bhv of reg is
     signal flag1: std_logic; --说明是否存在特殊情况
-    signal flag2: std_logic_vector(1 downto 0); --临时变量
+    signal flag2: std_logic_vector(2 downto 0); --临时变量
+    signal flag3: std_logic_vector(3 downto 0); --特殊寄存器
 begin
 process(SP_before,IH_before,reg_before,PC0,Instruction,Target,Data)
 begin
@@ -30,280 +31,376 @@ begin
     
         if (Instruction(4 downto 2) = "000") then
 
-                flag2 <= "00"; --初始化
+                flag2 <= "000"; --初始化
             
                 if (Instruction(15 downto 11) = "10010") then
                     flag1 <= '1'; --存在特殊情况
-                    flag2 <= "01"; --临时标记
+                    flag2 <= "001"; --临时标记
+                    flag3 <= "10010"; --特殊寄存器
                 end if;
                 
                 if (Instruction(15 downto 11) = "11110") then
                     flag1 <= '1'; --存在特殊情况
-                    flag2 <= "10"; --临时标记
+                    flag2 <= "010"; --临时标记
+                    flag3 <= "11110"; --特殊寄存器
                 end if;
                 
                 if (Instruction(15 downto 11) = "11101") then
                     flag1 <= '1'; --存在特殊情况
-                    flag2 <= "11"; --临时标记
+                    flag2 <= "011"; --临时标记
+                    flag3 <= "11101"; --特殊寄存器
                 end if;
                 
-            if flag2 = "00" then --正常情况
+                if (Instruction(15 downto 11) = "11010") then
+                    flag1 <= '1'; --存在特殊情况
+                    flag2 <= "100"; --临时标记
+                    flag3 <= "11010"; --特殊寄存器
+                end if;
+                
+            if flag2 = "000" then --正常情况
                 Rz <= reg_before(15 downto 0);
                 index(11 downto 8) <= "0000";
-            elsif  flag2 = "01" then
+            elsif  flag2 = "001" then
                 Rz <= SP_before;
                 index(11 downto 8) <= "1001";
-            elsif flag2 = "10" then
+            elsif flag2 = "010" then
                 Rz <= IH_before;
                 index(11 downto 8) <= "1000";
-            else
+            elsif flag2 = "011" then
                 Rz<= PC0;
                 index(11 downto 8) <= "1010";
+            else
+                Rz <= SP_before;
+                index(11 downto 8) <= "1001";
             end if;
             
         end if;
                 
         if (Instruction(4 downto 2) = "001") then
 
-                flag2 <= "00"; --初始化
+                flag2 <= "000"; --初始化
             
                 if (Instruction(15 downto 11) = "10010") then
                     flag1 <= '1'; --存在特殊情况
-                    flag2 <= "01"; --临时标记
+                    flag2 <= "001"; --临时标记
+                    flag3 <= "10010"; --特殊寄存器
                 end if;
                 
                 if (Instruction(15 downto 11) = "11110") then
                     flag1 <= '1'; --存在特殊情况
-                    flag2 <= "10"; --临时标记
+                    flag2 <= "010"; --临时标记
+                    flag3 <= "11110"; --特殊寄存器
                 end if;
                 
                 if (Instruction(15 downto 11) = "11101") then
                     flag1 <= '1'; --存在特殊情况
-                    flag2 <= "11"; --临时标记
+                    flag2 <= "011"; --临时标记
+                    flag3 <= "11101"; --特殊寄存器
                 end if;
                 
-            if flag2 = "00" then --正常情况
+                if (Instruction(15 downto 11) = "11010") then
+                    flag1 <= '1'; --存在特殊情况
+                    flag2 <= "100"; --临时标记
+                    flag3 <= "11010"; --特殊寄存器
+                end if;
+                
+            if flag2 = "000" then --正常情况
                 Rz <= reg_before(31 downto 16);
                 index(11 downto 8) <= "0001";
-            elsif  flag2 = "01" then
+            elsif  flag2 = "001" then
                 Rz <= SP_before;
                 index(11 downto 8) <= "1001";
-            elsif flag2 = "10" then
+            elsif flag2 = "010" then
                 Rz <= IH_before;
                 index(11 downto 8) <= "1000";
-            else
+            elsif flag2 = "011" then
                 Rz<= PC0;
                 index(11 downto 8) <= "1010";
+            else
+                Rz <= SP_before;
+                index(11 downto 8) <= "1001";
             end if;
             
         end if;
                 
         if (Instruction(4 downto 2) = "010") then
 
-                flag2 <= "00"; --初始化
+                flag2 <= "000"; --初始化
             
                 if (Instruction(15 downto 11) = "10010") then
                     flag1 <= '1'; --存在特殊情况
-                    flag2 <= "01"; --临时标记
+                    flag2 <= "001"; --临时标记
+                    flag3 <= "10010"; --特殊寄存器
                 end if;
                 
                 if (Instruction(15 downto 11) = "11110") then
                     flag1 <= '1'; --存在特殊情况
-                    flag2 <= "10"; --临时标记
+                    flag2 <= "010"; --临时标记
+                    flag3 <= "11110"; --特殊寄存器
                 end if;
                 
                 if (Instruction(15 downto 11) = "11101") then
                     flag1 <= '1'; --存在特殊情况
-                    flag2 <= "11"; --临时标记
+                    flag2 <= "011"; --临时标记
+                    flag3 <= "11101"; --特殊寄存器
                 end if;
                 
-            if flag2 = "00" then --正常情况
+                if (Instruction(15 downto 11) = "11010") then
+                    flag1 <= '1'; --存在特殊情况
+                    flag2 <= "100"; --临时标记
+                    flag3 <= "11010"; --特殊寄存器
+                end if;
+                
+            if flag2 = "000" then --正常情况
                 Rz <= reg_before(47 downto 32);
                 index(11 downto 8) <= "0010";
-            elsif  flag2 = "01" then
+            elsif  flag2 = "001" then
                 Rz <= SP_before;
                 index(11 downto 8) <= "1001";
-            elsif flag2 = "10" then
+            elsif flag2 = "010" then
                 Rz <= IH_before;
                 index(11 downto 8) <= "1000";
-            else
+            elsif flag2 = "011" then
                 Rz<= PC0;
                 index(11 downto 8) <= "1010";
+            else
+                Rz <= SP_before;
+                index(11 downto 8) <= "1001";
             end if;
             
         end if;
                 
         if (Instruction(4 downto 2) = "011") then
 
-                flag2 <= "00"; --初始化
+                flag2 <= "000"; --初始化
             
                 if (Instruction(15 downto 11) = "10010") then
                     flag1 <= '1'; --存在特殊情况
-                    flag2 <= "01"; --临时标记
+                    flag2 <= "001"; --临时标记
+                    flag3 <= "10010"; --特殊寄存器
                 end if;
                 
                 if (Instruction(15 downto 11) = "11110") then
                     flag1 <= '1'; --存在特殊情况
-                    flag2 <= "10"; --临时标记
+                    flag2 <= "010"; --临时标记
+                    flag3 <= "11110"; --特殊寄存器
                 end if;
                 
                 if (Instruction(15 downto 11) = "11101") then
                     flag1 <= '1'; --存在特殊情况
-                    flag2 <= "11"; --临时标记
+                    flag2 <= "011"; --临时标记
+                    flag3 <= "11101"; --特殊寄存器
                 end if;
                 
-            if flag2 = "00" then --正常情况
+                if (Instruction(15 downto 11) = "11010") then
+                    flag1 <= '1'; --存在特殊情况
+                    flag2 <= "100"; --临时标记
+                    flag3 <= "11010"; --特殊寄存器
+                end if;
+                
+            if flag2 = "000" then --正常情况
                 Rz <= reg_before(63 downto 48);
                 index(11 downto 8) <= "0011";
-            elsif  flag2 = "01" then
+            elsif  flag2 = "001" then
                 Rz <= SP_before;
                 index(11 downto 8) <= "1001";
-            elsif flag2 = "10" then
+            elsif flag2 = "010" then
                 Rz <= IH_before;
                 index(11 downto 8) <= "1000";
-            else
+            elsif flag2 = "011" then
                 Rz<= PC0;
                 index(11 downto 8) <= "1010";
+            else
+                Rz <= SP_before;
+                index(11 downto 8) <= "1001";
             end if;
             
         end if;
                 
         if (Instruction(4 downto 2) = "100") then
 
-                flag2 <= "00"; --初始化
+                flag2 <= "000"; --初始化
             
                 if (Instruction(15 downto 11) = "10010") then
                     flag1 <= '1'; --存在特殊情况
-                    flag2 <= "01"; --临时标记
+                    flag2 <= "001"; --临时标记
+                    flag3 <= "10010"; --特殊寄存器
                 end if;
                 
                 if (Instruction(15 downto 11) = "11110") then
                     flag1 <= '1'; --存在特殊情况
-                    flag2 <= "10"; --临时标记
+                    flag2 <= "010"; --临时标记
+                    flag3 <= "11110"; --特殊寄存器
                 end if;
                 
                 if (Instruction(15 downto 11) = "11101") then
                     flag1 <= '1'; --存在特殊情况
-                    flag2 <= "11"; --临时标记
+                    flag2 <= "011"; --临时标记
+                    flag3 <= "11101"; --特殊寄存器
                 end if;
                 
-            if flag2 = "00" then --正常情况
+                if (Instruction(15 downto 11) = "11010") then
+                    flag1 <= '1'; --存在特殊情况
+                    flag2 <= "100"; --临时标记
+                    flag3 <= "11010"; --特殊寄存器
+                end if;
+                
+            if flag2 = "000" then --正常情况
                 Rz <= reg_before(79 downto 64);
                 index(11 downto 8) <= "0100";
-            elsif  flag2 = "01" then
+            elsif  flag2 = "001" then
                 Rz <= SP_before;
                 index(11 downto 8) <= "1001";
-            elsif flag2 = "10" then
+            elsif flag2 = "010" then
                 Rz <= IH_before;
                 index(11 downto 8) <= "1000";
-            else
+            elsif flag2 = "011" then
                 Rz<= PC0;
                 index(11 downto 8) <= "1010";
+            else
+                Rz <= SP_before;
+                index(11 downto 8) <= "1001";
             end if;
             
         end if;
                 
         if (Instruction(4 downto 2) = "101") then
 
-                flag2 <= "00"; --初始化
+                flag2 <= "000"; --初始化
             
                 if (Instruction(15 downto 11) = "10010") then
                     flag1 <= '1'; --存在特殊情况
-                    flag2 <= "01"; --临时标记
+                    flag2 <= "001"; --临时标记
+                    flag3 <= "10010"; --特殊寄存器
                 end if;
                 
                 if (Instruction(15 downto 11) = "11110") then
                     flag1 <= '1'; --存在特殊情况
-                    flag2 <= "10"; --临时标记
+                    flag2 <= "010"; --临时标记
+                    flag3 <= "11110"; --特殊寄存器
                 end if;
                 
                 if (Instruction(15 downto 11) = "11101") then
                     flag1 <= '1'; --存在特殊情况
-                    flag2 <= "11"; --临时标记
+                    flag2 <= "011"; --临时标记
+                    flag3 <= "11101"; --特殊寄存器
                 end if;
                 
-            if flag2 = "00" then --正常情况
+                if (Instruction(15 downto 11) = "11010") then
+                    flag1 <= '1'; --存在特殊情况
+                    flag2 <= "100"; --临时标记
+                    flag3 <= "11010"; --特殊寄存器
+                end if;
+                
+            if flag2 = "000" then --正常情况
                 Rz <= reg_before(95 downto 80);
                 index(11 downto 8) <= "0101";
-            elsif  flag2 = "01" then
+            elsif  flag2 = "001" then
                 Rz <= SP_before;
                 index(11 downto 8) <= "1001";
-            elsif flag2 = "10" then
+            elsif flag2 = "010" then
                 Rz <= IH_before;
                 index(11 downto 8) <= "1000";
-            else
+            elsif flag2 = "011" then
                 Rz<= PC0;
                 index(11 downto 8) <= "1010";
+            else
+                Rz <= SP_before;
+                index(11 downto 8) <= "1001";
             end if;
             
         end if;
                 
         if (Instruction(4 downto 2) = "110") then
 
-                flag2 <= "00"; --初始化
+                flag2 <= "000"; --初始化
             
                 if (Instruction(15 downto 11) = "10010") then
                     flag1 <= '1'; --存在特殊情况
-                    flag2 <= "01"; --临时标记
+                    flag2 <= "001"; --临时标记
+                    flag3 <= "10010"; --特殊寄存器
                 end if;
                 
                 if (Instruction(15 downto 11) = "11110") then
                     flag1 <= '1'; --存在特殊情况
-                    flag2 <= "10"; --临时标记
+                    flag2 <= "010"; --临时标记
+                    flag3 <= "11110"; --特殊寄存器
                 end if;
                 
                 if (Instruction(15 downto 11) = "11101") then
                     flag1 <= '1'; --存在特殊情况
-                    flag2 <= "11"; --临时标记
+                    flag2 <= "011"; --临时标记
+                    flag3 <= "11101"; --特殊寄存器
                 end if;
                 
-            if flag2 = "00" then --正常情况
+                if (Instruction(15 downto 11) = "11010") then
+                    flag1 <= '1'; --存在特殊情况
+                    flag2 <= "100"; --临时标记
+                    flag3 <= "11010"; --特殊寄存器
+                end if;
+                
+            if flag2 = "000" then --正常情况
                 Rz <= reg_before(111 downto 96);
                 index(11 downto 8) <= "0110";
-            elsif  flag2 = "01" then
+            elsif  flag2 = "001" then
                 Rz <= SP_before;
                 index(11 downto 8) <= "1001";
-            elsif flag2 = "10" then
+            elsif flag2 = "010" then
                 Rz <= IH_before;
                 index(11 downto 8) <= "1000";
-            else
+            elsif flag2 = "011" then
                 Rz<= PC0;
                 index(11 downto 8) <= "1010";
+            else
+                Rz <= SP_before;
+                index(11 downto 8) <= "1001";
             end if;
             
         end if;
                 
         if (Instruction(4 downto 2) = "111") then
 
-                flag2 <= "00"; --初始化
+                flag2 <= "000"; --初始化
             
                 if (Instruction(15 downto 11) = "10010") then
                     flag1 <= '1'; --存在特殊情况
-                    flag2 <= "01"; --临时标记
+                    flag2 <= "001"; --临时标记
+                    flag3 <= "10010"; --特殊寄存器
                 end if;
                 
                 if (Instruction(15 downto 11) = "11110") then
                     flag1 <= '1'; --存在特殊情况
-                    flag2 <= "10"; --临时标记
+                    flag2 <= "010"; --临时标记
+                    flag3 <= "11110"; --特殊寄存器
                 end if;
                 
                 if (Instruction(15 downto 11) = "11101") then
                     flag1 <= '1'; --存在特殊情况
-                    flag2 <= "11"; --临时标记
+                    flag2 <= "011"; --临时标记
+                    flag3 <= "11101"; --特殊寄存器
                 end if;
                 
-            if flag2 = "00" then --正常情况
+                if (Instruction(15 downto 11) = "11010") then
+                    flag1 <= '1'; --存在特殊情况
+                    flag2 <= "100"; --临时标记
+                    flag3 <= "11010"; --特殊寄存器
+                end if;
+                
+            if flag2 = "000" then --正常情况
                 Rz <= reg_before(127 downto 112);
                 index(11 downto 8) <= "0111";
-            elsif  flag2 = "01" then
+            elsif  flag2 = "001" then
                 Rz <= SP_before;
                 index(11 downto 8) <= "1001";
-            elsif flag2 = "10" then
+            elsif flag2 = "010" then
                 Rz <= IH_before;
                 index(11 downto 8) <= "1000";
-            else
+            elsif flag2 = "011" then
                 Rz<= PC0;
                 index(11 downto 8) <= "1010";
+            else
+                Rz <= SP_before;
+                index(11 downto 8) <= "1001";
             end if;
             
         end if;
@@ -423,6 +520,28 @@ begin
         if Target(3 downto 0) < 15 then
             -- 不是输出
             led(15 downto 0)<=Data(15 downto 0);
+        end if;
+
+        if Target(3) = '0' then
+            if Target(2 downto 0) = Instruction(10 downto 8) then
+                Rx(15 downto 0) <= Data(15 downto 0);
+            end if;
+
+            if Target(2 downto 0) = Instruction(7 downto 5) then
+                Ry(15 downto 0) <= Data(15 downto 0);
+            end if;
+
+            if flag1 = '0' then --不存在特殊情况
+                if Target(2 downto 0) = Instruction(4 downto 2) then
+                    Rz(15 downto 0) <= Data(15 downto 0);
+                end if;
+            end if;
+        else
+            if flag1 = '1' then --存在特殊情况
+                if Target(3 downto 0) = SP(3 downto 0) then
+                    Rz(15 downto 0)<= Data(15 downto 0);
+                end if;
+            end if;
         end if;
 
             

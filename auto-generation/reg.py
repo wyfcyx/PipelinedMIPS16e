@@ -16,7 +16,7 @@ reg={
         '11101', '11100', '11011', '01100', '11010'
     ],
     'special':[
-        'LW_SP','MFIH','MFPC'
+        'LW_SP','MFIH','MFPC','SW_SP'
     ],
     'sindex':[
         9,8,10
@@ -49,7 +49,7 @@ def writereg(f):
 def Rz(index,f):
     #判断是不是特殊情况
     f.write('''
-                flag2 <= "00"; --初始化
+                flag2 <= "000"; --初始化
             ''')
     for i in range(len(reg['special'])):
         #如果是特殊情况
@@ -58,24 +58,28 @@ def Rz(index,f):
                 if (Instruction(15 downto 11) = "%s") then
                     flag1 <= '1'; --存在特殊情况
                     flag2 <= "%s"; --临时标记
+                    flag3 <= "%s"; --特殊寄存器
                 end if;
-                '''%(reg['bit15-11'][cur],'{:02b}'.format(i+1)))
+                '''%(reg['bit15-11'][cur],'{:03b}'.format(i+1),reg['bit15-11'][cur]))
     f.write('''
-            if flag2 = "00" then --正常情况
+            if flag2 = "000" then --正常情况
                 Rz <= reg_before(%d downto %d);
                 index(11 downto 8) <= "%s";
-            elsif  flag2 = "01" then
+            elsif  flag2 = "001" then
                 Rz <= SP_before;
                 index(11 downto 8) <= "%s";
-            elsif flag2 = "10" then
+            elsif flag2 = "010" then
                 Rz <= IH_before;
                 index(11 downto 8) <= "%s";
-            else
+            elsif flag2 = "011" then
                 Rz<= PC0;
+                index(11 downto 8) <= "%s";
+            else
+                Rz <= SP_before;
                 index(11 downto 8) <= "%s";
             end if;
             '''%(
-                index*16+15,index*16,'{:04b}'.format(index),reg['sbit15-11'][0],reg['sbit15-11'][1],reg['sbit15-11'][2]
+                index*16+15,index*16,'{:04b}'.format(index),reg['sbit15-11'][0],reg['sbit15-11'][1],reg['sbit15-11'][2],reg['sbit15-11'][0]
             ))
 def R(index,f):
     cur=['z','y','x']
@@ -127,7 +131,8 @@ entity reg is
 end reg;
 architecture bhv of reg is
     signal flag1: std_logic; --说明是否存在特殊情况
-    signal flag2: std_logic_vector(1 downto 0); --临时变量
+    signal flag2: std_logic_vector(2 downto 0); --临时变量
+    signal flag3: std_logic_vector(3 downto 0); --特殊寄存器
 begin
 process(SP_before,IH_before,reg_before,PC0,Instruction,Target,Data)
 begin
@@ -140,6 +145,28 @@ begin
         if Target(3 downto 0) < 15 then
             -- 不是输出
             led(15 downto 0)<=Data(15 downto 0);
+        end if;
+
+        if Target(3) = '0' then
+            if Target(2 downto 0) = Instruction(10 downto 8) then
+                Rx(15 downto 0) <= Data(15 downto 0);
+            end if;
+
+            if Target(2 downto 0) = Instruction(7 downto 5) then
+                Ry(15 downto 0) <= Data(15 downto 0);
+            end if;
+
+            if flag1 = '0' then --不存在特殊情况
+                if Target(2 downto 0) = Instruction(4 downto 2) then
+                    Rz(15 downto 0) <= Data(15 downto 0);
+                end if;
+            end if;
+        else
+            if flag1 = '1' then --存在特殊情况
+                if Target(3 downto 0) = SP(3 downto 0) then
+                    Rz(15 downto 0)<= Data(15 downto 0);
+                end if;
+            end if;
         end if;
 
             ''')
