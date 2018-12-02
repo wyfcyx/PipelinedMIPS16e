@@ -140,11 +140,19 @@ component alu is
 		AluInstruction : in std_logic_vector(3 downto 0);
 		T : in std_logic;
 		BranchTargetAlu : in std_logic_vector(15 downto 0);
+		
+		RegisterTarget : in std_logic_vector(3 downto 0);
+        ModifiedIndex_before : in std_logic_vector(3 downto 0);
+        ModifiedValue_before : in std_logic_vector(15 downto 0);
+		
 		BranchFlagForward : out std_logic;
 		BranchConfirm : out std_logic;
 		BranchTargetConfirm : out std_logic_vector(15 downto 0);
 		Tout : out std_logic;
-		Result : out std_logic_vector(15 downto 0)
+		Result : out std_logic_vector(15 downto 0);
+		
+		ModifiedIndex : out std_logic_vector(3 downto 0);
+        ModifiedValue : out std_logic_vector(15 downto 0)
 	);
 end component;
 
@@ -326,12 +334,17 @@ begin
 		AluInstruction => ID_EX_AluInstruction_out,
 		T => T_out,
 		BranchTargetAlu => ID_EX_BranchTargetAlu_out,
+		RegisterTarget => ID_EX_RegisterTarget_out,
+		ModifiedIndex_before => ID_EX_ModifiedIndex_out,
+		ModifiedValue_before => ID_EX_ModifiedValue_out,
 		-- out
-      BranchFlagForward => BranchFlagForward,
+		BranchFlagForward => BranchFlagForward,
 		BranchConfirm => BranchConfirm,
 		BranchTargetConfirm => BranchConfirmTarget,
 		Tout => T_in,
-		Result => EX_MEM_AluResult_in
+		Result => EX_MEM_AluResult_in,
+		ModifiedIndex => ID_EX_ModifiedIndex_in,
+		ModifiedValue => ID_EX_ModifiedValue_in
 	);
 
 	pcselector_instance : pcselector port map(
