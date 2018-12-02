@@ -366,7 +366,7 @@ def output_instruction(ins, f, tabs):
 
     # 数据选择器
     f.write('%sDataSelectorInstruction <= "%s";\n' % (tabs, ("00" + get_data(ins, 'DataSelectorInstruction')
-                                                       )[:6]))
+                                                       )[-6:]))
     f.write('%sBubbleNext <= "%s";\n' % (tabs, get_data(ins, 'BubbleNext')))
     if get_data(ins, 'BubbleNext') != "000":
         f.write('%sBranchForce <= \'1\';\n%sBranchTarget <= PC0;\n' % (
