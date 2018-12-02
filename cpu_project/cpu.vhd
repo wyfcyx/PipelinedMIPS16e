@@ -231,7 +231,9 @@ begin
 	--led <= IF_ID_Bubble_out(2 downto 0) & IF_ID_Instruction_out(15 downto 11) & IF_ID_PC0_out(3 downto 0) & ID_EX_AluInstruction_in(3 downto 0);
 	--led <= ID_EX_AluInstruction_out(3 downto 0) & ID_EX_Rx_out(3 downto 0) & EX_MEM_AluResult_out(3 downto 0) & DataA(3 downto 0);
 	--led <= EX_MEM_AluResult_out(11 downto 8) & DataB(3 downto 0) & ID_EX_ModifiedIndex_out(3 downto 0) & ID_EX_ModifiedValue_out(11 downto 8);
-	led <= ID_EX_ModifiedIndex_out(3 downto 0) & ID_EX_ModifiedValue_out(7 downto 4) & ID_EX_Ry_out(7 downto 4) & EX_MEM_DataS_in(7 downto 4);
+	--led <= ID_EX_ModifiedIndex_out(3 downto 0) & ID_EX_ModifiedValue_out(7 downto 4) & ID_EX_Ry_out(7 downto 4) & EX_MEM_DataS_in(7 downto 4);
+	--led <= EX_MEM_DataS_out(7 downto 4) & EX_MEM_AluResult_out(15 downto 12) & EX_MEM_LFlag_out & EX_MEM_SFlag_out & "00" & MEM_WB_WriteInData_in(7 downto 4);
+	led <= led_memory;
 	-- register-forward routes
 	EX_MEM_LFlag_in <= ID_EX_LFlag_out;
 	EX_MEM_SFlag_in <= ID_EX_SFlag_out;
@@ -247,7 +249,7 @@ begin
 		InstructionAddress => PC_out,
 		-- out
 		Result => MEM_WB_WriteInData_in,
-      Result_L => ID_EX_ModifiedValue_in_L,
+		Result_L => ID_EX_ModifiedValue_in_L,
 		InstructionResult => IF_ID_Instruction_in,
 		-- ram & comm
 		clk => clk,
