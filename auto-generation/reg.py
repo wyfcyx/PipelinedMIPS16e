@@ -58,9 +58,8 @@ def Rz(index,f):
                 if (Instruction(15 downto 11) = "%s") then
                     flag1 <= '1'; --存在特殊情况
                     flag2 <= "%s"; --临时标记
-                    flag3 <= "%s"; --特殊寄存器
                 end if;
-                '''%(reg['bit15-11'][cur],'{:03b}'.format(i+1),reg['bit15-11'][cur]))
+                '''%(reg['bit15-11'][cur],'{:03b}'.format(i+1)))
     f.write('''
             if flag2 = "000" then --正常情况
                 Rz <= reg_before(%d downto %d);
@@ -68,15 +67,19 @@ def Rz(index,f):
             elsif  flag2 = "001" then
                 Rz <= SP_before;
                 index(11 downto 8) <= "%s";
+                flag3 <= "1001";
             elsif flag2 = "010" then
                 Rz <= IH_before;
                 index(11 downto 8) <= "%s";
+                flag3 <= "1000";
             elsif flag2 = "011" then
                 Rz<= PC0;
                 index(11 downto 8) <= "%s";
+                flag3 <= "1010";
             else
                 Rz <= SP_before;
                 index(11 downto 8) <= "%s";
+                flag3 <= "1001";
             end if;
             '''%(
                 index*16+15,index*16,'{:04b}'.format(index),reg['sbit15-11'][0],reg['sbit15-11'][1],reg['sbit15-11'][2],reg['sbit15-11'][0]
@@ -163,7 +166,7 @@ begin
             end if;
         else
             if flag1 = '1' then --存在特殊情况
-                if Target(3 downto 0) = SP(3 downto 0) then
+                if Target(3 downto 0) = flag3(3 downto 0) then
                     Rz(15 downto 0)<= Data(15 downto 0);
                 end if;
             end if;
