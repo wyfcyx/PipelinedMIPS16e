@@ -30,13 +30,13 @@ begin
         PCNext <= BranchTarget;
     end if;
     if (BranchForce = '0' and BranchFlagForward = '1' and BranchConfirm = '1') then
-        PCNext <= PC + 1;
+        PCNext <= BranchTargetConfirm;
     end if;
     if (BranchForce = '0' and BranchFlagForward = '0' and BranchFlag = '0') then
         PCNext <= PC + 1;
     end if;
     if (BranchForce = '0' and BranchFlagForward = '1' and BranchConfirm = '0') then
-        PCNext <= BranchTargetConfirm;
+        PCNext <= PC + 1;
     end if;
     PredictionFailed <= (BranchFlagForward and (not BranchForce) and (not BranchConfirm));
     BranchPredictNext <= (BranchFlagForward and (not BranchForce) and (not BranchConfirm)) xor (BranchPredict);
