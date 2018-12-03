@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg_test_isim_beh.exe" -prj "D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/reg_test_beh.prj" "work.reg_test" 
