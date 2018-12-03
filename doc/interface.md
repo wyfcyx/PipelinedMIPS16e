@@ -237,15 +237,15 @@ PredictionFailed：指示本次预测是否失败【不预测的情况为0】
 
 BranchPredictNext：下次跳转预测是否预测为跳转
 
-【注意，因为我们在Decoder的地方做了特殊处理，所以在译码器的视角，永远是“预测跳转的”。所以Confirm=1相当于“预测正确”，Confirm=0相当于“预测失败并转向TargetConfirm”】
+【注意，因为我们在Decoder的地方做了特殊处理，所以在译码器的视角，永远是“预测跳转的”。所以Confirm=0相当于“预测正确”，Confirm=1相当于“预测失败并转向TargetConfirm”】
 
 此模块的真值表：
 
 | Flag | Force | FlagF | Confirm | PCNext        | PredFailed | PredNext    |
 | ---- | ----- | ----- | ------- | ------------- | ---------- | ----------- |
 | X    | 1     | X     | X       | Target        | 0          | Predict     |
-| X    | 0     | 1     | 1       | PC0           | 0          | Predict     |
-| X    | 0     | 1     | 0       | TargetConfirm | 1          | not Predict |
+| X    | 0     | 1     | 0       | PC0           | 0          | Predict     |
+| X    | 0     | 1     | 1       | TargetConfirm | 1          | not Predict |
 | 1    | 0     | 0     | X       | Target        | 0          | Predict     |
 | 0    | 0     | 0     | X       | PC0           | 0          | Predict     |
 
