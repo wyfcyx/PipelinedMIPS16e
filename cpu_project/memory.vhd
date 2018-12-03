@@ -56,7 +56,11 @@ end memory;
 -- no comm, no write instruction mem now
 architecture bhv of memory is
 type Ram1State is (
-	waiting, read1, read2, write1, done
+	waiting,
+	read1, read2, write1,
+	commRead1, commRead2, commRead3,
+	commWrite1, commWrite2, commWrite3, commWrite4, commWrite5,
+	done
 );
 type Ram2State is (
 	waiting, read1, read2, write1, done
@@ -106,8 +110,7 @@ begin
 			curAddr <= (others => '0');
 			startedCache <= '0';
 			state <= read1;
-			rdn <= '1';
-			wrn <= '1';
+			
 		elsif (clk_scan'event and clk_scan = '1') then
 			if (startedCache = '1') then
 				-- fetch instruction
@@ -145,12 +148,20 @@ begin
 				case r1State is
 					when waiting =>
 						if (LFlag = '1') then
-							r1State <= read1;
+							if (Address = x"bf00") then
+								r1State <= commRead1;
+							else
+								r1State <= read1;
+							end if;
 						elsif (SFlag = '1') then
                             Result_L_pointer <= '0';
                             Result_L <= "0000000000000000";
                             Result <= Address;
-							r1State <= write1;
+							if (Address = x"bf00") then
+								r1State <= write1;
+							else
+								r1State <= commWrite1;
+							end if;
 						else
                             Result_L_pointer <= '0';
                             Result_L <= "0000000000000000";
@@ -161,6 +172,8 @@ begin
 						Ram1WE <= '1';
 						Ram1OE <= '0';
 						Ram1EN <= '0';
+						rdn <= '1';
+						wrn <= '1';
 						Ram1Data <= (others => 'Z');
 						Ram1Addr <= Address;
 						r1State <= read2;
@@ -173,9 +186,52 @@ begin
 						Ram1WE <= '0';
 						Ram1OE <= '1';
 						Ram1EN <= '0';
+						rdn <= '1';
+						wrn <= '1';
 						Ram1Data <= DataS;
 						Ram1Addr <= Address;
 						r1State <= done;
+					when commRead1 =>
+						Ram1WE <= '1';
+						Ram1OE <= '1';
+						Ram1EN <= '1';
+						rdn <= '1';
+						wrn <= '1';
+						Ram1Data <= (others => 'Z');
+						r1State <= commRead2;
+					when commRead2 =>
+						if (dataReady = '1') then
+							rdn <= '0';
+							r1State <= commRead3;
+						else
+							r1State <= commRead1;
+						end if;
+					when commRead3 =>
+						Result <= Ram1Data;
+						Result_L_pointer <= '1';
+						Result_L <= Ram1Data;
+						r1State <= done;
+					when commWrite1 =>
+						Ram1WE <= '1';
+						Ram1OE <= '1';
+						Ram1EN <= '1';
+						wrn <= '1';
+						r1State <= commWrite2;
+					when commWrite2 =>
+						wrn <= '0';
+						Ram1Data <= DataS;
+						r1State <= commWrite3;
+					when commWrite3 =>
+						wrn <= '1';
+						r1State <= commWrite4;
+					when commWrite4 =>
+						if (tbre = '1') then
+							r1State <= commWrite5;
+						end if;
+					when commWrite5 =>
+						if (tsre = '1') then
+							r1State <= done;
+						end if;
 					when done =>
 					when others =>
 				end case;
