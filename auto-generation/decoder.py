@@ -278,23 +278,25 @@ def output_instruction(ins, f, tabs):
     if get_data(ins, 'BranchFlag') == '1':
         if ins not in ('B', 'JR'):
             # 需要预判的情况
-            f.write('''
+            f.write(('''
             if (BranchPredict = '0') then
                 BranchTarget <= PC0 + 1;
-                BranchTargetAlu <= PC0 + Instruction(7 downto 0);
+                BranchTargetAlu <= PC0 + (%s & Instruction(7 downto 0));
             else
                 BranchTargetAlu <= PC0 + 1;
-                BranchTarget <= PC0 + Instruction(7 downto 0);
+                BranchTarget <= PC0 + (%s & Instruction(7 downto 0));
             end if;
-            '''.replace(' ' * 12, tabs))
+            ''' % ((' & '.join(['Instruction(7)', ] * 8), ) * 2)).replace(' ' * 12, tabs))
         else:
             # 不需要预判的情况
             if ins == 'B':
                 # 直接跳转的情况
-                f.write('''
+                f.write(('''
                 BranchTargetAlu <= PC0 + 1;
-                BranchTarget <= PC0 + Instruction(7 downto 0);
-                '''.replace(' ' * 16, tabs))
+                BranchTarget <= PC0 + (%s & Instruction(7 downto 0));
+                ''' % (' & '.join([
+                    'Instruction(7)',
+                ] * 8), )).replace(' ' * 16, tabs))
             else:
                 # 读取跳转的情况
                 for i in range(8):

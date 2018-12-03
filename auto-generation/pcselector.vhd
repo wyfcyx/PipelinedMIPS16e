@@ -18,7 +18,7 @@ entity PCSelector is
         PCNext: out std_logic_vector(15 downto 0);
         PredictionFailed: out std_logic;
         BranchPredictNext: out std_logic
-    )
+    );
 end PCSelector;
 
 architecture bhv of PCSelector is
