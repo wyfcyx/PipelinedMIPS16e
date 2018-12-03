@@ -1,0 +1,36 @@
+#cpu file
+cpu_project/*.exe
+cpu_project/**/*.xmsgs
+cpu_project/*.gise
+cpu_project/*.xise
+cpu_project/*.xwbt
+cpu_project/*.ncd
+cpu_project/*.bit
+cpu_project/*.log
+cpu_project/*.xmsgs
+cpu_project/*.cmd
+cpu_project/*.prj
+cpu_project/*.xst
+cpu_project/*.wdb
+cpu_project/iseconfig/*
+cpu_project/isim/
+cpu_project/*.cmd_log
+cpu_project/*.lso
+cpu_project/*.syr
+cpu_project/*.ucf
+cpu_project/*.html
+cpu_project/*.xrpt
+cpu_project/*.dat
+cpu_project/*.tcl
+cpu_project/*.xml
+cpu_project/*.ini
+cpu_project/xst/
+# Unittest / Coverage report
+.pytest_cache/
+
+**/.DS_Store
+
+#vim
+*.swp
+
+
