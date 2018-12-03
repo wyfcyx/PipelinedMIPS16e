@@ -158,9 +158,9 @@ begin
                             Result_L <= "0000000000000000";
                             Result <= Address;
 							if (Address = x"bf00") then
-								r1State <= write1;
-							else
 								r1State <= commWrite1;
+							else
+								r1State <= write1;
 							end if;
 						else
                             Result_L_pointer <= '0';

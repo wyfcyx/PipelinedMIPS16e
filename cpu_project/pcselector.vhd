@@ -36,9 +36,9 @@ begin
         PCNext <= PC + 1;
     end if;
     if (BranchForce = '0' and BranchFlagForward = '1' and BranchConfirm = '0') then
-		  PCNext <= PC + 1;
+        PCNext <= PC + 1;
     end if;
-    PredictionFailed <= (BranchFlagForward and (not BranchForce) and (not BranchConfirm));
-    BranchPredictNext <= (BranchFlagForward and (not BranchForce) and (not BranchConfirm)) xor (BranchPredict);
+    PredictionFailed <= (BranchFlagForward and (not BranchForce) and BranchConfirm);
+    BranchPredictNext <= (BranchFlagForward and (not BranchForce) and BranchConfirm) xor (BranchPredict);
 end process;
 end bhv;
