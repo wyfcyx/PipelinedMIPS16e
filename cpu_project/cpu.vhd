@@ -69,6 +69,7 @@ signal ID_EX_Index_in, ID_EX_Index_out : std_logic_vector(11 downto 0);
 signal ID_EX_ModifiedIndex_in, ID_EX_ModifiedIndex_out : std_logic_vector(3 downto 0);
 signal ID_EX_ModifiedValue_in, ID_EX_ModifiedValue_out : std_logic_vector(15 downto 0);
 signal ID_EX_ModifiedValue_in_L : std_logic_vector(15 downto 0);
+signal ID_EX_ModifiedValue_in_L_pointer : std_logic := '0';
 -- EX/MEM lock
 signal EX_MEM_LFlag_in, EX_MEM_LFlag_out : std_logic;
 signal EX_MEM_SFlag_in, EX_MEM_SFlag_out : std_logic;
@@ -187,6 +188,7 @@ component memory is
 		reset : in std_logic;
 		
 		Result : out std_logic_vector(15 downto 0);
+        Result_L_pointer : out std_logic;
         Result_L : out std_logic_vector(15 downto 0);
 		InstructionResult : out std_logic_vector(15 downto 0);
 
@@ -226,11 +228,14 @@ begin
 	--led <= ID_EX_AluInstruction_in(3 downto 0) & ID_EX_Rx_in(3 downto 0) & EX_MEM_AluResult_in(3 downto 0) & DataA(3 downto 0);
 	--led <= IF_ID_Bubble_out(2 downto 0) & IF_ID_Instruction_out(15 downto 11) & IF_ID_PC0_out(3 downto 0) & ID_EX_AluInstruction_in(3 downto 0);
 	--led <= PC_out(3 downto 0) & IF_ID_PC0_in(3 downto 0) & BranchTarget(2 downto 0) &  BranchForce& IF_ID_Instruction_in(3 downto 0);
-	led <= led_reg;
+	--led <= led_reg;
 	--led <= IF_ID_Bubble_out(2 downto 0) & BranchForce& IF_ID_Instruction_out(3 downto 0) & IF_ID_PC0_out(3 downto 0) & ID_EX_AluInstruction_in(3 downto 0);
 	--led <= IF_ID_Bubble_out(2 downto 0) & IF_ID_Instruction_out(15 downto 11) & IF_ID_PC0_out(3 downto 0) & ID_EX_AluInstruction_in(3 downto 0);
 	--led <= ID_EX_AluInstruction_out(3 downto 0) & ID_EX_Rx_out(3 downto 0) & EX_MEM_AluResult_out(3 downto 0) & DataA(3 downto 0);
 	--led <= EX_MEM_AluResult_out(11 downto 8) & DataB(3 downto 0) & ID_EX_ModifiedIndex_out(3 downto 0) & ID_EX_ModifiedValue_out(11 downto 8);
+	--led <= ID_EX_ModifiedIndex_out(3 downto 0) & ID_EX_ModifiedValue_out(7 downto 4) & ID_EX_Ry_out(7 downto 4) & EX_MEM_DataS_in(7 downto 4);
+	--led <= EX_MEM_DataS_out(7 downto 4) & EX_MEM_AluResult_out(15 downto 12) & EX_MEM_LFlag_out & EX_MEM_SFlag_out & "00" & MEM_WB_WriteInData_in(7 downto 4);
+	led <= led_memory;
 	-- register-forward routes
 	EX_MEM_LFlag_in <= ID_EX_LFlag_out;
 	EX_MEM_SFlag_in <= ID_EX_SFlag_out;
@@ -246,7 +251,12 @@ begin
 		InstructionAddress => PC_out,
 		-- out
 		Result => MEM_WB_WriteInData_in,
+<<<<<<< HEAD
+        Result_L_pointer => ID_EX_ModifiedValue_in_L_pointer;
         Result_L => ID_EX_ModifiedValue_in_L;
+=======
+		Result_L => ID_EX_ModifiedValue_in_L,
+>>>>>>> 4bddc5800bb9d72980aff16be81527a9fb356750
 		InstructionResult => IF_ID_Instruction_in,
 		-- ram & comm
 		clk => clk,
@@ -400,7 +410,7 @@ begin
 			ID_EX_Rz_out <= ID_EX_Rz_in;
 			ID_EX_Index_out <= ID_EX_Index_in;
 			ID_EX_ModifiedIndex_out <= ID_EX_ModifiedIndex_in;
-            if (ID_EX_ModifiedValue_in_L == "0000000000000000") then
+            if (ID_EX_ModifiedValue_in_L_pointer = '0') then
                 ID_EX_ModifiedValue_out <= ID_EX_ModifiedValue_in;
             else
                 ID_EX_ModifiedValue_out <= ID_EX_ModifiedValue_in_L;

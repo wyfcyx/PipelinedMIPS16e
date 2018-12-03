@@ -22,6 +22,7 @@ entity memory is
 		reset : in std_logic;
 		
 		Result : out std_logic_vector(15 downto 0);
+        Result_L_pointer : out std_logic;
         Result_L : out std_logic_vector(15 downto 0);
 		InstructionResult : out std_logic_vector(15 downto 0);
 
@@ -60,15 +61,15 @@ type Ram1State is (
 type Ram2State is (
 	waiting, read1, read2, write1, done
 );
-signal r1State : Ram1State := waiting;
-signal r2State : Ram2State := waiting;
+signal r1State : Ram1State := done;
+signal r2State : Ram2State := done;
 signal r1Trigger : std_logic_vector(17 downto 0) := (others => '1');
 signal r2Trigger : std_logic_vector(15 downto 0) := (others => '1');
 signal curAddr : std_logic_vector(15 downto 0) := (others => '0');
 signal curData : std_logic_vector(15 downto 0);
 signal instructions : std_logic_vector(15 downto 0) := x"4000";
 type FlashToRamState is (
-	waiting, read1, read2, read3, read4, writeToRam, done, readTest
+	waiting, read1, read2, read3, read4, writeToRam, done, after1, after2, after3
 );
 signal state : FlashToRamState := waiting;
 signal startedCache : std_logic := '0';
@@ -129,7 +130,7 @@ begin
 						r2State <= read2;
 					when read2 =>
 						InstructionResult <= Ram2Data;
-						led <= Ram2Data;
+						--led <= Ram2Data;
 						r2State <= done;
 					when done =>
 					when others =>
@@ -144,10 +145,12 @@ begin
 						if (LFlag = '1') then
 							r1State <= read1;
 						elsif (SFlag = '1') then
+                            Result_L_pointer <= '0';
                             Result_L <= "0000000000000000";
                             Result <= Address;
 							r1State <= write1;
 						else
+                            Result_L_pointer <= '0';
                             Result_L <= "0000000000000000";
 							Result <= Address;
 							r1State <= done;
@@ -161,6 +164,7 @@ begin
 						r1State <= read2;
 					when read2 =>
 						Result <= Ram1Data;
+                        Result_L_pointer <= '1';
                         Result_L <= Ram1Data;
 						r1State <= done;
 					when write1 =>
@@ -204,15 +208,22 @@ begin
 							state <= read1;
 						end if;
 					when done =>
-						Ram2WE <= '1';
-						Ram2OE <= '0';
-						Ram2EN <= '0';
-						Ram2Addr <= (others => '0');
-						Ram2Data <= (others => 'Z');
-						state <= readTest;
-					when readTest =>
+						Ram1WE <= '0';
+						Ram1OE <= '1';
+						Ram1EN <= '0';
+						Ram1Addr <= x"c000";
+						Ram1Data <= "0011010001010110";
+						state <= after1;
+					when after1 =>
+						Ram1WE <= '1';
+						Ram1OE <= '0';
+						Ram1EN <= '0';
+						Ram1Addr <= x"c000";
+						Ram1Data <= (others => 'Z');
+						state <= after2;
+					when after2 =>
 						startedCache <= '1';
-						--led <= Ram2Data;
+						led <= Ram1Data;
 					when others =>
 				end case;
 			end if;

@@ -73,7 +73,7 @@ begin
 	led <= led_cpu;
 	cpu_instance : cpu port map(
 		clk => clk,
-		clk_scan => clk_scan,
+		clk_scan => gen_clk_scan,
 		reset => reset,
 		Ram1Data => Ram1Data,
 		Ram1Addr => Ram1Addr,
@@ -104,7 +104,7 @@ begin
 	process (clk_scan)
 	begin
 		if (clk_scan'event and clk_scan = '1') then
-			if (gen_scan_count = 1000000) then
+			if (gen_scan_count = 10) then
 				gen_scan_count <= (others => '0');
 				gen_clk_scan <= not gen_clk_scan;
 			else
