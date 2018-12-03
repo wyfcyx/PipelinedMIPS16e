@@ -22,6 +22,7 @@ entity memory is
 		reset : in std_logic;
 		
 		Result : out std_logic_vector(15 downto 0);
+        Result_L_pointer : out std_logic;
         Result_L : out std_logic_vector(15 downto 0);
 		InstructionResult : out std_logic_vector(15 downto 0);
 
@@ -144,10 +145,12 @@ begin
 						if (LFlag = '1') then
 							r1State <= read1;
 						elsif (SFlag = '1') then
+                            Result_L_pointer <= '0';
                             Result_L <= "0000000000000000";
                             Result <= Address;
 							r1State <= write1;
 						else
+                            Result_L_pointer <= '0';
                             Result_L <= "0000000000000000";
 							Result <= Address;
 							r1State <= done;
@@ -161,6 +164,7 @@ begin
 						r1State <= read2;
 					when read2 =>
 						Result <= Ram1Data;
+                        Result_L_pointer <= '1';
                         Result_L <= Ram1Data;
 						r1State <= done;
 					when write1 =>
