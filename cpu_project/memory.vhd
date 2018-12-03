@@ -67,10 +67,10 @@ type Ram2State is (
 );
 signal r1State : Ram1State := done;
 signal r2State : Ram2State := done;
-signal r1Trigger : std_logic_vector(17 downto 0) := (others => '1');
+signal r1Trigger : std_logic_vector(33 downto 0) := (others => '1');
 signal r2Trigger : std_logic_vector(15 downto 0) := (others => '1');
 signal curAddr : std_logic_vector(15 downto 0) := (others => '0');
-signal curData : std_logic_vector(15 downto 0);
+signal curData : std_logic_vector(15 downto 0) := (others => '0');
 signal instructions : std_logic_vector(15 downto 0) := x"4000";
 type FlashToRamState is (
 	waiting, read1, read2, read3, read4, writeToRam, done, after1, after2, after3
@@ -78,23 +78,6 @@ type FlashToRamState is (
 signal state : FlashToRamState := waiting;
 signal startedCache : std_logic := '0';
 begin
---	process (r2State)
---	begin
---		case r2State is
---			when waiting =>
---				led <= "0010000000000000";
---			when read1 =>
---				led <= "0100000000000000";
---			when read2 =>
---				led <= "0110000000000000";
---			when write1 =>
---				led <= "1000000000000000";
---			when done =>
---				led <= "1010000000000000";
---			when others =>
---		end case;
---	end process;
-
 	flashByte <= '1';
 	flashVpen <= '1';
 	flashRP <= '1';
@@ -111,7 +94,7 @@ begin
 			startedCache <= '0';
 			state <= read1;
 			
-		elsif (clk_scan'event and clk_scan = '1') then
+		elsif (clk_scan'event and clk_scan = '0') then
 			if (startedCache = '1') then
 				-- fetch instruction
 				if (r2Trigger /= InstructionAddress) then
@@ -141,9 +124,9 @@ begin
 					when others =>
 				end case;
 				-- data mem operation
-				if (r1Trigger /= (LFlag & SFlag & Address)) then
+				if (r1Trigger /= (LFlag & SFlag & Address & DataS)) then
 					r1State <= waiting;
-					r1Trigger <= (LFlag & SFlag & Address);
+					r1Trigger <= (LFlag & SFlag & Address & DataS);
 				end if;
 				case r1State is
 					when waiting =>

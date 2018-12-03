@@ -21,9 +21,9 @@ entity reg is
 	);
 end reg;
 architecture bhv of reg is
-    signal flag1: std_logic; --说明是否存在特殊情况
-    signal flag2: std_logic_vector(2 downto 0); --临时变量
-    signal flag3: std_logic_vector(3 downto 0); --特殊寄存器
+    signal flag1: std_logic := '0'; --说明是否存在特殊情况
+    signal flag2: std_logic_vector(2 downto 0) := (others => '0'); --临时变量
+    signal flag3: std_logic_vector(3 downto 0) := (others => '0'); --特殊寄存器
 begin
 process(SP_before,IH_before,reg_before,PC0,Instruction,Target,Data)
 begin

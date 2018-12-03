@@ -26,7 +26,7 @@ entity alu is
 end alu;
 
 architecture bhv of alu is
-signal Result0 : std_logic_vector(15 downto 0);
+signal Result0 : std_logic_vector(15 downto 0) := (others => '0');
 begin
 
 process(DataA, DataB, AluInstruction, T, BranchTargetAlu, RegisterTarget, ModifiedIndex_before, ModifiedValue_before)

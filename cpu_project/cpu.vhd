@@ -37,10 +37,10 @@ end cpu;
 architecture bhv of cpu is 
 -- Global Regs lock
 signal PC_in, PC_out : std_logic_vector(15 downto 0) := (others => '0'); -- r10
-signal SP_in, SP_out : std_logic_vector(15 downto 0); -- r9
-signal IH_in, IH_out : std_logic_vector(15 downto 0); -- r8
-signal reg_in, reg_out : std_logic_vector(127 downto 0); -- r0(15 downto 0), r1(31 downto 16), ...
-signal T_in, T_out : std_logic;
+signal SP_in, SP_out : std_logic_vector(15 downto 0) := (others => '0'); -- r9
+signal IH_in, IH_out : std_logic_vector(15 downto 0) := (others => '0'); -- r8
+signal reg_in, reg_out : std_logic_vector(127 downto 0) := (others => '0'); -- r0(15 downto 0), r1(31 downto 16), ...
+signal T_in, T_out : std_logic := '0';
 -- Local Regs lock
 signal BranchPredict_in, BranchPredict_out : std_logic := '0';
 signal PredictionFailed_in, PredictionFailed_out : std_logic := '0';
@@ -49,40 +49,40 @@ signal DataA, DataB : std_logic_vector(15 downto 0);
 signal BranchForce, BranchConfirm, BranchFlag : std_logic := '0';
 signal BranchTarget, BranchConfirmTarget : std_logic_vector(15 downto 0) := (others => '0');
 signal BranchFlagForward : std_logic := '0';
-signal Data : std_logic_vector(63 downto 0);
+signal Data : std_logic_vector(63 downto 0) := (others => '0');
 -- IF/ID lock
-signal IF_ID_PC0_in, IF_ID_PC0_out : std_logic_vector(15 downto 0);
-signal IF_ID_Instruction_in, IF_ID_Instruction_out : std_logic_vector(15 downto 0);
+signal IF_ID_PC0_in, IF_ID_PC0_out : std_logic_vector(15 downto 0) := (others => '0');
+signal IF_ID_Instruction_in, IF_ID_Instruction_out : std_logic_vector(15 downto 0) := (others => '0');
 signal IF_ID_Bubble_in, IF_ID_Bubble_out : std_logic_vector(2 downto 0) := "000";
 -- ID/EX lock
-signal ID_EX_LFlag_in, ID_EX_LFlag_out : std_logic;
-signal ID_EX_SFlag_in, ID_EX_SFlag_out : std_logic;
+signal ID_EX_LFlag_in, ID_EX_LFlag_out : std_logic := '0';
+signal ID_EX_SFlag_in, ID_EX_SFlag_out : std_logic := '0';
 signal ID_EX_BranchTargetAlu_in, ID_EX_BranchTargetAlu_out : std_logic_vector(15 downto 0) := (others => '0');
-signal ID_EX_RegisterTarget_in, ID_EX_RegisterTarget_out : std_logic_vector(3 downto 0);
-signal ID_EX_AluInstruction_in, ID_EX_AluInstruction_out : std_logic_vector(3 downto 0);
-signal ID_EX_Immediate_in, ID_EX_Immediate_out : std_logic_vector(15 downto 0);
-signal ID_EX_DataSelectorInstruction_in, ID_EX_DataSelectorInstruction_out : std_logic_vector(5 downto 0);
-signal ID_EX_Rx_in, ID_EX_Rx_out : std_logic_vector(15 downto 0);
-signal ID_EX_Ry_in, ID_EX_Ry_out : std_logic_vector(15 downto 0);
-signal ID_EX_Rz_in, ID_EX_Rz_out : std_logic_vector(15 downto 0);
-signal ID_EX_Index_in, ID_EX_Index_out : std_logic_vector(11 downto 0);
-signal ID_EX_ModifiedIndex_in, ID_EX_ModifiedIndex_out : std_logic_vector(3 downto 0);
-signal ID_EX_ModifiedValue_in, ID_EX_ModifiedValue_out : std_logic_vector(15 downto 0);
-signal ID_EX_ModifiedValue_in_L : std_logic_vector(15 downto 0);
+signal ID_EX_RegisterTarget_in, ID_EX_RegisterTarget_out : std_logic_vector(3 downto 0) := (others => '1');
+signal ID_EX_AluInstruction_in, ID_EX_AluInstruction_out : std_logic_vector(3 downto 0) := (others => '0');
+signal ID_EX_Immediate_in, ID_EX_Immediate_out : std_logic_vector(15 downto 0) := (others => '0');
+signal ID_EX_DataSelectorInstruction_in, ID_EX_DataSelectorInstruction_out : std_logic_vector(5 downto 0) := (others => '0');
+signal ID_EX_Rx_in, ID_EX_Rx_out : std_logic_vector(15 downto 0) := (others => '0');
+signal ID_EX_Ry_in, ID_EX_Ry_out : std_logic_vector(15 downto 0) := (others => '0');
+signal ID_EX_Rz_in, ID_EX_Rz_out : std_logic_vector(15 downto 0) := (others => '0');
+signal ID_EX_Index_in, ID_EX_Index_out : std_logic_vector(11 downto 0) := (others => '0');
+signal ID_EX_ModifiedIndex_in, ID_EX_ModifiedIndex_out : std_logic_vector(3 downto 0) := (others => '0');
+signal ID_EX_ModifiedValue_in, ID_EX_ModifiedValue_out : std_logic_vector(15 downto 0) := (others => '0');
+signal ID_EX_ModifiedValue_in_L : std_logic_vector(15 downto 0) := (others => '0');
 signal ID_EX_ModifiedValue_in_L_pointer : std_logic := '0';
 -- EX/MEM lock
-signal EX_MEM_LFlag_in, EX_MEM_LFlag_out : std_logic;
-signal EX_MEM_SFlag_in, EX_MEM_SFlag_out : std_logic;
-signal EX_MEM_RegisterTarget_in, EX_MEM_RegisterTarget_out : std_logic_vector(3 downto 0);
-signal EX_MEM_AluResult_in, EX_MEM_AluResult_out : std_logic_vector(15 downto 0);
-signal EX_MEM_DataS_in, EX_MEM_DataS_out : std_logic_vector(15 downto 0);
+signal EX_MEM_LFlag_in, EX_MEM_LFlag_out : std_logic := '0';
+signal EX_MEM_SFlag_in, EX_MEM_SFlag_out : std_logic := '0';
+signal EX_MEM_RegisterTarget_in, EX_MEM_RegisterTarget_out : std_logic_vector(3 downto 0) := (others => '0');
+signal EX_MEM_AluResult_in, EX_MEM_AluResult_out : std_logic_vector(15 downto 0) := (others => '0');
+signal EX_MEM_DataS_in, EX_MEM_DataS_out : std_logic_vector(15 downto 0) := (others => '0');
 -- MEM/WB lock
-signal MEM_WB_RegisterTarget_in, MEM_WB_RegisterTarget_out : std_logic_vector(3 downto 0);
-signal MEM_WB_WriteInData_in, MEM_WB_WriteInData_out : std_logic_vector(15 downto 0);
+signal MEM_WB_RegisterTarget_in, MEM_WB_RegisterTarget_out : std_logic_vector(3 downto 0) := (others => '0');
+signal MEM_WB_WriteInData_in, MEM_WB_WriteInData_out : std_logic_vector(15 downto 0) := (others => '0');
 -- debug led
-signal led_reg : std_logic_vector(15 downto 0);
+signal led_reg : std_logic_vector(15 downto 0) := (others => '0');
 signal led_test : std_logic_vector(15 downto 0) := (others => '0');
-signal led_memory : std_logic_vector(15 downto 0);
+signal led_memory : std_logic_vector(15 downto 0) := (others => '0');
 -- Components
 component decoder is
 	port(
@@ -237,7 +237,9 @@ begin
 	--led <= EX_MEM_DataS_out(7 downto 4) & EX_MEM_AluResult_out(15 downto 12) & EX_MEM_LFlag_out & EX_MEM_SFlag_out & "00" & MEM_WB_WriteInData_in(7 downto 4);
 	--led <= led_memory;
 	--led <= EX_MEM_RegisterTarget_out & MEM_WB_WriteInData_in(7 downto 4) & DataA(7 downto 4) & DataB(7 downto 4);
-	led <= PC_out(3 downto 0) & BranchConfirmTarget(3 downto 0) & BranchPredict_out & BranchFlag & BranchForce & BranchFlagForward & BranchConfirm & PredictionFailed_in & BranchPredict_in & "0";
+	--led <= PC_out(3 downto 0) & BranchConfirmTarget(3 downto 0) & BranchPredict_out & BranchFlag & BranchForce & BranchFlagForward & BranchConfirm & PredictionFailed_in & BranchPredict_in & "0";
+	led <= reg_out(7 downto 0) & reg_out(23 downto 16);
+	--led <= EX_MEM_DataS_out(7 downto 0) & EX_MEM_AluResult_out(7 downto 0);
 	-- register-forward routes
 	EX_MEM_LFlag_in <= ID_EX_LFlag_out;
 	EX_MEM_SFlag_in <= ID_EX_SFlag_out;
