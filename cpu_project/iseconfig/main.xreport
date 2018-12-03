@@ -1,23 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-<<<<<<< HEAD
-<<<<<<< HEAD
-  <DateModified>2018-12-02T22:00:56</DateModified>
-  <ModuleName>main</ModuleName>
-  <SummaryTimeStamp>2018-12-02T18:08:10</SummaryTimeStamp>
-  <SavedFilePath>Z:/Desktop/cpu/PipelinedMIPS16e/cpu_project/iseconfig/main.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>Z:/Desktop/cpu/PipelinedMIPS16e/cpu_project\</ImplementationReportsDirectory>
-=======
-  <DateModified>2018-12-03T14:35:10</DateModified>
-=======
-  <DateModified>2018-12-03T16:47:03</DateModified>
->>>>>>> 12/3 16:47
+  <DateModified>2018-12-03T18:52:38</DateModified>
   <ModuleName>main</ModuleName>
   <SummaryTimeStamp>2018-12-03T16:46:33</SummaryTimeStamp>
   <SavedFilePath>D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/iseconfig/main.xreport</SavedFilePath>
   <ImplementationReportsDirectory>D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project\</ImplementationReportsDirectory>
->>>>>>> 64ed2aa44aa1e761068c50d6d9602ffe5bf4044a
   <DateInitialized>2018-11-28T16:33:36</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

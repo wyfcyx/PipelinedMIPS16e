@@ -207,7 +207,7 @@ begin
                     BranchTargetAlu <= PC0 + 1;
                     BranchTarget <= PC0 + Instruction(7 downto 0);
                 end if;
-                                RegisterTarget <= "1010";
+                RegisterTarget <= "1010";
 
                 if (BranchPredict = '0') then
                     AluInstruction <= "1101";
