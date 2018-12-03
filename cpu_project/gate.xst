@@ -1,0 +1,5 @@
+set -tmpdir "Z:/Desktop/cpu/PipelinedMIPS16e/cpu_project/xst/projnav.tmp"
+set -xsthdpdir "Z:/Desktop/cpu/PipelinedMIPS16e/cpu_project/xst"
+elaborate
+-ifn gate.prj
+-ifmt mixed

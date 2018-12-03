@@ -31,17 +31,23 @@ def writereg(f):
         f.write('''
         if (Target(3 downto 0) = "%s") then
             reg_after(%d downto %d) <= Data(15 downto 0);
+        else
+            reg_after(%d downto %d) <= reg_before(%d downto %d);
         end if;
                 '''%(
-                    '{:04b}'.format(i),i*16+15,i*16
+                    '{:04b}'.format(i),i*16+15,i*16,i*16+15,i*16,i*16+15,i*16
                 ))
     f.write('''
         if (Target(3 downto 0) = "1001") then
             SP_after(15 downto 0) <= Data(15 downto 0);
+        else
+            SP_after(15 downto 0) <= SP_before(15 downto 0);
         end if;
 
         if (Target(3 downto 0) = "1000") then
-            IH_after <= Data(15 downto 0);
+            IH_after(15 downto 0) <= Data(15 downto 0);
+        else
+            IH_after(15 downto 0) <= IH_before(15 downto 0);
         end if;
 
             ''')
@@ -148,6 +154,8 @@ begin
         if Target(3 downto 0) < 15 then
             -- 不是输出
             led(15 downto 0)<=Data(15 downto 0);
+        else 
+            led(15 downto 0)<= (others=>'0');
         end if;
 
         if Target(3) = '0' then

@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "Z:/Desktop/cpu/PipelinedMIPS16e/gate/gate.xst" -ofn "Z:/Desktop/cpu/PipelinedMIPS16e/gate/gate.syr" 

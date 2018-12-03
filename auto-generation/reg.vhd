@@ -520,6 +520,8 @@ begin
         if Target(3 downto 0) < 15 then
             -- 不是输出
             led(15 downto 0)<=Data(15 downto 0);
+        else 
+            led(15 downto 0)<= (others=>'0');
         end if;
 
         if Target(3) = '0' then
@@ -547,42 +549,62 @@ begin
             
         if (Target(3 downto 0) = "0000") then
             reg_after(15 downto 0) <= Data(15 downto 0);
+        else
+            reg_after(15 downto 0) <= reg_before(15 downto 0);
         end if;
                 
         if (Target(3 downto 0) = "0001") then
             reg_after(31 downto 16) <= Data(15 downto 0);
+        else
+            reg_after(31 downto 16) <= reg_before(31 downto 16);
         end if;
                 
         if (Target(3 downto 0) = "0010") then
             reg_after(47 downto 32) <= Data(15 downto 0);
+        else
+            reg_after(47 downto 32) <= reg_before(47 downto 32);
         end if;
                 
         if (Target(3 downto 0) = "0011") then
             reg_after(63 downto 48) <= Data(15 downto 0);
+        else
+            reg_after(63 downto 48) <= reg_before(63 downto 48);
         end if;
                 
         if (Target(3 downto 0) = "0100") then
             reg_after(79 downto 64) <= Data(15 downto 0);
+        else
+            reg_after(79 downto 64) <= reg_before(79 downto 64);
         end if;
                 
         if (Target(3 downto 0) = "0101") then
             reg_after(95 downto 80) <= Data(15 downto 0);
+        else
+            reg_after(95 downto 80) <= reg_before(95 downto 80);
         end if;
                 
         if (Target(3 downto 0) = "0110") then
             reg_after(111 downto 96) <= Data(15 downto 0);
+        else
+            reg_after(111 downto 96) <= reg_before(111 downto 96);
         end if;
                 
         if (Target(3 downto 0) = "0111") then
             reg_after(127 downto 112) <= Data(15 downto 0);
+        else
+            reg_after(127 downto 112) <= reg_before(127 downto 112);
         end if;
                 
         if (Target(3 downto 0) = "1001") then
             SP_after(15 downto 0) <= Data(15 downto 0);
+        else
+            SP_after(15 downto 0) <= SP_before(15 downto 0);
         end if;
 
         if (Target(3 downto 0) = "1000") then
-            IH_after <= Data(15 downto 0);
+            IH_after(15 downto 0) <= Data(15 downto 0);
+        else
+            IH_after(15 downto 0) <= IH_before(15 downto 0);
         end if;
 
             

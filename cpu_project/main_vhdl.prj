@@ -1,0 +1,8 @@
+vhdl work "\\mac\home\Desktop\cpu\PipelinedMIPS16e\cpu_project\reg.vhd"
+vhdl work "\\mac\home\Desktop\cpu\PipelinedMIPS16e\cpu_project\pcselector.vhd"
+vhdl work "\\mac\home\Desktop\cpu\PipelinedMIPS16e\cpu_project\memory.vhd"
+vhdl work "\\mac\home\Desktop\cpu\PipelinedMIPS16e\cpu_project\decoder.vhd"
+vhdl work "\\mac\home\Desktop\cpu\PipelinedMIPS16e\cpu_project\dataselector.vhd"
+vhdl work "\\mac\home\Desktop\cpu\PipelinedMIPS16e\cpu_project\alu.vhd"
+vhdl work "\\mac\home\Desktop\cpu\PipelinedMIPS16e\cpu_project\cpu.vhd"
+vhdl work "\\mac\home\Desktop\cpu\PipelinedMIPS16e\cpu_project\main.vhd"
