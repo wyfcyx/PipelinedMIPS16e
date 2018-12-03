@@ -96,7 +96,7 @@ begin
 	flashRP <= '1';
 	flashCE <= '0';
 	started <= startedCache;
-	--led <= InstructionAddress;
+	led <= InstructionAddress;
 	process (LFlag, SFlag, startedCache, clk_scan, clk, reset)
 	begin
 		if (reset = '0') then
@@ -106,6 +106,8 @@ begin
 			curAddr <= (others => '0');
 			startedCache <= '0';
 			state <= read1;
+			rdn <= '1';
+			wrn <= '1';
 		elsif (clk_scan'event and clk_scan = '1') then
 			if (startedCache = '1') then
 				-- fetch instruction
@@ -223,7 +225,7 @@ begin
 						state <= after2;
 					when after2 =>
 						startedCache <= '1';
-						led <= Ram1Data;
+						--led <= Ram1Data;
 					when others =>
 				end case;
 			end if;

@@ -297,12 +297,17 @@
     <property xil_pn:name="Safe Implementation" xil_pn:value="No" xil_pn:valueState="default"/>
     <property xil_pn:name="Security" xil_pn:value="Enable Readback and Reconfiguration" xil_pn:valueState="default"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <property xil_pn:name="Selected Module Instance Name" xil_pn:value="/test/uut" xil_pn:valueState="non-default"/>
     <property xil_pn:name="Selected Simulation Root Source Node Behavioral" xil_pn:value="work.gate" xil_pn:valueState="non-default"/>
 =======
     <property xil_pn:name="Selected Module Instance Name" xil_pn:value="/main/cpu_instance/pcselector_instance" xil_pn:valueState="non-default"/>
     <property xil_pn:name="Selected Simulation Root Source Node Behavioral" xil_pn:value="work.PCSelector" xil_pn:valueState="non-default"/>
 >>>>>>> 64ed2aa44aa1e761068c50d6d9602ffe5bf4044a
+=======
+    <property xil_pn:name="Selected Module Instance Name" xil_pn:value="/reg_test" xil_pn:valueState="non-default"/>
+    <property xil_pn:name="Selected Simulation Root Source Node Behavioral" xil_pn:value="work.reg_test" xil_pn:valueState="non-default"/>
+>>>>>>> 12/3 16:47
     <property xil_pn:name="Selected Simulation Root Source Node Post-Map" xil_pn:value="" xil_pn:valueState="default"/>
     <property xil_pn:name="Selected Simulation Root Source Node Post-Route" xil_pn:value="" xil_pn:valueState="default"/>
     <property xil_pn:name="Selected Simulation Root Source Node Post-Translate" xil_pn:value="" xil_pn:valueState="default"/>
@@ -319,10 +324,14 @@
     <property xil_pn:name="Slice Utilization Ratio" xil_pn:value="100" xil_pn:valueState="default"/>
     <property xil_pn:name="Specify 'define Macro Name and Value" xil_pn:value="" xil_pn:valueState="default"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <property xil_pn:name="Specify Top Level Instance Names Behavioral" xil_pn:value="work.gate" xil_pn:valueState="default"/>
 =======
     <property xil_pn:name="Specify Top Level Instance Names Behavioral" xil_pn:value="work.PCSelector" xil_pn:valueState="default"/>
 >>>>>>> 64ed2aa44aa1e761068c50d6d9602ffe5bf4044a
+=======
+    <property xil_pn:name="Specify Top Level Instance Names Behavioral" xil_pn:value="work.reg_test" xil_pn:valueState="default"/>
+>>>>>>> 12/3 16:47
     <property xil_pn:name="Specify Top Level Instance Names Post-Map" xil_pn:value="Default" xil_pn:valueState="default"/>
     <property xil_pn:name="Specify Top Level Instance Names Post-Route" xil_pn:value="Default" xil_pn:valueState="default"/>
     <property xil_pn:name="Specify Top Level Instance Names Post-Translate" xil_pn:value="Default" xil_pn:valueState="default"/>
