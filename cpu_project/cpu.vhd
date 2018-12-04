@@ -428,7 +428,8 @@ begin
             else
                 IF_ID_Bubble_out <= IF_ID_Bubble_in_Alu;
             end if;
-
+            
+            ID_EX_PC0_out <= ID_EX_PC0_in;
             if (ID_EX_NextForceNop_in = '1') then
                 ID_EX_LFlag_out <= '0';
                 ID_EX_SFlag_out <= '0';
