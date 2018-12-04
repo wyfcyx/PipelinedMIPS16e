@@ -14,6 +14,9 @@ entity PCSelector is
         BranchConfirm: in std_logic;
         BranchTargetConfirm: in std_logic_vector(15 downto 0);
         
+        BranchForce_Alu: in std_logic;
+        BranchTarget_Alu: in std_logic_vector(15 downto 0);
+        
         PC0: out std_logic_vector(15 downto 0);
         PCNext: out std_logic_vector(15 downto 0);
         PredictionFailed: out std_logic;
@@ -26,19 +29,24 @@ begin
 process(PC, BranchPredict, BranchFlag, BranchForce, BranchTarget, BranchFlagForward, BranchConfirm, BranchTargetConfirm)
 begin
     PC0 <= PC + 1;
-    if ((BranchForce = '1') or (BranchFlagForward = '0' and BranchFlag = '1')) then
-        PCNext <= BranchTarget;
+    if (BranchForce_Alu = '1') then
+        PCNext <= BranchTarget_Alu;
+    else
+        if ((BranchForce = '1') or (BranchFlagForward = '0' and BranchFlag = '1')) then
+            PCNext <= BranchTarget;
+        end if;
+        if (BranchForce = '0' and BranchFlagForward = '1' and BranchConfirm = '1') then
+            PCNext <= BranchTargetConfirm;
+        end if;
+        if (BranchForce = '0' and BranchFlagForward = '0' and BranchFlag = '0') then
+            PCNext <= PC + 1;
+        end if;
+        if (BranchForce = '0' and BranchFlagForward = '1' and BranchConfirm = '0') then
+            PCNext <= PC + 1;
+        end if;
     end if;
-    if (BranchForce = '0' and BranchFlagForward = '1' and BranchConfirm = '1') then
-        PCNext <= BranchTargetConfirm;
-    end if;
-    if (BranchForce = '0' and BranchFlagForward = '0' and BranchFlag = '0') then
-        PCNext <= PC + 1;
-    end if;
-    if (BranchForce = '0' and BranchFlagForward = '1' and BranchConfirm = '0') then
-        PCNext <= PC + 1;
-    end if;
-    PredictionFailed <= (BranchFlagForward and (not BranchForce) and BranchConfirm);
-    BranchPredictNext <= (BranchFlagForward and (not BranchForce) and BranchConfirm) xor (BranchPredict);
+    
+    PredictionFailed <= (BranchFlagForward and (not BranchForce) and (not BranchForce_Alu) and BranchConfirm);
+    BranchPredictNext <= (BranchFlagForward and (not BranchForce) and (not BranchForce_Alu) and BranchConfirm) xor (BranchPredict);
 end process;
 end bhv;
