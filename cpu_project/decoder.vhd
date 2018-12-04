@@ -284,13 +284,13 @@ begin
                 BranchFlag <= '1';
                 BranchForce <= '0';
 
-                if ((Instruction(8) = '0') and (Instruction(7) = '1') and (Instruction(6) = '0')) then
+                if ((Instruction(8) = '0') and (Instruction(7) = '0') and (Instruction(6) = '0')) then
                     BranchTargetAlu <= PC0 + 1;
                     BranchTarget <= reg(15 downto 0);
                     Immediate <= reg(15 downto 0);
                 end if;
                 
-                if ((Instruction(8) = '0') and (Instruction(7) = '1') and (Instruction(6) = '0')) then
+                if ((Instruction(8) = '0') and (Instruction(7) = '0') and (Instruction(6) = '1')) then
                     BranchTargetAlu <= PC0 + 1;
                     BranchTarget <= reg(31 downto 16);
                     Immediate <= reg(31 downto 16);
@@ -302,31 +302,31 @@ begin
                     Immediate <= reg(47 downto 32);
                 end if;
                 
-                if ((Instruction(8) = '0') and (Instruction(7) = '1') and (Instruction(6) = '0')) then
+                if ((Instruction(8) = '0') and (Instruction(7) = '1') and (Instruction(6) = '1')) then
                     BranchTargetAlu <= PC0 + 1;
                     BranchTarget <= reg(63 downto 48);
                     Immediate <= reg(63 downto 48);
                 end if;
                 
-                if ((Instruction(8) = '0') and (Instruction(7) = '1') and (Instruction(6) = '0')) then
+                if ((Instruction(8) = '1') and (Instruction(7) = '0') and (Instruction(6) = '0')) then
                     BranchTargetAlu <= PC0 + 1;
                     BranchTarget <= reg(79 downto 64);
                     Immediate <= reg(79 downto 64);
                 end if;
                 
-                if ((Instruction(8) = '0') and (Instruction(7) = '1') and (Instruction(6) = '0')) then
+                if ((Instruction(8) = '1') and (Instruction(7) = '0') and (Instruction(6) = '1')) then
                     BranchTargetAlu <= PC0 + 1;
                     BranchTarget <= reg(95 downto 80);
                     Immediate <= reg(95 downto 80);
                 end if;
                 
-                if ((Instruction(8) = '0') and (Instruction(7) = '1') and (Instruction(6) = '0')) then
+                if ((Instruction(8) = '1') and (Instruction(7) = '1') and (Instruction(6) = '0')) then
                     BranchTargetAlu <= PC0 + 1;
                     BranchTarget <= reg(111 downto 96);
                     Immediate <= reg(111 downto 96);
                 end if;
                 
-                if ((Instruction(8) = '0') and (Instruction(7) = '1') and (Instruction(6) = '0')) then
+                if ((Instruction(8) = '1') and (Instruction(7) = '1') and (Instruction(6) = '1')) then
                     BranchTargetAlu <= PC0 + 1;
                     BranchTarget <= reg(127 downto 112);
                     Immediate <= reg(127 downto 112);
