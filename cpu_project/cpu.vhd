@@ -69,7 +69,7 @@ signal ID_EX_Rx_in, ID_EX_Rx_out : std_logic_vector(15 downto 0) := (others => '
 signal ID_EX_Ry_in, ID_EX_Ry_out : std_logic_vector(15 downto 0) := (others => '0');
 signal ID_EX_Rz_in, ID_EX_Rz_out : std_logic_vector(15 downto 0) := (others => '0');
 signal ID_EX_Index_in, ID_EX_Index_out : std_logic_vector(11 downto 0) := (others => '0');
-signal ID_EX_ModifiedIndex_in, ID_EX_ModifiedIndex_out : std_logic_vector(3 downto 0) := (others => '0');
+signal ID_EX_ModifiedIndex_in, ID_EX_ModifiedIndex_out : std_logic_vector(3 downto 0) := "1111";
 signal ID_EX_ModifiedValue_in, ID_EX_ModifiedValue_out : std_logic_vector(15 downto 0) := (others => '0');
 signal ID_EX_ModifiedValue_in_L : std_logic_vector(15 downto 0) := (others => '0');
 signal ID_EX_ModifiedValue_in_L_pointer : std_logic := '0';
