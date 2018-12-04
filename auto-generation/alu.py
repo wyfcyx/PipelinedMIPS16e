@@ -1,7 +1,7 @@
 AluInstruction = [
     'NOP', 'ADD', 'SUBU', 'CMP',
     'SLTU', 'AND', 'OR', 'SLL',
-    'SRA', 'NEG', 'B', 'BN',
+    'SRA', 'NEG', 'JR', 'BN',
     'BEQZ', 'BNEZ', 'BTEQZ', 'BTNEZ'
 ]
 
@@ -31,11 +31,14 @@ def output_alu(ins, f):
     ))
     f.write('''
         BranchFlagForward <= '%d';''' %
-            (1 if ins[0] == 'B' else 0))
+            (1 if ins[0] == 'B' or ins == 'JR' else 0))
 
-    if ins == 'B':
+    if ins == 'JR':
         f.write('''
-        BranchConfirm <= '1';''')
+        BranchConfirm <= (%s);''' % (
+          ' or '.join([
+              '(DataA(%d) xor DataB(%d))' % (x, x) for x in range(16)
+          ]), ))
     elif ins == 'BN':
         f.write('''
         BranchConfirm <= '0';''')
@@ -60,8 +63,11 @@ def output_alu(ins, f):
     else:
         f.write('''
         BranchConfirm <= '0';''')
-
-    f.write('''
+    if ins == 'JR':
+        f.write('''
+        BranchTargetConfirm <= DataA;''')
+    else:
+        f.write('''
         BranchTargetConfirm <= BranchTargetAlu;''')
 
     if ins == 'CMP':
@@ -81,7 +87,7 @@ def output_alu(ins, f):
         f.write('''
         Tout <= T;''')
 
-    if ins[0] == 'B' or ins in ('NOP', 'CMP', 'SLTU'):
+    if ins[0] == 'B' or ins in ('NOP', 'CMP', 'SLTU', 'JR'):
         f.write('''
         Result0 <= "%s";''' % ('0'*16, ))
     elif ins == 'ADD':
@@ -158,7 +164,7 @@ entity alu is
         NextForceNop : out std_logic;
         BubbleNext_Alu : out std_logic_vector(2 downto 0);
         BranchForce_Alu : out std_logic;
-        BranchTarget_Alu : out std_logic_vector(15 downto 0);
+        BranchTarget_Alu : out std_logic_vector(15 downto 0)
     );
 end alu;
 

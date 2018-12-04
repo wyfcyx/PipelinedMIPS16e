@@ -68,7 +68,7 @@ outputSignals = {
 AluInstruction = [
     'NOP', 'ADD', 'SUBU', 'CMP',
     'SLTU', 'AND', 'OR', 'SLL',
-    'SRA', 'NEG', 'B', 'BN',
+    'SRA', 'NEG', 'JR', 'BN',
     'BEQZ', 'BNEZ', 'BTEQZ', 'BTNEZ'
 ]
 
@@ -151,9 +151,14 @@ set_data('CMP', 'DataSelectorInstruction', '1001')
 set_data('CMPI', 'AluInstruction', 'CMP')
 set_data('CMPI', 'DataSelectorInstruction', '0001')
 
+# JR这个时候传给Branch的跳转是rx现在的取值
+# 同时JR这里输出的immediate也是rx现在的取值
+# 而JR的rx则在下个周期由获取旁路的data selector取到
+# JR对应的运算B，等价于BNE：当immediate不等于rx时
+# 跳转到rx的值去
 set_data('JR', 'BranchFlag', '1')
 set_data('JR', 'RegisterTarget', 'PC')
-set_data('JR', 'AluInstruction', 'B')
+set_data('JR', 'AluInstruction', 'JR')
 set_data('JR', 'DataSelectorInstruction', '0001')
 
 # LI操作直接对两个立即数取与，返回本身作为Address
@@ -304,12 +309,13 @@ def output_instruction(ins, f, tabs):
                     if (%s) then
                         BranchTargetAlu <= PC0 + 1;
                         BranchTarget <= reg(%s downto %s);
+                        Immediate <= reg(%s downto %s);
                     end if;
                     ''' % (
                         ' and '.join([
                             '(Instruction(%s) = \'%s\')' % (str(j), ("000" + bin(j)[2:])[5-j])
                             for j in [8, 7, 6]
-                        ]), str((i+1)*16-1), str(i*16)
+                        ]), str((i+1)*16-1), str(i*16), str((i+1)*16-1), str(i*16)
                     )).replace(' ' * 20, tabs))
     else:
         # 不进行跳转的情况
@@ -333,8 +339,11 @@ def output_instruction(ins, f, tabs):
 
     # ALU跳转
     if get_data(ins, 'BranchFlag') == '1':
-        if ins in ['B', 'JR']:
+        if ins == 'B':
             f.write('%sAluInstruction <= "%s";\n' % (tabs, get_alu_index('BN')))
+        elif ins == 'JR':
+            # 这个地方JR是扔到B
+            f.write('%sAluInstruction <= "%s";\n' % (tabs, get_alu_index('JR')))
         else:
             f.write(('''
             if (BranchPredict = '0') then
@@ -358,7 +367,9 @@ def output_instruction(ins, f, tabs):
             start_immediate = i
         if get_ins_bit(ins, i) != 'i' and start_immediate >= 0:
             end_immediate = i+1
-    if start_immediate < 0:
+    if ins == 'JR':
+        f.write('')
+    elif start_immediate < 0:
         f.write('%sImmediate <= "%s";\n' % (tabs, '0'*16))
     else:
         f.write('%sImmediate <= %s;\n' %

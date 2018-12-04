@@ -27,7 +27,7 @@ entity alu is
         NextForceNop : out std_logic;
         BubbleNext_Alu : out std_logic_vector(2 downto 0);
         BranchForce_Alu : out std_logic;
-        BranchTarget_Alu : out std_logic_vector(15 downto 0);
+        BranchTarget_Alu : out std_logic_vector(15 downto 0)
     );
 end alu;
 
@@ -174,11 +174,11 @@ begin
         Result0 <= (not DataA(15 downto 0)) + 1;
     end if;
     
-    -- B
+    -- JR
     if (AluInstruction(3 downto 0) = "1010") then
         BranchFlagForward <= '1';
-        BranchConfirm <= '1';
-        BranchTargetConfirm <= BranchTargetAlu;
+        BranchConfirm <= ((DataA(0) xor DataB(0)) or (DataA(1) xor DataB(1)) or (DataA(2) xor DataB(2)) or (DataA(3) xor DataB(3)) or (DataA(4) xor DataB(4)) or (DataA(5) xor DataB(5)) or (DataA(6) xor DataB(6)) or (DataA(7) xor DataB(7)) or (DataA(8) xor DataB(8)) or (DataA(9) xor DataB(9)) or (DataA(10) xor DataB(10)) or (DataA(11) xor DataB(11)) or (DataA(12) xor DataB(12)) or (DataA(13) xor DataB(13)) or (DataA(14) xor DataB(14)) or (DataA(15) xor DataB(15)));
+        BranchTargetConfirm <= DataA;
         Tout <= T;
         Result0 <= "0000000000000000";
     end if;
