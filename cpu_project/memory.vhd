@@ -107,7 +107,7 @@ begin
 				end if;
 				case r2State is
 					when waiting =>
-						if ((LFlag = '1' or SFlag = '1') and Address < x"4000") then
+						if ((LFlag = '1' or SFlag = '1') and (Address < x"4000")) then
 							if (LFlag = '1') then
 								r2State <= readMem1;
 							else
@@ -157,7 +157,7 @@ begin
 				end case;
 				case r1State is
 					when waiting =>
-						if ((LFlag = '1' or SFlag = '1') and Address < x"4000") then
+						if ((LFlag = '1' or SFlag = '1') and (Address < x"4000")) then
 							r1State <= done;
 						elsif (LFlag = '1') then
 							if (Address = x"bf00") then
