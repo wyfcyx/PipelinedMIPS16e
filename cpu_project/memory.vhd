@@ -111,7 +111,7 @@ begin
 							if (LFlag = '1') then
 								r2State <= readMem1;
 							else
-								r2State <= readMem2;
+								r2State <= writeMem1;
 							end if;
 						else
 							r2State <= readInstruction1;
