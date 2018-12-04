@@ -429,10 +429,10 @@ begin
                 IF_ID_Bubble_out <= IF_ID_Bubble_in_Alu;
             end if;
 
-            if (ID_EX_NextForceNop_in = '1') then'
+            if (ID_EX_NextForceNop_in = '1') then
                 ID_EX_LFlag_out <= '0';
                 ID_EX_SFlag_out <= '0';
-                ID_EX_BranchTargetAlu_out <= "0000";
+                ID_EX_BranchTargetAlu_out <= x"0000";
                 ID_EX_RegisterTarget_out <= "1111";
                 ID_EX_AluInstruction_out <= "0000";
                 ID_EX_Immediate_out <= "0000000000000000";
@@ -442,7 +442,7 @@ begin
                 ID_EX_Rz_out <= "0000000000000000";
                 ID_EX_Index_out <= "000000000000";
                 ID_EX_ModifiedIndex_out <= "1111";
-                ID_EX_ModifiedValue_out <= "0000";
+                ID_EX_ModifiedValue_out <= x"0000";
             else
                 ID_EX_LFlag_out <= ID_EX_LFlag_in;
                 ID_EX_SFlag_out <= ID_EX_SFlag_in;

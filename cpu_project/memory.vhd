@@ -64,12 +64,15 @@ type Ram1State is (
 	done
 );
 type Ram2State is (
-	waiting, read1, read2, write1, done
+	waiting,
+	readInstruction1, readInstruction2,
+	readMem1, readMem2,
+	writeMem1, writeMem2,
+	done
 );
 signal r1State : Ram1State := done;
 signal r2State : Ram2State := done;
-signal r1Trigger : std_logic_vector(33 downto 0) := (others => '1');
-signal r2Trigger : std_logic_vector(15 downto 0) := (others => '1');
+signal trigger : std_logic_vector(49 downto 0) := (others => '1');
 signal curAddr : std_logic_vector(15 downto 0) := (others => '0');
 signal curData : std_logic_vector(15 downto 0) := (others => '0');
 signal instructions : std_logic_vector(15 downto 0) := x"4000";
@@ -97,41 +100,66 @@ begin
 			
 		elsif (clk_scan'event and clk_scan = '0') then
 			if (startedCache = '1') then
-				-- fetch instruction
-				if (r2Trigger /= InstructionAddress) then
-					r2Trigger <= InstructionAddress;
+				if (trigger /= (LFlag & SFlag & Address & DataS & InstructionAddress)) then
+					trigger <= (LFlag & SFlag & Address & DataS & InstructionAddress);
+					r1State <= waiting;
 					r2State <= waiting;
 				end if;
 				case r2State is
 					when waiting =>
-						if (InstructionAddress < x"4000") then
-							r2State <= read1;
+						if ((LFlag = '1' or SFlag = '1') and Address < x"4000") then
+							if (LFlag = '1') then
+								r2State <= readMem1;
+							else
+								r2State <= readMem2;
+							end if;
 						else
-							r2State <= done;
-							InstructionResult <= (others => '0');
+							r2State <= readInstruction1;
 						end if;
-					when read1 =>
+					when readInstruction1 =>
 						Ram2WE <= '1';
 						Ram2OE <= '0';
 						Ram2EN <= '0';
 						Ram2Data <= (others => 'Z');
 						Ram2Addr <= InstructionAddress;
-						r2State <= read2;
-					when read2 =>
+						r2State <= readInstruction2;
+					when readInstruction2 =>
 						InstructionResult <= Ram2Data;
-						--led <= Ram2Data;
+						r2State <= done;
+					when readMem1 =>
+						Ram2WE <= '1';
+						Ram2OE <= '0';
+						Ram2EN <= '0';
+						Ram2Data <= (others => 'Z');
+						Ram2Addr <= Address;
+						r2State <= readMem2;
+					when readMem2 =>
+						Result <= Ram2Data;
+						Result_L <= Ram2Data;
+						Result_L_pointer <= '1';
+						InstructionResult <= (others => '0');
+						r2State <= done;
+					when writeMem1 =>
+						Ram2WE <= '0';
+						Ram2OE <= '1';
+						Ram2EN <= '0';
+						Ram2Data <= DataS;
+						Ram2Addr <= Address;
+						r2State <= writeMem2;
+					when writeMem2 =>
+						Result <= (others => '0');
+						Result_L <= (others => '0');
+						Result_L_pointer <= '0';
+						InstructionResult <= (others => '0');
 						r2State <= done;
 					when done =>
 					when others =>
 				end case;
-				-- data mem operation
-				if (r1Trigger /= (LFlag & SFlag & Address & DataS)) then
-					r1State <= waiting;
-					r1Trigger <= (LFlag & SFlag & Address & DataS);
-				end if;
 				case r1State is
 					when waiting =>
-						if (LFlag = '1') then
+						if ((LFlag = '1' or SFlag = '1') and Address < x"4000") then
+							r1State <= done;
+						elsif (LFlag = '1') then
 							if (Address = x"bf00") then
 								r1State <= commRead1;
 							elsif (Address = x"bf01") then
@@ -140,9 +168,6 @@ begin
 								r1State <= read1;
 							end if;
 						elsif (SFlag = '1') then
-                            Result_L_pointer <= '0';
-                            Result_L <= "0000000000000000";
-                            Result <= Address;
 							if (Address = x"bf00") then
 								r1State <= commWrite1;
 							else
@@ -177,6 +202,9 @@ begin
 						Ram1Data <= DataS;
 						Ram1Addr <= Address;
 						r1State <= done;
+						Result <= (others => '0');
+						Result_L <= (others => '0');
+						Result_L_pointer <= '0';
 					when commTest1 =>
 						Ram1WE <= '1';
 						Ram1OE <= '1';
@@ -216,9 +244,12 @@ begin
 					when commWrite5 =>
 						if (tsre = '1') then
 							r1State <= done;
+							Result <= (others => '0');
+							Result_L <= (others => '0');
+							Result_L_pointer <= '0';
 						end if;
 					when done =>
-					when others =>
+					when others =>	
 				end case;
 			else
 				InstructionResult <= (others => '0');
