@@ -72,7 +72,7 @@ signal gen_scan_count : std_logic_vector(31 downto 0) := (others => '0');
 begin
 	led <= led_cpu;
 	cpu_instance : cpu port map(
-		clk => gen_clk_scan,
+		clk => clk,
 		clk_scan => clk_scan,
 		reset => reset,
 		Ram1Data => Ram1Data,
