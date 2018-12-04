@@ -46,15 +46,18 @@ signal BranchPredict_in, BranchPredict_out : std_logic := '0';
 signal PredictionFailed_in, PredictionFailed_out : std_logic := '0';
 -- transfer signals
 signal DataA, DataB : std_logic_vector(15 downto 0);
-signal BranchForce, BranchConfirm, BranchFlag : std_logic := '0';
-signal BranchTarget, BranchConfirmTarget : std_logic_vector(15 downto 0) := (others => '0');
+signal BranchForce, BranchConfirm, BranchFlag, BranchForce_Alu : std_logic := '0';
+signal BranchTarget, BranchConfirmTarget, BranchTarget_Alu : std_logic_vector(15 downto 0) := (others => '0');
 signal BranchFlagForward : std_logic := '0';
 signal Data : std_logic_vector(63 downto 0) := (others => '0');
 -- IF/ID lock
 signal IF_ID_PC0_in, IF_ID_PC0_out : std_logic_vector(15 downto 0) := (others => '0');
 signal IF_ID_Instruction_in, IF_ID_Instruction_out : std_logic_vector(15 downto 0) := (others => '0');
 signal IF_ID_Bubble_in, IF_ID_Bubble_out : std_logic_vector(2 downto 0) := "000";
+
+signal IF_ID_Bubble_in_Alu : std_logic_vector(2 downto 0) := "000";
 -- ID/EX lock
+signal ID_EX_PC0_in, ID_EX_PC0_out : std_logic_vector(15 downto 0) := (others => '0');
 signal ID_EX_LFlag_in, ID_EX_LFlag_out : std_logic := '0';
 signal ID_EX_SFlag_in, ID_EX_SFlag_out : std_logic := '0';
 signal ID_EX_BranchTargetAlu_in, ID_EX_BranchTargetAlu_out : std_logic_vector(15 downto 0) := (others => '0');
@@ -70,6 +73,7 @@ signal ID_EX_ModifiedIndex_in, ID_EX_ModifiedIndex_out : std_logic_vector(3 down
 signal ID_EX_ModifiedValue_in, ID_EX_ModifiedValue_out : std_logic_vector(15 downto 0) := (others => '0');
 signal ID_EX_ModifiedValue_in_L : std_logic_vector(15 downto 0) := (others => '0');
 signal ID_EX_ModifiedValue_in_L_pointer : std_logic := '0';
+signal ID_EX_NextForceNop_in : std_logic := '0';
 -- EX/MEM lock
 signal EX_MEM_LFlag_in, EX_MEM_LFlag_out : std_logic := '0';
 signal EX_MEM_SFlag_in, EX_MEM_SFlag_out : std_logic := '0';
@@ -147,14 +151,22 @@ component alu is
         ModifiedIndex_before : in std_logic_vector(3 downto 0);
         ModifiedValue_before : in std_logic_vector(15 downto 0);
 		
-		BranchFlagForward : out std_logic;
-		BranchConfirm : out std_logic;
-		BranchTargetConfirm : out std_logic_vector(15 downto 0);
-		Tout : out std_logic;
-		Result : out std_logic_vector(15 downto 0);
-		
-		ModifiedIndex : out std_logic_vector(3 downto 0);
-        ModifiedValue : out std_logic_vector(15 downto 0)
+		SFlag : in std_logic;
+        PC0 : in std_logic_vector(15 downto 0);
+
+        BranchFlagForward : out std_logic;
+        BranchConfirm : out std_logic;
+        BranchTargetConfirm : out std_logic_vector(15 downto 0);
+        Tout : out std_logic;
+        Result: out std_logic_vector(15 downto 0);
+        
+        ModifiedIndex : out std_logic_vector(3 downto 0);
+        ModifiedValue : out std_logic_vector(15 downto 0);
+        
+        NextForceNop : out std_logic;
+        BubbleNext_Alu : out std_logic_vector(2 downto 0);
+        BranchForce_Alu : out std_logic;
+        BranchTarget_Alu : out std_logic_vector(15 downto 0)
 	);
 end component;
 
@@ -168,6 +180,9 @@ component pcselector is
 		BranchFlagForward : in std_logic;
 		BranchConfirm : in std_logic;
 		BranchTargetConfirm : in std_logic_vector(15 downto 0);
+        
+        BranchForce_Alu: in std_logic;
+        BranchTarget_Alu: in std_logic_vector(15 downto 0);
 		
 		PC0 : out std_logic_vector(15 downto 0);
 		PCNext : out std_logic_vector(15 downto 0);
@@ -241,6 +256,7 @@ begin
 	led <= reg_out(7 downto 0) & reg_out(23 downto 16);
 	--led <= EX_MEM_DataS_out(7 downto 0) & EX_MEM_AluResult_out(7 downto 0);
 	-- register-forward routes
+    ID_EX_PC0_in <= IF_ID_PC0_out;
 	EX_MEM_LFlag_in <= ID_EX_LFlag_out;
 	EX_MEM_SFlag_in <= ID_EX_SFlag_out;
 	EX_MEM_RegisterTarget_in <= ID_EX_RegisterTarget_out;
@@ -351,6 +367,9 @@ begin
 		RegisterTarget => ID_EX_RegisterTarget_out,
 		ModifiedIndex_before => ID_EX_ModifiedIndex_out,
 		ModifiedValue_before => ID_EX_ModifiedValue_out,
+        
+        SFlag => ID_EX_SFlag_out,
+        PC0 => ID_EX_PC0_out,
 		-- out
 		BranchFlagForward => BranchFlagForward,
 		BranchConfirm => BranchConfirm,
@@ -358,7 +377,12 @@ begin
 		Tout => T_in,
 		Result => EX_MEM_AluResult_in,
 		ModifiedIndex => ID_EX_ModifiedIndex_in,
-		ModifiedValue => ID_EX_ModifiedValue_in
+		ModifiedValue => ID_EX_ModifiedValue_in,
+        
+        NextForceNop => ID_EX_NextForceNop_in,
+        BubbleNext_Alu => IF_ID_Bubble_in_Alu,
+        BranchForce_Alu => BranchForce_Alu,
+        BranchTarget_Alu => BranchTarget_Alu
 	);
 
 	pcselector_instance : pcselector port map(
@@ -371,6 +395,9 @@ begin
 		BranchFlagForward => BranchFlagForward,
 		BranchConfirm => BranchConfirm,
 		BranchTargetConfirm => BranchConfirmTarget,
+        
+        BranchForce_Alu => BranchForce_Alu,
+        BranchTarget_Alu => BranchTarget_Alu,
 		-- out
       	PC0 => IF_ID_PC0_in,
 		PCNext => PC_in,
@@ -396,24 +423,44 @@ begin
 
 			IF_ID_PC0_out <= IF_ID_PC0_in;
 			IF_ID_Instruction_out <= IF_ID_Instruction_in;
-			IF_ID_Bubble_out <= IF_ID_Bubble_in;
-
-			ID_EX_LFlag_out <= ID_EX_LFlag_in;
-			ID_EX_SFlag_out <= ID_EX_SFlag_in;
-			ID_EX_BranchTargetAlu_out <= ID_EX_BranchTargetAlu_in;
-			ID_EX_RegisterTarget_out <= ID_EX_RegisterTarget_in;
-			ID_EX_AluInstruction_out <= ID_EX_AluInstruction_in;
-			ID_EX_Immediate_out <= ID_EX_Immediate_in;
-			ID_EX_DataSelectorInstruction_out <= ID_EX_DataSelectorInstruction_in;
-			ID_EX_Rx_out <= ID_EX_Rx_in;
-			ID_EX_Ry_out <= ID_EX_Ry_in;
-			ID_EX_Rz_out <= ID_EX_Rz_in;
-			ID_EX_Index_out <= ID_EX_Index_in;
-			ID_EX_ModifiedIndex_out <= ID_EX_ModifiedIndex_in;
-            if (ID_EX_ModifiedValue_in_L_pointer = '0') then
-                ID_EX_ModifiedValue_out <= ID_EX_ModifiedValue_in;
+            if (IF_ID_Bubble_in_Alu = "00") then
+                IF_ID_Bubble_out <= IF_ID_Bubble_in;
             else
-                ID_EX_ModifiedValue_out <= ID_EX_ModifiedValue_in_L;
+                IF_ID_Bubble_out <= IF_ID_Bubble_in_Alu;
+            end if;
+
+            if (ID_EX_NextForceNop_in = '1') then'
+                ID_EX_LFlag_out <= '0';
+                ID_EX_SFlag_out <= '0';
+                ID_EX_BranchTargetAlu_out <= "0000";
+                ID_EX_RegisterTarget_out <= "1111";
+                ID_EX_AluInstruction_out <= "0000";
+                ID_EX_Immediate_out <= "0000000000000000";
+                ID_EX_DataSelectorInstruction_out <= "000000";
+                ID_EX_Rx_out <= "0000000000000000";
+                ID_EX_Ry_out <= "0000000000000000";
+                ID_EX_Rz_out <= "0000000000000000";
+                ID_EX_Index_out <= "000000000000";
+                ID_EX_ModifiedIndex_out <= "1111";
+                ID_EX_ModifiedValue_out <= "0000";
+            else
+                ID_EX_LFlag_out <= ID_EX_LFlag_in;
+                ID_EX_SFlag_out <= ID_EX_SFlag_in;
+                ID_EX_BranchTargetAlu_out <= ID_EX_BranchTargetAlu_in;
+                ID_EX_RegisterTarget_out <= ID_EX_RegisterTarget_in;
+                ID_EX_AluInstruction_out <= ID_EX_AluInstruction_in;
+                ID_EX_Immediate_out <= ID_EX_Immediate_in;
+                ID_EX_DataSelectorInstruction_out <= ID_EX_DataSelectorInstruction_in;
+                ID_EX_Rx_out <= ID_EX_Rx_in;
+                ID_EX_Ry_out <= ID_EX_Ry_in;
+                ID_EX_Rz_out <= ID_EX_Rz_in;
+                ID_EX_Index_out <= ID_EX_Index_in;
+                ID_EX_ModifiedIndex_out <= ID_EX_ModifiedIndex_in;
+                if (ID_EX_ModifiedValue_in_L_pointer = '0') then
+                    ID_EX_ModifiedValue_out <= ID_EX_ModifiedValue_in;
+                else
+                    ID_EX_ModifiedValue_out <= ID_EX_ModifiedValue_in_L;
+                end if;
             end if;
 
 			EX_MEM_LFlag_out <= EX_MEM_LFlag_in;

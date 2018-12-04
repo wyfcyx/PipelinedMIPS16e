@@ -14,6 +14,8 @@ entity alu is
         RegisterTarget : in std_logic_vector(3 downto 0);
         ModifiedIndex_before : in std_logic_vector(3 downto 0);
         ModifiedValue_before : in std_logic_vector(15 downto 0);
+        SFlag : in std_logic;
+        PC0 : in std_logic_vector(15 downto 0);
 
         BranchFlagForward : out std_logic;
         BranchConfirm : out std_logic;
@@ -21,14 +23,17 @@ entity alu is
         Tout : out std_logic;
         Result: out std_logic_vector(15 downto 0);
         ModifiedIndex : out std_logic_vector(3 downto 0);
-        ModifiedValue : out std_logic_vector(15 downto 0)
+        ModifiedValue : out std_logic_vector(15 downto 0);
+        NextForceNop : out std_logic;
+        BubbleNext_Alu : out std_logic_vector(2 downto 0);
+        BranchForce_Alu : out std_logic;
+        BranchTarget_Alu : out std_logic_vector(15 downto 0);
     );
 end alu;
 
 architecture bhv of alu is
-signal Result0 : std_logic_vector(15 downto 0) := (others => '0');
 begin
-
+signal Result0 : std_logic_vector(15 downto 0);
 process(DataA, DataB, AluInstruction, T, BranchTargetAlu, RegisterTarget, ModifiedIndex_before, ModifiedValue_before)
 begin
     
@@ -230,6 +235,18 @@ begin
     else
         ModifiedIndex <= RegisterTarget;
         ModifiedValue <= Result0;
+    end if;
+    
+    if (SFlag = '1' and Result0(15 downto 14) = "00") then
+        NextForceNop <= '1';
+        BubbleNext_Alu <= "010";
+        BranchForce_Alu <= '1';
+        BranchTarget_Alu <= PC0;
+    else
+        NextForceNop <= '0';
+        BubbleNext_Alu <= "000";
+        BranchForce_Alu <= '0';
+        BranchTarget_Alu <= "0000000000000000";
     end if;
 end process;
 end bhv;
