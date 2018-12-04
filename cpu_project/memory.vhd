@@ -58,7 +58,8 @@ architecture bhv of memory is
 type Ram1State is (
 	waiting,
 	read1, read2, write1,
-	commRead1, commRead2, commRead3,
+	commTest1, commTest2,
+	commRead1, commRead2,
 	commWrite1, commWrite2, commWrite3, commWrite4, commWrite5,
 	done
 );
@@ -133,6 +134,8 @@ begin
 						if (LFlag = '1') then
 							if (Address = x"bf00") then
 								r1State <= commRead1;
+							elsif (Address = x"bf01") then
+								r1State <= commTest1;
 							else
 								r1State <= read1;
 							end if;
@@ -174,22 +177,21 @@ begin
 						Ram1Data <= DataS;
 						Ram1Addr <= Address;
 						r1State <= done;
-					when commRead1 =>
+					when commTest1 =>
 						Ram1WE <= '1';
 						Ram1OE <= '1';
 						Ram1EN <= '1';
 						rdn <= '1';
 						wrn <= '1';
 						Ram1Data <= (others => 'Z');
+						r1State <= commTest2;
+					when commTest2 =>
+						Result <= x"000" & "00" & dataReady & '1';
+						r1State <= done;
+					when commRead1 =>
+						rdn <= '0';
 						r1State <= commRead2;
 					when commRead2 =>
-						if (dataReady = '1') then
-							rdn <= '0';
-							r1State <= commRead3;
-						else
-							r1State <= commRead1;
-						end if;
-					when commRead3 =>
 						Result <= Ram1Data;
 						Result_L_pointer <= '1';
 						Result_L <= Ram1Data;
