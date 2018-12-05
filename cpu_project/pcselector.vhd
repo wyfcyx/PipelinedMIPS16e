@@ -32,7 +32,11 @@ begin
         PCNext <= BranchTarget_Alu;
         PC0 <= BranchTarget_Alu;
     else
-        if ((BranchForce = '1') or (BranchFlagForward = '0' and BranchFlag = '1')) then
+        if (BranchForce = '1') then
+            PCNext <= BranchTarget;
+            PC0 <= PC + 1;
+        end if;
+        if (BranchFlagForward = '0' and BranchFlag = '1') then
             PCNext <= BranchTarget;
             PC0 <= BranchTarget;
         end if;
