@@ -22,7 +22,7 @@ entity memory is
 		reset : in std_logic;
 		
 		Result : out std_logic_vector(15 downto 0);
-        Result_L_pointer : out std_logic;
+        --Result_L_pointer : out std_logic;
         Result_L : out std_logic_vector(15 downto 0);
 		InstructionResult : out std_logic_vector(15 downto 0);
 
@@ -143,7 +143,7 @@ begin
 					when readMem2 =>
 						Result <= Ram2Data;
 						Result_L <= Ram2Data;
-						Result_L_pointer <= '1';
+						--Result_L_pointer <= '1';
 						InstructionResult <= (others => '0');
 						r2State <= done;
 					when writeMem1 =>
@@ -156,7 +156,7 @@ begin
 					when writeMem2 =>
 						Result <= (others => '0');
 						Result_L <= (others => '0');
-						Result_L_pointer <= '0';
+						--Result_L_pointer <= '0';
 						InstructionResult <= (others => '0');
 						r2State <= done;
 					when done =>
@@ -181,7 +181,7 @@ begin
 								r1State <= write1;
 							end if;
 						else
-                            Result_L_pointer <= '0';
+                            --Result_L_pointer <= '0';
                             Result_L <= "0000000000000000";
 							Result <= Address;
 							r1State <= done;
@@ -197,7 +197,7 @@ begin
 						r1State <= read2;
 					when read2 =>
 						Result <= Ram1Data;
-                        Result_L_pointer <= '1';
+                        --Result_L_pointer <= '1';
                         Result_L <= Ram1Data;
 						r1State <= done;
 					when write1 =>
@@ -211,7 +211,7 @@ begin
 						r1State <= done;
 						Result <= (others => '0');
 						Result_L <= (others => '0');
-						Result_L_pointer <= '0';
+						--Result_L_pointer <= '0';
 					when commTest1 =>
 						Ram1WE <= '1';
 						Ram1OE <= '1';
@@ -231,7 +231,7 @@ begin
 						r1State <= commRead2;
 					when commRead2 =>
 						Result <= Ram1Data;
-						Result_L_pointer <= '1';
+						--Result_L_pointer <= '1';
 						Result_L <= Ram1Data;
 						rdn <= '1';
 						r1State <= done;
@@ -257,7 +257,7 @@ begin
 							r1State <= done;
 							Result <= (others => '0');
 							Result_L <= (others => '0');
-							Result_L_pointer <= '0';
+							--Result_L_pointer <= '0';
 						end if;
 					when done =>
 					when others =>	

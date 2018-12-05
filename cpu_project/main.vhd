@@ -104,7 +104,7 @@ begin
 	process (clk_scan)
 	begin
 		if (clk_scan'event and clk_scan = '1') then
-			if (gen_scan_count = 1100000) then
+			if (gen_scan_count = 11000000) then
 				gen_scan_count <= (others => '0');
 				gen_clk_scan <= not gen_clk_scan;
 			else
