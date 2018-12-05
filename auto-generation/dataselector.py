@@ -11,9 +11,15 @@ def select_data(index, f):
             if (%s) then
                 Data%s <= ModifiedValue;
             else
-                Data%s <= Data(%d downto %d);
+                if (%s) then
+                    Data%s <= ModifiedValueForward;
+                else
+                    Data%s <= Data(%d downto %d);
+                end if;
             end if;\n''' % (
                 'Index(%d downto %d) = ModifiedIndex(3 downto 0)' % (
+                    (dataIndex-1)*4+3, (dataIndex-1)*4
+                ), 'ABS'[index], 'Index(%d downto %d) = ModifiedIndexForward(3 downto 0)' % (
                     (dataIndex-1)*4+3, (dataIndex-1)*4
                 ),
                 'ABS'[index], 'ABS'[index],
@@ -43,6 +49,8 @@ entity DataSelector is
         Index : in std_logic_vector(11 downto 0);
         ModifiedIndex : in std_logic_vector(3 downto 0);
         ModifiedValue : in std_logic_vector(15 downto 0);
+        ModifiedIndexForward : in std_logic_vector(3 downto 0);
+        ModifiedValueForward : in std_logic_vector(15 downto 0);
         
         DataA : out std_logic_vector(15 downto 0);
         DataB : out std_logic_vector(15 downto 0);

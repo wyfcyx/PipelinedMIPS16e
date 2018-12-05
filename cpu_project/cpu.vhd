@@ -71,8 +71,10 @@ signal ID_EX_Rz_in, ID_EX_Rz_out : std_logic_vector(15 downto 0) := (others => '
 signal ID_EX_Index_in, ID_EX_Index_out : std_logic_vector(11 downto 0) := (others => '0');
 signal ID_EX_ModifiedIndex_in, ID_EX_ModifiedIndex_out : std_logic_vector(3 downto 0) := "1111";
 signal ID_EX_ModifiedValue_in, ID_EX_ModifiedValue_out : std_logic_vector(15 downto 0) := (others => '0');
-signal ID_EX_ModifiedValue_in_L : std_logic_vector(15 downto 0) := (others => '0');
-signal ID_EX_ModifiedValue_in_L_pointer : std_logic := '0';
+-- signal ID_EX_ModifiedValue_in_L : std_logic_vector(15 downto 0) := (others => '0');
+-- signal ID_EX_ModifiedValue_in_L_pointer : std_logic := '0';
+signal ID_EX_ModifiedIndexForward_in, ID_EX_ModifiedIndexForward_out : std_logic_vector(3 downto 0) := "1111";
+signal ID_EX_ModifiedValueForward_in, ID_EX_ModifiedValueForward_out : std_logic_vector(15 downto 0) := (others => '0');
 signal ID_EX_NextForceNop_in : std_logic := '0';
 -- EX/MEM lock
 signal EX_MEM_LFlag_in, EX_MEM_LFlag_out : std_logic := '0';
@@ -136,6 +138,8 @@ component dataselector is
 		Index : in std_logic_vector(11 downto 0);
 		ModifiedIndex : in std_logic_vector(3 downto 0);
 		ModifiedValue : in std_logic_vector(15 downto 0);
+        ModifiedIndexForward : in std_logic_vector(3 downto 0);
+        ModifiedValueForward : in std_logic_vector(15 downto 0);
 
 		DataA, DataB, DataS : out std_logic_vector(15 downto 0)
 	);
@@ -204,7 +208,7 @@ component memory is
 		reset : in std_logic;
 		
 		Result : out std_logic_vector(15 downto 0);
-        Result_L_pointer : out std_logic;
+        -- Result_L_pointer : out std_logic;
         Result_L : out std_logic_vector(15 downto 0);
 		InstructionResult : out std_logic_vector(15 downto 0);
 
@@ -266,6 +270,8 @@ begin
 	EX_MEM_SFlag_in <= ID_EX_SFlag_out;
 	EX_MEM_RegisterTarget_in <= ID_EX_RegisterTarget_out;
 	MEM_WB_RegisterTarget_in <= EX_MEM_RegisterTarget_out;
+    
+    ID_EX_ModifiedIndexForward_in <= EX_MEM_RegisterTarget_out;
 	-- component routes
 	memory_instance : memory port map(
 		-- in
@@ -276,8 +282,8 @@ begin
 		InstructionAddress => PC_out,
 		-- out
 		Result => MEM_WB_WriteInData_in,
-        Result_L_pointer => ID_EX_ModifiedValue_in_L_pointer,
-        Result_L => ID_EX_ModifiedValue_in_L,
+        -- Result_L_pointer => ID_EX_ModifiedValue_in_L_pointer,
+        Result_L => ID_EX_ModifiedValueForward_in,
 		InstructionResult => IF_ID_Instruction_in,
 		-- ram & comm
 		clk => clk,
@@ -356,6 +362,8 @@ begin
 		Index => ID_EX_Index_out,
 		ModifiedIndex => ID_EX_ModifiedIndex_out,
 		ModifiedValue => ID_EX_ModifiedValue_out,
+        ModifiedIndexForward => ID_EX_ModifiedIndexForward_out,
+        ModifiedValueForward => ID_EX_ModifiedValueForward_out,
 		-- out
 		DataA => DataA,
 		DataB => DataB,
@@ -448,7 +456,9 @@ begin
                 ID_EX_Rz_out <= "0000000000000000";
                 ID_EX_Index_out <= "000000000000";
                 ID_EX_ModifiedIndex_out <= "1111";
+                ID_EX_ModifiedIndexForward_out <= "1111";
                 ID_EX_ModifiedValue_out <= x"0000";
+                ID_EX_ModifiedValueForward_out <= x"0000";
             else
                 ID_EX_LFlag_out <= ID_EX_LFlag_in;
                 ID_EX_SFlag_out <= ID_EX_SFlag_in;
@@ -462,11 +472,9 @@ begin
                 ID_EX_Rz_out <= ID_EX_Rz_in;
                 ID_EX_Index_out <= ID_EX_Index_in;
                 ID_EX_ModifiedIndex_out <= ID_EX_ModifiedIndex_in;
-                if (ID_EX_ModifiedValue_in_L_pointer = '0') then
-                    ID_EX_ModifiedValue_out <= ID_EX_ModifiedValue_in;
-                else
-                    ID_EX_ModifiedValue_out <= ID_EX_ModifiedValue_in_L;
-                end if;
+                ID_EX_ModifiedIndexForward_out <= ID_EX_ModifiedIndexForward_in;
+                ID_EX_ModifiedValue_out <= ID_EX_ModifiedValue_in;
+                ID_EX_ModifiedValueForward_out <= ID_EX_ModifiedValueForward_in;
             end if;
 
 			EX_MEM_LFlag_out <= EX_MEM_LFlag_in;
