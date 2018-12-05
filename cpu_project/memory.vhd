@@ -76,8 +76,15 @@ signal trigger : std_logic_vector(49 downto 0) := (others => '1');
 signal curAddr : std_logic_vector(15 downto 0) := (others => '0');
 signal curData : std_logic_vector(15 downto 0) := (others => '0');
 signal instructions : std_logic_vector(15 downto 0) := x"4000";
+signal ram2_rst_pointer : std_logic_vector(15 downto 0) := x"4000";
+signal ram1_rst_pointer : std_logic_vector(15 downto 0) := x"8000";
 type FlashToRamState is (
-	waiting, read1, read2, read3, read4, writeToRam, done, after1, after2, after3
+	waiting,
+	read1, read2, read3, read4, writeToRam,
+	ram2_rst1, ram2_rst2,
+	ram1_rst1, ram1_rst2,
+	done,
+	after1, after2, after3
 );
 signal state : FlashToRamState := waiting;
 signal startedCache : std_logic := '0';
@@ -285,10 +292,40 @@ begin
 						Ram2Data <= curData;
 						Ram2Addr <= curAddr;
 						if (curAddr + 1 = instructions) then
-							state <= done;
+							state <= ram2_rst1;
 						else
 							curAddr <= curAddr + 1;
 							state <= read1;
+						end if;
+					when ram2_rst1 =>
+						Ram2WE <= '0';
+						Ram2OE <= '1';
+						Ram2EN <= '0';
+						Ram2Data <= (others => '0');
+						Ram2Addr <= ram2_rst_pointer;
+						state <= ram2_rst2;
+					when ram2_rst2 =>
+						if (ram2_rst_pointer + 1 = ram1_rst_pointer) then
+							state <= ram1_rst1;
+						else
+							ram2_rst_pointer <= ram2_rst_pointer + 1;
+							state <= ram2_rst1;
+						end if;
+					when ram1_rst1 =>
+						Ram1WE <= '0';
+						Ram1OE <= '1';
+						Ram1EN <= '0';
+						rdn <= '1';
+						wrn <= '1';
+						Ram1Data <= (others => '0');
+						Ram1Addr <= ram1_rst_pointer;
+						state <= ram1_rst2;
+					when ram1_rst2 =>
+						if (ram1_rst_pointer = x"ffff") then
+							state <= done;
+						else
+							ram1_rst_pointer <= ram1_rst_pointer + 1;
+							state <= ram1_rst1;
 						end if;
 					when done =>
 						startedCache <= '1';
