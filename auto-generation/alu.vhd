@@ -237,7 +237,7 @@ begin
         ModifiedValue <= Result0;
     end if;
     
-    if (SFlag = '1' and Result0(15 downto 14) = "00") then
+    if ((SFlag = '1' or LFlag = '1') and Result0(15 downto 14) = "00") then
         NextForceNop <= '1';
         BubbleNext_Alu <= "010";
         BranchForce_Alu <= '1';
