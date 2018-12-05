@@ -182,7 +182,7 @@ begin
 							end if;
 						else
                             --Result_L_pointer <= '0';
-                            Result_L <= "0000000000000000";
+                            Result_L <= Address;
 							Result <= Address;
 							r1State <= done;
 						end if;
