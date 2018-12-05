@@ -59,7 +59,7 @@ type Ram1State is (
 	waiting,
 	read1, read2, write1,
 	commTest1, commTest2,
-	commRead1, commRead2,
+	commRead1, commRead2, commRead3,
 	commWrite1, commWrite2, commWrite3, commWrite4, commWrite5,
 	done
 );
@@ -217,12 +217,16 @@ begin
 						Result <= x"000" & "00" & dataReady & '1';
 						r1State <= done;
 					when commRead1 =>
+						Ram1WE <= '1';
+						Ram1OE <= '1';
+						Ram1EN <= '1';
 						rdn <= '0';
 						r1State <= commRead2;
 					when commRead2 =>
 						Result <= Ram1Data;
 						Result_L_pointer <= '1';
 						Result_L <= Ram1Data;
+						rdn <= '1';
 						r1State <= done;
 					when commWrite1 =>
 						Ram1WE <= '1';
@@ -254,6 +258,11 @@ begin
 			else
 				InstructionResult <= (others => '0');
 				Result <= (others => '0');
+				Ram1WE <= '1';
+				Ram1OE <= '1';
+				Ram1EN <= '1';
+				rdn <= '1';
+				wrn <= '1';
 				case state is
 					when read1 =>
 						flashData <= x"00FF";
@@ -282,22 +291,7 @@ begin
 							state <= read1;
 						end if;
 					when done =>
-						Ram1WE <= '0';
-						Ram1OE <= '1';
-						Ram1EN <= '0';
-						Ram1Addr <= x"c000";
-						Ram1Data <= "0011010001010110";
-						state <= after1;
-					when after1 =>
-						Ram1WE <= '1';
-						Ram1OE <= '0';
-						Ram1EN <= '0';
-						Ram1Addr <= x"c000";
-						Ram1Data <= (others => 'Z');
-						state <= after2;
-					when after2 =>
 						startedCache <= '1';
-						--led <= Ram1Data;
 					when others =>
 				end case;
 			end if;
