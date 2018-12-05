@@ -313,8 +313,8 @@ def output_instruction(ins, f, tabs):
                     end if;
                     ''' % (
                         ' and '.join([
-                            '(Instruction(%s) = \'%s\')' % (str(j), ("000" + bin(i)[2:])[5-j])
-                            for j in [8, 7, 6]
+                            '(Instruction(%s) = \'%s\')' % (str(j), ("000" + bin(i)[2:])[7-j])
+                            for j in [10, 9, 8]
                         ]), str((i+1)*16-1), str(i*16), str((i+1)*16-1), str(i*16)
                     )).replace(' ' * 20, tabs))
     else:
