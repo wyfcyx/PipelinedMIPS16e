@@ -451,7 +451,7 @@ begin
                 RegisterTarget <= "1001";
                 AluInstruction <= "0101";
                 Immediate <= "0000000000000000";
-                DataSelectorInstruction <= "000101";
+                DataSelectorInstruction <= "001010";
                 BubbleNext <= "000";
             end if;
 

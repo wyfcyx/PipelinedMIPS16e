@@ -28,7 +28,7 @@ decoder = {
         '', 'ry', '', 'ry', 'ry',
         '', '', '', '', 'ry',
         '', '000', '', 'ry', '',
-        '000', '010', '000', 'rx', 'ry',
+        '000', '010', '000', 'ry', 'ry',
         '000', 'ry', 'ry', 'ry', 'ry',
         'ry', 'ry', 'ry', '', ''
     ],
@@ -193,7 +193,7 @@ set_data('MTIH', 'DataSelectorInstruction', '0101')
 
 set_data('MTSP', 'RegisterTarget', 'SP')
 set_data('MTSP', 'AluInstruction', 'AND')
-set_data('MTSP', 'DataSelectorInstruction', '0101')
+set_data('MTSP', 'DataSelectorInstruction', '1010')
 
 set_data('NEG', 'RegisterTarget', 'rx')
 set_data('NEG', 'AluInstruction', 'NEG')
