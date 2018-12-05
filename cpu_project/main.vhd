@@ -72,7 +72,7 @@ signal gen_scan_count : std_logic_vector(31 downto 0) := (others => '0');
 begin
 	led <= led_cpu;
 	cpu_instance : cpu port map(
-		clk => clk,
+		clk => gen_clk_scan,
 		clk_scan => clk_scan,
 		reset => reset,
 		Ram1Data => Ram1Data,
@@ -104,7 +104,7 @@ begin
 	process (clk_scan)
 	begin
 		if (clk_scan'event and clk_scan = '1') then
-			if (gen_scan_count = 11) then
+			if (gen_scan_count = 110) then
 				gen_scan_count <= (others => '0');
 				gen_clk_scan <= not gen_clk_scan;
 			else
