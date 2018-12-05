@@ -79,11 +79,11 @@ signal ID_EX_NextForceNop_in : std_logic := '0';
 -- EX/MEM lock
 signal EX_MEM_LFlag_in, EX_MEM_LFlag_out : std_logic := '0';
 signal EX_MEM_SFlag_in, EX_MEM_SFlag_out : std_logic := '0';
-signal EX_MEM_RegisterTarget_in, EX_MEM_RegisterTarget_out : std_logic_vector(3 downto 0) := (others => '0');
+signal EX_MEM_RegisterTarget_in, EX_MEM_RegisterTarget_out : std_logic_vector(3 downto 0) := "1111";
 signal EX_MEM_AluResult_in, EX_MEM_AluResult_out : std_logic_vector(15 downto 0) := (others => '0');
 signal EX_MEM_DataS_in, EX_MEM_DataS_out : std_logic_vector(15 downto 0) := (others => '0');
 -- MEM/WB lock
-signal MEM_WB_RegisterTarget_in, MEM_WB_RegisterTarget_out : std_logic_vector(3 downto 0) := (others => '0');
+signal MEM_WB_RegisterTarget_in, MEM_WB_RegisterTarget_out : std_logic_vector(3 downto 0) := "1111";
 signal MEM_WB_WriteInData_in, MEM_WB_WriteInData_out : std_logic_vector(15 downto 0) := (others => '0');
 -- debug led
 signal led_reg : std_logic_vector(15 downto 0) := (others => '0');
