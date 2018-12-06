@@ -72,6 +72,8 @@ signal ID_EX_Rz_in, ID_EX_Rz_out : std_logic_vector(15 downto 0) := (others => '
 signal ID_EX_Index_in, ID_EX_Index_out : std_logic_vector(11 downto 0) := (others => '0');
 signal ID_EX_ModifiedIndex_in, ID_EX_ModifiedIndex_out : std_logic_vector(3 downto 0) := "1111";
 signal ID_EX_ModifiedValue_in, ID_EX_ModifiedValue_out : std_logic_vector(15 downto 0) := (others => '0');
+signal ID_EX_ModifiedIndexForward_out : std_logic_vector(3 downto 0) := "111";
+signal ID_EX_ModifiedValueForward_out : std_logic_vector(15 downto 0) := (others => '0');
 signal ID_EX_ModifiedValue_in_L : std_logic_vector(15 downto 0) := (others => '0');
 signal ID_EX_ModifiedValue_in_L_pointer : std_logic := '0';
 signal ID_EX_NextForceNop_in : std_logic := '0';
@@ -137,6 +139,8 @@ component dataselector is
 		Index : in std_logic_vector(11 downto 0);
 		ModifiedIndex : in std_logic_vector(3 downto 0);
 		ModifiedValue : in std_logic_vector(15 downto 0);
+        ModifiedIndexForward : in std_logic_vector(3 downto 0);
+        ModifiedValueForward : in std_logic_vector(15 downto 0);
 
 		DataA, DataB, DataS : out std_logic_vector(15 downto 0)
 	);
@@ -358,6 +362,8 @@ begin
 		Index => ID_EX_Index_out,
 		ModifiedIndex => ID_EX_ModifiedIndex_out,
 		ModifiedValue => ID_EX_ModifiedValue_out,
+        ModifiedIndexForward => ID_EX_ModifiedIndexForward_out,
+        ModifiedValueForward => ID_EX_ModifiedValueForward_out,
 		-- out
 		DataA => DataA,
 		DataB => DataB,
@@ -437,6 +443,8 @@ begin
             end if;
             
             ID_EX_PC0_out <= ID_EX_PC0_in;
+            ID_EX_ModifiedIndexForward_out <= ID_EX_ModifiedIndex_out;
+            ID_EX_ModifiedValueForward_out <= ID_EX_ModifiedValue_out;
             if (ID_EX_NextForceNop_in = '1') then
                 ID_EX_LFlag_out <= '0';
                 ID_EX_SFlag_out <= '0';
