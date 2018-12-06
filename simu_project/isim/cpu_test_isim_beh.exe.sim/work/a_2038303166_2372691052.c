@@ -930,7 +930,7 @@ LAB2:    xsi_set_current_line(525, ng0);
     *((unsigned char *)t6) = (unsigned char)2;
     xsi_driver_first_trans_fast(t2);
     xsi_set_current_line(526, ng0);
-    t7 = (300 * 1000LL);
+    t7 = (5000 * 1000LL);
     t2 = (t0 + 21832);
     xsi_process_wait(t2, t7);
 
@@ -946,7 +946,7 @@ LAB4:    xsi_set_current_line(527, ng0);
     *((unsigned char *)t6) = (unsigned char)3;
     xsi_driver_first_trans_fast(t2);
     xsi_set_current_line(528, ng0);
-    t7 = (300 * 1000LL);
+    t7 = (5000 * 1000LL);
     t2 = (t0 + 21832);
     xsi_process_wait(t2, t7);
 

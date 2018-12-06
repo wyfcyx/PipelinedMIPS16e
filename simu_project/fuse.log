@@ -24,9 +24,8 @@ Compiling architecture bhv of entity alu [alu_default]
 Compiling architecture bhv of entity PCSelector [pcselector_default]
 Compiling architecture behavior of entity cpu_test
 Time Resolution for simulation is 1ps.
-Waiting for 1 sub-compilation(s) to finish...
 WARNING:Simulator - Unable to copy libPortabilityNOSH.dll to the simulation executable directory: boost::filesystem::copy_file: 系统找不到指定的路径。, "isim\cpu_test_isim_beh.exe.sim\libPortability.dll".
 Compiled 17 VHDL Units
 Built simulation executable D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/simu_project/cpu_test_isim_beh.exe
-Fuse Memory Usage: 43024 KB
-Fuse CPU Usage: 2265 ms
+Fuse Memory Usage: 43044 KB
+Fuse CPU Usage: 2234 ms
