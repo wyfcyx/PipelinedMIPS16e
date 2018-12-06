@@ -1,7 +1,0 @@
-vhdl work "reg.vhd"
-vhdl work "pcselector.vhd"
-vhdl work "fmemory.vhd"
-vhdl work "decoder.vhd"
-vhdl work "dataselector.vhd"
-vhdl work "alu.vhd"
-vhdl work "cpu_test.vhd"
