@@ -1,4 +1,3 @@
-
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.std_logic_arith.all;
@@ -38,7 +37,7 @@ begin
 process(DataA, DataB, AluInstruction, T, BranchTargetAlu, RegisterTarget, ModifiedIndex_before, ModifiedValue_before)
 begin
     
-    
+    Result <= Result0;
     -- NOP
     if (AluInstruction(3 downto 0) = "0000") then
         BranchFlagForward <= '0';
@@ -71,7 +70,7 @@ begin
         BranchFlagForward <= '0';
         BranchConfirm <= '0';
         BranchTargetConfirm <= BranchTargetAlu;
-        Tout <= ((DataA(0) xor DataB(0)) and (DataA(1) xor DataB(1)) and (DataA(2) xor DataB(2)) and (DataA(3) xor DataB(3)) and (DataA(4) xor DataB(4)) and (DataA(5) xor DataB(5)) and (DataA(6) xor DataB(6)) and (DataA(7) xor DataB(7)) and (DataA(8) xor DataB(8)) and (DataA(9) xor DataB(9)) and (DataA(10) xor DataB(10)) and (DataA(11) xor DataB(11)) and (DataA(12) xor DataB(12)) and (DataA(13) xor DataB(13)) and (DataA(14) xor DataB(14)) and (DataA(15) xor DataB(15)));
+        Tout <= ((DataA(0) xor DataB(0)) or (DataA(1) xor DataB(1)) or (DataA(2) xor DataB(2)) or (DataA(3) or DataB(3)) or (DataA(4) xor DataB(4)) or (DataA(5) xor DataB(5)) or (DataA(6) xor DataB(6)) or (DataA(7) xor DataB(7)) or (DataA(8) xor DataB(8)) or (DataA(9) xor DataB(9)) or (DataA(10) xor DataB(10)) or (DataA(11) xor DataB(11)) or (DataA(12) xor DataB(12)) or (DataA(13) xor DataB(13)) or (DataA(14) xor DataB(14)) or (DataA(15) xor DataB(15)));
         Result0 <= "0000000000000000";
     end if;
     
@@ -229,7 +228,7 @@ begin
         Result0 <= "0000000000000000";
     end if;
     
-    Result <= Result0;
+    
     if (RegisterTarget = "1111") then
         ModifiedIndex <= ModifiedIndex_before;
         ModifiedValue <= ModifiedValue_before;
@@ -251,4 +250,3 @@ begin
     end if;
 end process;
 end bhv;
-    

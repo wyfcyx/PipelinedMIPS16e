@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2018-12-06T22:04:15</DateModified>
+  <DateModified>2018-12-06T22:04:46</DateModified>
   <ModuleName>main</ModuleName>
-  <SummaryTimeStamp>2018-12-06T08:03:45</SummaryTimeStamp>
-  <SavedFilePath>D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project/iseconfig/main.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/cpu_project\</ImplementationReportsDirectory>
-  <DateInitialized>2018-11-28T16:33:36</DateInitialized>
+  <SummaryTimeStamp>Unknown</SummaryTimeStamp>
+  <SavedFilePath>D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/simu_project/iseconfig/main.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/simu_project\</ImplementationReportsDirectory>
+  <DateInitialized>2018-12-06T17:58:47</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
  <body>

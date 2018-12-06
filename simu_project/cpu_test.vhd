@@ -1,41 +1,72 @@
-library ieee;
-use ieee.std_logic_1164.all;
-use ieee.std_logic_arith.all;
-use ieee.std_logic_unsigned.all;
+--------------------------------------------------------------------------------
+-- Company: 
+-- Engineer:
+--
+-- Create Date:   17:59:33 12/06/2018
+-- Design Name:   
+-- Module Name:   D:/Tsinghua/Autumn2018/computer/PipelinedMIPS16e/simu_project/cpu_test.vhd
+-- Project Name:  simu_project
+-- Target Device:  
+-- Tool versions:  
+-- Description:   
+-- 
+-- VHDL Test Bench Created by ISE for module: cpu
+-- 
+-- Dependencies:
+-- 
+-- Revision:
+-- Revision 0.01 - File Created
+-- Additional Comments:
+--
+-- Notes: 
+-- This testbench has been automatically generated using types std_logic and
+-- std_logic_vector for the ports of the unit under test.  Xilinx recommends
+-- that these types always be used for the top-level I/O of a design in order
+-- to guarantee that the testbench will bind correctly to the post-implementation 
+-- simulation model.
+--------------------------------------------------------------------------------
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+ 
+-- Uncomment the following library declaration if using
+-- arithmetic functions with Signed or Unsigned values
+--USE ieee.numeric_std.ALL;
+ 
+ENTITY cpu_test IS
+END cpu_test;
+ 
+ARCHITECTURE behavior OF cpu_test IS 
 
-entity cpu is
-	port(
-		-- pipeline clock
-		clk : in std_logic;
+
+-- pipeline clock
+		signal clk :  std_logic;
 		-- scan clock
-		clk_scan : in std_logic;
-		reset : in std_logic;
+		signal clk_scan :  std_logic;
+		signal reset :  std_logic;
 		-- data mem
-		Ram1Data : inout std_logic_vector(15 downto 0);
-		Ram1Addr : out std_logic_vector(15 downto 0);
-		Ram1OE, Ram1WE, Ram1EN : out std_logic;
-		dataReady, rdn, wrn, tbre, tsre : inout std_logic;
+		signal Ram1Data :  std_logic_vector(15 downto 0);
+		signal Ram1Addr :  std_logic_vector(15 downto 0);
+		signal Ram1OE, Ram1WE, Ram1EN :  std_logic;
+		signal dataReady, rdn, wrn, tbre, tsre :  std_logic;
 		-- instruction mem
-		Ram2Data : inout std_logic_vector(15 downto 0);
-		Ram2Addr : out std_logic_vector(15 downto 0);
-		Ram2OE, Ram2WE, Ram2EN : out std_logic;
+		signal Ram2Data :  std_logic_vector(15 downto 0);
+		signal Ram2Addr :  std_logic_vector(15 downto 0);
+		signal Ram2OE, Ram2WE, Ram2EN :  std_logic;
 		-- flash
 		
-		flashByte : out std_logic;
-		flashVpen : out std_logic;
-		flashCE : out std_logic;
-		flashOE : out std_logic;
-		flashWE : out std_logic;
-		flashRP : out std_logic;
-		flashAddr : out std_logic_vector(22 downto 1);
-		flashData : inout std_logic_vector(15 downto 0);
+		signal flashByte :  std_logic;
+		signal flashVpen :  std_logic;
+		signal flashCE :  std_logic;
+		signal flashOE :  std_logic;
+		signal flashWE :  std_logic;
+		signal flashRP :  std_logic;
+		signal flashAddr : std_logic_vector(22 downto 1);
+		signal flashData :  std_logic_vector(15 downto 0);
 		-- debug data output
-		led : out std_logic_vector(15 downto 0);
-		started : out std_logic
-	);
-end cpu;
-
-architecture bhv of cpu is 
+		signal led :  std_logic_vector(15 downto 0);
+		signal started :  std_logic;
+		
+		
 -- Global Regs lock
 signal PC_in, PC_out : std_logic_vector(15 downto 0) := (others => '0'); -- r10
 signal SP_in, SP_out : std_logic_vector(15 downto 0) := (others => '0'); -- r9
@@ -249,7 +280,7 @@ begin
 	--led <= ID_EX_AluInstruction_in(3 downto 0) & ID_EX_Rx_in(3 downto 0) & EX_MEM_AluResult_in(3 downto 0) & DataA(3 downto 0);
 	--led <= IF_ID_Bubble_out(2 downto 0) & IF_ID_Instruction_out(15 downto 11) & IF_ID_PC0_out(3 downto 0) & ID_EX_AluInstruction_in(3 downto 0);
 	--led <= PC_out(3 downto 0) & IF_ID_PC0_in(3 downto 0) & BranchTarget(2 downto 0) &  BranchForce& IF_ID_Instruction_in(3 downto 0);
-	--led <= led_reg;
+	led <= led_reg;
 	--led <= IF_ID_Bubble_out(2 downto 0) & BranchForce& IF_ID_Instruction_out(3 downto 0) & IF_ID_PC0_out(3 downto 0) & ID_EX_AluInstruction_in(3 downto 0);
 	--led <= IF_ID_Bubble_out(2 downto 0) & IF_ID_Instruction_out(15 downto 11) & IF_ID_PC0_out(3 downto 0) & ID_EX_AluInstruction_in(3 downto 0);
 	--led <= ID_EX_AluInstruction_out(3 downto 0) & ID_EX_Rx_out(3 downto 0) & EX_MEM_AluResult_out(3 downto 0) & DataA(3 downto 0);
@@ -264,7 +295,7 @@ begin
 	--led <= EX_MEM_DataS_in(11 downto 8) & ID_EX_ModifiedValue_out(11 downto 8) & ID_EX_ModifiedIndex_out(1 downto 0) & ID_EX_DataSelectorInstruction_out(5 downto 0);
 	--led <= IF_ID_Instruction_out(15 downto 6) & EX_MEM_LFlag_out & EX_MEM_SFlag_out & PC_out(3 downto 0);
 	--led <= EX_MEM_AluResult_out(15 downto 2) & EX_MEM_LFlag_out & EX_MEM_SFlag_out;
-	led <= PC_out;
+	--led <= PC_out;
 	-- register-forward routes
 	started <= startedCache;
     ID_EX_PC0_in <= IF_ID_PC0_out;
@@ -424,7 +455,6 @@ begin
 	begin
 		if (clk'event and clk = '0' and startedCache = '1') then
 			-- led debug-area
-			led_test <= led_test + 1;
 			-- led debug-area
 			PC_out <= PC_in;
 			SP_out <= SP_in;
@@ -489,4 +519,34 @@ begin
 			MEM_WB_WriteInData_out <= MEM_WB_WriteInData_in;
 		end if;
 	end process;
-end bhv;
+
+	clk_process :process
+   begin
+		clk <= '0';
+		wait for 300ns;
+		clk <= '1';
+		wait for 300ns;
+   end process;
+ 
+   clk_scan_process :process
+   begin
+		clk_scan <= '0';
+		wait for 30ns;
+		clk_scan <= '1';
+		wait for 30ns;
+   end process;
+ 
+
+   -- Stimulus process
+   stim_proc: process
+   begin		
+      -- hold reset state for 100 ns.
+      wait for 50 ns;	
+		reset <= '1';
+		wait for 20ns;
+		reset <= '0';
+      -- insert stimulus here 
+
+      wait;
+   end process;
+END;

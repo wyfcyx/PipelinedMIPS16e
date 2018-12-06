@@ -74,7 +74,7 @@ def output_alu(ins, f):
         # 进行比较
         f.write('''
         Tout <= (%s);''' % (
-            ' and '.join([
+            ' or '.join([
                 '(DataA(%d) xor DataB(%d))' % (x, x)
                 for x in range(16)
             ])
@@ -169,8 +169,8 @@ entity alu is
 end alu;
 
 architecture bhv of alu is
-begin
 signal Result0 : std_logic_vector(15 downto 0);
+begin
 process(DataA, DataB, AluInstruction, T, BranchTargetAlu, RegisterTarget, ModifiedIndex_before, ModifiedValue_before)
 begin
     ''')
