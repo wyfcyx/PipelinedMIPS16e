@@ -71,6 +71,8 @@ signal ID_EX_Rz_in, ID_EX_Rz_out : std_logic_vector(15 downto 0) := (others => '
 signal ID_EX_Index_in, ID_EX_Index_out : std_logic_vector(11 downto 0) := (others => '0');
 signal ID_EX_ModifiedIndex_in, ID_EX_ModifiedIndex_out : std_logic_vector(3 downto 0) := "1111";
 signal ID_EX_ModifiedValue_in, ID_EX_ModifiedValue_out : std_logic_vector(15 downto 0) := (others => '0');
+signal ID_EX_ModifiedIndexForward_out : std_logic_vector(3 downto 0) := "111";
+signal ID_EX_ModifiedValueForward_out : std_logic_vector(15 downto 0) := (others => '0');
 signal ID_EX_ModifiedValue_in_L : std_logic_vector(15 downto 0) := (others => '0');
 signal ID_EX_ModifiedValue_in_L_pointer : std_logic := '0';
 signal ID_EX_NextForceNop_in : std_logic := '0';
@@ -136,6 +138,8 @@ component dataselector is
 		Index : in std_logic_vector(11 downto 0);
 		ModifiedIndex : in std_logic_vector(3 downto 0);
 		ModifiedValue : in std_logic_vector(15 downto 0);
+        ModifiedIndexForward : in std_logic_vector(3 downto 0);
+        ModifiedValueForward : in std_logic_vector(15 downto 0);
 
 		DataA, DataB, DataS : out std_logic_vector(15 downto 0)
 	);
@@ -244,7 +248,7 @@ begin
 	--led <= ID_EX_AluInstruction_in(3 downto 0) & ID_EX_Rx_in(3 downto 0) & EX_MEM_AluResult_in(3 downto 0) & DataA(3 downto 0);
 	--led <= IF_ID_Bubble_out(2 downto 0) & IF_ID_Instruction_out(15 downto 11) & IF_ID_PC0_out(3 downto 0) & ID_EX_AluInstruction_in(3 downto 0);
 	--led <= PC_out(3 downto 0) & IF_ID_PC0_in(3 downto 0) & BranchTarget(2 downto 0) &  BranchForce& IF_ID_Instruction_in(3 downto 0);
-	--led <= led_reg;
+	led <= led_reg;
 	--led <= IF_ID_Bubble_out(2 downto 0) & BranchForce& IF_ID_Instruction_out(3 downto 0) & IF_ID_PC0_out(3 downto 0) & ID_EX_AluInstruction_in(3 downto 0);
 	--led <= IF_ID_Bubble_out(2 downto 0) & IF_ID_Instruction_out(15 downto 11) & IF_ID_PC0_out(3 downto 0) & ID_EX_AluInstruction_in(3 downto 0);
 	--led <= ID_EX_AluInstruction_out(3 downto 0) & ID_EX_Rx_out(3 downto 0) & EX_MEM_AluResult_out(3 downto 0) & DataA(3 downto 0);
@@ -259,7 +263,7 @@ begin
 	--led <= EX_MEM_DataS_in(11 downto 8) & ID_EX_ModifiedValue_out(11 downto 8) & ID_EX_ModifiedIndex_out(1 downto 0) & ID_EX_DataSelectorInstruction_out(5 downto 0);
 	--led <= IF_ID_Instruction_out(15 downto 6) & EX_MEM_LFlag_out & EX_MEM_SFlag_out & PC_out(3 downto 0);
 	--led <= EX_MEM_AluResult_out(15 downto 2) & EX_MEM_LFlag_out & EX_MEM_SFlag_out;
-	led <= PC_out;
+	--led <= PC_out;
 	-- register-forward routes
 	started <= startedCache;
     ID_EX_PC0_in <= IF_ID_PC0_out;
@@ -357,6 +361,8 @@ begin
 		Index => ID_EX_Index_out,
 		ModifiedIndex => ID_EX_ModifiedIndex_out,
 		ModifiedValue => ID_EX_ModifiedValue_out,
+        ModifiedIndexForward => ID_EX_ModifiedIndexForward_out,
+        ModifiedValueForward => ID_EX_ModifiedValueForward_out,
 		-- out
 		DataA => DataA,
 		DataB => DataB,
@@ -436,6 +442,8 @@ begin
             end if;
             
             ID_EX_PC0_out <= ID_EX_PC0_in;
+            ID_EX_ModifiedIndexForward_out <= ID_EX_ModifiedIndex_out;
+            ID_EX_ModifiedValueForward_out <= ID_EX_ModifiedValue_out;
             if (ID_EX_NextForceNop_in = '1') then
                 ID_EX_LFlag_out <= '0';
                 ID_EX_SFlag_out <= '0';
