@@ -32,25 +32,18 @@ begin
         PCNext <= BranchTarget_Alu;
         PC0 <= BranchTarget_Alu;
     else
-        if (BranchForce = '1') then
+        PC0 <= PC + 1;
+        if ((BranchForce = '1') or (BranchFlagForward = '0' and BranchFlag = '1')) then
             PCNext <= BranchTarget;
-            PC0 <= PC + 1;
-        end if;
-        if (BranchFlagForward = '0' and BranchFlag = '1') then
-            PCNext <= BranchTarget;
-            PC0 <= BranchTarget;
         end if;
         if (BranchForce = '0' and BranchFlagForward = '1' and BranchConfirm = '1') then
             PCNext <= BranchTargetConfirm;
-            PC0 <= BranchTargetConfirm;
         end if;
         if (BranchForce = '0' and BranchFlagForward = '0' and BranchFlag = '0') then
             PCNext <= PC + 1;
-            PC0 <= PC + 1;
         end if;
         if (BranchForce = '0' and BranchFlagForward = '1' and BranchConfirm = '0') then
             PCNext <= PC + 1;
-            PC0 <= PC + 1;
         end if;
     end if;
     
