@@ -20,6 +20,7 @@ entity cpu is
 		Ram2Addr : out std_logic_vector(15 downto 0);
 		Ram2OE, Ram2WE, Ram2EN : out std_logic;
 		-- flash
+		
 		flashByte : out std_logic;
 		flashVpen : out std_logic;
 		flashCE : out std_logic;

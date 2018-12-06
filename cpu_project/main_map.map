@@ -1,0 +1,114 @@
+Release 14.7 Map P.20131013 (nt64)
+Xilinx Map Application Log File for Design 'main'
+
+Design Information
+------------------
+Command Line   : map -intstyle ise -p xc3s1200e-fg320-4 -timing -logic_opt off
+-ol high -t 1 -register_duplication off -cm balanced -ir off -pr off -power off
+-o main_map.ncd main.ngd main.pcf 
+Target Device  : xc3s1200e
+Target Package : fg320
+Target Speed   : -4
+Mapper Version : spartan3e -- $Revision: 1.55 $
+Mapped Date    : Thu Dec 06 08:35:58 2018
+
+Mapping design into LUTs...
+Running directed packing...
+Running delay-based LUT packing...
+Updating timing models...
+Running timing-driven placement...
+Total REAL time at the beginning of Placer: 8 secs 
+Total CPU  time at the beginning of Placer: 8 secs 
+
+Phase 1.1  Initial Placement Analysis
+Phase 1.1  Initial Placement Analysis (Checksum:486a8f21) REAL time: 9 secs 
+
+Phase 2.7  Design Feasibility Check
+Phase 2.7  Design Feasibility Check (Checksum:486a8f21) REAL time: 9 secs 
+
+Phase 3.31  Local Placement Optimization
+Phase 3.31  Local Placement Optimization (Checksum:486a8f21) REAL time: 9 secs 
+
+Phase 4.2  Initial Clock and IO Placement
+
+Phase 4.2  Initial Clock and IO Placement (Checksum:a12e5c01) REAL time: 13 secs 
+
+Phase 5.30  Global Clock Region Assignment
+Phase 5.30  Global Clock Region Assignment (Checksum:a12e5c01) REAL time: 13 secs 
+
+Phase 6.36  Local Placement Optimization
+Phase 6.36  Local Placement Optimization (Checksum:a12e5c01) REAL time: 13 secs 
+
+Phase 7.8  Global Placement
+.........................................................
+....
+.......................................................................................................................
+................
+................
+Phase 7.8  Global Placement (Checksum:c4ae3391) REAL time: 20 secs 
+
+Phase 8.5  Local Placement Optimization
+Phase 8.5  Local Placement Optimization (Checksum:c4ae3391) REAL time: 20 secs 
+
+Phase 9.18  Placement Optimization
+Phase 9.18  Placement Optimization (Checksum:cb8ac725) REAL time: 32 secs 
+
+Phase 10.5  Local Placement Optimization
+Phase 10.5  Local Placement Optimization (Checksum:cb8ac725) REAL time: 32 secs 
+
+Total REAL time to Placer completion: 32 secs 
+Total CPU  time to Placer completion: 32 secs 
+Running post-placement packing...
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   cpu_instance/reg_instance/flag2<0> is sourced by a combinatorial pin. This is
+   not good design practice. Use the CE pin to control the loading of data into
+   the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   cpu_instance/decoder_instance/SFlag_and0000 is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   cpu_instance/decoder_instance/Immediate_not0001 is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   cpu_instance/pcselector_instance/PCNext_or0000 is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+
+Design Summary
+--------------
+
+Design Summary:
+Number of errors:      0
+Number of warnings:    4
+Logic Utilization:
+  Total Number Slice Registers:         780 out of  17,344    4%
+    Number used as Flip Flops:          724
+    Number used as Latches:              56
+  Number of 4 input LUTs:             2,353 out of  17,344   13%
+Logic Distribution:
+  Number of occupied Slices:          1,677 out of   8,672   19%
+    Number of Slices containing only related logic:   1,677 out of   1,677 100%
+    Number of Slices containing unrelated logic:          0 out of   1,677   0%
+      *See NOTES below for an explanation of the effects of unrelated logic.
+  Total Number of 4 input LUTs:       2,475 out of  17,344   14%
+    Number used as logic:             2,353
+    Number used as a route-thru:        122
+
+  The Slice Logic Distribution report is not meaningful if the design is
+  over-mapped for a non-slice resource or if Placement fails.
+
+  Number of bonded IOBs:                139 out of     250   55%
+    IOB Flip Flops:                       4
+    IOB Latches:                          2
+  Number of BUFGMUXs:                     2 out of      24    8%
+
+Average Fanout of Non-Clock Nets:                3.81
+
+Peak Memory Usage:  4548 MB
+Total REAL time to MAP completion:  34 secs 
+Total CPU time to MAP completion:   33 secs 
+
+Mapping completed.
+See MAP report file "main_map.mrp" for details.
