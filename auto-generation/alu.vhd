@@ -32,7 +32,6 @@ entity alu is
 end alu;
 
 architecture bhv of alu is
-signal Result0 : std_logic_vector(15 downto 0);
 begin
 process(DataA, DataB, AluInstruction, T, BranchTargetAlu, RegisterTarget, ModifiedIndex_before, ModifiedValue_before)
 begin
@@ -44,7 +43,10 @@ begin
         BranchConfirm <= '0';
         BranchTargetConfirm <= BranchTargetAlu;
         Tout <= T;
-        Result0 <= "0000000000000000";
+        Result <= "0000000000000000";
+        if (RegisterTarget /= "1111") then
+            ModifiedValue <= "0000000000000000";
+        end if;
     end if;
     
     -- ADD
@@ -53,7 +55,10 @@ begin
         BranchConfirm <= '0';
         BranchTargetConfirm <= BranchTargetAlu;
         Tout <= T;
-        Result0 <= DataA + DataB;
+        Result <= DataA + DataB;
+        if (RegisterTarget /= "1111") then
+            ModifiedValue <= DataA + DataB;
+        end if;
     end if;
     
     -- SUBU
@@ -62,7 +67,10 @@ begin
         BranchConfirm <= '0';
         BranchTargetConfirm <= BranchTargetAlu;
         Tout <= T;
-        Result0 <= DataA - DataB;
+        Result <= DataA - DataB;
+        if (RegisterTarget /= "1111") then
+            ModifiedValue <= DataA - DataB;
+        end if;
     end if;
     
     -- CMP
@@ -71,7 +79,10 @@ begin
         BranchConfirm <= '0';
         BranchTargetConfirm <= BranchTargetAlu;
         Tout <= ((DataA(0) xor DataB(0)) or (DataA(1) xor DataB(1)) or (DataA(2) xor DataB(2)) or (DataA(3) xor DataB(3)) or (DataA(4) xor DataB(4)) or (DataA(5) xor DataB(5)) or (DataA(6) xor DataB(6)) or (DataA(7) xor DataB(7)) or (DataA(8) xor DataB(8)) or (DataA(9) xor DataB(9)) or (DataA(10) xor DataB(10)) or (DataA(11) xor DataB(11)) or (DataA(12) xor DataB(12)) or (DataA(13) xor DataB(13)) or (DataA(14) xor DataB(14)) or (DataA(15) xor DataB(15)));
-        Result0 <= "0000000000000000";
+        Result <= "0000000000000000";
+        if (RegisterTarget /= "1111") then
+            ModifiedValue <= "0000000000000000";
+        end if;
     end if;
     
     -- SLTU
@@ -80,7 +91,10 @@ begin
         BranchConfirm <= '0';
         BranchTargetConfirm <= BranchTargetAlu;
         Tout <= (((not DataA(15)) and DataB(15)) or ((DataA(15) xnor DataB(15)) and (((not DataA(14)) and DataB(14)) or ((DataA(14) xnor DataB(14)) and (((not DataA(13)) and DataB(13)) or ((DataA(13) xnor DataB(13)) and (((not DataA(12)) and DataB(12)) or ((DataA(12) xnor DataB(12)) and (((not DataA(11)) and DataB(11)) or ((DataA(11) xnor DataB(11)) and (((not DataA(10)) and DataB(10)) or ((DataA(10) xnor DataB(10)) and (((not DataA(9)) and DataB(9)) or ((DataA(9) xnor DataB(9)) and (((not DataA(8)) and DataB(8)) or ((DataA(8) xnor DataB(8)) and (((not DataA(7)) and DataB(7)) or ((DataA(7) xnor DataB(7)) and (((not DataA(6)) and DataB(6)) or ((DataA(6) xnor DataB(6)) and (((not DataA(5)) and DataB(5)) or ((DataA(5) xnor DataB(5)) and (((not DataA(4)) and DataB(4)) or ((DataA(4) xnor DataB(4)) and (((not DataA(3)) and DataB(3)) or ((DataA(3) xnor DataB(3)) and (((not DataA(2)) and DataB(2)) or ((DataA(2) xnor DataB(2)) and (((not DataA(1)) and DataB(1)) or ((DataA(1) xnor DataB(1)) and ((not DataA(0)) and DataB(0))))))))))))))))))))))))))))))));
-        Result0 <= "0000000000000000";
+        Result <= "0000000000000000";
+        if (RegisterTarget /= "1111") then
+            ModifiedValue <= "0000000000000000";
+        end if;
     end if;
     
     -- AND
@@ -89,7 +103,10 @@ begin
         BranchConfirm <= '0';
         BranchTargetConfirm <= BranchTargetAlu;
         Tout <= T;
-        Result0 <= (DataA(15) and DataB(15)) & (DataA(14) and DataB(14)) & (DataA(13) and DataB(13)) & (DataA(12) and DataB(12)) & (DataA(11) and DataB(11)) & (DataA(10) and DataB(10)) & (DataA(9) and DataB(9)) & (DataA(8) and DataB(8)) & (DataA(7) and DataB(7)) & (DataA(6) and DataB(6)) & (DataA(5) and DataB(5)) & (DataA(4) and DataB(4)) & (DataA(3) and DataB(3)) & (DataA(2) and DataB(2)) & (DataA(1) and DataB(1)) & (DataA(0) and DataB(0));
+        Result <= (DataA(15) and DataB(15)) & (DataA(14) and DataB(14)) & (DataA(13) and DataB(13)) & (DataA(12) and DataB(12)) & (DataA(11) and DataB(11)) & (DataA(10) and DataB(10)) & (DataA(9) and DataB(9)) & (DataA(8) and DataB(8)) & (DataA(7) and DataB(7)) & (DataA(6) and DataB(6)) & (DataA(5) and DataB(5)) & (DataA(4) and DataB(4)) & (DataA(3) and DataB(3)) & (DataA(2) and DataB(2)) & (DataA(1) and DataB(1)) & (DataA(0) and DataB(0));
+        if (RegisterTarget /= "1111") then
+            ModifiedValue <= (DataA(15) and DataB(15)) & (DataA(14) and DataB(14)) & (DataA(13) and DataB(13)) & (DataA(12) and DataB(12)) & (DataA(11) and DataB(11)) & (DataA(10) and DataB(10)) & (DataA(9) and DataB(9)) & (DataA(8) and DataB(8)) & (DataA(7) and DataB(7)) & (DataA(6) and DataB(6)) & (DataA(5) and DataB(5)) & (DataA(4) and DataB(4)) & (DataA(3) and DataB(3)) & (DataA(2) and DataB(2)) & (DataA(1) and DataB(1)) & (DataA(0) and DataB(0));
+        end if;
     end if;
     
     -- OR
@@ -98,7 +115,10 @@ begin
         BranchConfirm <= '0';
         BranchTargetConfirm <= BranchTargetAlu;
         Tout <= T;
-        Result0 <= (DataA(15) or DataB(15)) & (DataA(14) or DataB(14)) & (DataA(13) or DataB(13)) & (DataA(12) or DataB(12)) & (DataA(11) or DataB(11)) & (DataA(10) or DataB(10)) & (DataA(9) or DataB(9)) & (DataA(8) or DataB(8)) & (DataA(7) or DataB(7)) & (DataA(6) or DataB(6)) & (DataA(5) or DataB(5)) & (DataA(4) or DataB(4)) & (DataA(3) or DataB(3)) & (DataA(2) or DataB(2)) & (DataA(1) or DataB(1)) & (DataA(0) or DataB(0));
+        Result <= (DataA(15) or DataB(15)) & (DataA(14) or DataB(14)) & (DataA(13) or DataB(13)) & (DataA(12) or DataB(12)) & (DataA(11) or DataB(11)) & (DataA(10) or DataB(10)) & (DataA(9) or DataB(9)) & (DataA(8) or DataB(8)) & (DataA(7) or DataB(7)) & (DataA(6) or DataB(6)) & (DataA(5) or DataB(5)) & (DataA(4) or DataB(4)) & (DataA(3) or DataB(3)) & (DataA(2) or DataB(2)) & (DataA(1) or DataB(1)) & (DataA(0) or DataB(0));
+        if (RegisterTarget /= "1111") then
+            ModifiedValue <= (DataA(15) or DataB(15)) & (DataA(14) or DataB(14)) & (DataA(13) or DataB(13)) & (DataA(12) or DataB(12)) & (DataA(11) or DataB(11)) & (DataA(10) or DataB(10)) & (DataA(9) or DataB(9)) & (DataA(8) or DataB(8)) & (DataA(7) or DataB(7)) & (DataA(6) or DataB(6)) & (DataA(5) or DataB(5)) & (DataA(4) or DataB(4)) & (DataA(3) or DataB(3)) & (DataA(2) or DataB(2)) & (DataA(1) or DataB(1)) & (DataA(0) or DataB(0));
+        end if;
     end if;
     
     -- SLL
@@ -108,28 +128,52 @@ begin
         BranchTargetConfirm <= BranchTargetAlu;
         Tout <= T;
         if (DataB(2 downto 0) = "000") then
-            Result0 <= DataA(7 downto 0) & "00000000";
+            Result <= DataA(7 downto 0) & "00000000";
+            if (RegisterTarget /= "1111") then
+                ModifiedValue <= DataA(7 downto 0) & "00000000";
+            end if;
         end if;
         if (DataB(2 downto 0) = "001") then
-            Result0 <= DataA(14 downto 0) & "0";
+            Result <= DataA(14 downto 0) & "0";
+            if (RegisterTarget /= "1111") then
+                ModifiedValue <= DataA(14 downto 0) & "0";
+            end if;
         end if;
         if (DataB(2 downto 0) = "010") then
-            Result0 <= DataA(13 downto 0) & "00";
+            Result <= DataA(13 downto 0) & "00";
+            if (RegisterTarget /= "1111") then
+                ModifiedValue <= DataA(13 downto 0) & "00";
+            end if;
         end if;
         if (DataB(2 downto 0) = "011") then
-            Result0 <= DataA(12 downto 0) & "000";
+            Result <= DataA(12 downto 0) & "000";
+            if (RegisterTarget /= "1111") then
+                ModifiedValue <= DataA(12 downto 0) & "000";
+            end if;
         end if;
         if (DataB(2 downto 0) = "100") then
-            Result0 <= DataA(11 downto 0) & "0000";
+            Result <= DataA(11 downto 0) & "0000";
+            if (RegisterTarget /= "1111") then
+                ModifiedValue <= DataA(11 downto 0) & "0000";
+            end if;
         end if;
         if (DataB(2 downto 0) = "101") then
-            Result0 <= DataA(10 downto 0) & "00000";
+            Result <= DataA(10 downto 0) & "00000";
+            if (RegisterTarget /= "1111") then
+                ModifiedValue <= DataA(10 downto 0) & "00000";
+            end if;
         end if;
         if (DataB(2 downto 0) = "110") then
-            Result0 <= DataA(9 downto 0) & "000000";
+            Result <= DataA(9 downto 0) & "000000";
+            if (RegisterTarget /= "1111") then
+                ModifiedValue <= DataA(9 downto 0) & "000000";
+            end if;
         end if;
         if (DataB(2 downto 0) = "111") then
-            Result0 <= DataA(8 downto 0) & "0000000";
+            Result <= DataA(8 downto 0) & "0000000";
+            if (RegisterTarget /= "1111") then
+                ModifiedValue <= DataA(8 downto 0) & "0000000";
+            end if;
         end if;
     end if;
     
@@ -140,28 +184,52 @@ begin
         BranchTargetConfirm <= BranchTargetAlu;
         Tout <= T;
         if (DataB(2 downto 0) = "000") then
-            Result0 <= DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15 downto 8);
+            Result <= DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15 downto 8);
+            if (RegisterTarget /= "1111") then
+                ModifiedValue <= DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15 downto 8);
+            end if;
         end if;
         if (DataB(2 downto 0) = "001") then
-            Result0 <= DataA(15) & DataA(15 downto 1);
+            Result <= DataA(15) & DataA(15 downto 1);
+            if (RegisterTarget /= "1111") then
+                ModifiedValue <= DataA(15) & DataA(15 downto 1);
+            end if;
         end if;
         if (DataB(2 downto 0) = "010") then
-            Result0 <= DataA(15) & DataA(15) & DataA(15 downto 2);
+            Result <= DataA(15) & DataA(15) & DataA(15 downto 2);
+            if (RegisterTarget /= "1111") then
+                ModifiedValue <= DataA(15) & DataA(15) & DataA(15 downto 2);
+            end if;
         end if;
         if (DataB(2 downto 0) = "011") then
-            Result0 <= DataA(15) & DataA(15) & DataA(15) & DataA(15 downto 3);
+            Result <= DataA(15) & DataA(15) & DataA(15) & DataA(15 downto 3);
+            if (RegisterTarget /= "1111") then
+                ModifiedValue <= DataA(15) & DataA(15) & DataA(15) & DataA(15 downto 3);
+            end if;
         end if;
         if (DataB(2 downto 0) = "100") then
-            Result0 <= DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15 downto 4);
+            Result <= DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15 downto 4);
+            if (RegisterTarget /= "1111") then
+                ModifiedValue <= DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15 downto 4);
+            end if;
         end if;
         if (DataB(2 downto 0) = "101") then
-            Result0 <= DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15 downto 5);
+            Result <= DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15 downto 5);
+            if (RegisterTarget /= "1111") then
+                ModifiedValue <= DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15 downto 5);
+            end if;
         end if;
         if (DataB(2 downto 0) = "110") then
-            Result0 <= DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15 downto 6);
+            Result <= DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15 downto 6);
+            if (RegisterTarget /= "1111") then
+                ModifiedValue <= DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15 downto 6);
+            end if;
         end if;
         if (DataB(2 downto 0) = "111") then
-            Result0 <= DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15 downto 7);
+            Result <= DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15 downto 7);
+            if (RegisterTarget /= "1111") then
+                ModifiedValue <= DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15) & DataA(15 downto 7);
+            end if;
         end if;
     end if;
     
@@ -171,7 +239,10 @@ begin
         BranchConfirm <= '0';
         BranchTargetConfirm <= BranchTargetAlu;
         Tout <= T;
-        Result0 <= (not DataA(15 downto 0)) + 1;
+        Result <= (not DataA(15 downto 0)) + 1;
+        if (RegisterTarget /= "1111") then
+            ModifiedValue <= (not DataA(15 downto 0)) + 1;
+        end if;
     end if;
     
     -- JR
@@ -180,7 +251,10 @@ begin
         BranchConfirm <= ((DataA(0) xor DataB(0)) or (DataA(1) xor DataB(1)) or (DataA(2) xor DataB(2)) or (DataA(3) xor DataB(3)) or (DataA(4) xor DataB(4)) or (DataA(5) xor DataB(5)) or (DataA(6) xor DataB(6)) or (DataA(7) xor DataB(7)) or (DataA(8) xor DataB(8)) or (DataA(9) xor DataB(9)) or (DataA(10) xor DataB(10)) or (DataA(11) xor DataB(11)) or (DataA(12) xor DataB(12)) or (DataA(13) xor DataB(13)) or (DataA(14) xor DataB(14)) or (DataA(15) xor DataB(15)));
         BranchTargetConfirm <= DataA;
         Tout <= T;
-        Result0 <= "0000000000000000";
+        Result <= "0000000000000000";
+        if (RegisterTarget /= "1111") then
+            ModifiedValue <= "0000000000000000";
+        end if;
     end if;
     
     -- BN
@@ -189,7 +263,10 @@ begin
         BranchConfirm <= '0';
         BranchTargetConfirm <= BranchTargetAlu;
         Tout <= T;
-        Result0 <= "0000000000000000";
+        Result <= "0000000000000000";
+        if (RegisterTarget /= "1111") then
+            ModifiedValue <= "0000000000000000";
+        end if;
     end if;
     
     -- BEQZ
@@ -198,7 +275,10 @@ begin
         BranchConfirm <= not (DataA(0) or DataA(1) or DataA(2) or DataA(3) or DataA(4) or DataA(5) or DataA(6) or DataA(7) or DataA(8) or DataA(9) or DataA(10) or DataA(11) or DataA(12) or DataA(13) or DataA(14) or DataA(15));
         BranchTargetConfirm <= BranchTargetAlu;
         Tout <= T;
-        Result0 <= "0000000000000000";
+        Result <= "0000000000000000";
+        if (RegisterTarget /= "1111") then
+            ModifiedValue <= "0000000000000000";
+        end if;
     end if;
     
     -- BNEZ
@@ -207,7 +287,10 @@ begin
         BranchConfirm <= (DataA(0) or DataA(1) or DataA(2) or DataA(3) or DataA(4) or DataA(5) or DataA(6) or DataA(7) or DataA(8) or DataA(9) or DataA(10) or DataA(11) or DataA(12) or DataA(13) or DataA(14) or DataA(15));
         BranchTargetConfirm <= BranchTargetAlu;
         Tout <= T;
-        Result0 <= "0000000000000000";
+        Result <= "0000000000000000";
+        if (RegisterTarget /= "1111") then
+            ModifiedValue <= "0000000000000000";
+        end if;
     end if;
     
     -- BTEQZ
@@ -216,7 +299,10 @@ begin
         BranchConfirm <= not T;
         BranchTargetConfirm <= BranchTargetAlu;
         Tout <= T;
-        Result0 <= "0000000000000000";
+        Result <= "0000000000000000";
+        if (RegisterTarget /= "1111") then
+            ModifiedValue <= "0000000000000000";
+        end if;
     end if;
     
     -- BTNEZ
@@ -225,16 +311,17 @@ begin
         BranchConfirm <= T;
         BranchTargetConfirm <= BranchTargetAlu;
         Tout <= T;
-        Result0 <= "0000000000000000";
+        Result <= "0000000000000000";
+        if (RegisterTarget /= "1111") then
+            ModifiedValue <= "0000000000000000";
+        end if;
     end if;
     
-    Result <= Result0;
     if (RegisterTarget = "1111") then
         ModifiedIndex <= ModifiedIndex_before;
         ModifiedValue <= ModifiedValue_before;
     else
         ModifiedIndex <= RegisterTarget;
-        ModifiedValue <= Result0;
     end if;
     
     if ((LFlag = '1' or SFlag = '1') and Result0(15 downto 14) = "00") then

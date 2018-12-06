@@ -89,44 +89,69 @@ def output_alu(ins, f):
 
     if ins[0] == 'B' or ins in ('NOP', 'CMP', 'SLTU', 'JR'):
         f.write('''
-        Result0 <= "%s";''' % ('0'*16, ))
+        Result <= "%s";
+        if (RegisterTarget /= "1111") then
+            ModifiedValue <= "%s";
+        end if;''' % (('0'*16, ) * 2))
     elif ins == 'ADD':
         f.write('''
-        Result0 <= DataA + DataB;''')
+        Result <= DataA + DataB;
+        if (RegisterTarget /= "1111") then
+            ModifiedValue <= DataA + DataB;
+        end if;''')
     elif ins == 'SUBU':
         f.write('''
-        Result0 <= DataA - DataB;''')
+        Result <= DataA - DataB;
+        if (RegisterTarget /= "1111") then
+            ModifiedValue <= DataA - DataB;
+        end if;''')
     elif ins == 'AND':
         f.write('''
-        Result0 <= %s;''' % (' & '.join([
+        Result <= %s;
+        if (RegisterTarget /= "1111") then
+            ModifiedValue <= %s;
+        end if;''' % ((' & '.join([
             '(DataA(%d) and DataB(%d))' %
             (x, x) for x in list(range(16))[::-1]
-        ]), ))
+        ]), )*2))
     elif ins == 'OR':
         f.write('''
-        Result0 <= %s;''' % (' & '.join([
+        Result <= %s;
+        if (RegisterTarget /= "1111") then
+            ModifiedValue <= %s;
+        end if;''' % ((' & '.join([
             '(DataA(%d) or DataB(%d))' %
             (x, x) for x in list(range(16))[::-1]
-        ]),))
+        ]),)*2))
     elif ins == 'NEG':
         f.write('''
-        Result0 <= (not DataA(15 downto 0)) + 1;''' % (
-        ))
+        Result <= (not DataA(15 downto 0)) + 1;
+        if (RegisterTarget /= "1111") then
+            ModifiedValue <= (not DataA(15 downto 0)) + 1;
+        end if;''')
     elif ins == 'SLL':
         for i in range(8):
             f.write('''
         if (DataB(2 downto 0) = "%s") then
-            Result0 <= DataA(%d downto 0) & "%s";
+            Result <= DataA(%d downto 0) & "%s";
+            if (RegisterTarget /= "1111") then
+                ModifiedValue <= DataA(%d downto 0) & "%s";
+            end if;
         end if;''' % (
                 ("000" + bin(i)[2:])[-3:], 7 if i == 0 else 15-i, '0' * (8 if i == 0 else i)
+                , 7 if i == 0 else 15 - i, '0' * (8 if i == 0 else i)
             ))
     elif ins == 'SRA':
         for i in range(8):
             f.write('''
         if (DataB(2 downto 0) = "%s") then
-            Result0 <= %s & DataA(15 downto %d);
+            Result <= %s & DataA(15 downto %d);
+            if (RegisterTarget /= "1111") then
+                ModifiedValue <= %s & DataA(15 downto %d);
+            end if;
         end if;''' % (
                 ("000" + bin(i)[2:])[-3:], ' & '.join(['DataA(15)', ] * (8 if i == 0 else i)),
+                8 if i == 0 else i, ' & '.join(['DataA(15)', ] * (8 if i == 0 else i)),
                 8 if i == 0 else i
             ))
 
@@ -169,7 +194,6 @@ entity alu is
 end alu;
 
 architecture bhv of alu is
-signal Result0 : std_logic_vector(15 downto 0);
 begin
 process(DataA, DataB, AluInstruction, T, BranchTargetAlu, RegisterTarget, ModifiedIndex_before, ModifiedValue_before)
 begin
@@ -178,13 +202,11 @@ begin
         output_alu(ins, f)
     f.write('''
     
-    Result <= Result0;
     if (RegisterTarget = "1111") then
         ModifiedIndex <= ModifiedIndex_before;
         ModifiedValue <= ModifiedValue_before;
     else
         ModifiedIndex <= RegisterTarget;
-        ModifiedValue <= Result0;
     end if;
     
     if ((LFlag = '1' or SFlag = '1') and Result0(15 downto 14) = "00") then
