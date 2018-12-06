@@ -58,8 +58,7 @@ signal IF_ID_Bubble_in, IF_ID_Bubble_out : std_logic_vector(2 downto 0) := "000"
 
 signal IF_ID_Bubble_in_Alu : std_logic_vector(2 downto 0) := "000";
 -- ID/EX lock
-signal ID_EX_PC0_in : std_logic_vector(15 downto 0);
-signal ID_EX_PC0_out : std_logic_vector(15 downto 0) := (others => '0');
+signal ID_EX_PC0_in, ID_EX_PC0_out : std_logic_vector(15 downto 0) := (others => '0');
 signal ID_EX_LFlag_in, ID_EX_LFlag_out : std_logic := '0';
 signal ID_EX_SFlag_in, ID_EX_SFlag_out : std_logic := '0';
 signal ID_EX_BranchTargetAlu_in, ID_EX_BranchTargetAlu_out : std_logic_vector(15 downto 0) := (others => '0');
@@ -71,27 +70,21 @@ signal ID_EX_Rx_in, ID_EX_Rx_out : std_logic_vector(15 downto 0) := (others => '
 signal ID_EX_Ry_in, ID_EX_Ry_out : std_logic_vector(15 downto 0) := (others => '0');
 signal ID_EX_Rz_in, ID_EX_Rz_out : std_logic_vector(15 downto 0) := (others => '0');
 signal ID_EX_Index_in, ID_EX_Index_out : std_logic_vector(11 downto 0) := (others => '0');
-signal ID_EX_ModifiedIndex_in : std_logic_vector(3 downto 0);
-signal ID_EX_ModifiedIndex_out : std_logic_vector(3 downto 0) := "1111";
-signal ID_EX_ModifiedValue_in : std_logic_vector(15 downto 0);
-signal ID_EX_ModifiedValue_out : std_logic_vector(15 downto 0) := (others => '0');
+signal ID_EX_ModifiedIndex_in, ID_EX_ModifiedIndex_out : std_logic_vector(3 downto 0) := "1111";
+signal ID_EX_ModifiedValue_in, ID_EX_ModifiedValue_out : std_logic_vector(15 downto 0) := (others => '0');
 -- signal ID_EX_ModifiedValue_in_L : std_logic_vector(15 downto 0) := (others => '0');
 -- signal ID_EX_ModifiedValue_in_L_pointer : std_logic := '0';
 signal ID_EX_ModifiedIndexForward_in, ID_EX_ModifiedIndexForward_out : std_logic_vector(3 downto 0) := "1111";
 signal ID_EX_ModifiedValueForward_in, ID_EX_ModifiedValueForward_out : std_logic_vector(15 downto 0) := (others => '0');
 signal ID_EX_NextForceNop_in : std_logic := '0';
 -- EX/MEM lock
-signal EX_MEM_LFlag_in : std_logic;
-signal EX_MEM_LFlag_out : std_logic := '0';
-signal EX_MEM_SFlag_in : std_logic;
-signal EX_MEM_SFlag_out : std_logic := '0';
-signal EX_MEM_RegisterTarget_in : std_logic_vector(3 downto 0);
-signal EX_MEM_RegisterTarget_out : std_logic_vector(3 downto 0) := "1111";
+signal EX_MEM_LFlag_in, EX_MEM_LFlag_out : std_logic := '0';
+signal EX_MEM_SFlag_in, EX_MEM_SFlag_out : std_logic := '0';
+signal EX_MEM_RegisterTarget_in, EX_MEM_RegisterTarget_out : std_logic_vector(3 downto 0) := "1111";
 signal EX_MEM_AluResult_in, EX_MEM_AluResult_out : std_logic_vector(15 downto 0) := (others => '0');
 signal EX_MEM_DataS_in, EX_MEM_DataS_out : std_logic_vector(15 downto 0) := (others => '0');
 -- MEM/WB lock
-signal MEM_WB_RegisterTarget_in : std_logic_vector(3 downto 0);
-signal MEM_WB_RegisterTarget_out : std_logic_vector(3 downto 0) := "1111";
+signal MEM_WB_RegisterTarget_in, MEM_WB_RegisterTarget_out : std_logic_vector(3 downto 0) := "1111";
 signal MEM_WB_WriteInData_in, MEM_WB_WriteInData_out : std_logic_vector(15 downto 0) := (others => '0');
 -- debug led
 signal led_reg : std_logic_vector(15 downto 0) := (others => '0');
@@ -272,10 +265,6 @@ begin
 	--led <= IF_ID_Instruction_out(15 downto 6) & EX_MEM_LFlag_out & EX_MEM_SFlag_out & PC_out(3 downto 0);
 	--led <= EX_MEM_AluResult_out(15 downto 2) & EX_MEM_LFlag_out & EX_MEM_SFlag_out;
 	--led <= PC_out;
-	--led <= ID_EX_ModifiedIndexForward_out(3 downto 0) & ID_EX_ModifiedValueForward_out(3 downto 0) & ID_EX_ModifiedIndex_out(3 downto 0) & ID_EX_ModifiedValue_out(3 downto 0);
-	--led <= EX_MEM_RegisterTarget_out(3 downto 0) & EX_MEM_AluResult_out(3 downto 0) & ID_EX_RegisterTarget_out(3 downto 0) & MEM_WB_WriteInData_out(3 downto 0);
-	--led <= ID_EX_ModifiedIndexForward_in(3 downto 0) & EX_MEM_RegisterTarget_in(3 downto 0) & ID_EX_RegisterTarget_in(3 downto 0) & ID_EX_ModifiedValueForward_out(3 downto 0);
-	--led <= DataA(3 downto 0) & DataB(3 downto 0) & EX_MEM_AluResult_in(3 downto 0) & ID_EX_AluInstruction_out(3 downto 0);
 	-- register-forward routes
 	started <= startedCache;
     ID_EX_PC0_in <= IF_ID_PC0_out;
