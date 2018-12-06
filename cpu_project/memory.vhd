@@ -22,7 +22,7 @@ entity memory is
 		reset : in std_logic;
 		
 		Result : out std_logic_vector(15 downto 0);
-        --Result_L_pointer : out std_logic;
+        Result_L_pointer : out std_logic;
         Result_L : out std_logic_vector(15 downto 0);
 		InstructionResult : out std_logic_vector(15 downto 0);
 
@@ -61,8 +61,7 @@ type Ram1State is (
 	commTest1, commTest2,
 	commRead1, commRead2, commRead3,
 	commWrite1, commWrite2, commWrite3, commWrite4, commWrite5,
-	done,
-	skip
+	done
 );
 type Ram2State is (
 	waiting,
@@ -112,8 +111,6 @@ begin
 					trigger <= (LFlag & SFlag & Address & DataS & InstructionAddress);
 					r1State <= waiting;
 					r2State <= waiting;
-				else
-					r1State <= skip;
 				end if;
 				case r2State is
 					when waiting =>
@@ -146,7 +143,7 @@ begin
 					when readMem2 =>
 						Result <= Ram2Data;
 						Result_L <= Ram2Data;
-						--Result_L_pointer <= '1';
+						Result_L_pointer <= '1';
 						InstructionResult <= (others => '0');
 						r2State <= done;
 					when writeMem1 =>
@@ -159,7 +156,7 @@ begin
 					when writeMem2 =>
 						Result <= (others => '0');
 						Result_L <= (others => '0');
-						--Result_L_pointer <= '0';
+						Result_L_pointer <= '0';
 						InstructionResult <= (others => '0');
 						r2State <= done;
 					when done =>
@@ -184,8 +181,8 @@ begin
 								r1State <= write1;
 							end if;
 						else
-                            --Result_L_pointer <= '0';
-                            Result_L <= Address;
+                            Result_L_pointer <= '0';
+                            Result_L <= "0000000000000000";
 							Result <= Address;
 							r1State <= done;
 						end if;
@@ -200,7 +197,7 @@ begin
 						r1State <= read2;
 					when read2 =>
 						Result <= Ram1Data;
-                        --Result_L_pointer <= '1';
+                        Result_L_pointer <= '1';
                         Result_L <= Ram1Data;
 						r1State <= done;
 					when write1 =>
@@ -214,7 +211,7 @@ begin
 						r1State <= done;
 						Result <= (others => '0');
 						Result_L <= (others => '0');
-						--Result_L_pointer <= '0';
+						Result_L_pointer <= '0';
 					when commTest1 =>
 						Ram1WE <= '1';
 						Ram1OE <= '1';
@@ -234,7 +231,7 @@ begin
 						r1State <= commRead2;
 					when commRead2 =>
 						Result <= Ram1Data;
-						--Result_L_pointer <= '1';
+						Result_L_pointer <= '1';
 						Result_L <= Ram1Data;
 						rdn <= '1';
 						r1State <= done;
@@ -260,13 +257,9 @@ begin
 							r1State <= done;
 							Result <= (others => '0');
 							Result_L <= (others => '0');
-							--Result_L_pointer <= '0';
+							Result_L_pointer <= '0';
 						end if;
 					when done =>
-					when skip =>
-						Result <= Address;
-						Result_L <= Address;
-						InstructionResult <= (others => '0');
 					when others =>	
 				end case;
 			else

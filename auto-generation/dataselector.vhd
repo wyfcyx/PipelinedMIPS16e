@@ -11,8 +11,6 @@ entity DataSelector is
         Index : in std_logic_vector(11 downto 0);
         ModifiedIndex : in std_logic_vector(3 downto 0);
         ModifiedValue : in std_logic_vector(15 downto 0);
-        ModifiedIndexForward : in std_logic_vector(3 downto 0);
-        ModifiedValueForward : in std_logic_vector(15 downto 0);
         
         DataA : out std_logic_vector(15 downto 0);
         DataB : out std_logic_vector(15 downto 0);
@@ -36,11 +34,7 @@ begin
             if (Index(3 downto 0) = ModifiedIndex(3 downto 0)) then
                 DataA <= ModifiedValue;
             else
-                if (Index(3 downto 0) = ModifiedIndexForward(3 downto 0)) then
-                    DataA <= ModifiedValueForward;
-                else
-                    DataA <= Data(31 downto 16);
-                end if;
+                DataA <= Data(31 downto 16);
             end if;
 
         end if;
@@ -50,11 +44,7 @@ begin
             if (Index(7 downto 4) = ModifiedIndex(3 downto 0)) then
                 DataA <= ModifiedValue;
             else
-                if (Index(7 downto 4) = ModifiedIndexForward(3 downto 0)) then
-                    DataA <= ModifiedValueForward;
-                else
-                    DataA <= Data(47 downto 32);
-                end if;
+                DataA <= Data(47 downto 32);
             end if;
 
         end if;
@@ -64,11 +54,7 @@ begin
             if (Index(11 downto 8) = ModifiedIndex(3 downto 0)) then
                 DataA <= ModifiedValue;
             else
-                if (Index(11 downto 8) = ModifiedIndexForward(3 downto 0)) then
-                    DataA <= ModifiedValueForward;
-                else
-                    DataA <= Data(63 downto 48);
-                end if;
+                DataA <= Data(63 downto 48);
             end if;
 
         end if;
@@ -84,11 +70,7 @@ begin
             if (Index(3 downto 0) = ModifiedIndex(3 downto 0)) then
                 DataB <= ModifiedValue;
             else
-                if (Index(3 downto 0) = ModifiedIndexForward(3 downto 0)) then
-                    DataB <= ModifiedValueForward;
-                else
-                    DataB <= Data(31 downto 16);
-                end if;
+                DataB <= Data(31 downto 16);
             end if;
 
         end if;
@@ -98,11 +80,7 @@ begin
             if (Index(7 downto 4) = ModifiedIndex(3 downto 0)) then
                 DataB <= ModifiedValue;
             else
-                if (Index(7 downto 4) = ModifiedIndexForward(3 downto 0)) then
-                    DataB <= ModifiedValueForward;
-                else
-                    DataB <= Data(47 downto 32);
-                end if;
+                DataB <= Data(47 downto 32);
             end if;
 
         end if;
@@ -112,11 +90,7 @@ begin
             if (Index(11 downto 8) = ModifiedIndex(3 downto 0)) then
                 DataB <= ModifiedValue;
             else
-                if (Index(11 downto 8) = ModifiedIndexForward(3 downto 0)) then
-                    DataB <= ModifiedValueForward;
-                else
-                    DataB <= Data(63 downto 48);
-                end if;
+                DataB <= Data(63 downto 48);
             end if;
 
         end if;
@@ -132,11 +106,7 @@ begin
             if (Index(3 downto 0) = ModifiedIndex(3 downto 0)) then
                 DataS <= ModifiedValue;
             else
-                if (Index(3 downto 0) = ModifiedIndexForward(3 downto 0)) then
-                    DataS <= ModifiedValueForward;
-                else
-                    DataS <= Data(31 downto 16);
-                end if;
+                DataS <= Data(31 downto 16);
             end if;
 
         end if;
@@ -146,11 +116,7 @@ begin
             if (Index(7 downto 4) = ModifiedIndex(3 downto 0)) then
                 DataS <= ModifiedValue;
             else
-                if (Index(7 downto 4) = ModifiedIndexForward(3 downto 0)) then
-                    DataS <= ModifiedValueForward;
-                else
-                    DataS <= Data(47 downto 32);
-                end if;
+                DataS <= Data(47 downto 32);
             end if;
 
         end if;
@@ -160,11 +126,7 @@ begin
             if (Index(11 downto 8) = ModifiedIndex(3 downto 0)) then
                 DataS <= ModifiedValue;
             else
-                if (Index(11 downto 8) = ModifiedIndexForward(3 downto 0)) then
-                    DataS <= ModifiedValueForward;
-                else
-                    DataS <= Data(63 downto 48);
-                end if;
+                DataS <= Data(63 downto 48);
             end if;
 
         end if;
