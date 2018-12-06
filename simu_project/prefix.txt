@@ -1,0 +1,72 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+use ieee.std_logic_arith.all;
+-- using " word address " below
+-- system instruction area : 0x0000 ~ 0x3fff
+-- user instruction area : 0x4000 ~ 0x7fff
+-- system data area : 0x8000 ~ 0xbeff
+-- com1 : 0xbf00 ~ 0xbf01
+-- com2 : 0xbf02 ~ 0xbf03
+-- resident : 0xbf04 ~ 0xbf0f
+-- system heap stack : 0xbf10 ~ 0xbfff
+-- user data area : 0xc000 ~ 0xffff
+entity memory is
+	port(
+		LFlag, SFlag : in std_logic;
+		Address : in std_logic_vector(15 downto 0);
+		DataS : in std_logic_vector(15 downto 0);
+		InstructionAddress : in std_logic_vector(15 downto 0);
+		clk : in std_logic;
+		clk_scan : in std_logic;
+		reset : in std_logic;
+		
+		Result : out std_logic_vector(15 downto 0);
+        Result_L_pointer : out std_logic;
+        Result_L : out std_logic_vector(15 downto 0);
+		InstructionResult : out std_logic_vector(15 downto 0);
+
+		-- data mem
+		Ram1Data : inout std_logic_vector(15 downto 0);
+		Ram1Addr : out std_logic_vector(15 downto 0);
+		Ram1OE, Ram1WE, Ram1EN : out std_logic;
+		dataReady, rdn, wrn, tbre, tsre : inout std_logic;
+
+		-- instruction mem
+		Ram2Data : inout std_logic_vector(15 downto 0);
+		Ram2Addr : out std_logic_vector(15 downto 0);
+		Ram2OE, Ram2WE, Ram2EN : out std_logic;
+		
+		-- flash
+		flashByte : out std_logic;
+		flashVpen : out std_logic;
+		flashCE : out std_logic;
+		flashOE : out std_logic;
+		flashWE : out std_logic;
+		flashRP : out std_logic;
+		flashAddr : out std_logic_vector(22 downto 1);
+		flashData : inout std_logic_vector(15 downto 0);
+		
+		-- led
+		led : out std_logic_vector(15 downto 0);
+		started : out std_logic
+		--trigger : out std_logic_vector(49 downto 0)
+	);
+end memory;
+
+architecture bhv of memory is
+type ramBlock is array(1023 downto 0) of std_logic_vector(15 downto 0);
+signal Ram1, Ram2 : ramBlock;
+
+-- instruction [0000,0013]
+-- data [c000,c013]
+signal startedCache : std_logic := '0';
+signal triggerCache : std_logic_vector(49 downto 0) := (others => '1');
+begin
+	started <= startedCache;
+	--trigger <= triggerCache;
+	led <= (others => '0');
+	process (LFlag, SFlag, startedCache, clk_scan, clk, reset)
+	begin
+		if (reset = '1') then
+			startedCache <= '1';

@@ -1,0 +1,36 @@
+		elsif (clk_scan'event and clk_scan = '1' and startedCache = '1') then
+			if (triggercache /= (LFlag & SFlag & Address & DataS & InstructionAddress)) then
+				triggerCache <= LFlag & SFlag & Address & DataS & InstructionAddress;
+				if (((LFlag or SFlag) = '1') and Address < x"8000") then
+					if (LFlag = '1') then
+						Result <= Ram2(conv_integer(Address(9 downto 0)));
+						Result_L <= Ram2(conv_integer(Address(9 downto 0)));
+						Result_L_pointer <= '1';
+					else
+						Ram2(conv_integer(Address(9 downto 0))) <= DataS;
+						Result <= (others => '0');
+						Result_L <= (others => '0');
+						Result_L_pointer <= '0';
+					end if;
+					InstructionResult <= (others => '0');
+				else
+					InstructionResult <= Ram2(conv_integer(InstructionAddress(9 downto 0)));
+					if (LFlag = '1') then
+						Result <= Ram1(conv_integer(Address(9 downto 0)));
+						Result_L <= Ram1(conv_integer(Address(9 downto 0)));
+						Result_L_pointer <= '1';
+					elsif (SFlag = '1') then
+						Ram1(conv_integer(Address(9 downto 0))) <= DataS;
+						Result <= (others => '0');
+						Result_L <= (others => '0');
+						Result_L_pointer <= '1';
+					else
+						Result <= Address;
+						Result_L <= Address;
+						Result_L_pointer <= '0';
+					end if;
+				end if;
+			end if;
+		end if;
+	end process;
+end bhv;
