@@ -276,8 +276,9 @@ def output_full_instruction(ins, f, tabs):
 def output_instruction(ins, f, tabs):
     f.write('%sLFlag <= \'%s\';\n' % (tabs, get_data(ins, 'LFlag')))
     f.write('%sSFlag <= \'%s\';\n' % (tabs, get_data(ins, 'SFlag')))
-    f.write('%sBranchFlag <= \'%s\';\n' % (tabs, get_data(ins, 'BranchFlag')))
-    f.write('%sBranchForce <= \'0\';\n' % tabs)
+    if get_data(ins, 'BubbleNext') == "000":
+        f.write('%sBranchFlag <= \'%s\';\n' % (tabs, get_data(ins, 'BranchFlag')))
+        f.write('%sBranchForce <= \'0\';\n' % tabs)
 
     # 跳转语句的跳转目标
     if get_data(ins, 'BranchFlag') == '1':

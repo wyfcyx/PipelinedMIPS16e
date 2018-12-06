@@ -89,25 +89,25 @@ def output_alu(ins, f):
 
     if ins[0] == 'B' or ins in ('NOP', 'CMP', 'SLTU', 'JR'):
         f.write('''
-        Result <= "%s";
+        Result0 <= "%s";
         if (RegisterTarget /= "1111") then
             ModifiedValue <= "%s";
         end if;''' % (('0'*16, ) * 2))
     elif ins == 'ADD':
         f.write('''
-        Result <= DataA + DataB;
+        Result0 <= DataA + DataB;
         if (RegisterTarget /= "1111") then
             ModifiedValue <= DataA + DataB;
         end if;''')
     elif ins == 'SUBU':
         f.write('''
-        Result <= DataA - DataB;
+        Result0 <= DataA - DataB;
         if (RegisterTarget /= "1111") then
             ModifiedValue <= DataA - DataB;
         end if;''')
     elif ins == 'AND':
         f.write('''
-        Result <= %s;
+        Result0 <= %s;
         if (RegisterTarget /= "1111") then
             ModifiedValue <= %s;
         end if;''' % ((' & '.join([
@@ -116,7 +116,7 @@ def output_alu(ins, f):
         ]), )*2))
     elif ins == 'OR':
         f.write('''
-        Result <= %s;
+        Result0 <= %s;
         if (RegisterTarget /= "1111") then
             ModifiedValue <= %s;
         end if;''' % ((' & '.join([
@@ -125,7 +125,7 @@ def output_alu(ins, f):
         ]),)*2))
     elif ins == 'NEG':
         f.write('''
-        Result <= (not DataA(15 downto 0)) + 1;
+        Result0 <= (not DataA(15 downto 0)) + 1;
         if (RegisterTarget /= "1111") then
             ModifiedValue <= (not DataA(15 downto 0)) + 1;
         end if;''')
@@ -133,7 +133,7 @@ def output_alu(ins, f):
         for i in range(8):
             f.write('''
         if (DataB(2 downto 0) = "%s") then
-            Result <= DataA(%d downto 0) & "%s";
+            Result0 <= DataA(%d downto 0) & "%s";
             if (RegisterTarget /= "1111") then
                 ModifiedValue <= DataA(%d downto 0) & "%s";
             end if;
@@ -145,7 +145,7 @@ def output_alu(ins, f):
         for i in range(8):
             f.write('''
         if (DataB(2 downto 0) = "%s") then
-            Result <= %s & DataA(15 downto %d);
+            Result0 <= %s & DataA(15 downto %d);
             if (RegisterTarget /= "1111") then
                 ModifiedValue <= %s & DataA(15 downto %d);
             end if;
@@ -176,6 +176,7 @@ entity alu is
         RegisterTarget : in std_logic_vector(3 downto 0);
         ModifiedIndex_before : in std_logic_vector(3 downto 0);
         ModifiedValue_before : in std_logic_vector(15 downto 0);
+        LFlag : in std_logic;
         SFlag : in std_logic;
         PC0 : in std_logic_vector(15 downto 0);
 
@@ -195,6 +196,7 @@ end alu;
 
 architecture bhv of alu is
 begin
+signal Result0 : std_logic_vector(15 downto 0) := (others =>'0');
 process(DataA, DataB, AluInstruction, T, BranchTargetAlu, RegisterTarget, ModifiedIndex_before, ModifiedValue_before)
 begin
     ''')

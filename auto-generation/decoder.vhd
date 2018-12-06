@@ -341,8 +341,6 @@ begin
             if ((Instruction(11) = '1') and (Instruction(12) = '0') and (Instruction(13) = '1') and (Instruction(14) = '1') and (Instruction(15) = '0')) then
                 LFlag <= '0';
                 SFlag <= '0';
-                BranchFlag <= '0';
-                BranchForce <= '0';
 
                 BranchTargetAlu <= "0000000000000000";
                 BranchTarget <= "0000000000000000";
@@ -359,8 +357,6 @@ begin
             if ((Instruction(11) = '1') and (Instruction(12) = '1') and (Instruction(13) = '0') and (Instruction(14) = '0') and (Instruction(15) = '1')) then
                 LFlag <= '1';
                 SFlag <= '0';
-                BranchFlag <= '0';
-                BranchForce <= '0';
 
                 BranchTargetAlu <= "0000000000000000";
                 BranchTarget <= "0000000000000000";
@@ -377,8 +373,6 @@ begin
             if ((Instruction(11) = '0') and (Instruction(12) = '1') and (Instruction(13) = '0') and (Instruction(14) = '0') and (Instruction(15) = '1')) then
                 LFlag <= '1';
                 SFlag <= '0';
-                BranchFlag <= '0';
-                BranchForce <= '0';
 
                 BranchTargetAlu <= "0000000000000000";
                 BranchTarget <= "0000000000000000";
