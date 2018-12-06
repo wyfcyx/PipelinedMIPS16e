@@ -61,7 +61,8 @@ type Ram1State is (
 	commTest1, commTest2,
 	commRead1, commRead2, commRead3,
 	commWrite1, commWrite2, commWrite3, commWrite4, commWrite5,
-	done
+	done,
+	skip
 );
 type Ram2State is (
 	waiting,
@@ -111,6 +112,8 @@ begin
 					trigger <= (LFlag & SFlag & Address & DataS & InstructionAddress);
 					r1State <= waiting;
 					r2State <= waiting;
+				else
+					r1State <= skip;
 				end if;
 				case r2State is
 					when waiting =>
@@ -260,6 +263,10 @@ begin
 							--Result_L_pointer <= '0';
 						end if;
 					when done =>
+					when skip =>
+						Result <= Address;
+						Result_L <= Address;
+						InstructionResult <= (others => '0');
 					when others =>	
 				end case;
 			else
