@@ -523,9 +523,9 @@ begin
 	clk_process :process
    begin
 		clk <= '0';
-		wait for 5000ns;
+		wait for 300ns;
 		clk <= '1';
-		wait for 5000ns;
+		wait for 300ns;
    end process;
  
    clk_scan_process :process

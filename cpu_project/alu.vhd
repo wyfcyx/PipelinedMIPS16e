@@ -33,11 +33,11 @@ end alu;
 architecture bhv of alu is
 signal Result0 : std_logic_vector(15 downto 0);
 begin
-
+	Result <= Result0;
 process(DataA, DataB, AluInstruction, T, BranchTargetAlu, RegisterTarget, ModifiedIndex_before, ModifiedValue_before)
 begin
     
-    Result <= Result0;
+    
     -- NOP
     if (AluInstruction(3 downto 0) = "0000") then
         BranchFlagForward <= '0';
@@ -228,7 +228,9 @@ begin
         Result0 <= "0000000000000000";
     end if;
     
-    
+end process;
+process (RegisterTarget, Result0)
+begin
     if (RegisterTarget = "1111") then
         ModifiedIndex <= ModifiedIndex_before;
         ModifiedValue <= ModifiedValue_before;
@@ -236,7 +238,9 @@ begin
         ModifiedIndex <= RegisterTarget;
         ModifiedValue <= Result0;
     end if;
-    
+end process;
+process (SFlag, Result0)
+begin
     if (SFlag = '1' and Result0(15 downto 14) = "00") then
         NextForceNop <= '1';
         BubbleNext_Alu <= "010";

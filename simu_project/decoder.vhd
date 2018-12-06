@@ -12,7 +12,7 @@ entity decoder is
         Instruction : in std_logic_vector(15 downto 0);
         BranchPredict : in std_logic;
         
-        -- 寄存器
+        -- 寄存�
         reg : in std_logic_vector(127 downto 0);
         
         LFlag : out std_logic;
@@ -61,7 +61,7 @@ begin
             AluInstruction <= "0000";
             Immediate <= "0000000000000000";
             DataSelectorInstruction <= "000000";
-            BubbleNext <= "000";
+            --BubbleNext <= "000";
 
             if ((Bubble(0) = '1') or (Bubble(1) = '1')) then
                 BranchForce <= '1';
@@ -341,8 +341,6 @@ begin
             if ((Instruction(11) = '1') and (Instruction(12) = '0') and (Instruction(13) = '1') and (Instruction(14) = '1') and (Instruction(15) = '0')) then
                 LFlag <= '0';
                 SFlag <= '0';
-                BranchFlag <= '0';
-                BranchForce <= '0';
 
                 BranchTargetAlu <= "0000000000000000";
                 BranchTarget <= "0000000000000000";
@@ -359,8 +357,6 @@ begin
             if ((Instruction(11) = '1') and (Instruction(12) = '1') and (Instruction(13) = '0') and (Instruction(14) = '0') and (Instruction(15) = '1')) then
                 LFlag <= '1';
                 SFlag <= '0';
-                BranchFlag <= '0';
-                BranchForce <= '0';
 
                 BranchTargetAlu <= "0000000000000000";
                 BranchTarget <= "0000000000000000";
@@ -377,8 +373,6 @@ begin
             if ((Instruction(11) = '0') and (Instruction(12) = '1') and (Instruction(13) = '0') and (Instruction(14) = '0') and (Instruction(15) = '1')) then
                 LFlag <= '1';
                 SFlag <= '0';
-                BranchFlag <= '0';
-                BranchForce <= '0';
 
                 BranchTargetAlu <= "0000000000000000";
                 BranchTarget <= "0000000000000000";

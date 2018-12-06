@@ -22,7 +22,7 @@ end DataSelector;
 
 architecture bhv of DataSelector is
 begin
-process(Data, DataSelectorInstruction, Index, ModifiedIndex, ModifiedValue)
+process(Data, DataSelectorInstruction, Index, ModifiedIndex, ModifiedValue, ModifiedIndexForward, ModifiedValueForward)
 begin
     
         if (DataSelectorInstruction(1 downto 0) = "00") then
