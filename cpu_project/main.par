@@ -1,7 +1,7 @@
 Release 14.7 par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-DESKTOP-VTNP7M7::  Thu Dec 06 08:36:35 2018
+DESKTOP-VTNP7M7::  Thu Dec 06 10:10:44 2018
 
 par -w -intstyle ise -ol high -t 1 main_map.ncd main.ncd main.pcf 
 
@@ -47,8 +47,8 @@ Design Summary Report:
 
 
    Number of BUFGMUXs                        2 out of 24      8%
-   Number of Slices                       1677 out of 8672   19%
-      Number of SLICEMs                      0 out of 4336    0%
+   Number of Slices                       1657 out of 8672   19%
+      Number of SLICEMs                      3 out of 4336    1%
 
 
 
@@ -61,13 +61,13 @@ Finished initial Timing Analysis.  REAL time: 7 secs
 Starting Router
 
 
-Phase  1  : 10536 unrouted;      REAL time: 20 secs 
+Phase  1  : 10302 unrouted;      REAL time: 19 secs 
 
-Phase  2  : 9819 unrouted;      REAL time: 20 secs 
+Phase  2  : 9596 unrouted;      REAL time: 20 secs 
 
-Phase  3  : 2539 unrouted;      REAL time: 22 secs 
+Phase  3  : 2354 unrouted;      REAL time: 22 secs 
 
-Phase  4  : 2637 unrouted; (Par is working to improve performance)     REAL time: 25 secs 
+Phase  4  : 2533 unrouted; (Par is working to improve performance)     REAL time: 25 secs 
 
 Phase  5  : 0 unrouted; (Par is working to improve performance)     REAL time: 28 secs 
 
@@ -75,28 +75,24 @@ Updating file: main.ncd with current fully routed design.
 
 Phase  6  : 0 unrouted; (Par is working to improve performance)     REAL time: 30 secs 
 
-Phase  7  : 0 unrouted; (Par is working to improve performance)     REAL time: 12 mins 36 secs 
+Phase  7  : 0 unrouted; (Par is working to improve performance)     REAL time: 11 mins 51 secs 
 
-Phase  8  : 0 unrouted; (Par is working to improve performance)     REAL time: 12 mins 41 secs 
+Phase  8  : 0 unrouted; (Par is working to improve performance)     REAL time: 11 mins 55 secs 
 
-Phase  9  : 0 unrouted; (Par is working to improve performance)     REAL time: 12 mins 41 secs 
+Phase  9  : 0 unrouted; (Par is working to improve performance)     REAL time: 11 mins 55 secs 
 
-Phase 10  : 0 unrouted; (Par is working to improve performance)     REAL time: 12 mins 41 secs 
+Phase 10  : 0 unrouted; (Par is working to improve performance)     REAL time: 11 mins 56 secs 
 
-Phase 11  : 0 unrouted; (Par is working to improve performance)     REAL time: 12 mins 42 secs 
+Phase 11  : 0 unrouted; (Par is working to improve performance)     REAL time: 11 mins 57 secs 
 WARNING:Route:455 - CLK Net:cpu_instance/decoder_instance/SFlag_and0000 may have excessive skew because 
-      7 CLK pins and 6 NON_CLK pins failed to route using a CLK template.
-WARNING:Route:455 - CLK Net:cpu_instance/decoder_instance/Immediate_not0001 may have excessive skew because 
-      6 CLK pins and 0 NON_CLK pins failed to route using a CLK template.
-WARNING:Route:455 - CLK Net:cpu_instance/pcselector_instance/PCNext_or0000 may have excessive skew because 
-      1 CLK pins and 0 NON_CLK pins failed to route using a CLK template.
+      3 CLK pins and 4 NON_CLK pins failed to route using a CLK template.
 WARNING:Route:455 - CLK Net:cpu_instance/reg_instance/flag2<0> may have excessive skew because 
-      2 CLK pins and 18 NON_CLK pins failed to route using a CLK template.
+      0 CLK pins and 19 NON_CLK pins failed to route using a CLK template.
 WARNING:Route:455 - CLK Net:cpu_instance/IF_ID_Instruction_out<15> may have excessive skew because 
-      1 CLK pins and 48 NON_CLK pins failed to route using a CLK template.
+      0 CLK pins and 48 NON_CLK pins failed to route using a CLK template.
 
-Total REAL time to Router completion: 12 mins 42 secs 
-Total CPU time to Router completion: 12 mins 41 secs 
+Total REAL time to Router completion: 11 mins 57 secs 
+Total CPU time to Router completion: 11 mins 54 secs 
 
 Partition Implementation Status
 -------------------------------
@@ -114,27 +110,27 @@ Generating Clock Report
 +---------------------+--------------+------+------+------------+-------------+
 |        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
 +---------------------+--------------+------+------+------------+-------------+
-|           clk_BUFGP |  BUFGMUX_X1Y1| No   |  390 |  0.205     |  0.377      |
+|           clk_BUFGP |  BUFGMUX_X1Y1| No   |  361 |  0.207     |  0.376      |
 +---------------------+--------------+------+------+------------+-------------+
-|      clk_scan_BUFGP | BUFGMUX_X2Y11| No   |  254 |  0.208     |  0.377      |
+|      clk_scan_BUFGP | BUFGMUX_X2Y11| No   |  245 |  0.209     |  0.378      |
 +---------------------+--------------+------+------+------------+-------------+
 |cpu_instance/reg_ins |              |      |      |            |             |
-|      tance/flag2<0> |         Local|      |   20 |  0.000     |  0.934      |
+|      tance/flag2<0> |         Local|      |   21 |  0.000     |  1.941      |
 +---------------------+--------------+------+------+------------+-------------+
 |cpu_instance/decoder |              |      |      |            |             |
 |_instance/SFlag_and0 |              |      |      |            |             |
-|                 000 |         Local|      |   23 |  1.089     |  2.620      |
+|                 000 |         Local|      |   21 |  1.009     |  2.177      |
 +---------------------+--------------+------+------+------------+-------------+
 |cpu_instance/IF_ID_I |              |      |      |            |             |
-|  nstruction_out<15> |         Local|      |   54 |  0.895     |  2.833      |
-+---------------------+--------------+------+------+------------+-------------+
-|cpu_instance/decoder |              |      |      |            |             |
-|_instance/Immediate_ |              |      |      |            |             |
-|             not0001 |         Local|      |   16 |  0.876     |  2.582      |
+|  nstruction_out<15> |         Local|      |   52 |  0.210     |  2.458      |
 +---------------------+--------------+------+------+------------+-------------+
 |cpu_instance/pcselec |              |      |      |            |             |
 |tor_instance/PCNext_ |              |      |      |            |             |
-|              or0000 |         Local|      |   16 |  0.627     |  2.318      |
+|              or0000 |         Local|      |   16 |  0.090     |  1.778      |
++---------------------+--------------+------+------+------------+-------------+
+|cpu_instance/decoder |              |      |      |            |             |
+|_instance/Immediate_ |              |      |      |            |             |
+|             not0001 |         Local|      |   15 |  0.717     |  2.544      |
 +---------------------+--------------+------+------+------------+-------------+
 
 * Net Skew is the difference between the minimum and maximum routing
@@ -154,11 +150,11 @@ Asterisk (*) preceding a constraint indicates it was not met.
   Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
                                             |             |    Slack   | Achievable | Errors |    Score   
 ----------------------------------------------------------------------------------------------------------
-  Autotimespec constraint for clock net clk | SETUP       |         N/A|    17.208ns|     N/A|           0
-  _BUFGP                                    | HOLD        |     0.984ns|            |       0|           0
+  Autotimespec constraint for clock net clk | SETUP       |         N/A|    16.193ns|     N/A|           0
+  _BUFGP                                    | HOLD        |     0.765ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
-  Autotimespec constraint for clock net clk | SETUP       |         N/A|     8.635ns|     N/A|           0
-  _scan_BUFGP                               | HOLD        |     1.030ns|            |       0|           0
+  Autotimespec constraint for clock net clk | SETUP       |         N/A|     8.621ns|     N/A|           0
+  _scan_BUFGP                               | HOLD        |     1.036ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
 
 
@@ -174,8 +170,8 @@ Generating Pad Report.
 
 All signals are completely routed.
 
-Total REAL time to PAR completion: 12 mins 44 secs 
-Total CPU time to PAR completion: 12 mins 43 secs 
+Total REAL time to PAR completion: 11 mins 58 secs 
+Total CPU time to PAR completion: 11 mins 56 secs 
 
 Peak Memory Usage:  4497 MB
 
@@ -183,7 +179,7 @@ Placer: Placement generated during map.
 Routing: Completed - No errors found.
 
 Number of error messages: 0
-Number of warning messages: 5
+Number of warning messages: 3
 Number of info messages: 1
 
 Writing design to file main.ncd

@@ -45,58 +45,58 @@ Setup/Hold to clock clk_scan
              |Max Setup to|Max Hold to |                  | Clock  |
 Source       | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
 -------------+------------+------------+------------------+--------+
-Ram1Data<0>  |    5.115(F)|   -0.190(F)|clk_scan_BUFGP    |   0.000|
-Ram1Data<1>  |    4.835(F)|   -0.916(F)|clk_scan_BUFGP    |   0.000|
-Ram1Data<2>  |    3.178(F)|   -0.249(F)|clk_scan_BUFGP    |   0.000|
-Ram1Data<3>  |    4.042(F)|   -0.689(F)|clk_scan_BUFGP    |   0.000|
-Ram1Data<4>  |    3.253(F)|   -0.932(F)|clk_scan_BUFGP    |   0.000|
-Ram1Data<5>  |    3.159(F)|   -0.921(F)|clk_scan_BUFGP    |   0.000|
-Ram1Data<6>  |    3.515(F)|   -0.091(F)|clk_scan_BUFGP    |   0.000|
-Ram1Data<7>  |    2.632(F)|   -0.828(F)|clk_scan_BUFGP    |   0.000|
-Ram1Data<8>  |    4.161(F)|   -1.383(F)|clk_scan_BUFGP    |   0.000|
-Ram1Data<9>  |    4.033(F)|   -1.384(F)|clk_scan_BUFGP    |   0.000|
-Ram1Data<10> |    2.745(F)|   -0.341(F)|clk_scan_BUFGP    |   0.000|
-Ram1Data<11> |    2.390(F)|   -0.596(F)|clk_scan_BUFGP    |   0.000|
-Ram1Data<12> |    2.889(F)|   -0.628(F)|clk_scan_BUFGP    |   0.000|
-Ram1Data<13> |    2.854(F)|   -0.952(F)|clk_scan_BUFGP    |   0.000|
-Ram1Data<14> |    2.027(F)|   -0.315(F)|clk_scan_BUFGP    |   0.000|
-Ram1Data<15> |    2.749(F)|   -0.599(F)|clk_scan_BUFGP    |   0.000|
-Ram2Data<0>  |    5.356(F)|   -0.253(F)|clk_scan_BUFGP    |   0.000|
-Ram2Data<1>  |    4.083(F)|   -0.817(F)|clk_scan_BUFGP    |   0.000|
-Ram2Data<2>  |    4.722(F)|   -0.256(F)|clk_scan_BUFGP    |   0.000|
-Ram2Data<3>  |    3.881(F)|   -0.304(F)|clk_scan_BUFGP    |   0.000|
-Ram2Data<4>  |    4.818(F)|   -0.714(F)|clk_scan_BUFGP    |   0.000|
-Ram2Data<5>  |    3.606(F)|   -0.464(F)|clk_scan_BUFGP    |   0.000|
-Ram2Data<6>  |    3.607(F)|   -0.619(F)|clk_scan_BUFGP    |   0.000|
-Ram2Data<7>  |    4.977(F)|   -0.917(F)|clk_scan_BUFGP    |   0.000|
-Ram2Data<8>  |    2.822(F)|   -0.626(F)|clk_scan_BUFGP    |   0.000|
-Ram2Data<9>  |    3.075(F)|    0.129(F)|clk_scan_BUFGP    |   0.000|
-Ram2Data<10> |    2.960(F)|   -0.474(F)|clk_scan_BUFGP    |   0.000|
-Ram2Data<11> |    2.626(F)|   -0.341(F)|clk_scan_BUFGP    |   0.000|
-Ram2Data<12> |    3.209(F)|   -0.977(F)|clk_scan_BUFGP    |   0.000|
-Ram2Data<13> |    3.775(F)|   -0.084(F)|clk_scan_BUFGP    |   0.000|
-Ram2Data<14> |    2.236(F)|   -0.241(F)|clk_scan_BUFGP    |   0.000|
-Ram2Data<15> |    2.970(F)|   -0.171(F)|clk_scan_BUFGP    |   0.000|
-dataReady    |    5.912(F)|   -3.469(F)|clk_scan_BUFGP    |   0.000|
-flashData<0> |    0.835(F)|    0.557(F)|clk_scan_BUFGP    |   0.000|
-flashData<1> |    1.440(F)|    0.068(F)|clk_scan_BUFGP    |   0.000|
-flashData<2> |    1.678(F)|   -0.121(F)|clk_scan_BUFGP    |   0.000|
-flashData<3> |    1.381(F)|    0.116(F)|clk_scan_BUFGP    |   0.000|
-flashData<4> |    0.948(F)|    0.486(F)|clk_scan_BUFGP    |   0.000|
-flashData<5> |    1.213(F)|    0.257(F)|clk_scan_BUFGP    |   0.000|
-flashData<6> |    1.425(F)|    0.083(F)|clk_scan_BUFGP    |   0.000|
-flashData<7> |    1.148(F)|    0.308(F)|clk_scan_BUFGP    |   0.000|
-flashData<8> |    1.058(F)|    0.380(F)|clk_scan_BUFGP    |   0.000|
-flashData<9> |    1.578(F)|   -0.033(F)|clk_scan_BUFGP    |   0.000|
-flashData<10>|    2.200(F)|   -0.533(F)|clk_scan_BUFGP    |   0.000|
-flashData<11>|    1.657(F)|   -0.099(F)|clk_scan_BUFGP    |   0.000|
-flashData<12>|    1.918(F)|   -0.308(F)|clk_scan_BUFGP    |   0.000|
-flashData<13>|    1.961(F)|   -0.342(F)|clk_scan_BUFGP    |   0.000|
-flashData<14>|    1.822(F)|   -0.234(F)|clk_scan_BUFGP    |   0.000|
-flashData<15>|    2.179(F)|   -0.516(F)|clk_scan_BUFGP    |   0.000|
-reset        |    7.150(F)|    0.341(F)|clk_scan_BUFGP    |   0.000|
-tbre         |    5.226(F)|   -1.314(F)|clk_scan_BUFGP    |   0.000|
-tsre         |    7.649(F)|   -0.339(F)|clk_scan_BUFGP    |   0.000|
+Ram1Data<0>  |    3.551(F)|   -0.406(F)|clk_scan_BUFGP    |   0.000|
+Ram1Data<1>  |    2.830(F)|   -0.002(F)|clk_scan_BUFGP    |   0.000|
+Ram1Data<2>  |    2.906(F)|   -0.447(F)|clk_scan_BUFGP    |   0.000|
+Ram1Data<3>  |    3.384(F)|   -0.353(F)|clk_scan_BUFGP    |   0.000|
+Ram1Data<4>  |    2.766(F)|   -0.680(F)|clk_scan_BUFGP    |   0.000|
+Ram1Data<5>  |    2.950(F)|   -0.655(F)|clk_scan_BUFGP    |   0.000|
+Ram1Data<6>  |    2.075(F)|    0.072(F)|clk_scan_BUFGP    |   0.000|
+Ram1Data<7>  |    2.510(F)|   -0.713(F)|clk_scan_BUFGP    |   0.000|
+Ram1Data<8>  |    2.817(F)|   -0.873(F)|clk_scan_BUFGP    |   0.000|
+Ram1Data<9>  |    1.805(F)|    0.382(F)|clk_scan_BUFGP    |   0.000|
+Ram1Data<10> |    1.944(F)|    0.271(F)|clk_scan_BUFGP    |   0.000|
+Ram1Data<11> |    1.652(F)|    0.267(F)|clk_scan_BUFGP    |   0.000|
+Ram1Data<12> |    1.738(F)|    0.586(F)|clk_scan_BUFGP    |   0.000|
+Ram1Data<13> |    1.954(F)|   -0.137(F)|clk_scan_BUFGP    |   0.000|
+Ram1Data<14> |    1.429(F)|    0.107(F)|clk_scan_BUFGP    |   0.000|
+Ram1Data<15> |    1.831(F)|    0.551(F)|clk_scan_BUFGP    |   0.000|
+Ram2Data<0>  |    2.540(F)|    0.730(F)|clk_scan_BUFGP    |   0.000|
+Ram2Data<1>  |    3.711(F)|    0.218(F)|clk_scan_BUFGP    |   0.000|
+Ram2Data<2>  |    3.231(F)|    0.009(F)|clk_scan_BUFGP    |   0.000|
+Ram2Data<3>  |    3.148(F)|    0.129(F)|clk_scan_BUFGP    |   0.000|
+Ram2Data<4>  |    3.397(F)|   -0.887(F)|clk_scan_BUFGP    |   0.000|
+Ram2Data<5>  |    2.547(F)|   -0.340(F)|clk_scan_BUFGP    |   0.000|
+Ram2Data<6>  |    3.010(F)|   -0.146(F)|clk_scan_BUFGP    |   0.000|
+Ram2Data<7>  |    2.730(F)|   -0.363(F)|clk_scan_BUFGP    |   0.000|
+Ram2Data<8>  |    2.908(F)|   -0.185(F)|clk_scan_BUFGP    |   0.000|
+Ram2Data<9>  |    4.443(F)|   -0.083(F)|clk_scan_BUFGP    |   0.000|
+Ram2Data<10> |    2.405(F)|   -0.219(F)|clk_scan_BUFGP    |   0.000|
+Ram2Data<11> |    4.209(F)|    0.855(F)|clk_scan_BUFGP    |   0.000|
+Ram2Data<12> |    2.905(F)|   -0.483(F)|clk_scan_BUFGP    |   0.000|
+Ram2Data<13> |    3.041(F)|    0.359(F)|clk_scan_BUFGP    |   0.000|
+Ram2Data<14> |    2.720(F)|    0.178(F)|clk_scan_BUFGP    |   0.000|
+Ram2Data<15> |    3.225(F)|   -0.035(F)|clk_scan_BUFGP    |   0.000|
+dataReady    |    4.298(F)|   -2.196(F)|clk_scan_BUFGP    |   0.000|
+flashData<0> |    1.370(F)|    0.130(F)|clk_scan_BUFGP    |   0.000|
+flashData<1> |    1.630(F)|   -0.081(F)|clk_scan_BUFGP    |   0.000|
+flashData<2> |    1.399(F)|    0.101(F)|clk_scan_BUFGP    |   0.000|
+flashData<3> |    1.372(F)|    0.123(F)|clk_scan_BUFGP    |   0.000|
+flashData<4> |    1.144(F)|    0.312(F)|clk_scan_BUFGP    |   0.000|
+flashData<5> |    1.432(F)|    0.081(F)|clk_scan_BUFGP    |   0.000|
+flashData<6> |    1.350(F)|    0.142(F)|clk_scan_BUFGP    |   0.000|
+flashData<7> |    1.110(F)|    0.339(F)|clk_scan_BUFGP    |   0.000|
+flashData<8> |    0.762(F)|    0.619(F)|clk_scan_BUFGP    |   0.000|
+flashData<9> |    1.542(F)|   -0.001(F)|clk_scan_BUFGP    |   0.000|
+flashData<10>|    1.411(F)|    0.093(F)|clk_scan_BUFGP    |   0.000|
+flashData<11>|    1.386(F)|    0.117(F)|clk_scan_BUFGP    |   0.000|
+flashData<12>|    1.104(F)|    0.343(F)|clk_scan_BUFGP    |   0.000|
+flashData<13>|    1.309(F)|    0.185(F)|clk_scan_BUFGP    |   0.000|
+flashData<14>|    1.452(F)|    0.061(F)|clk_scan_BUFGP    |   0.000|
+flashData<15>|    1.654(F)|   -0.097(F)|clk_scan_BUFGP    |   0.000|
+reset        |    6.035(F)|    0.492(F)|clk_scan_BUFGP    |   0.000|
+tbre         |    2.334(F)|    0.067(F)|clk_scan_BUFGP    |   0.000|
+tsre         |    8.901(F)|   -1.328(F)|clk_scan_BUFGP    |   0.000|
 -------------+------------+------------+------------------+--------+
 
 Clock clk to Pad
@@ -104,19 +104,22 @@ Clock clk to Pad
             | clk (edge) |                  | Clock  |
 Destination |   to PAD   |Internal Clock(s) | Phase  |
 ------------+------------+------------------+--------+
-led<1>      |   25.059(F)|clk_BUFGP         |   0.000|
-led<2>      |   24.710(F)|clk_BUFGP         |   0.000|
-led<3>      |   22.837(F)|clk_BUFGP         |   0.000|
-led<4>      |   10.590(F)|clk_BUFGP         |   0.000|
-led<7>      |    8.422(F)|clk_BUFGP         |   0.000|
-led<8>      |   18.442(F)|clk_BUFGP         |   0.000|
-led<9>      |   17.113(F)|clk_BUFGP         |   0.000|
-led<10>     |   16.923(F)|clk_BUFGP         |   0.000|
-led<11>     |   17.641(F)|clk_BUFGP         |   0.000|
-led<12>     |    6.256(F)|clk_BUFGP         |   0.000|
-led<13>     |    6.247(F)|clk_BUFGP         |   0.000|
-led<14>     |    6.323(F)|clk_BUFGP         |   0.000|
-led<15>     |    6.278(F)|clk_BUFGP         |   0.000|
+led<0>      |   13.274(F)|clk_BUFGP         |   0.000|
+led<1>      |   13.510(F)|clk_BUFGP         |   0.000|
+led<2>      |   13.336(F)|clk_BUFGP         |   0.000|
+led<3>      |   12.942(F)|clk_BUFGP         |   0.000|
+led<4>      |   13.367(F)|clk_BUFGP         |   0.000|
+led<5>      |   13.369(F)|clk_BUFGP         |   0.000|
+led<6>      |   12.581(F)|clk_BUFGP         |   0.000|
+led<7>      |   12.938(F)|clk_BUFGP         |   0.000|
+led<8>      |   12.840(F)|clk_BUFGP         |   0.000|
+led<9>      |   12.260(F)|clk_BUFGP         |   0.000|
+led<10>     |   11.986(F)|clk_BUFGP         |   0.000|
+led<11>     |   12.338(F)|clk_BUFGP         |   0.000|
+led<12>     |   12.712(F)|clk_BUFGP         |   0.000|
+led<13>     |   12.328(F)|clk_BUFGP         |   0.000|
+led<14>     |   13.266(F)|clk_BUFGP         |   0.000|
+led<15>     |   12.902(F)|clk_BUFGP         |   0.000|
 ------------+------------+------------------+--------+
 
 Clock clk_scan to Pad
@@ -124,111 +127,111 @@ Clock clk_scan to Pad
              | clk (edge) |                  | Clock  |
 Destination  |   to PAD   |Internal Clock(s) | Phase  |
 -------------+------------+------------------+--------+
-Ram1Addr<0>  |    8.041(F)|clk_scan_BUFGP    |   0.000|
-Ram1Addr<1>  |    8.231(F)|clk_scan_BUFGP    |   0.000|
-Ram1Addr<2>  |    8.213(F)|clk_scan_BUFGP    |   0.000|
-Ram1Addr<3>  |    8.441(F)|clk_scan_BUFGP    |   0.000|
-Ram1Addr<4>  |    7.927(F)|clk_scan_BUFGP    |   0.000|
-Ram1Addr<5>  |    8.270(F)|clk_scan_BUFGP    |   0.000|
-Ram1Addr<6>  |    7.927(F)|clk_scan_BUFGP    |   0.000|
-Ram1Addr<7>  |    7.669(F)|clk_scan_BUFGP    |   0.000|
-Ram1Addr<8>  |    7.881(F)|clk_scan_BUFGP    |   0.000|
-Ram1Addr<9>  |    8.182(F)|clk_scan_BUFGP    |   0.000|
-Ram1Addr<10> |    7.912(F)|clk_scan_BUFGP    |   0.000|
-Ram1Addr<11> |    8.266(F)|clk_scan_BUFGP    |   0.000|
-Ram1Addr<12> |    8.558(F)|clk_scan_BUFGP    |   0.000|
-Ram1Addr<13> |    8.022(F)|clk_scan_BUFGP    |   0.000|
-Ram1Addr<14> |    8.425(F)|clk_scan_BUFGP    |   0.000|
-Ram1Addr<15> |    8.551(F)|clk_scan_BUFGP    |   0.000|
-Ram1Data<0>  |    8.181(F)|clk_scan_BUFGP    |   0.000|
-Ram1Data<1>  |    8.447(F)|clk_scan_BUFGP    |   0.000|
-Ram1Data<2>  |    8.697(F)|clk_scan_BUFGP    |   0.000|
-Ram1Data<3>  |    8.427(F)|clk_scan_BUFGP    |   0.000|
-Ram1Data<4>  |    8.023(F)|clk_scan_BUFGP    |   0.000|
-Ram1Data<5>  |    8.038(F)|clk_scan_BUFGP    |   0.000|
-Ram1Data<6>  |    7.818(F)|clk_scan_BUFGP    |   0.000|
-Ram1Data<7>  |    7.487(F)|clk_scan_BUFGP    |   0.000|
-Ram1Data<8>  |    7.488(F)|clk_scan_BUFGP    |   0.000|
-Ram1Data<9>  |    7.785(F)|clk_scan_BUFGP    |   0.000|
-Ram1Data<10> |    8.420(F)|clk_scan_BUFGP    |   0.000|
-Ram1Data<11> |    8.270(F)|clk_scan_BUFGP    |   0.000|
-Ram1Data<12> |    8.144(F)|clk_scan_BUFGP    |   0.000|
-Ram1Data<13> |    8.028(F)|clk_scan_BUFGP    |   0.000|
-Ram1Data<14> |    9.283(F)|clk_scan_BUFGP    |   0.000|
-Ram1Data<15> |    9.833(F)|clk_scan_BUFGP    |   0.000|
-Ram1EN       |    7.311(F)|clk_scan_BUFGP    |   0.000|
-Ram1OE       |    7.328(F)|clk_scan_BUFGP    |   0.000|
-Ram1WE       |    7.838(F)|clk_scan_BUFGP    |   0.000|
-Ram2Addr<0>  |    8.634(F)|clk_scan_BUFGP    |   0.000|
-Ram2Addr<1>  |    9.437(F)|clk_scan_BUFGP    |   0.000|
-Ram2Addr<2>  |    8.326(F)|clk_scan_BUFGP    |   0.000|
-Ram2Addr<3>  |    8.726(F)|clk_scan_BUFGP    |   0.000|
-Ram2Addr<4>  |    8.613(F)|clk_scan_BUFGP    |   0.000|
-Ram2Addr<5>  |    8.836(F)|clk_scan_BUFGP    |   0.000|
-Ram2Addr<6>  |    8.700(F)|clk_scan_BUFGP    |   0.000|
-Ram2Addr<7>  |    8.732(F)|clk_scan_BUFGP    |   0.000|
-Ram2Addr<8>  |    9.539(F)|clk_scan_BUFGP    |   0.000|
-Ram2Addr<9>  |   10.234(F)|clk_scan_BUFGP    |   0.000|
-Ram2Addr<10> |    9.006(F)|clk_scan_BUFGP    |   0.000|
-Ram2Addr<11> |    9.526(F)|clk_scan_BUFGP    |   0.000|
-Ram2Addr<12> |    9.013(F)|clk_scan_BUFGP    |   0.000|
-Ram2Addr<13> |    8.520(F)|clk_scan_BUFGP    |   0.000|
-Ram2Addr<14> |    8.860(F)|clk_scan_BUFGP    |   0.000|
-Ram2Addr<15> |    9.278(F)|clk_scan_BUFGP    |   0.000|
-Ram2Data<0>  |    9.444(F)|clk_scan_BUFGP    |   0.000|
-Ram2Data<1>  |    9.670(F)|clk_scan_BUFGP    |   0.000|
-Ram2Data<2>  |    9.376(F)|clk_scan_BUFGP    |   0.000|
-Ram2Data<3>  |    9.463(F)|clk_scan_BUFGP    |   0.000|
-Ram2Data<4>  |    9.737(F)|clk_scan_BUFGP    |   0.000|
-Ram2Data<5>  |    9.970(F)|clk_scan_BUFGP    |   0.000|
-Ram2Data<6>  |   10.017(F)|clk_scan_BUFGP    |   0.000|
-Ram2Data<7>  |    9.981(F)|clk_scan_BUFGP    |   0.000|
-Ram2Data<8>  |   10.307(F)|clk_scan_BUFGP    |   0.000|
-Ram2Data<9>  |   11.394(F)|clk_scan_BUFGP    |   0.000|
-Ram2Data<10> |    9.145(F)|clk_scan_BUFGP    |   0.000|
-Ram2Data<11> |    9.690(F)|clk_scan_BUFGP    |   0.000|
-Ram2Data<12> |   10.797(F)|clk_scan_BUFGP    |   0.000|
-Ram2Data<13> |   11.691(F)|clk_scan_BUFGP    |   0.000|
-Ram2Data<14> |    9.553(F)|clk_scan_BUFGP    |   0.000|
-Ram2Data<15> |   11.675(F)|clk_scan_BUFGP    |   0.000|
-Ram2OE       |    8.937(F)|clk_scan_BUFGP    |   0.000|
-Ram2WE       |    9.267(F)|clk_scan_BUFGP    |   0.000|
-flashAddr<1> |    9.489(F)|clk_scan_BUFGP    |   0.000|
-flashAddr<2> |    8.947(F)|clk_scan_BUFGP    |   0.000|
-flashAddr<3> |    9.183(F)|clk_scan_BUFGP    |   0.000|
-flashAddr<4> |    8.583(F)|clk_scan_BUFGP    |   0.000|
-flashAddr<5> |    8.781(F)|clk_scan_BUFGP    |   0.000|
-flashAddr<6> |    8.457(F)|clk_scan_BUFGP    |   0.000|
-flashAddr<7> |    8.362(F)|clk_scan_BUFGP    |   0.000|
-flashAddr<8> |    7.945(F)|clk_scan_BUFGP    |   0.000|
-flashAddr<9> |    8.031(F)|clk_scan_BUFGP    |   0.000|
-flashAddr<10>|    8.002(F)|clk_scan_BUFGP    |   0.000|
-flashAddr<11>|    8.028(F)|clk_scan_BUFGP    |   0.000|
-flashAddr<12>|    7.969(F)|clk_scan_BUFGP    |   0.000|
-flashAddr<13>|    8.023(F)|clk_scan_BUFGP    |   0.000|
-flashAddr<14>|    8.166(F)|clk_scan_BUFGP    |   0.000|
-flashAddr<15>|    8.017(F)|clk_scan_BUFGP    |   0.000|
-flashAddr<16>|    8.290(F)|clk_scan_BUFGP    |   0.000|
-flashData<0> |    9.081(F)|clk_scan_BUFGP    |   0.000|
-flashData<1> |    8.828(F)|clk_scan_BUFGP    |   0.000|
-flashData<2> |    9.327(F)|clk_scan_BUFGP    |   0.000|
-flashData<3> |    8.818(F)|clk_scan_BUFGP    |   0.000|
-flashData<4> |    9.582(F)|clk_scan_BUFGP    |   0.000|
-flashData<5> |    9.852(F)|clk_scan_BUFGP    |   0.000|
-flashData<6> |    9.586(F)|clk_scan_BUFGP    |   0.000|
-flashData<7> |    9.849(F)|clk_scan_BUFGP    |   0.000|
-flashData<8> |    9.337(F)|clk_scan_BUFGP    |   0.000|
-flashData<9> |    9.330(F)|clk_scan_BUFGP    |   0.000|
-flashData<10>|    9.838(F)|clk_scan_BUFGP    |   0.000|
-flashData<11>|   10.106(F)|clk_scan_BUFGP    |   0.000|
-flashData<12>|   10.359(F)|clk_scan_BUFGP    |   0.000|
-flashData<13>|   10.094(F)|clk_scan_BUFGP    |   0.000|
-flashData<14>|   10.607(F)|clk_scan_BUFGP    |   0.000|
-flashData<15>|   10.343(F)|clk_scan_BUFGP    |   0.000|
-flashOE      |    9.314(F)|clk_scan_BUFGP    |   0.000|
-rdn          |    9.871(F)|clk_scan_BUFGP    |   0.000|
-started      |   11.156(F)|clk_scan_BUFGP    |   0.000|
-wrn          |   10.510(F)|clk_scan_BUFGP    |   0.000|
+Ram1Addr<0>  |    8.427(F)|clk_scan_BUFGP    |   0.000|
+Ram1Addr<1>  |    8.424(F)|clk_scan_BUFGP    |   0.000|
+Ram1Addr<2>  |    8.451(F)|clk_scan_BUFGP    |   0.000|
+Ram1Addr<3>  |    8.300(F)|clk_scan_BUFGP    |   0.000|
+Ram1Addr<4>  |    8.031(F)|clk_scan_BUFGP    |   0.000|
+Ram1Addr<5>  |    8.175(F)|clk_scan_BUFGP    |   0.000|
+Ram1Addr<6>  |    7.406(F)|clk_scan_BUFGP    |   0.000|
+Ram1Addr<7>  |    7.404(F)|clk_scan_BUFGP    |   0.000|
+Ram1Addr<8>  |    7.613(F)|clk_scan_BUFGP    |   0.000|
+Ram1Addr<9>  |    7.594(F)|clk_scan_BUFGP    |   0.000|
+Ram1Addr<10> |    7.314(F)|clk_scan_BUFGP    |   0.000|
+Ram1Addr<11> |    7.595(F)|clk_scan_BUFGP    |   0.000|
+Ram1Addr<12> |    8.041(F)|clk_scan_BUFGP    |   0.000|
+Ram1Addr<13> |    8.565(F)|clk_scan_BUFGP    |   0.000|
+Ram1Addr<14> |    8.378(F)|clk_scan_BUFGP    |   0.000|
+Ram1Addr<15> |    8.118(F)|clk_scan_BUFGP    |   0.000|
+Ram1Data<0>  |    8.165(F)|clk_scan_BUFGP    |   0.000|
+Ram1Data<1>  |    7.892(F)|clk_scan_BUFGP    |   0.000|
+Ram1Data<2>  |    7.777(F)|clk_scan_BUFGP    |   0.000|
+Ram1Data<3>  |    7.621(F)|clk_scan_BUFGP    |   0.000|
+Ram1Data<4>  |    8.140(F)|clk_scan_BUFGP    |   0.000|
+Ram1Data<5>  |    8.136(F)|clk_scan_BUFGP    |   0.000|
+Ram1Data<6>  |    8.978(F)|clk_scan_BUFGP    |   0.000|
+Ram1Data<7>  |    8.444(F)|clk_scan_BUFGP    |   0.000|
+Ram1Data<8>  |    8.283(F)|clk_scan_BUFGP    |   0.000|
+Ram1Data<9>  |    8.388(F)|clk_scan_BUFGP    |   0.000|
+Ram1Data<10> |    8.969(F)|clk_scan_BUFGP    |   0.000|
+Ram1Data<11> |    8.950(F)|clk_scan_BUFGP    |   0.000|
+Ram1Data<12> |    8.999(F)|clk_scan_BUFGP    |   0.000|
+Ram1Data<13> |    8.697(F)|clk_scan_BUFGP    |   0.000|
+Ram1Data<14> |    9.980(F)|clk_scan_BUFGP    |   0.000|
+Ram1Data<15> |    9.709(F)|clk_scan_BUFGP    |   0.000|
+Ram1EN       |    7.868(F)|clk_scan_BUFGP    |   0.000|
+Ram1OE       |    8.109(F)|clk_scan_BUFGP    |   0.000|
+Ram1WE       |    7.977(F)|clk_scan_BUFGP    |   0.000|
+Ram2Addr<0>  |    9.301(F)|clk_scan_BUFGP    |   0.000|
+Ram2Addr<1>  |    9.702(F)|clk_scan_BUFGP    |   0.000|
+Ram2Addr<2>  |    8.387(F)|clk_scan_BUFGP    |   0.000|
+Ram2Addr<3>  |   10.289(F)|clk_scan_BUFGP    |   0.000|
+Ram2Addr<4>  |    8.945(F)|clk_scan_BUFGP    |   0.000|
+Ram2Addr<5>  |    8.578(F)|clk_scan_BUFGP    |   0.000|
+Ram2Addr<6>  |    9.271(F)|clk_scan_BUFGP    |   0.000|
+Ram2Addr<7>  |    9.272(F)|clk_scan_BUFGP    |   0.000|
+Ram2Addr<8>  |    9.551(F)|clk_scan_BUFGP    |   0.000|
+Ram2Addr<9>  |   10.023(F)|clk_scan_BUFGP    |   0.000|
+Ram2Addr<10> |    9.764(F)|clk_scan_BUFGP    |   0.000|
+Ram2Addr<11> |    9.535(F)|clk_scan_BUFGP    |   0.000|
+Ram2Addr<12> |    9.374(F)|clk_scan_BUFGP    |   0.000|
+Ram2Addr<13> |    8.501(F)|clk_scan_BUFGP    |   0.000|
+Ram2Addr<14> |    8.834(F)|clk_scan_BUFGP    |   0.000|
+Ram2Addr<15> |    9.498(F)|clk_scan_BUFGP    |   0.000|
+Ram2Data<0>  |   10.123(F)|clk_scan_BUFGP    |   0.000|
+Ram2Data<1>  |    9.985(F)|clk_scan_BUFGP    |   0.000|
+Ram2Data<2>  |    9.988(F)|clk_scan_BUFGP    |   0.000|
+Ram2Data<3>  |    9.836(F)|clk_scan_BUFGP    |   0.000|
+Ram2Data<4>  |    9.727(F)|clk_scan_BUFGP    |   0.000|
+Ram2Data<5>  |   10.165(F)|clk_scan_BUFGP    |   0.000|
+Ram2Data<6>  |    9.664(F)|clk_scan_BUFGP    |   0.000|
+Ram2Data<7>  |    9.968(F)|clk_scan_BUFGP    |   0.000|
+Ram2Data<8>  |   10.300(F)|clk_scan_BUFGP    |   0.000|
+Ram2Data<9>  |   11.412(F)|clk_scan_BUFGP    |   0.000|
+Ram2Data<10> |   11.047(F)|clk_scan_BUFGP    |   0.000|
+Ram2Data<11> |   11.499(F)|clk_scan_BUFGP    |   0.000|
+Ram2Data<12> |   10.843(F)|clk_scan_BUFGP    |   0.000|
+Ram2Data<13> |   11.729(F)|clk_scan_BUFGP    |   0.000|
+Ram2Data<14> |    9.446(F)|clk_scan_BUFGP    |   0.000|
+Ram2Data<15> |   11.711(F)|clk_scan_BUFGP    |   0.000|
+Ram2OE       |    9.274(F)|clk_scan_BUFGP    |   0.000|
+Ram2WE       |    8.604(F)|clk_scan_BUFGP    |   0.000|
+flashAddr<1> |    9.483(F)|clk_scan_BUFGP    |   0.000|
+flashAddr<2> |    9.264(F)|clk_scan_BUFGP    |   0.000|
+flashAddr<3> |    9.464(F)|clk_scan_BUFGP    |   0.000|
+flashAddr<4> |    8.945(F)|clk_scan_BUFGP    |   0.000|
+flashAddr<5> |    8.881(F)|clk_scan_BUFGP    |   0.000|
+flashAddr<6> |    8.814(F)|clk_scan_BUFGP    |   0.000|
+flashAddr<7> |    8.871(F)|clk_scan_BUFGP    |   0.000|
+flashAddr<8> |    8.752(F)|clk_scan_BUFGP    |   0.000|
+flashAddr<9> |    8.414(F)|clk_scan_BUFGP    |   0.000|
+flashAddr<10>|    9.145(F)|clk_scan_BUFGP    |   0.000|
+flashAddr<11>|    9.298(F)|clk_scan_BUFGP    |   0.000|
+flashAddr<12>|    8.403(F)|clk_scan_BUFGP    |   0.000|
+flashAddr<13>|    8.676(F)|clk_scan_BUFGP    |   0.000|
+flashAddr<14>|    8.340(F)|clk_scan_BUFGP    |   0.000|
+flashAddr<15>|    8.739(F)|clk_scan_BUFGP    |   0.000|
+flashAddr<16>|    8.276(F)|clk_scan_BUFGP    |   0.000|
+flashData<0> |    8.910(F)|clk_scan_BUFGP    |   0.000|
+flashData<1> |    9.733(F)|clk_scan_BUFGP    |   0.000|
+flashData<2> |    9.985(F)|clk_scan_BUFGP    |   0.000|
+flashData<3> |    8.922(F)|clk_scan_BUFGP    |   0.000|
+flashData<4> |    9.692(F)|clk_scan_BUFGP    |   0.000|
+flashData<5> |    9.690(F)|clk_scan_BUFGP    |   0.000|
+flashData<6> |    9.436(F)|clk_scan_BUFGP    |   0.000|
+flashData<7> |    9.422(F)|clk_scan_BUFGP    |   0.000|
+flashData<8> |    9.173(F)|clk_scan_BUFGP    |   0.000|
+flashData<9> |    9.160(F)|clk_scan_BUFGP    |   0.000|
+flashData<10>|    9.948(F)|clk_scan_BUFGP    |   0.000|
+flashData<11>|    9.943(F)|clk_scan_BUFGP    |   0.000|
+flashData<12>|   10.197(F)|clk_scan_BUFGP    |   0.000|
+flashData<13>|   10.204(F)|clk_scan_BUFGP    |   0.000|
+flashData<14>|   10.445(F)|clk_scan_BUFGP    |   0.000|
+flashData<15>|   10.452(F)|clk_scan_BUFGP    |   0.000|
+flashOE      |   10.919(F)|clk_scan_BUFGP    |   0.000|
+rdn          |    7.361(F)|clk_scan_BUFGP    |   0.000|
+started      |   13.092(F)|clk_scan_BUFGP    |   0.000|
+wrn          |   11.192(F)|clk_scan_BUFGP    |   0.000|
 -------------+------------+------------------+--------+
 
 Clock to Setup on destination clock clk
@@ -236,8 +239,8 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |         |         |         |   17.208|
-clk_scan       |         |         |         |    7.751|
+clk            |         |         |         |   16.193|
+clk_scan       |         |         |         |    7.463|
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock clk_scan
@@ -245,12 +248,12 @@ Clock to Setup on destination clock clk_scan
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |         |         |         |   10.935|
-clk_scan       |         |         |         |    8.635|
+clk            |         |         |         |   10.920|
+clk_scan       |         |         |         |    8.621|
 ---------------+---------+---------+---------+---------+
 
 
-Analysis completed Thu Dec 06 08:49:29 2018 
+Analysis completed Thu Dec 06 10:22:52 2018 
 --------------------------------------------------------------------------------
 
 Trace Settings:
