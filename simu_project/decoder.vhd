@@ -160,7 +160,7 @@ begin
 
                 BranchTargetAlu <= PC0 + 1;
                 BranchTarget <= PC0 + (Instruction(10) & Instruction(10) & Instruction(10) & Instruction(10) & Instruction(10) & Instruction(10 downto 0));
-                                RegisterTarget <= "1010";
+                                RegisterTarget <= "1111";
                 AluInstruction <= "1011";
                 Immediate <= Instruction(10) & Instruction(10) & Instruction(10) & Instruction(10) & Instruction(10) & Instruction(10 downto 0);
                 DataSelectorInstruction <= "000011";
@@ -181,7 +181,7 @@ begin
                     BranchTargetAlu <= PC0 + 1;
                     BranchTarget <= PC0 + (Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7 downto 0));
                 end if;
-                                RegisterTarget <= "1010";
+                                RegisterTarget <= "1111";
 
                 if (BranchPredict = '0') then
                     AluInstruction <= "1100";
@@ -207,7 +207,7 @@ begin
                     BranchTargetAlu <= PC0 + 1;
                     BranchTarget <= PC0 + (Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7 downto 0));
                 end if;
-                                RegisterTarget <= "1010";
+                                RegisterTarget <= "1111";
 
                 if (BranchPredict = '0') then
                     AluInstruction <= "1101";
@@ -233,7 +233,7 @@ begin
                     BranchTargetAlu <= PC0 + 1;
                     BranchTarget <= PC0 + (Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7 downto 0));
                 end if;
-                                RegisterTarget <= "1010";
+                                RegisterTarget <= "1111";
 
                 if (BranchPredict = '0') then
                     AluInstruction <= "1110";
@@ -331,7 +331,7 @@ begin
                     BranchTarget <= reg(127 downto 112);
                     Immediate <= reg(127 downto 112);
                 end if;
-                                RegisterTarget <= "1010";
+                                RegisterTarget <= "1111";
                 AluInstruction <= "1010";
                 DataSelectorInstruction <= "000001";
                 BubbleNext <= "000";

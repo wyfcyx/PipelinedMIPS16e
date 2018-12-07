@@ -78,6 +78,8 @@ signal curData : std_logic_vector(15 downto 0) := (others => '0');
 signal instructions : std_logic_vector(15 downto 0) := x"4000";
 signal ram2_rst_pointer : std_logic_vector(15 downto 0) := x"4000";
 signal ram1_rst_pointer : std_logic_vector(15 downto 0) := x"8000";
+signal isTesting : std_logic := '0';
+signal nullClk : std_logic_vector(19 downto 0) := (others => '0');
 type FlashToRamState is (
 	waiting,
 	read1, read2, read3, read4, writeToRam,
@@ -111,157 +113,152 @@ begin
 					trigger <= (LFlag & SFlag & Address & DataS & InstructionAddress);
 					r1State <= waiting;
 					r2State <= waiting;
-				end if;
-				case r2State is
-					when waiting =>
-						if ((LFlag = '1' or SFlag = '1') and (Address < x"8000")) then
-							if (LFlag = '1') then
-								r2State <= readMem1;
+				else
+					case r2State is
+						when waiting =>
+							if ((LFlag = '1' or SFlag = '1') and (Address < x"8000")) then
+								if (LFlag = '1') then
+									r2State <= readMem1;
+								else
+									r2State <= writeMem1;
+								end if;
 							else
-								r2State <= writeMem1;
+								r2State <= readInstruction1;
 							end if;
-						else
-							r2State <= readInstruction1;
-						end if;
-					when readInstruction1 =>
-						Ram2WE <= '1';
-						Ram2OE <= '0';
-						Ram2EN <= '0';
-						Ram2Data <= (others => 'Z');
-						Ram2Addr <= InstructionAddress;
-						r2State <= readInstruction2;
-					when readInstruction2 =>
-						InstructionResult <= Ram2Data;
-						r2State <= done;
-					when readMem1 =>
-						Ram2WE <= '1';
-						Ram2OE <= '0';
-						Ram2EN <= '0';
-						Ram2Data <= (others => 'Z');
-						Ram2Addr <= Address;
-						r2State <= readMem2;
-					when readMem2 =>
-						Result <= Ram2Data;
-						Result_L <= Ram2Data;
-						Result_L_pointer <= '1';
-						InstructionResult <= (others => '0');
-						r2State <= done;
-					when writeMem1 =>
-						Ram2WE <= '0';
-						Ram2OE <= '1';
-						Ram2EN <= '0';
-						Ram2Data <= DataS;
-						Ram2Addr <= Address;
-						r2State <= writeMem2;
-					when writeMem2 =>
-						Result <= (others => '0');
-						Result_L <= (others => '0');
-						Result_L_pointer <= '0';
-						InstructionResult <= (others => '0');
-						r2State <= done;
-					when done =>
-					when others =>
-				end case;
-				case r1State is
-					when waiting =>
-						if ((LFlag = '1' or SFlag = '1') and (Address < x"8000")) then
+						when readInstruction1 =>
+							Ram2WE <= '1';
+							Ram2OE <= '0';
+							Ram2EN <= '0';
+							Ram2Data <= (others => 'Z');
+							Ram2Addr <= InstructionAddress;
+							r2State <= readInstruction2;
+						when readInstruction2 =>
+							InstructionResult <= Ram2Data;
+							r2State <= done;
+						when readMem1 =>
+							Ram2WE <= '1';
+							Ram2OE <= '0';
+							Ram2EN <= '0';
+							Ram2Data <= (others => 'Z');
+							Ram2Addr <= Address;
+							r2State <= readMem2;
+						when readMem2 =>
+							Result <= Ram2Data;
+							Result_L <= Ram2Data;
+							Result_L_pointer <= '1';
+							InstructionResult <= (others => '0');
+							r2State <= done;
+						when writeMem1 =>
+							Ram2WE <= '0';
+							Ram2OE <= '1';
+							Ram2EN <= '0';
+							Ram2Data <= DataS;
+							Ram2Addr <= Address;
+							r2State <= writeMem2;
+						when writeMem2 =>
+							Result <= (others => '0');
+							Result_L <= (others => '0');
+							Result_L_pointer <= '0';
+							InstructionResult <= (others => '0');
+							r2State <= done;
+						when done =>
+						when others =>
+					end case;
+					case r1State is
+						when waiting =>
+							if ((LFlag = '1' or SFlag = '1') and (Address < x"8000")) then
+								r1State <= done;
+							elsif (LFlag = '1') then
+								if (Address = x"bf00") then
+									r1State <= commRead1;
+								elsif (Address = x"bf01") then
+									r1State <= commTest1;
+								else
+									r1State <= read1;
+								end if;
+							elsif (SFlag = '1') then
+								if (Address = x"bf00") then
+									r1State <= commWrite1;
+								else
+									r1State <= write1;
+								end if;
+							else
+								Result_L_pointer <= '0';
+								Result_L <= "0000000000000000";
+								Result <= Address;
+								r1State <= done;
+							end if;
+						when read1 =>
+							Ram1WE <= '1';
+							Ram1OE <= '0';
+							Ram1EN <= '0';
+							rdn <= '1';
+							wrn <= '1';
+							Ram1Data <= (others => 'Z');
+							Ram1Addr <= Address;
+							r1State <= read2;
+						when read2 =>
+							Result <= Ram1Data;
+							Result_L_pointer <= '1';
+							Result_L <= Ram1Data;
 							r1State <= done;
-						elsif (LFlag = '1') then
-							if (Address = x"bf00") then
-								r1State <= commRead1;
-							elsif (Address = x"bf01") then
-								r1State <= commTest1;
-							else
-								r1State <= read1;
-							end if;
-						elsif (SFlag = '1') then
-							if (Address = x"bf00") then
-								r1State <= commWrite1;
-							else
-								r1State <= write1;
-							end if;
-						else
-                            Result_L_pointer <= '0';
-                            Result_L <= "0000000000000000";
-							Result <= Address;
-							r1State <= done;
-						end if;
-					when read1 =>
-						Ram1WE <= '1';
-						Ram1OE <= '0';
-						Ram1EN <= '0';
-						rdn <= '1';
-						wrn <= '1';
-						Ram1Data <= (others => 'Z');
-						Ram1Addr <= Address;
-						r1State <= read2;
-					when read2 =>
-						Result <= Ram1Data;
-                        Result_L_pointer <= '1';
-                        Result_L <= Ram1Data;
-						r1State <= done;
-					when write1 =>
-						Ram1WE <= '0';
-						Ram1OE <= '1';
-						Ram1EN <= '0';
-						rdn <= '1';
-						wrn <= '1';
-						Ram1Data <= DataS;
-						Ram1Addr <= Address;
-						r1State <= done;
-						Result <= (others => '0');
-						Result_L <= (others => '0');
-						Result_L_pointer <= '0';
-					when commTest1 =>
-						Ram1WE <= '1';
-						Ram1OE <= '1';
-						Ram1EN <= '1';
-						rdn <= '1';
-						wrn <= '1';
-						Ram1Data <= (others => 'Z');
-						r1State <= commTest2;
-					when commTest2 =>
-						Result <= x"000" & "00" & dataReady & '1';
-						r1State <= done;
-					when commRead1 =>
-						Ram1WE <= '1';
-						Ram1OE <= '1';
-						Ram1EN <= '1';
-						rdn <= '0';
-						r1State <= commRead2;
-					when commRead2 =>
-						Result <= Ram1Data;
-						Result_L_pointer <= '1';
-						Result_L <= Ram1Data;
-						rdn <= '1';
-						r1State <= done;
-					when commWrite1 =>
-						Ram1WE <= '1';
-						Ram1OE <= '1';
-						Ram1EN <= '1';
-						wrn <= '1';
-						r1State <= commWrite2;
-					when commWrite2 =>
-						wrn <= '0';
-						Ram1Data <= DataS;
-						r1State <= commWrite3;
-					when commWrite3 =>
-						wrn <= '1';
-						r1State <= commWrite4;
-					when commWrite4 =>
-						if (tbre = '1') then
-							r1State <= commWrite5;
-						end if;
-					when commWrite5 =>
-						if (tsre = '1') then
+						when write1 =>
+							Ram1WE <= '0';
+							Ram1OE <= '1';
+							Ram1EN <= '0';
+							rdn <= '1';
+							wrn <= '1';
+							Ram1Data <= DataS;
+							Ram1Addr <= Address;
 							r1State <= done;
 							Result <= (others => '0');
 							Result_L <= (others => '0');
 							Result_L_pointer <= '0';
-						end if;
-					when done =>
-					when others =>	
-				end case;
+						when commTest1 =>
+							Ram1WE <= '1';
+							Ram1OE <= '1';
+							Ram1EN <= '1';
+							rdn <= '1';
+							wrn <= '1';
+							Ram1Data <= (others => 'Z');
+							r1State <= commTest2;
+						when commTest2 =>
+							Result <= x"000" & "00" & dataReady & (tbre and tsre);
+							r1State <= done;
+						when commRead1 =>
+							Ram1WE <= '1';
+							Ram1OE <= '1';
+							Ram1EN <= '1';
+							rdn <= '0';
+							r1State <= commRead2;
+						when commRead2 =>
+							Result(7 downto 0) <= Ram1Data(7 downto 0);
+							Result(15 downto 8) <= (others => '0');
+							Result_L_pointer <= '1';
+							Result_L(7 downto 0) <= Ram1Data(7 downto 0);
+							rdn <= '1';
+							Ram1Data <= (others => 'Z');
+							r1State <= done;
+						when commWrite1 =>
+							Ram1WE <= '1';
+							Ram1OE <= '1';
+							Ram1EN <= '1';
+							wrn <= '1';
+							r1State <= commWrite2;
+						when commWrite2 =>
+							wrn <= '0';
+							Ram1Data(7 downto 0) <= DataS(7 downto 0);
+							r1State <= commWrite3;
+						when commWrite3 =>
+							wrn <= '1';
+							Result <= (others => '0');
+							Result_L <= (others => '0');
+							Result_L_pointer <= '0';
+							r1State <= done;
+						when done =>
+						when others =>	
+					end case;
+				end if;
 			else
 				InstructionResult <= (others => '0');
 				Result <= (others => '0');

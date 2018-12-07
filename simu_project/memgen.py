@@ -10,7 +10,7 @@ with open('fmemory.vhd', 'w') as f:
         for line in lines:
             f.write(line)
     f.write('\n')
-    with open('mini_mfpc1.dat', 'rb') as _:
+    with open('mini_mfpc3.dat', 'rb') as _:
         for i in range(1024):
             dataa = _.read(1)
             datab = _.read(1)

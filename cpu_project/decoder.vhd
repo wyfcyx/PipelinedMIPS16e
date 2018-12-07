@@ -12,7 +12,7 @@ entity decoder is
         Instruction : in std_logic_vector(15 downto 0);
         BranchPredict : in std_logic;
         
-        -- 寄存器
+        -- 瀵勫瓨鍣
         reg : in std_logic_vector(127 downto 0);
         
         LFlag : out std_logic;
@@ -33,7 +33,7 @@ architecture bhv of decoder is
 begin
 process(PC0, Bubble, ForceNop, Instruction, BranchPredict)
 begin
-    -- 判断是否因为预测失败强制解析为NOP
+    -- 鍒ゆ柇鏄惁鍥犱负棰勬祴澶辫触寮哄埗瑙ｆ瀽涓篘OP
     if (ForceNop = '1') then
             LFlag <= '0';
         SFlag <= '0';
@@ -61,7 +61,7 @@ begin
             AluInstruction <= "0000";
             Immediate <= "0000000000000000";
             DataSelectorInstruction <= "000000";
-            BubbleNext <= "000";
+            --BubbleNext <= "000";
 
             if ((Bubble(0) = '1') or (Bubble(1) = '1')) then
                 BranchForce <= '1';
@@ -160,7 +160,7 @@ begin
 
                 BranchTargetAlu <= PC0 + 1;
                 BranchTarget <= PC0 + (Instruction(10) & Instruction(10) & Instruction(10) & Instruction(10) & Instruction(10) & Instruction(10 downto 0));
-                                RegisterTarget <= "1010";
+                                RegisterTarget <= "1111";
                 AluInstruction <= "1011";
                 Immediate <= Instruction(10) & Instruction(10) & Instruction(10) & Instruction(10) & Instruction(10) & Instruction(10 downto 0);
                 DataSelectorInstruction <= "000011";
@@ -181,7 +181,7 @@ begin
                     BranchTargetAlu <= PC0 + 1;
                     BranchTarget <= PC0 + (Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7 downto 0));
                 end if;
-                                RegisterTarget <= "1010";
+                                RegisterTarget <= "1111";
 
                 if (BranchPredict = '0') then
                     AluInstruction <= "1100";
@@ -207,7 +207,7 @@ begin
                     BranchTargetAlu <= PC0 + 1;
                     BranchTarget <= PC0 + (Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7 downto 0));
                 end if;
-                                RegisterTarget <= "1010";
+                                RegisterTarget <= "1111";
 
                 if (BranchPredict = '0') then
                     AluInstruction <= "1101";
@@ -233,7 +233,7 @@ begin
                     BranchTargetAlu <= PC0 + 1;
                     BranchTarget <= PC0 + (Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7) & Instruction(7 downto 0));
                 end if;
-                                RegisterTarget <= "1010";
+                                RegisterTarget <= "1111";
 
                 if (BranchPredict = '0') then
                     AluInstruction <= "1110";
@@ -331,7 +331,7 @@ begin
                     BranchTarget <= reg(127 downto 112);
                     Immediate <= reg(127 downto 112);
                 end if;
-                                RegisterTarget <= "1010";
+                                RegisterTarget <= "1111";
                 AluInstruction <= "1010";
                 DataSelectorInstruction <= "000001";
                 BubbleNext <= "000";
