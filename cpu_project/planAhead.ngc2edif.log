@@ -220,3 +220,19 @@ WARNING:NetListWriters:306 - Signal bus cpu_instance/reg_instance/flag3<3 : 0>
 Writing EDIF netlist file main.edif ...
 ngc2edif: Total memory usage is 87752 kilobytes
 
+Release 14.7 - ngc2edif P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design main.ngc ...
+WARNING:NetListWriters:298 - No output is written to main.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus cpu_instance/ID_EX_Index_out<11 : 0> on
+   block main is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus cpu_instance/ID_EX_Index_out_mux0001<11
+   : 0> on block main is not reconstructed, because there are some missing bus
+   signals.
+  finished :Prep
+Writing EDIF netlist file main.edif ...
+ngc2edif: Total memory usage is 88200 kilobytes
+

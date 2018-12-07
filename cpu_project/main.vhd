@@ -106,14 +106,16 @@ begin
 	process (clk_scan)
 	begin
 		if (clk_scan'event and clk_scan = '1') then
-			if (gen_scan_count = 1) then
+			-- 50M
+			if (gen_scan_count = 0) then
 				gen_scan_count <= (others => '0');
 				gen_clk_scan <= not gen_clk_scan;
 			else
 				gen_scan_count <= gen_scan_count + 1;
 			end if;
-			if (gen_clk_count = 9) then
-				gen_clk_count <= (others => '0');
+			-- 10M
+			if (gen_cpu_count = 4) then
+				gen_cpu_count <= (others => '0');
 				gen_clk_cpu <= not gen_clk_cpu;
 			else
 				gen_cpu_count <= gen_cpu_count + 1;
