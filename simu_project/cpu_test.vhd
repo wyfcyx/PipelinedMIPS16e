@@ -466,7 +466,7 @@ begin
 
 			IF_ID_PC0_out <= IF_ID_PC0_in;
 			IF_ID_Instruction_out <= IF_ID_Instruction_in;
-            if (IF_ID_Bubble_in_Alu = "00") then
+            if (IF_ID_Bubble_in_Alu = "000") then
                 IF_ID_Bubble_out <= IF_ID_Bubble_in;
             else
                 IF_ID_Bubble_out <= IF_ID_Bubble_in_Alu;
@@ -523,17 +523,17 @@ begin
 	clk_process :process
    begin
 		clk <= '0';
-		wait for 300ns;
+		wait for 2000ns;
 		clk <= '1';
-		wait for 300ns;
+		wait for 2000ns;
    end process;
  
    clk_scan_process :process
    begin
 		clk_scan <= '0';
-		wait for 30ns;
+		wait for 45ns;
 		clk_scan <= '1';
-		wait for 30ns;
+		wait for 45ns;
    end process;
  
 
@@ -541,9 +541,9 @@ begin
    stim_proc: process
    begin		
       -- hold reset state for 100 ns.
-      wait for 50 ns;	
+      wait for 100 ns;	
 		reset <= '1';
-		wait for 20ns;
+		wait for 200 ns;
 		reset <= '0';
       -- insert stimulus here 
 

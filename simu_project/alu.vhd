@@ -241,7 +241,7 @@ begin
 end process;
 process (SFlag, Result0)
 begin
-    if (SFlag = '1' and Result0(15 downto 14) = "00") then
+    if (SFlag = '1' and Result0(15) = '0') then
         NextForceNop <= '1';
         BubbleNext_Alu <= "010";
         BranchForce_Alu <= '1';

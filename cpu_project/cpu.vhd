@@ -249,7 +249,9 @@ begin
 	--led <= ID_EX_AluInstruction_in(3 downto 0) & ID_EX_Rx_in(3 downto 0) & EX_MEM_AluResult_in(3 downto 0) & DataA(3 downto 0);
 	--led <= IF_ID_Bubble_out(2 downto 0) & IF_ID_Instruction_out(15 downto 11) & IF_ID_PC0_out(3 downto 0) & ID_EX_AluInstruction_in(3 downto 0);
 	--led <= PC_out(3 downto 0) & IF_ID_PC0_in(3 downto 0) & BranchTarget(2 downto 0) &  BranchForce& IF_ID_Instruction_in(3 downto 0);
-	led <= led_reg;
+	--led <= led_reg;
+	--led <= led_memory;
+	--led <= reg_out(47 downto 32);
 	--led <= IF_ID_Bubble_out(2 downto 0) & BranchForce& IF_ID_Instruction_out(3 downto 0) & IF_ID_PC0_out(3 downto 0) & ID_EX_AluInstruction_in(3 downto 0);
 	--led <= IF_ID_Bubble_out(2 downto 0) & IF_ID_Instruction_out(15 downto 11) & IF_ID_PC0_out(3 downto 0) & ID_EX_AluInstruction_in(3 downto 0);
 	--led <= ID_EX_AluInstruction_out(3 downto 0) & ID_EX_Rx_out(3 downto 0) & EX_MEM_AluResult_out(3 downto 0) & DataA(3 downto 0);
@@ -264,7 +266,7 @@ begin
 	--led <= EX_MEM_DataS_in(11 downto 8) & ID_EX_ModifiedValue_out(11 downto 8) & ID_EX_ModifiedIndex_out(1 downto 0) & ID_EX_DataSelectorInstruction_out(5 downto 0);
 	--led <= IF_ID_Instruction_out(15 downto 6) & EX_MEM_LFlag_out & EX_MEM_SFlag_out & PC_out(3 downto 0);
 	--led <= EX_MEM_AluResult_out(15 downto 2) & EX_MEM_LFlag_out & EX_MEM_SFlag_out;
-	--led <= PC_out;
+	led <= PC_out;
 	-- register-forward routes
 	started <= startedCache;
     ID_EX_PC0_in <= IF_ID_PC0_out;
@@ -436,7 +438,7 @@ begin
 
 			IF_ID_PC0_out <= IF_ID_PC0_in;
 			IF_ID_Instruction_out <= IF_ID_Instruction_in;
-            if (IF_ID_Bubble_in_Alu = "00") then
+            if (IF_ID_Bubble_in_Alu = "000") then
                 IF_ID_Bubble_out <= IF_ID_Bubble_in;
             else
                 IF_ID_Bubble_out <= IF_ID_Bubble_in_Alu;

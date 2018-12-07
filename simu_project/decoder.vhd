@@ -12,7 +12,7 @@ entity decoder is
         Instruction : in std_logic_vector(15 downto 0);
         BranchPredict : in std_logic;
         
-        -- 寄存�
+        -- 瀵勫瓨鍣
         reg : in std_logic_vector(127 downto 0);
         
         LFlag : out std_logic;
@@ -33,7 +33,7 @@ architecture bhv of decoder is
 begin
 process(PC0, Bubble, ForceNop, Instruction, BranchPredict)
 begin
-    -- 判断是否因为预测失败强制解析为NOP
+    -- 鍒ゆ柇鏄惁鍥犱负棰勬祴澶辫触寮哄埗瑙ｆ瀽涓篘OP
     if (ForceNop = '1') then
             LFlag <= '0';
         SFlag <= '0';
@@ -98,7 +98,7 @@ begin
                 BranchTarget <= "0000000000000000";
                 RegisterTarget <= "0" & Instruction(7 downto 5);
                 AluInstruction <= "0001";
-                Immediate <= Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4 downto 0);
+                Immediate <= Instruction(3) & Instruction(3) & Instruction(3) & Instruction(3) & Instruction(3) & Instruction(3) & Instruction(3) & Instruction(3) & Instruction(3) & Instruction(3) & Instruction(3) & Instruction(3) & Instruction(3 downto 0);
                 DataSelectorInstruction <= "000001";
                 BubbleNext <= "000";
             end if;
@@ -540,7 +540,7 @@ begin
                 BranchTarget <= "0000000000000000";
                 RegisterTarget <= "0" & Instruction(10 downto 8);
                 AluInstruction <= "1000";
-                Immediate <= Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4 downto 1);
+                Immediate <= x"000" & "0" & Instruction(4 downto 2);
                 DataSelectorInstruction <= "000010";
                 BubbleNext <= "000";
             end if;

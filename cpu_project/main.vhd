@@ -69,11 +69,13 @@ end component;
 signal led_cpu : std_logic_vector(15 downto 0);
 signal gen_clk_scan : std_logic;
 signal gen_scan_count : std_logic_vector(31 downto 0) := (others => '0');
+signal gen_clk_cpu : std_logic;
+signal gen_cpu_count : std_logic_vector(31 downto 0) := (others => '0');
 begin
 	led <= led_cpu;
 	cpu_instance : cpu port map(
-		clk => gen_clk_scan,
-		clk_scan => clk_scan,
+		clk => gen_clk_cpu,
+		clk_scan => gen_clk_scan,
 		reset => reset,
 		Ram1Data => Ram1Data,
 		Ram1Addr => Ram1Addr,
@@ -104,11 +106,17 @@ begin
 	process (clk_scan)
 	begin
 		if (clk_scan'event and clk_scan = '1') then
-			if (gen_scan_count = 11) then
+			if (gen_scan_count = 1) then
 				gen_scan_count <= (others => '0');
 				gen_clk_scan <= not gen_clk_scan;
 			else
 				gen_scan_count <= gen_scan_count + 1;
+			end if;
+			if (gen_clk_count = 9) then
+				gen_clk_count <= (others => '0');
+				gen_clk_cpu <= not gen_clk_cpu;
+			else
+				gen_cpu_count <= gen_cpu_count + 1;
 			end if;
 		end if;
 	end process;

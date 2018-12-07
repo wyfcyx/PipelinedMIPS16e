@@ -540,7 +540,7 @@ begin
                 BranchTarget <= "0000000000000000";
                 RegisterTarget <= "0" & Instruction(10 downto 8);
                 AluInstruction <= "1000";
-                Immediate <= Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4) & Instruction(4 downto 1);
+                Immediate <= x"000" & "0" & Instruction(4 downto 2);
                 DataSelectorInstruction <= "000010";
                 BubbleNext <= "000";
             end if;

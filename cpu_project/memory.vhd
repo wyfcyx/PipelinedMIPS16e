@@ -96,7 +96,7 @@ begin
 	flashRP <= '1';
 	flashCE <= '0';
 	started <= startedCache;
-	led <= InstructionAddress;
+	--led <= InstructionAddress;
 	process (LFlag, SFlag, startedCache, clk_scan, clk, reset)
 	begin
 		if (reset = '0') then
@@ -236,6 +236,7 @@ begin
 							Result(15 downto 8) <= (others => '0');
 							Result_L_pointer <= '1';
 							Result_L(7 downto 0) <= Ram1Data(7 downto 0);
+							led <= x"00" & Ram1Data(7 downto 0);
 							rdn <= '1';
 							Ram1Data <= (others => 'Z');
 							r1State <= done;
